@@ -1,1 +1,1 @@
-{"cmd":"none","issued_at":"2026-09-27T21:35:00+00:00","nonce":"init-2026-09-27","note":"initial state — the supervisor ignores 'none'. Scorpio replaces this file to send commands."}
+{"cmd":"ping","issued_at":"2026-09-27T21:38:00+00:00","nonce":"welcome-ping-20260927","note":"If your supervisor picks this up, the remote command channel is live."}
