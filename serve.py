@@ -3,10 +3,11 @@
 Run:  python3 serve.py        (serves on port 8899)
 Stop: Ctrl+C
 
-Exposes exactly three files, nothing else:
+Exposes exactly four files, nothing else:
   - status.json
   - opportunities.jsonl
   - node.log
+  - supervisor.json        (supervisor heartbeat + last remote command)
 
 Everything else returns 404 — notably config.json is NEVER served,
 because it may hold your Telegram bot token one day.
@@ -18,7 +19,7 @@ import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ALLOWED = {"status.json", "opportunities.jsonl", "node.log"}
+ALLOWED = {"status.json", "opportunities.jsonl", "node.log", "supervisor.json"}
 PORT = 8899
 
 

@@ -17,12 +17,30 @@ buyers. You still apply, reply, or pitch. That 5-minute human step is
 the part no script can do for you, and anyone who says otherwise is lying.
 
 ## How the monitor/upgrade loop works with Scorpio
-1. You run the node: `python node.py` (plus `python serve.py` for the live link)
-2. It writes `status.json`, `opportunities.jsonl`, `node.log`
+1. You run one thing: `python supervisor.py` (it starts `node.py` + `serve.py`
+   for you and keeps them alive)
+2. The node writes `status.json`, `opportunities.jsonl`, `node.log`
 3. I read the telemetry myself over our private Tailscale link, on a schedule
 4. I tune keywords and ship upgraded seekers straight to this GitHub repo
-5. You double-click `update.bat` to pull the upgrade, then restart the node.
-   Repeat — the node gets sharper every round.
+5. I then push a command — your supervisor sees it within a minute, pulls the
+   upgrade, and restarts the node itself. Zero clicks from you.
+
+## Supervisor (autonomous mode — recommended)
+`supervisor.py` replaces the two-terminal setup. One terminal, one command:
+
+```
+python supervisor.py
+```
+
+It launches `node.py` and `serve.py`, restarts them if they crash, and polls
+`commands.json` in this repo every 60 seconds for Scorpio's commands
+(`update` / `restart` / `ping`). When I ship an upgrade, I send the `update`
+command myself — your PC pulls it from GitHub and restarts the node on its
+own. `supervisor.json` (visible at `:8899/supervisor.json`) shows the
+supervisor's heartbeat and the last command it executed.
+
+Manual mode still works (`python node.py` + `python serve.py` in two
+terminals), but then updates need your double-click on `update.bat` again.
 
 ## Setup (your computer)
 1. Install Python 3 (https://www.python.org/downloads/)

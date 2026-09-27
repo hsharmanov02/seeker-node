@@ -4,6 +4,8 @@ seen.json
 status.json
 opportunities.jsonl
 node.log
+supervisor.json
+last_nonce.txt
 remote_check_state.json
 __pycache__/
 *.pyc
