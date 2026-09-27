@@ -1,0 +1,9 @@
+# Runtime state — machine-specific, never committed
+config.json
+seen.json
+status.json
+opportunities.jsonl
+node.log
+remote_check_state.json
+__pycache__/
+*.pyc
