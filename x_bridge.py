@@ -56,7 +56,7 @@ PROFILE_DIR = os.path.join(BASE_DIR, ".xbridge-profile")
 PORT = 8898
 CDP_PORT = 9222
 CDP_URL = f"http://localhost:{CDP_PORT}"
-CYCLE_SECS = 15 * 60
+CYCLE_SECS = 5 * 60
 BRIDGE_MARKER = "xbridge-window"  # fragment identifying our dedicated window
 
 QUERIES = [
