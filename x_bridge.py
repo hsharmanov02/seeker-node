@@ -502,8 +502,8 @@ def write_posts(posts):
 # AppUserModelID). Without this, Windows 11 silently drops toasts from
 # unregistered apps — no error, nothing displayed.
 TOAST_REG_PS1 = r'''
-$appId = "Scorpio Trade Alerts"
-$lnkPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Scorpio Trade Alerts.lnk"
+$appId = "ScorpioTradeAlerts"
+$lnkPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\ScorpioTradeAlerts.lnk"
 if (-not (Test-Path $lnkPath)) {
     $wsh = New-Object -ComObject WScript.Shell
     $sc = $wsh.CreateShortcut($lnkPath)
@@ -551,10 +551,26 @@ public static class ToastReg {
         hr = SetCurrentProcessExplicitAppUserModelID(appId);
         if (hr != 0) throw new Exception(""SetCurrentProcessExplicitAppUserModelID failed"");
     }
+    public static string GetAppId(string lnkPath) {
+        Guid iid = new Guid(""886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99"");
+        IPropertyStore store;
+        int hr = SHGetPropertyStoreFromParsingName(lnkPath, IntPtr.Zero, 0, ref iid, out store);
+        if (hr != 0) throw new Exception(""SHGetPropertyStoreFromParsingName failed"");
+        PROPERTYKEY key = new PROPERTYKEY();
+        key.fmtid = new Guid(""9F4C2855-9F79-4B39-A8D0-E1D42DE1D5F3"");
+        key.pid = 5;
+        PROPVARIANT pv = new PROPVARIANT();
+        store.GetValue(ref key, out pv);
+        string val = Marshal.PtrToStringUni(pv.pwszVal);
+        Marshal.ReleaseComObject(store);
+        return val;
+    }
 }
 "@
 try {
     [ToastReg]::Register($lnkPath, $appId)
+    $readBack = [ToastReg]::GetAppId($lnkPath)
+    Write-Output "appid readback: [$readBack]"
 } catch {
     [Console]::Error.WriteLine("toast appid registration failed: " + $_.Exception.Message)
 }
