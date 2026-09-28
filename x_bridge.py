@@ -499,7 +499,7 @@ def write_posts(posts):
 # ---------------------------------------------------------------------------
 
 TOAST_PS1_BUTTONS = r'''$toastXml = @"
-<toast>
+<toast scenario="reminder" duration="long">
   <visual>
     <binding template="ToastGeneric">
       <text>{title}</text>
@@ -520,7 +520,7 @@ $notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
 '''
 
 TOAST_PS1_PLAIN = r'''$toastXml = @"
-<toast>
+<toast duration="long">
   <visual>
     <binding template="ToastGeneric">
       <text>{title}</text>
