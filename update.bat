@@ -11,9 +11,15 @@ for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8898" ^| findstr "LISTENING
     taskkill /PID %%a /F >nul 2>nul
 )
 
-git pull origin main
+git fetch origin main
 if errorlevel 1 (
     echo Update failed. Check your internet and try again.
+    pause
+    exit /b 1
+)
+git reset --hard origin/main
+if errorlevel 1 (
+    echo Update failed during reset.
     pause
     exit /b 1
 )
