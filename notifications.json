@@ -62,6 +62,15 @@
    "ticket_id": "TEST-005",
    "title": "TEST ticket - tap Yes",
    "body": "TEST ONLY, no real order. BUY NVDA GBP 12 @ market, stop 228, target 235. Direct-push speed test - tap Yes."
+  },
+  {
+   "id": "n1790609001-e8f955",
+   "ts": "2026-09-28T15:23:21.789799+00:00",
+   "ts_epoch": 1790609001.7897515,
+   "type": "trade_approval",
+   "ticket_id": "TEST-006",
+   "title": "TEST ticket - tap Yes",
+   "body": "TEST ONLY, no real order. BUY NVDA GBP 12 @ market, stop 228, target 235. AppId registration test - tap Yes."
   }
  ]
 }
