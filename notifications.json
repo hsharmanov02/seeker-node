@@ -26,6 +26,15 @@
    "ticket_id": "",
    "title": "Toast test",
    "body": "If you can see this popup on your PC, notifications are working now."
+  },
+  {
+   "id": "n1790608274-ca7ddc",
+   "ts": "2026-09-28T15:11:14.490627+00:00",
+   "ts_epoch": 1790608274.490591,
+   "type": "note",
+   "ticket_id": "",
+   "title": "Toast test 2",
+   "body": "Second attempt - if this pops up on your PC, notifications are live."
   }
  ]
 }
