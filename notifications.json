@@ -1,1 +1,13 @@
-{"notifications":[]}
+{
+ "notifications": [
+  {
+   "id": "n1790607659-50d962",
+   "ts": "2026-09-28T15:00:59.226786+00:00",
+   "ts_epoch": 1790607659.226728,
+   "type": "trade_approval",
+   "ticket_id": "TEST-001",
+   "title": "TEST - not a real trade",
+   "body": "Button test only. Tap Yes or No in this popup, then close the confirmation tab."
+  }
+ ]
+}
