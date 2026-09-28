@@ -625,23 +625,36 @@ def show_windows_toast(title, body, buttons=None):
         ps1 = (TOAST_PS1_PLAIN.replace("__TITLE__", title)
                                   .replace("__BODY__", body))
     ps1_path = os.path.join(BASE_DIR, "_toast_tmp.ps1")
+    diag = {"returncode": None, "stdout": "", "stderr": ""}
     try:
         with open(ps1_path, "w", encoding="utf-8") as f:
             f.write(ps1)
         r = subprocess.run(
             ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
              "-File", ps1_path],
-            capture_output=True, timeout=30)
+            capture_output=True, timeout=60)
+        diag = {
+            "returncode": r.returncode,
+            "stdout": (r.stdout or b"").decode("utf-8", "replace")[-500:],
+            "stderr": (r.stderr or b"").decode("utf-8", "replace")[-1500:],
+        }
         if r.returncode != 0:
-            err = (r.stderr or b"").decode("utf-8", "replace")[-400:]
-            log(f"toast powershell failed (rc={r.returncode}): {err}")
+            log(f"toast powershell failed (rc={r.returncode}): {diag['stderr'][-400:]}")
+        else:
+            log(f"toast shown: {title[:60]}")
+    except subprocess.TimeoutExpired:
+        log("toast powershell timed out after 60s")
+        diag = {"returncode": -1, "stdout": "", "stderr": "timeout after 60s"}
     except Exception as e:
         log(f"toast failed ({type(e).__name__}: {e})")
+        diag = {"returncode": -2, "stdout": "",
+                "stderr": f"{type(e).__name__}: {e}"}
     finally:
         try:
             os.remove(ps1_path)
         except OSError:
             pass
+    return diag
 
 
 def fetch_notifications():
@@ -712,9 +725,11 @@ def record_answer(ticket_id, choice):
 
 
 def show_notification(n, btn_ip):
-    """Toast one notification dict. Returns its id, or None if invalid."""
+    """Toast one notification dict. Returns (id, diag) — diag holds the
+    PowerShell return code / captured output for remote diagnostics."""
     if not isinstance(n, dict) or not n.get("id"):
-        return None
+        return None, {"returncode": None, "stdout": "",
+                      "stderr": "invalid notification payload"}
     nid = str(n["id"])
     title = str(n.get("title", "Scorpio"))
     body = str(n.get("body", ""))
@@ -722,15 +737,15 @@ def show_notification(n, btn_ip):
         tid = str(n["ticket_id"])
         base = (f"http://{btn_ip}:{PORT}/answer"
                 f"?ticket={urllib.parse.quote(tid, safe='')}")
-        show_windows_toast(
+        diag = show_windows_toast(
             title, body,
             buttons=[("Yes", base + "&choice=yes"),
                      ("No", base + "&choice=no")])
         log(f"trade-approval toast shown (ticket {tid})")
     else:
-        show_windows_toast(title, body)
+        diag = show_windows_toast(title, body)
         log(f"toast shown: {title[:60]}")
-    return nid
+    return nid, diag
 
 
 def notify_loop(btn_ip):
@@ -749,7 +764,7 @@ def notify_loop(btn_ip):
                 if not nid or nid in seen:
                     continue
                 seen.add(nid)
-                show_notification(n, btn_ip)
+                _nid, _diag = show_notification(n, btn_ip)
             save_seen_ids(seen)
         except Exception:
             log("notify loop error:\n" + traceback.format_exc(limit=3))
@@ -820,12 +835,14 @@ class Handler(BaseHTTPRequestHandler):
                 payload = {}
             try:
                 seen = load_seen_ids()
-                nid = show_notification(payload, Handler.btn_ip)
+                nid, diag = show_notification(payload, Handler.btn_ip)
                 if nid:
                     seen.add(nid)
                     save_seen_ids(seen)
                     log(f"direct push received ({nid})")
-                self._send(b'{"ok": true}', "application/json")
+                self._send(json.dumps({"ok": True, "nid": nid,
+                                       "toast": diag}).encode("utf-8"),
+                           "application/json")
             except Exception as e:
                 log(f"/notify failed ({type(e).__name__}: {e})")
                 self._send(b'{"ok": false}', "application/json")

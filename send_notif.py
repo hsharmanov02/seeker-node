@@ -86,9 +86,18 @@ def main():
                 headers={"Content-Type": "application/json"}, method="POST")
             opener = urllib.request.build_opener(
                 urllib.request.ProxyHandler({"http": tunnel}))
-            with opener.open(req, timeout=15) as r:
-                r.read()
+            with opener.open(req, timeout=60) as r:
+                resp = r.read().decode("utf-8", "replace")
             print("direct push delivered")
+            try:
+                tj = (json.loads(resp).get("toast") or {})
+                print(f"bridge toast rc={tj.get('returncode')}")
+                if tj.get("stderr"):
+                    print("bridge stderr: " + tj["stderr"][-600:])
+                if tj.get("stdout"):
+                    print("bridge stdout: " + tj["stdout"][-300:])
+            except Exception:
+                pass
         else:
             print("direct push skipped (no tunnel proxy available)")
     except Exception as e:
