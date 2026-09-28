@@ -46,9 +46,11 @@ Tailscale network (x_posts.json on port 8898).
 import html
 import json
 import os
+import py_compile
 import re
 import socket
 import subprocess
+import sys
 import threading
 import time
 import traceback
@@ -906,6 +908,42 @@ def notify_loop(btn_ip):
         time.sleep(NOTIF_SECS)
 
 
+def do_self_update():
+    """Download the latest x_bridge.py from GitHub and restart.
+
+    Bypasses git entirely — direct HTTPS download, syntax-check, replace,
+    re-exec. Returns (ok, message).
+    """
+    url = ("https://raw.githubusercontent.com/hsharmanov02/"
+           "seeker-node/main/x_bridge.py")
+    tmp = os.path.join(BASE_DIR, "_x_bridge_new.py")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "xbridge-updater/1.0"})
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(req, timeout=30) as r:
+            if r.status != 200:
+                return False, f"download HTTP {r.status}"
+            data = r.read()
+        if len(data) < 10000 or b"def main" not in data:
+            return False, "downloaded file looks wrong (too small)"
+        with open(tmp, "wb") as f:
+            f.write(data)
+        # Syntax check before replacing.
+        try:
+            py_compile.compile(tmp, doraise=True)
+        except Exception as e:
+            try:
+                os.remove(tmp)
+            except Exception:
+                pass
+            return False, f"syntax check failed: {e}"
+        os.replace(tmp, os.path.abspath(__file__))
+        log("self-update: new code installed, restarting")
+        return True, "restarting"
+    except Exception as e:
+        return False, f"{type(e).__name__}: {e}"
+
+
 class Handler(BaseHTTPRequestHandler):
     btn_ip = "127.0.0.1"  # set by main() once Tailscale is up
 
@@ -970,6 +1008,21 @@ class Handler(BaseHTTPRequestHandler):
                     pend = []
             self._send(json.dumps({"pending": pend}).encode("utf-8"),
                        "application/json")
+            return
+
+        if name == "self_update":
+            ok, msg = do_self_update()
+            self._send(json.dumps({"ok": ok, "msg": msg}).encode("utf-8"),
+                       "application/json")
+            if ok:
+                # Restart after the response is sent.
+                def _restart():
+                    time.sleep(1)
+                    try:
+                        os.execv(sys.executable, [sys.executable, os.path.abspath(__file__)])
+                    except Exception as e:
+                        log(f"self-update restart failed: {e}")
+                threading.Thread(target=_restart, daemon=True).start()
             return
 
         if name != "x_posts.json":
