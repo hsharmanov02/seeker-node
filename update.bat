@@ -12,7 +12,11 @@ for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8898" ^| findstr "LISTENING
 )
 
 git pull origin main
+if errorlevel 1 (
+    echo Update failed. Check your internet and try again.
+    pause
+    exit /b 1
+)
 echo.
-echo Done. If node.py / serve.py were running, restart them to pick up the changes.
-echo Now re-run x_bridge.bat to start the bridge with the new code.
-pause
+echo Starting x_bridge with the new code...
+start "x_bridge" "%~dp0x_bridge.bat"
