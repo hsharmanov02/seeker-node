@@ -82,6 +82,7 @@ NOTIF_SECS = 30
 NOTIF_FILE = os.path.join(BASE_DIR, "notifications.json")  # served copy lives on GitHub
 LAST_NOTIF_FILE = os.path.join(BASE_DIR, ".xbridge-last-notif")
 ANSWERS_FILE = os.path.join(BASE_DIR, "trade_answers.json")
+PENDING_FILE = os.path.join(BASE_DIR, "pending_approvals.json")
 
 QUERIES = [
     ("home", "https://x.com/home"),
@@ -264,6 +265,41 @@ def launch_bridge_chrome(chrome_exe):
 
 
 _chrome_exe = None
+
+
+def open_approval_monitor(btn_ip):
+    """Open the trade-approval monitor tab in the bridge Chrome.
+
+    The tab polls /pending_approvals.json, plays a loud sound, and pops a
+    Chrome system notification when a trade approval arrives — works even
+    when Windows toasts are broken.
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as pw:
+            browser = pw.chromium.connect_over_cdp(CDP_URL)
+            ctx = browser.contexts[0] if browser.contexts else None
+            if ctx is None:
+                log("approval monitor: no browser context")
+                return
+            try:
+                ctx.grant_permissions(["notifications"])
+            except Exception:
+                pass
+            url = f"http://{btn_ip}:{PORT}/approval"
+            # Reuse existing monitor tab if present.
+            for p in ctx.pages:
+                try:
+                    if "/approval" in (p.url or ""):
+                        log("approval monitor tab already open")
+                        return
+                except Exception:
+                    pass
+            page = ctx.new_page()
+            page.goto(url)
+            log("approval monitor tab opened")
+    except Exception as e:
+        log(f"approval monitor failed to open: {type(e).__name__}: {e}")
 
 
 def ensure_bridge_chrome():
@@ -619,6 +655,71 @@ $notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
 '''
 
 
+APPROVAL_HTML = r'''<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Scorpio Trade Approval</title>
+<style>
+body{font-family:sans-serif;background:#0f1419;color:#e7e9ea;text-align:center;margin:0;padding:40px}
+#alert{display:none;border:3px solid #f7b500;border-radius:12px;padding:30px;max-width:600px;margin:20px auto;background:#1a2332}
+#alert h1{color:#f7b500;margin-top:0}
+#ticket{font-size:13px;color:#8899a6;white-space:pre-wrap;text-align:left;background:#0f1419;padding:15px;border-radius:8px;max-height:300px;overflow:auto}
+button{font-size:24px;padding:15px 50px;margin:15px;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+#yes{background:#00c853;color:#fff}
+#no{background:#d32f2f;color:#fff}
+#status{color:#8899a6;margin-top:20px}
+</style></head><body>
+<h2>&#128308; Scorpio Trade Approval Monitor</h2>
+<p id="status">Watching for trade approvals... (keep this tab open)</p>
+<div id="alert">
+<h1>&#128308; TRADE APPROVAL NEEDED</h1>
+<div id="ticket"></div>
+<div><button id="yes">YES</button><button id="no">NO</button></div>
+</div>
+<script>
+let audioCtx=null, beepTimer=null, currentId=null;
+function loudBeep(){
+  if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+  o.connect(g); g.connect(audioCtx.destination);
+  o.frequency.value=880; o.type='square';
+  g.gain.setValueAtTime(0.3, audioCtx.currentTime);
+  o.start(); o.stop(audioCtx.currentTime+0.4);
+}
+function startAlarm(){ stopAlarm(); for(let i=0;i<6;i++) setTimeout(loudBeep, i*700); beepTimer=setInterval(loudBeep, 5000); }
+function stopAlarm(){ if(beepTimer){clearInterval(beepTimer); beepTimer=null;} }
+async function check(){
+  try{
+    const r=await fetch('/pending_approvals.json'); const data=await r.json();
+    const pend=data.pending||[];
+    if(pend.length>0 && pend[0].id!==currentId){
+      const t=pend[0]; currentId=t.id;
+      document.getElementById('ticket').textContent=t.detail||JSON.stringify(t);
+      document.getElementById('alert').style.display='block';
+      document.getElementById('status').textContent='Approval needed!';
+      startAlarm();
+      if(Notification.permission==='granted'){
+        new Notification('TRADE APPROVAL NEEDED', {body:(t.summary||'Review the ticket').substring(0,200), requireInteraction:true});
+      }
+      document.getElementById('yes').onclick=()=>answer(t,'yes');
+      document.getElementById('no').onclick=()=>answer(t,'no');
+    } else if(pend.length===0 && currentId){
+      currentId=null; document.getElementById('alert').style.display='none';
+      document.getElementById('status').textContent='Watching for trade approvals... (keep this tab open)';
+      stopAlarm();
+    }
+  }catch(e){}
+}
+async function answer(t, choice){
+  stopAlarm();
+  await fetch('/answer?ticket='+encodeURIComponent(t.ticket_id||t.id)+'&choice='+choice);
+  document.getElementById('alert').style.display='none';
+  document.getElementById('status').textContent='Recorded: '+choice.toUpperCase()+' — watching...';
+  currentId=null;
+}
+if(Notification.permission==='default'){ Notification.requestPermission(); }
+setInterval(check, 2000); check();
+</script></body></html>'''
+
+
 def show_windows_toast(title, body, buttons=None):
     """Pop a Windows toast. buttons = [(label, url), ...] or None for plain.
 
@@ -758,6 +859,24 @@ def show_notification(n, btn_ip):
             buttons=[("Yes", base + "&choice=yes"),
                      ("No", base + "&choice=no")])
         log(f"trade-approval toast shown (ticket {tid})")
+        # Chrome monitor fallback: queue for the approval tab (sound + popup).
+        try:
+            pend = []
+            if os.path.isfile(PENDING_FILE):
+                with open(PENDING_FILE, "r", encoding="utf-8") as f:
+                    pend = json.load(f) or []
+            pend = [p for p in pend if p.get("id") != nid]
+            pend.append({
+                "id": nid, "ticket_id": tid,
+                "summary": title, "detail": body,
+                "ts": time.time(),
+            })
+            tmp = PENDING_FILE + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(pend[-5:], f)
+            os.replace(tmp, PENDING_FILE)
+        except Exception as e:
+            log(f"pending approval queue failed: {e}")
     else:
         diag = show_windows_toast(title, body)
         log(f"toast shown: {title[:60]}")
@@ -808,6 +927,17 @@ class Handler(BaseHTTPRequestHandler):
             choice = (args.get("choice") or [""])[0].lower()
             if ticket and choice in ("yes", "no"):
                 record_answer(ticket, choice)
+                # Clear from pending so the monitor tab stops alarming.
+                try:
+                    if os.path.isfile(PENDING_FILE):
+                        with open(PENDING_FILE, "r", encoding="utf-8") as f:
+                            pend = json.load(f) or []
+                        pend = [p for p in pend
+                                if p.get("ticket_id") != ticket and p.get("id") != ticket]
+                        with open(PENDING_FILE, "w", encoding="utf-8") as f:
+                            json.dump(pend, f)
+                except Exception:
+                    pass
                 page = (
                     "<html><head><meta charset='utf-8'></head>"
                     "<body style='font-family:sans-serif;text-align:center;"
@@ -823,6 +953,22 @@ class Handler(BaseHTTPRequestHandler):
 
         if name == "trade_answer.json":
             self._send(json.dumps(read_answers()).encode("utf-8"),
+                       "application/json")
+            return
+
+        if name == "approval":
+            self._send(APPROVAL_HTML.encode("utf-8"), "text/html; charset=utf-8")
+            return
+
+        if name == "pending_approvals.json":
+            pend = []
+            if os.path.isfile(PENDING_FILE):
+                try:
+                    with open(PENDING_FILE, "r", encoding="utf-8") as f:
+                        pend = json.load(f) or []
+                except Exception:
+                    pend = []
+            self._send(json.dumps({"pending": pend}).encode("utf-8"),
                        "application/json")
             return
 
@@ -895,6 +1041,7 @@ def main():
 
     ensure_bridge_chrome()
     log("x_bridge v3 started — Ctrl+C to stop")
+    open_approval_monitor(btn_ip)
     with sync_playwright() as pw:
         while True:
             if not in_scan_window():
