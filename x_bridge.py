@@ -12,6 +12,8 @@ What it does:
   3. During market hours (Mon–Fri, 13:30–21:30 London) it quietly loads,
      every 15 minutes: your Home timeline plus Latest searches for
      $NVDA, $MSFT and $AAPL, and copies out recent posts mentioning them.
+     All four searches reuse the single bridge tab — it never opens extra
+     windows or tabs.
      Outside market hours it just keeps serving the last batch.
   4. Saves them to x_posts.json and serves ONLY that file on port 8898,
      so Scorpio can fetch it over your Tailscale network. If Tailscale is
@@ -360,13 +362,32 @@ def get_bridge_page(pw):
         return None, None
 
     def find_page():
+        # Identify OUR page two ways: the URL fragment works right after
+        # creation, and a JS marker (registered via add_init_script) survives
+        # every navigation afterwards. If the old window-per-cycle bug left
+        # duplicates behind, keep the first and close the rest.
+        marked = []
         for p in ctx.pages:
             try:
-                if not p.is_closed() and BRIDGE_MARKER in (p.url or ""):
-                    return p
+                if p.is_closed():
+                    continue
+                if BRIDGE_MARKER in (p.url or ""):
+                    marked.append(p)
+                    continue
+                try:
+                    if p.evaluate("window.__xbridge === true"):
+                        marked.append(p)
+                except Exception:
+                    continue
             except Exception:
                 continue
-        return None
+        for dup in marked[1:]:
+            try:
+                dup.close()
+                log("closed a duplicate bridge window left by the old bug")
+            except Exception:
+                pass
+        return marked[0] if marked else None
 
     page = find_page()
     if page is not None:
@@ -392,6 +413,12 @@ def get_bridge_page(pw):
         time.sleep(0.5)
         page = find_page()
         if page is not None:
+            try:
+                # Marker survives every page.goto, so next cycle finds this
+                # same tab again instead of opening a new window.
+                page.add_init_script("window.__xbridge = true;")
+            except Exception:
+                pass
             log("bridge window opened — log into X in it if it asks, then minimize it")
             return browser, page
     log("Bridge window did not appear; will retry next cycle.")
