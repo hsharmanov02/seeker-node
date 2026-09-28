@@ -35,6 +35,15 @@
    "ticket_id": "",
    "title": "Toast test 2",
    "body": "Second attempt - if this pops up on your PC, notifications are live."
+  },
+  {
+   "id": "n1790608429-20008d",
+   "ts": "2026-09-28T15:13:49.555400+00:00",
+   "ts_epoch": 1790608429.5553572,
+   "type": "trade_approval",
+   "ticket_id": "TEST-003",
+   "title": "TEST ticket - tap Yes",
+   "body": "TEST ONLY, no real order. BUY NVDA GBP 12 @ market, stop 228, target 235. This popup should stay until you tap Yes or No."
   }
  ]
 }
