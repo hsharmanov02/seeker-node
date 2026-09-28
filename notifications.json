@@ -8,6 +8,15 @@
    "ticket_id": "TEST-001",
    "title": "TEST - not a real trade",
    "body": "Button test only. Tap Yes or No in this popup, then close the confirmation tab."
+  },
+  {
+   "id": "n1790607688-aaa0e0",
+   "ts": "2026-09-28T15:01:28.287165+00:00",
+   "ts_epoch": 1790607688.2871304,
+   "type": "trade_approval",
+   "ticket_id": "TEST-002",
+   "title": "TEST ticket - tap Yes",
+   "body": "TEST ONLY, no real order. BUY NVDA GBP 12 @ market, stop 228, target 235. Tap Yes to simulate approval."
   }
  ]
 }
