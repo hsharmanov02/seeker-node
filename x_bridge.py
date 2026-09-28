@@ -577,7 +577,11 @@ def fetch_notifications():
     try:
         url = NOTIF_URL + f"?cb={int(time.time())}"
         req = urllib.request.Request(url, headers={"User-Agent": "xbridge-notify/1.0"})
-        with urllib.request.urlopen(req, timeout=20) as r:
+        # Bypass any system proxy settings — go direct to GitHub. A stale or
+        # broken proxy (or firewall-blocked proxy) would otherwise kill this
+        # silently on some PCs.
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(req, timeout=20) as r:
             if r.status != 200:
                 return []
             data = json.loads(r.read().decode("utf-8"))
