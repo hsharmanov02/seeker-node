@@ -556,10 +556,13 @@ def show_windows_toast(title, body, buttons=None):
     try:
         with open(ps1_path, "w", encoding="utf-8") as f:
             f.write(ps1)
-        subprocess.run(
+        r = subprocess.run(
             ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
              "-File", ps1_path],
             capture_output=True, timeout=30)
+        if r.returncode != 0:
+            err = (r.stderr or b"").decode("utf-8", "replace")[-400:]
+            log(f"toast powershell failed (rc={r.returncode}): {err}")
     except Exception as e:
         log(f"toast failed ({type(e).__name__}: {e})")
     finally:
@@ -580,8 +583,9 @@ def fetch_notifications():
             data = json.loads(r.read().decode("utf-8"))
         notifs = data.get("notifications", []) if isinstance(data, dict) else []
         return [n for n in notifs if isinstance(n, dict) and n.get("id")]
-    except Exception:
-        return []  # 404 / offline / bad json — stay quiet, retry next minute
+    except Exception as e:
+        log(f"notification fetch failed ({type(e).__name__}: {e})")
+        return []  # stay quiet otherwise, retry next minute
 
 
 def load_seen_ids():
