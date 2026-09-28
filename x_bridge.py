@@ -498,33 +498,99 @@ def write_posts(posts):
 # Trade-approval PC notifications (Yes/No toasts)
 # ---------------------------------------------------------------------------
 
-TOAST_PS1_BUTTONS = r'''$toastXml = @"
+# Registers this app's toast identity with Windows (Start Menu shortcut +
+# AppUserModelID). Without this, Windows 11 silently drops toasts from
+# unregistered apps — no error, nothing displayed.
+TOAST_REG_PS1 = r'''
+$appId = "Scorpio Trade Alerts"
+$lnkPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Scorpio Trade Alerts.lnk"
+if (-not (Test-Path $lnkPath)) {
+    $wsh = New-Object -ComObject WScript.Shell
+    $sc = $wsh.CreateShortcut($lnkPath)
+    $sc.TargetPath = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
+    $sc.Save()
+}
+Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public static class ToastReg {
+    [DllImport(""shell32.dll"", CharSet = CharSet.Unicode)]
+    private static extern int SetCurrentProcessExplicitAppUserModelID(string AppID);
+    [DllImport(""shell32.dll"", CharSet = CharSet.Unicode)]
+    private static extern int SHGetPropertyStoreFromParsingName(string pszPath, IntPtr pbc, int flags, ref Guid riid, out IPropertyStore store);
+    [ComImport, Guid(""886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99""), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IPropertyStore {
+        uint GetCount();
+        void GetAt(uint iProp, out PROPERTYKEY pkey);
+        void GetValue(ref PROPERTYKEY key, out PROPVARIANT pv);
+        void SetValue(ref PROPERTYKEY key, ref PROPVARIANT pv);
+        void Commit();
+    }
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct PROPERTYKEY { public Guid fmtid; public uint pid; }
+    [StructLayout(LayoutKind.Explicit)]
+    public struct PROPVARIANT {
+        [FieldOffset(0)] public ushort vt;
+        [FieldOffset(8)] public IntPtr pwszVal;
+    }
+    public static void Register(string lnkPath, string appId) {
+        Guid iid = new Guid(""886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99"");
+        IPropertyStore store;
+        int hr = SHGetPropertyStoreFromParsingName(lnkPath, IntPtr.Zero, 0, ref iid, out store);
+        if (hr != 0) throw new Exception(""SHGetPropertyStoreFromParsingName failed"");
+        PROPERTYKEY key = new PROPERTYKEY();
+        key.fmtid = new Guid(""9F4C2855-9F79-4B39-A8D0-E1D42DE1D5F3"");
+        key.pid = 5;
+        PROPVARIANT pv = new PROPVARIANT();
+        pv.vt = 31;
+        pv.pwszVal = Marshal.StringToCoTaskMemUni(appId);
+        store.SetValue(ref key, ref pv);
+        store.Commit();
+        Marshal.FreeCoTaskMem(pv.pwszVal);
+        Marshal.ReleaseComObject(store);
+        hr = SetCurrentProcessExplicitAppUserModelID(appId);
+        if (hr != 0) throw new Exception(""SetCurrentProcessExplicitAppUserModelID failed"");
+    }
+}
+"@
+try {
+    [ToastReg]::Register($lnkPath, $appId)
+} catch {
+    [Console]::Error.WriteLine("toast appid registration failed: " + $_.Exception.Message)
+}
+'''
+
+TOAST_PS1_BUTTONS = TOAST_REG_PS1 + r'''
+$toastXml = @"
+<?xml version="1.0" encoding="utf-8"?>
 <toast scenario="reminder" duration="long">
   <visual>
     <binding template="ToastGeneric">
-      <text>{title}</text>
-      <text>{body}</text>
+      <text>__TITLE__</text>
+      <text>__BODY__</text>
     </binding>
   </visual>
   <actions>
-    <action content="Yes" arguments="{url_yes}" activationType="protocol" />
-    <action content="No" arguments="{url_no}" activationType="protocol" />
+    <action content="Yes" arguments="__URL_YES__" activationType="protocol" />
+    <action content="No" arguments="__URL_NO__" activationType="protocol" />
   </actions>
 </toast>
 "@
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
 $xmlDoc = New-Object Windows.Data.Xml.Dom.XmlDocument
 $xmlDoc.LoadXml($toastXml)
-$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("Scorpio Trade Alerts")
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($appId)
 $notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
 '''
 
-TOAST_PS1_PLAIN = r'''$toastXml = @"
+TOAST_PS1_PLAIN = TOAST_REG_PS1 + r'''
+$toastXml = @"
+<?xml version="1.0" encoding="utf-8"?>
 <toast duration="long">
   <visual>
     <binding template="ToastGeneric">
-      <text>{title}</text>
-      <text>{body}</text>
+      <text>__TITLE__</text>
+      <text>__BODY__</text>
     </binding>
   </visual>
 </toast>
@@ -532,7 +598,7 @@ TOAST_PS1_PLAIN = r'''$toastXml = @"
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
 $xmlDoc = New-Object Windows.Data.Xml.Dom.XmlDocument
 $xmlDoc.LoadXml($toastXml)
-$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("Scorpio Trade Alerts")
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($appId)
 $notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
 '''
 
@@ -543,15 +609,21 @@ def show_windows_toast(title, body, buttons=None):
     Button clicks open the URL (a tiny 'recorded' page served by this bridge)
     AND record the answer — no need to open the chat.
     """
-    title = html.escape(str(title))[:120]
-    body = html.escape(str(body))[:300]
+    def ps_escape(s):
+        # Inside PowerShell expandable heredocs, $ starts interpolation.
+        return s.replace("$", "`$")
+    title = ps_escape(html.escape(str(title))[:120])
+    body = ps_escape(html.escape(str(body))[:300])
     if buttons:
-        url_yes = html.escape(buttons[0][1], quote=True)
-        url_no = html.escape(buttons[1][1], quote=True)
-        ps1 = TOAST_PS1_BUTTONS.format(title=title, body=body,
-                                       url_yes=url_yes, url_no=url_no)
+        url_yes = ps_escape(html.escape(buttons[0][1], quote=True))
+        url_no = ps_escape(html.escape(buttons[1][1], quote=True))
+        ps1 = (TOAST_PS1_BUTTONS.replace("__TITLE__", title)
+                                  .replace("__BODY__", body)
+                                  .replace("__URL_YES__", url_yes)
+                                  .replace("__URL_NO__", url_no))
     else:
-        ps1 = TOAST_PS1_PLAIN.format(title=title, body=body)
+        ps1 = (TOAST_PS1_PLAIN.replace("__TITLE__", title)
+                                  .replace("__BODY__", body))
     ps1_path = os.path.join(BASE_DIR, "_toast_tmp.ps1")
     try:
         with open(ps1_path, "w", encoding="utf-8") as f:
@@ -752,6 +824,7 @@ class Handler(BaseHTTPRequestHandler):
                 if nid:
                     seen.add(nid)
                     save_seen_ids(seen)
+                    log(f"direct push received ({nid})")
                 self._send(b'{"ok": true}', "application/json")
             except Exception as e:
                 log(f"/notify failed ({type(e).__name__}: {e})")
