@@ -16,6 +16,11 @@ What it does:
   4. Saves them to x_posts.json and serves ONLY that file on port 8898,
      so Scorpio can fetch it over your Tailscale network. If Tailscale is
      installed but not running, the bridge tries to start it itself.
+  5. Every 60 seconds it also checks notifications.json on GitHub. When
+     Scorpio needs a TRADE approval from you, a Windows toast pops up on
+     your PC with the ticket summary and Yes/No buttons — click one and
+     your answer is recorded instantly (a small confirmation tab opens;
+     just close it). Used ONLY for trade approvals, nothing else.
 
 What it does NOT do:
   - It never posts, likes, follows, or sends DMs. Read-only.
@@ -23,6 +28,8 @@ What it does NOT do:
   - It never opens tabs in your main Chrome window.
   - It never kills your main Chrome — only stale bridge-Chrome processes
     that it started itself.
+  - It never places trades. A "Yes" click only records your answer for
+    Scorpio to act on; every ticket is still shown to you first.
 
 One-time setup:
   1. Double-click x_bridge.bat.
@@ -34,6 +41,7 @@ Stop any time with Ctrl+C. Nothing is uploaded anywhere except your own
 Tailscale network (x_posts.json on port 8898).
 """
 
+import html
 import json
 import os
 import re
@@ -42,6 +50,8 @@ import subprocess
 import threading
 import time
 import traceback
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -58,6 +68,18 @@ CDP_PORT = 9222
 CDP_URL = f"http://localhost:{CDP_PORT}"
 CYCLE_SECS = 5 * 60
 BRIDGE_MARKER = "xbridge-window"  # fragment identifying our dedicated window
+
+# --- Trade-approval PC notifications ---------------------------------------
+# Scorpio drops trade-approval requests into notifications.json on GitHub;
+# this bridge polls it every minute and pops a Windows toast on YOUR pc
+# with Yes/No buttons. Clicking one records your answer locally, which
+# Scorpio reads back over Tailscale. Used ONLY for trade approvals.
+NOTIF_URL = ("https://raw.githubusercontent.com/hsharmanov02/seeker-node"
+             "/main/notifications.json")
+NOTIF_SECS = 60
+NOTIF_FILE = os.path.join(BASE_DIR, "notifications.json")  # served copy lives on GitHub
+LAST_NOTIF_FILE = os.path.join(BASE_DIR, ".xbridge-last-notif")
+ANSWERS_FILE = os.path.join(BASE_DIR, "trade_answers.json")
 
 QUERIES = [
     ("home", "https://x.com/home"),
@@ -445,9 +467,211 @@ def write_posts(posts):
     os.replace(tmp, OUT_FILE)
 
 
+# ---------------------------------------------------------------------------
+# Trade-approval PC notifications (Yes/No toasts)
+# ---------------------------------------------------------------------------
+
+TOAST_PS1_BUTTONS = r'''$toastXml = @"
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>{title}</text>
+      <text>{body}</text>
+    </binding>
+  </visual>
+  <actions>
+    <action content="Yes" arguments="{url_yes}" activationType="protocol" />
+    <action content="No" arguments="{url_no}" activationType="protocol" />
+  </actions>
+</toast>
+"@
+[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
+$xmlDoc = New-Object Windows.Data.Xml.Dom.XmlDocument
+$xmlDoc.LoadXml($toastXml)
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("Scorpio Trade Alerts")
+$notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
+'''
+
+TOAST_PS1_PLAIN = r'''$toastXml = @"
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>{title}</text>
+      <text>{body}</text>
+    </binding>
+  </visual>
+</toast>
+"@
+[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
+$xmlDoc = New-Object Windows.Data.Xml.Dom.XmlDocument
+$xmlDoc.LoadXml($toastXml)
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("Scorpio Trade Alerts")
+$notifier.Show([Windows.UI.Notifications.ToastNotification]::new($xmlDoc))
+'''
+
+
+def show_windows_toast(title, body, buttons=None):
+    """Pop a Windows toast. buttons = [(label, url), ...] or None for plain.
+
+    Button clicks open the URL (a tiny 'recorded' page served by this bridge)
+    AND record the answer — no need to open the chat.
+    """
+    title = html.escape(str(title))[:120]
+    body = html.escape(str(body))[:300]
+    if buttons:
+        url_yes = html.escape(buttons[0][1], quote=True)
+        url_no = html.escape(buttons[1][1], quote=True)
+        ps1 = TOAST_PS1_BUTTONS.format(title=title, body=body,
+                                       url_yes=url_yes, url_no=url_no)
+    else:
+        ps1 = TOAST_PS1_PLAIN.format(title=title, body=body)
+    ps1_path = os.path.join(BASE_DIR, "_toast_tmp.ps1")
+    try:
+        with open(ps1_path, "w", encoding="utf-8") as f:
+            f.write(ps1)
+        subprocess.run(
+            ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+             "-File", ps1_path],
+            capture_output=True, timeout=30)
+    except Exception as e:
+        log(f"toast failed ({type(e).__name__}: {e})")
+    finally:
+        try:
+            os.remove(ps1_path)
+        except OSError:
+            pass
+
+
+def fetch_notifications():
+    """Pull notifications.json from GitHub. Returns a list of dicts."""
+    try:
+        url = NOTIF_URL + f"?cb={int(time.time())}"
+        req = urllib.request.Request(url, headers={"User-Agent": "xbridge-notify/1.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            if r.status != 200:
+                return []
+            data = json.loads(r.read().decode("utf-8"))
+        notifs = data.get("notifications", []) if isinstance(data, dict) else []
+        return [n for n in notifs if isinstance(n, dict) and n.get("id")]
+    except Exception:
+        return []  # 404 / offline / bad json — stay quiet, retry next minute
+
+
+def load_seen_ids():
+    try:
+        with open(LAST_NOTIF_FILE, encoding="utf-8") as f:
+            return set(json.load(f))
+    except Exception:
+        return set()
+
+
+def save_seen_ids(seen):
+    try:
+        tmp = LAST_NOTIF_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(sorted(seen)[-100:], f)
+        os.replace(tmp, LAST_NOTIF_FILE)
+    except Exception:
+        pass
+
+
+def read_answers():
+    try:
+        with open(ANSWERS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def record_answer(ticket_id, choice):
+    answers = read_answers()
+    answers[str(ticket_id)] = {
+        "choice": choice,
+        "answered_at": datetime.now(timezone.utc).isoformat(),
+    }
+    # keep only the 20 most recent answers
+    try:
+        items = sorted(answers.items(),
+                       key=lambda kv: kv[1].get("answered_at", ""),
+                       reverse=True)[:20]
+        answers = dict(items)
+        tmp = ANSWERS_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(answers, f, indent=1)
+        os.replace(tmp, ANSWERS_FILE)
+    except Exception:
+        pass
+
+
+def notify_loop(btn_ip):
+    """Poll GitHub for new notifications every minute; toast the new ones."""
+    seen = load_seen_ids()
+    log("trade-approval toasts armed (checking for new notifications every 60s)")
+    while True:
+        try:
+            for n in sorted(fetch_notifications(), key=lambda x: str(x.get("ts", ""))):
+                nid = str(n["id"])
+                if nid in seen:
+                    continue
+                seen.add(nid)
+                title = str(n.get("title", "Scorpio"))
+                body = str(n.get("body", ""))
+                if n.get("type") == "trade_approval" and n.get("ticket_id"):
+                    tid = str(n["ticket_id"])
+                    base = (f"http://{btn_ip}:{PORT}/answer"
+                            f"?ticket={urllib.parse.quote(tid, safe='')}")
+                    show_windows_toast(
+                        title, body,
+                        buttons=[("Yes", base + "&choice=yes"),
+                                 ("No", base + "&choice=no")])
+                    log(f"trade-approval toast shown (ticket {tid})")
+                else:
+                    show_windows_toast(title, body)
+                    log(f"toast shown: {title[:60]}")
+            save_seen_ids(seen)
+        except Exception:
+            log("notify loop error:\n" + traceback.format_exc(limit=3))
+        time.sleep(NOTIF_SECS)
+
+
 class Handler(BaseHTTPRequestHandler):
+    def _send(self, body_bytes, content_type):
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body_bytes)))
+        self.end_headers()
+        self.wfile.write(body_bytes)
+
     def do_GET(self):
-        name = self.path.lstrip("/").split("?")[0].split("#")[0]
+        parsed = urllib.parse.urlparse(self.path)
+        name = parsed.path.lstrip("/").split("#")[0]
+
+        if name == "answer":
+            # Toast button landing: ?ticket=<id>&choice=yes|no
+            args = urllib.parse.parse_qs(parsed.query)
+            ticket = (args.get("ticket") or [""])[0]
+            choice = (args.get("choice") or [""])[0].lower()
+            if ticket and choice in ("yes", "no"):
+                record_answer(ticket, choice)
+                page = (
+                    "<html><head><meta charset='utf-8'></head>"
+                    "<body style='font-family:sans-serif;text-align:center;"
+                    "margin-top:60px;background:#0f1419;color:#e7e9ea'>"
+                    f"<h1>&#10003; Recorded: {choice.upper()}</h1>"
+                    f"<p>Ticket {html.escape(ticket)} — you can close this tab.</p>"
+                    "</body></html>")
+                log(f"answer recorded: ticket {ticket} -> {choice.upper()}")
+            else:
+                page = "<html><body><p>Missing ticket or choice.</p></body></html>"
+            self._send(page.encode("utf-8"), "text/html; charset=utf-8")
+            return
+
+        if name == "trade_answer.json":
+            self._send(json.dumps(read_answers()).encode("utf-8"),
+                       "application/json")
+            return
+
         if name != "x_posts.json":
             self.send_response(404)
             self.end_headers()
@@ -458,11 +682,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         with open(OUT_FILE, "rb") as f:
             body = f.read()
-        self.send_response(200)
-        self.send_header("Content-Type", "application/json")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
+        self._send(body, "application/json")
 
     def log_message(self, *args):
         pass
@@ -485,6 +705,10 @@ def main():
     ts_ip, ts_msg = tailscale_ipv4()
     log(ts_msg)
     threading.Thread(target=serve, args=(ts_ip or "0.0.0.0",), daemon=True).start()
+    # Trade-approval toasts: poll GitHub notifications.json every minute.
+    # Button clicks land back on this machine's own bridge address.
+    btn_ip = ts_ip or "127.0.0.1"
+    threading.Thread(target=notify_loop, args=(btn_ip,), daemon=True).start()
 
     ensure_bridge_chrome()
     log("x_bridge v3 started — Ctrl+C to stop")
