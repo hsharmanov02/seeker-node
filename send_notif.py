@@ -70,6 +70,30 @@ def main():
         sys.exit(1)
     print("notification pushed: " + entry["id"])
 
+    # Fast path: push straight to the bridge over the Tailscale tunnel so the
+    # toast appears in seconds instead of waiting for the GitHub poll.
+    # Best-effort — the poll is the backup if this fails.
+    try:
+        import re
+        import urllib.request
+        m = re.match(r"^(https?://[^:/]+)(?::\d+)?$",
+                     os.environ.get("HTTPS_PROXY", "") or os.environ.get("https_proxy", ""))
+        if m:
+            tunnel = m.group(1) + ":3130"
+            payload = json.dumps(entry).encode("utf-8")
+            req = urllib.request.Request(
+                "http://100.109.69.66:8898/notify", data=payload,
+                headers={"Content-Type": "application/json"}, method="POST")
+            opener = urllib.request.build_opener(
+                urllib.request.ProxyHandler({"http": tunnel}))
+            with opener.open(req, timeout=15) as r:
+                r.read()
+            print("direct push delivered")
+        else:
+            print("direct push skipped (no tunnel proxy available)")
+    except Exception as e:
+        print(f"direct push failed ({type(e).__name__}: {e}) — poll will pick it up")
+
 
 if __name__ == "__main__":
     main()

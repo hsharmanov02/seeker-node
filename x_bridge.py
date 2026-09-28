@@ -78,7 +78,7 @@ BRIDGE_MARKER = "xbridge-window"  # fragment identifying our dedicated window
 # Scorpio reads back over Tailscale. Used ONLY for trade approvals.
 NOTIF_URL = ("https://raw.githubusercontent.com/hsharmanov02/seeker-node"
              "/main/notifications.json")
-NOTIF_SECS = 60
+NOTIF_SECS = 30
 NOTIF_FILE = os.path.join(BASE_DIR, "notifications.json")  # served copy lives on GitHub
 LAST_NOTIF_FILE = os.path.join(BASE_DIR, ".xbridge-last-notif")
 ANSWERS_FILE = os.path.join(BASE_DIR, "trade_answers.json")
@@ -639,31 +639,45 @@ def record_answer(ticket_id, choice):
         pass
 
 
+def show_notification(n, btn_ip):
+    """Toast one notification dict. Returns its id, or None if invalid."""
+    if not isinstance(n, dict) or not n.get("id"):
+        return None
+    nid = str(n["id"])
+    title = str(n.get("title", "Scorpio"))
+    body = str(n.get("body", ""))
+    if n.get("type") == "trade_approval" and n.get("ticket_id"):
+        tid = str(n["ticket_id"])
+        base = (f"http://{btn_ip}:{PORT}/answer"
+                f"?ticket={urllib.parse.quote(tid, safe='')}")
+        show_windows_toast(
+            title, body,
+            buttons=[("Yes", base + "&choice=yes"),
+                     ("No", base + "&choice=no")])
+        log(f"trade-approval toast shown (ticket {tid})")
+    else:
+        show_windows_toast(title, body)
+        log(f"toast shown: {title[:60]}")
+    return nid
+
+
 def notify_loop(btn_ip):
-    """Poll GitHub for new notifications every minute; toast the new ones."""
+    """Backup poll: GitHub for notifications every 30s; toast the new ones.
+
+    The fast path is a direct POST to /notify from send_notif.py over the
+    Tailscale tunnel (seconds). This poll only catches anything sent while
+    the bridge was offline.
+    """
     seen = load_seen_ids()
-    log("trade-approval toasts armed (checking for new notifications every 60s)")
+    log("trade-approval toasts armed (direct push + 30s backup poll)")
     while True:
         try:
             for n in sorted(fetch_notifications(), key=lambda x: str(x.get("ts", ""))):
-                nid = str(n["id"])
-                if nid in seen:
+                nid = str(n.get("id", ""))
+                if not nid or nid in seen:
                     continue
                 seen.add(nid)
-                title = str(n.get("title", "Scorpio"))
-                body = str(n.get("body", ""))
-                if n.get("type") == "trade_approval" and n.get("ticket_id"):
-                    tid = str(n["ticket_id"])
-                    base = (f"http://{btn_ip}:{PORT}/answer"
-                            f"?ticket={urllib.parse.quote(tid, safe='')}")
-                    show_windows_toast(
-                        title, body,
-                        buttons=[("Yes", base + "&choice=yes"),
-                                 ("No", base + "&choice=no")])
-                    log(f"trade-approval toast shown (ticket {tid})")
-                else:
-                    show_windows_toast(title, body)
-                    log(f"toast shown: {title[:60]}")
+                show_notification(n, btn_ip)
             save_seen_ids(seen)
         except Exception:
             log("notify loop error:\n" + traceback.format_exc(limit=3))
@@ -671,6 +685,8 @@ def notify_loop(btn_ip):
 
 
 class Handler(BaseHTTPRequestHandler):
+    btn_ip = "127.0.0.1"  # set by main() once Tailscale is up
+
     def _send(self, body_bytes, content_type):
         self.send_response(200)
         self.send_header("Content-Type", content_type)
@@ -719,6 +735,31 @@ class Handler(BaseHTTPRequestHandler):
             body = f.read()
         self._send(body, "application/json")
 
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        name = parsed.path.lstrip("/").split("#")[0]
+        if name == "notify":
+            # Fast path: Scorpio pushes a notification straight to the bridge
+            # over the Tailscale tunnel instead of waiting for the GitHub poll.
+            length = int(self.headers.get("Content-Length", 0) or 0)
+            try:
+                payload = json.loads(self.rfile.read(length).decode("utf-8") or "{}")
+            except Exception:
+                payload = {}
+            try:
+                seen = load_seen_ids()
+                nid = show_notification(payload, Handler.btn_ip)
+                if nid:
+                    seen.add(nid)
+                    save_seen_ids(seen)
+                self._send(b'{"ok": true}', "application/json")
+            except Exception as e:
+                log(f"/notify failed ({type(e).__name__}: {e})")
+                self._send(b'{"ok": false}', "application/json")
+            return
+        self.send_response(404)
+        self.end_headers()
+
     def log_message(self, *args):
         pass
 
@@ -743,6 +784,7 @@ def main():
     # Trade-approval toasts: poll GitHub notifications.json every minute.
     # Button clicks land back on this machine's own bridge address.
     btn_ip = ts_ip or "127.0.0.1"
+    Handler.btn_ip = btn_ip
     threading.Thread(target=notify_loop, args=(btn_ip,), daemon=True).start()
 
     ensure_bridge_chrome()
