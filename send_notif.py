@@ -74,12 +74,12 @@ def main():
     # toast appears in seconds instead of waiting for the GitHub poll.
     # Best-effort — the poll is the backup if this fails.
     try:
-        import re
         import urllib.request
-        m = re.match(r"^(https?://[^:/]+)(?::\d+)?$",
-                     os.environ.get("HTTPS_PROXY", "") or os.environ.get("https_proxy", ""))
-        if m:
-            tunnel = m.group(1) + ":3130"
+        proxy = os.environ.get("HTTPS_PROXY", "") or os.environ.get("https_proxy", "")
+        # Tunnel proxy lives on port 3130 of the same proxy host (keep any
+        # credentials in the URL — strip only the trailing :port).
+        tunnel = proxy.rsplit(":", 1)[0] + ":3130" if proxy else None
+        if tunnel:
             payload = json.dumps(entry).encode("utf-8")
             req = urllib.request.Request(
                 "http://100.109.69.66:8898/notify", data=payload,
