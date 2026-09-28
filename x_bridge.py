@@ -3,17 +3,20 @@
 What it does:
   1. Attaches to your already-running Chrome (started with
      --remote-debugging-port=9222) — no new login, uses your X session.
-  2. Every 15 minutes it quietly opens background tabs: your Home timeline
-     plus Latest searches for $NVDA, $MSFT and $AAPL, and copies out the
-     recent posts mentioning those tickers.
-  3. Saves them to x_posts.json and serves ONLY that file on port 8898,
+  2. Opens ONE dedicated bridge window (a separate Chrome window, not a tab
+     in your main window). Minimize it once and ignore it forever — all
+     scanning happens in there, so your main window is never touched.
+  3. During market hours (Mon–Fri, 13:30–21:30 London) it quietly loads,
+     every 15 minutes: your Home timeline plus Latest searches for
+     $NVDA, $MSFT and $AAPL, and copies out recent posts mentioning them.
+     Outside market hours it just keeps serving the last batch.
+  4. Saves them to x_posts.json and serves ONLY that file on port 8898,
      so Scorpio can fetch it over your Tailscale network.
 
 What it does NOT do:
   - It never posts, likes, follows, or sends DMs. Read-only.
   - It never touches your passwords or DMs; it only reads public timeline text.
-  - It opens at most 4 lightweight pages per cycle, then closes the tabs,
-    to stay gentle on X's rate limits.
+  - It never opens tabs in your main Chrome window.
 
 One-time setup:
   1. Right-click your Chrome shortcut -> Properties -> Target, and add
@@ -21,8 +24,9 @@ One-time setup:
      Example: "C:\\...\\chrome.exe" --remote-debugging-port=9222
   2. Restart Chrome with that shortcut and log in to X as normal.
   3. Double-click x_bridge.bat (installs the `playwright` package once,
-     then starts this script). Leave the window open while you want
-     Scorpio to see your feed.
+     then starts this script). A small extra Chrome window appears —
+     minimize it and leave it alone. Leave the script window open while
+     you want Scorpio to see your feed.
 
 Stop any time with Ctrl+C. Nothing is uploaded anywhere except your own
 Tailscale network (x_posts.json on port 8898).
@@ -37,11 +41,17 @@ import traceback
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:  # pragma: no cover
+    ZoneInfo = None
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_FILE = os.path.join(BASE_DIR, "x_posts.json")
 PORT = 8898
 CDP_URL = "http://localhost:9222"
 CYCLE_SECS = 15 * 60
+BRIDGE_MARKER = "xbridge-window"  # fragment identifying our dedicated window
 
 QUERIES = [
     ("home", "https://x.com/home"),
@@ -78,47 +88,122 @@ def log(msg):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 
-def scrape_cycle(pw):
-    """One gentle pass over home + the three ticker searches."""
+def in_scan_window(now=None):
+    """Only scan during market hours: Mon–Fri 13:30–21:30 Europe/London."""
+    if ZoneInfo is None:
+        return True
+    now = now or datetime.now(ZoneInfo("Europe/London"))
+    if now.weekday() >= 5:
+        return False
+    mins = now.hour * 60 + now.minute
+    return 13 * 60 + 30 <= mins < 21 * 60 + 30
+
+
+def get_bridge_page(pw):
+    """Return (browser, page) for our dedicated minimized window, creating it if needed.
+
+    The window is a real separate Chrome window in the same profile, so it
+    shares your X login — but it is NOT your main window, so scanning never
+    steals your tabs. Minimize it once and ignore it.
+    """
     try:
         browser = pw.chromium.connect_over_cdp(CDP_URL)
     except Exception:
         log("Could not reach Chrome. Is it running with --remote-debugging-port=9222?")
-        return None
+        return None, None
     ctx = browser.contexts[0] if browser.contexts else None
     if ctx is None:
         log("No browser context found.")
+        try:
+            browser.close()
+        except Exception:
+            pass
+        return None, None
+
+    def find_page():
+        for p in ctx.pages:
+            try:
+                if not p.is_closed() and BRIDGE_MARKER in (p.url or ""):
+                    return p
+            except Exception:
+                continue
+        return None
+
+    page = find_page()
+    if page is not None:
+        return browser, page
+
+    # Open a dedicated background window for the bridge.
+    try:
+        cdp = browser.new_browser_cdp_session()
+        cdp.send("Target.createTarget", {
+            "url": "about:blank#" + BRIDGE_MARKER,
+            "newWindow": True,
+            "background": True,
+        })
+    except Exception as e:
+        log(f"Could not open bridge window ({type(e).__name__}: {e})")
+        try:
+            browser.close()
+        except Exception:
+            pass
+        return None, None
+
+    for _ in range(30):
+        time.sleep(0.5)
+        page = find_page()
+        if page is not None:
+            log("bridge window opened — minimize it once and ignore it from now on")
+            return browser, page
+    log("Bridge window did not appear; will retry next cycle.")
+    try:
+        browser.close()
+    except Exception:
+        pass
+    return None, None
+
+
+def scrape_cycle(pw):
+    """One gentle pass over home + the three ticker searches, inside the bridge window."""
+    browser, page = get_bridge_page(pw)
+    if page is None:
         return None
 
     seen = {}
     try:
         for label, url in QUERIES:
-            page = ctx.new_page()
             try:
+                if page.is_closed():
+                    log(f"{label}: bridge window was closed; recreating next cycle")
+                    break
                 page.goto(url, wait_until="domcontentloaded", timeout=30000)
                 page.wait_for_timeout(4000)
-                if "Something went wrong" in page.title():
+                title = page.evaluate("document.title") or ""
+                if "Something went wrong" in title:
                     log(f"{label}: X showed an error page (rate limit?) — skipping")
                     continue
                 # A couple of gentle scrolls to load more posts.
                 for _ in range(2):
-                    page.mouse.wheel(0, 2500)
+                    page.evaluate("window.scrollBy(0, 2500)")
                     page.wait_for_timeout(2500)
                 posts = page.evaluate(SCRAPE_JS)
+                kept = 0
                 for p in posts:
                     if not p["text"] or not TICKER_RE.search(p["text"]):
                         continue
                     key = (p["handle"], p["text"][:80])
                     if key not in seen:
                         seen[key] = {**p, "via": label}
-                log(f"{label}: kept {len([p for p in posts if p['text'] and TICKER_RE.search(p['text'])])} ticker posts")
+                        kept += 1
+                log(f"{label}: kept {kept} ticker posts")
             except Exception as e:
                 log(f"{label}: scrape hiccup ({type(e).__name__}); continuing")
-            finally:
-                page.close()
             time.sleep(3)  # breathe between pages — stay gentle on rate limits
     finally:
-        browser.close()
+        try:
+            browser.close()  # disconnects only; his Chrome and bridge window stay open
+        except Exception:
+            pass
 
     return list(seen.values())
 
@@ -172,6 +257,10 @@ def main():
     log("x_bridge started — Ctrl+C to stop")
     with sync_playwright() as pw:
         while True:
+            if not in_scan_window():
+                log("outside market hours — feed paused, serving last batch")
+                time.sleep(5 * 60)
+                continue
             try:
                 posts = scrape_cycle(pw)
                 if posts is not None:
