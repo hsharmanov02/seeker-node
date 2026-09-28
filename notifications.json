@@ -17,6 +17,15 @@
    "ticket_id": "TEST-002",
    "title": "TEST ticket - tap Yes",
    "body": "TEST ONLY, no real order. BUY NVDA GBP 12 @ market, stop 228, target 235. Tap Yes to simulate approval."
+  },
+  {
+   "id": "n1790608106-3b8e9e",
+   "ts": "2026-09-28T15:08:26.281360+00:00",
+   "ts_epoch": 1790608106.2813241,
+   "type": "note",
+   "ticket_id": "",
+   "title": "Toast test",
+   "body": "If you can see this popup on your PC, notifications are working now."
   }
  ]
 }
