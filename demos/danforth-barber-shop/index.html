@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danforth Barber Shop — Classic Barbershop, Toronto</title>
+<meta name="description" content="Danforth Barber Shop, 1172 Danforth Ave, Toronto. Classic cuts, hot-towel shaves and beard trims.">
+<style>
+  :root{
+    --bg:#14100c; --bg2:#1e1712; --gold:#c9a45c; --gold-soft:#e5c98a;
+    --cream:#f4ead8; --muted:#b9a98d; --card:#221a13; --line:#3a2d20;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:.5px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  a{color:var(--gold-soft)}
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(20,16,12,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  .brand{font-size:1.15rem;color:var(--gold);text-decoration:none;font-weight:bold;letter-spacing:1px}
+  .navlinks a{color:var(--cream);text-decoration:none;margin-left:18px;font-size:.92rem}
+  .navlinks a:hover{color:var(--gold-soft)}
+  @media(max-width:640px){.navlinks a{margin-left:12px;font-size:.82rem}}
+  /* HERO */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:url('images/hero.webp') center/cover no-repeat #0c0906;margin-top:52px}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(10,7,5,.62),rgba(10,7,5,.72))}
+  .hero-inner{position:relative;z-index:2;padding:80px 20px;max-width:760px}
+  .rule{display:block;width:64px;height:3px;background:var(--gold);margin:18px auto}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);color:var(--cream);text-transform:uppercase;letter-spacing:3px}
+  .hero p.tag{font-size:1.15rem;color:var(--gold-soft);font-style:italic;margin-top:10px}
+  .hero p.addr{color:var(--muted);margin-top:14px}
+  .btn{display:inline-block;margin-top:26px;padding:14px 34px;background:var(--gold);color:#14100c;text-decoration:none;
+    font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:.9rem;border-radius:2px;border:1px solid var(--gold)}
+  .btn:hover{background:transparent;color:var(--gold-soft)}
+  .btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--cream);margin-left:10px}
+  .btn.ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft)}
+  /* SECTIONS */
+  section{padding:70px 0}
+  section h2{text-align:center;font-size:clamp(1.6rem,3.5vw,2.3rem);color:var(--gold);text-transform:uppercase;letter-spacing:2px}
+  section .sub{text-align:center;color:var(--muted);margin:10px auto 40px;max-width:620px;font-style:italic}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 24px;text-align:center}
+  .card h3{color:var(--gold-soft);margin-bottom:10px;font-size:1.2rem}
+  .card .price{font-size:1.5rem;color:var(--gold);font-weight:bold;margin:8px 0}
+  .card p{color:var(--muted);font-size:.94rem}
+  .note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:26px;font-style:italic}
+  /* BANNER STRIPS */
+  .banner{height:300px;background-size:cover;background-position:center;position:relative}
+  .banner::before{content:'';position:absolute;inset:0;background:rgba(10,7,5,.35)}
+  @media(max-width:640px){.banner{height:200px}}
+  /* VISIT */
+  .visit{background:var(--bg2)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media(max-width:700px){.visit-grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px}
+  .panel h3{color:var(--gold-soft);margin-bottom:14px}
+  .panel p{color:var(--muted);margin-bottom:8px}
+  .panel p strong{color:var(--cream)}
+  .big-addr{font-size:1.25rem;color:var(--cream)}
+  /* CONTACT */
+  .contact{background:var(--bg2);text-align:center}
+  .contact .btns{margin-top:10px}
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:#7a6c57;font-size:.82rem}
+  footer p{margin:4px 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">DANFORTH BARBER SHOP</a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <h1>Danforth<br>Barber Shop</h1>
+    <span class="rule"></span>
+    <p class="tag">Old-school cuts &amp; hot-towel shaves on the Danforth</p>
+    <p class="addr">1172 Danforth Ave, Toronto, Ontario</p>
+    <div>
+      <a class="btn" href="#contact">Book a Chair</a>
+      <a class="btn ghost" href="#services">Services</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="sub">Classic barbering done right — no appointments necessary, walk-ins welcome.</p>
+    <div class="cards">
+      <div class="card"><h3>Haircut</h3><div class="price">from $30</div><p>Precision scissor or clipper cut, finished with a hot-lather neckline shave.</p></div>
+      <div class="card"><h3>Cut &amp; Beard Trim</h3><div class="price">from $40</div><p>The full service — haircut plus shaped and detailed beard work.</p></div>
+      <div class="card"><h3>Hot-Towel Shave</h3><div class="price">from $25</div><p>Traditional straight-razor shave with hot towels and finishing balm.</p></div>
+      <div class="card"><h3>Kids Cut</h3><div class="price">from $22</div><p>Patient, friendly cuts for the young gentlemen (under 12).</p></div>
+    </div>
+    <p class="note">Prices shown are illustrative sample prices in CAD, for demo purposes only.</p>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner1.webp')" role="img" aria-label="Barber trimming hair with scissors"></div>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <h2>Visit Us</h2>
+    <p class="sub">Right on the Danforth — stop by for a cut the old-fashioned way.</p>
+    <div class="visit-grid">
+      <div class="panel">
+        <h3>Find Us</h3>
+        <p class="big-addr"><strong>1172 Danforth Ave<br>Toronto, ON</strong></p>
+        <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=Danforth+Barber+Shop+1172+Danforth+Ave+Toronto" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+      </div>
+      <div class="panel">
+        <h3>Hours</h3>
+        <p>Hours vary — <a href="https://www.google.com/maps/search/?api=1&query=Danforth+Barber+Shop+1172+Danforth+Ave+Toronto" target="_blank" rel="noopener">check our Google profile</a> for current opening hours.</p>
+        <p>Walk-ins welcome, subject to chair availability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner2.webp')" role="img" aria-label="Vintage barber tools"></div>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get In Touch</h2>
+    <p class="sub">Questions or to book ahead, drop us an email.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:info@danforthbarbershop.com?subject=Booking%20enquiry%20—%20Danforth%20Barber%20Shop">Email Us</a>
+    </div>
+    <p style="margin-top:22px;color:var(--muted)">info@danforthbarbershop.com</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Danforth Barber Shop — 1172 Danforth Ave, Toronto, ON</p>
+    <p>Demo preview — free mockup, not affiliated with the business.</p>
+  </div>
+</footer>
+
+</body>
+</html>

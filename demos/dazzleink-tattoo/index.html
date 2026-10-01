@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DazzleInk Tattoo Studio — Leeds</title>
+<meta name="description" content="DazzleInk Tattoo Studio, 21 South Parkway, Leeds. Appointment-only tattoo studio. Book your session by email.">
+<style>
+  :root{
+    --bg:#08080a; --bg2:#0e0e11; --red:#e0284b; --red-soft:#ff5c7a;
+    --text:#f2ecec; --muted:#a89ca0; --card:#141417; --line:#26262c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65}
+  h1,h2,h3{letter-spacing:2px;text-transform:uppercase}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  a{color:var(--red-soft)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,8,10,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  .brand{font-size:1.15rem;color:var(--text);text-decoration:none;font-weight:900;letter-spacing:3px}
+  .brand span{color:var(--red)}
+  .navlinks a{color:var(--text);text-decoration:none;margin-left:18px;font-size:.9rem;font-weight:600}
+  .navlinks a:hover{color:var(--red-soft)}
+  @media(max-width:640px){.navlinks a{margin-left:12px;font-size:.8rem}}
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:url('images/hero.webp') center/cover no-repeat #050505;margin-top:54px}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,5,5,.6),rgba(5,5,5,.82))}
+  .hero-inner{position:relative;z-index:2;padding:80px 20px;max-width:800px}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:900;line-height:1.05}
+  .hero h1 span{color:var(--red)}
+  .rule{display:block;width:64px;height:3px;background:var(--red);margin:18px auto}
+  .hero p.tag{font-size:1.15rem;color:var(--red-soft);margin-top:10px}
+  .hero p.addr{color:var(--muted);margin-top:14px}
+  .btn{display:inline-block;margin-top:26px;padding:14px 34px;background:var(--red);color:#fff;text-decoration:none;
+    font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.88rem;border-radius:3px;border:1px solid var(--red)}
+  .btn:hover{background:transparent;color:var(--red-soft)}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--text);margin-left:10px}
+  .btn.ghost:hover{border-color:var(--red-soft);color:var(--red-soft)}
+  section{padding:70px 0}
+  section h2{text-align:center;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900}
+  section h2 span{color:var(--red)}
+  section .sub{text-align:center;color:var(--muted);margin:10px auto 40px;max-width:640px}
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .gallery figure{position:relative;overflow:hidden;border-radius:6px;border:1px solid var(--line)}
+  .gallery img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .3s}
+  .gallery figure:hover img{transform:scale(1.05)}
+  .gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:rgba(5,5,5,.75);font-size:.85rem;color:var(--muted)}
+  /* SERVICES */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 24px;text-align:center}
+  .card:hover{border-color:var(--red)}
+  .card h3{color:var(--red-soft);margin-bottom:10px;font-size:1.1rem}
+  .card .price{font-size:1.4rem;color:var(--red);font-weight:800;margin:8px 0}
+  .card p{color:var(--muted);font-size:.94rem}
+  .note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:26px;font-style:italic}
+  .banner{height:300px;background-size:cover;background-position:center;position:relative}
+  .banner::before{content:'';position:absolute;inset:0;background:rgba(5,5,5,.3)}
+  @media(max-width:640px){.banner{height:200px}}
+  /* BOOKING */
+  .booking{background:var(--bg2)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-bottom:40px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px;text-align:center}
+  .step .num{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;font-size:1.2rem;margin-bottom:12px}
+  .step h3{font-size:1rem;margin-bottom:8px;color:var(--red-soft)}
+  .step p{color:var(--muted);font-size:.92rem}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media(max-width:700px){.visit-grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px}
+  .panel h3{color:var(--red-soft);margin-bottom:14px}
+  .panel p{color:var(--muted);margin-bottom:8px}
+  .panel p strong{color:var(--text)}
+  .big-addr{font-size:1.25rem;color:var(--text)}
+  .contact{background:var(--bg2);text-align:center}
+  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:#6b5f63;font-size:.82rem}
+  footer p{margin:4px 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">DAZZLE<span>INK</span></a>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <h1>Dazzle<span>Ink</span></h1>
+    <span class="rule"></span>
+    <p class="tag">Appointment-only tattoo studio — one artist, full focus on your piece</p>
+    <p class="addr">21 South Parkway, Leeds LS14 6TU</p>
+    <div>
+      <a class="btn" href="#booking">Book Your Session</a>
+      <a class="btn ghost" href="#work">See the Work</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>The <span>Work</span></h2>
+    <p class="sub">Blackwork, linework and custom pieces — every tattoo designed for the body it lives on.</p>
+    <div class="gallery">
+      <figure><img src="images/banner1.webp" alt="Tattoo artist working on a detailed blackwork forearm piece"><figcaption>Blackwork in progress</figcaption></figure>
+      <figure><img src="images/hero.webp" alt="DazzleInk studio interior"><figcaption>Inside the studio</figcaption></figure>
+      <figure><img src="images/banner2.webp" alt="Sterile tattoo equipment laid out"><figcaption>Professional, sterile setup</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2><span>Services</span> &amp; Pricing</h2>
+    <p class="sub">Appointment-only — every session is one-on-one.</p>
+    <div class="cards">
+      <div class="card"><h3>Small Piece</h3><div class="price">from £60</div><p>Minimal designs, symbols and small linework — single session.</p></div>
+      <div class="card"><h3>Medium Piece</h3><div class="price">from £120</div><p>Detailed blackwork, florals and custom designs — single session.</p></div>
+      <div class="card"><h3>Large / Custom</h3><div class="price">from £250</div><p>Sleeves, back pieces and full custom work — quoted per project.</p></div>
+    </div>
+    <p class="note">Prices shown are illustrative sample prices in GBP, for demo purposes only. Final quote given at consultation.</p>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner1.webp')" role="img" aria-label="Tattoo artist at work"></div>
+
+<section id="booking" class="booking">
+  <div class="wrap">
+    <h2>How <span>Booking</span> Works</h2>
+    <p class="sub">Appointment-only. Here's how to get inked.</p>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>Send Your Idea</h3><p>Email your design idea, reference images and placement.</p></div>
+      <div class="step"><span class="num">2</span><h3>Get a Quote</h3><p>You'll get a price and available session dates by email.</p></div>
+      <div class="step"><span class="num">3</span><h3>Get Inked</h3><p>Come to the studio at your appointment time. That's it.</p></div>
+    </div>
+    <div class="visit-grid">
+      <div class="panel">
+        <h3>Find the Studio</h3>
+        <p class="big-addr"><strong>21 South Parkway<br>Leeds LS14 6TU</strong></p>
+        <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=DazzleInk+Tattoo+Studio+21+South+Parkway+Leeds+LS14+6TU" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+      </div>
+      <div class="panel">
+        <h3>Hours</h3>
+        <p>Appointment-only — no walk-ins.</p>
+        <p>Email <a href="mailto:dazzleink@outlook.com">dazzleink@outlook.com</a> to arrange your session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner2.webp')" role="img" aria-label="Tattoo equipment"></div>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Book <span>Now</span></h2>
+    <p class="sub">Send your idea and we'll take it from there.</p>
+    <div>
+      <a class="btn" href="mailto:dazzleink@outlook.com?subject=Tattoo%20booking%20enquiry%20—%20DazzleInk">Email to Book</a>
+    </div>
+    <p style="margin-top:22px;color:var(--muted)">dazzleink@outlook.com</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>DazzleInk Tattoo Studio — 21 South Parkway, Leeds LS14 6TU</p>
+    <p>Demo preview — free mockup, not affiliated with the business.</p>
+  </div>
+</footer>
+
+</body>
+</html>

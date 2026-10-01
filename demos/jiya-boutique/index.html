@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiya Boutique — Custom Tailoring | Sukhliya, Indore</title>
+<meta name="description" content="Jiya Boutique (Jiya-Tailor), Sukhliya, Indore — bespoke tailoring: blouses, suits, lehengas, alterations & bridal trousseau. Book an appointment on WhatsApp.">
+<style>
+:root{--bg:#f7fbfb;--ink:#17383a;--teal:#14696b;--gold:#c9a24e;--cream:#fffdfb;--muted:#5f7a7c;--card:#ffffff;--line:rgba(20,105,107,.2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:50;background:rgba(247,251,251,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+.brand{font-size:1.2rem;letter-spacing:3px;font-weight:700}
+.brand span{color:var(--teal)}
+.navlinks{display:flex;gap:22px;font-size:.95rem;color:var(--muted)}
+.navlinks a:hover{color:var(--teal)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--teal),#0e4b4d);color:#fff;font-weight:700;padding:12px 28px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;letter-spacing:.4px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
+.hero{position:relative;padding:110px 0 96px;background:linear-gradient(rgba(23,56,58,.6),rgba(23,56,58,.7)),url('images/hero.webp') center/cover no-repeat,var(--bg);color:#fff}
+.eyebrow{color:#f3d9a4;letter-spacing:3px;font-size:.8rem;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.15;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:#f3d9a4}
+.hero p{color:#e3f0f0;max-width:560px;font-size:1.08rem;margin-bottom:30px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.banner{height:320px;background-size:cover;background-position:center;position:relative}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(23,56,58,.06),rgba(23,56,58,.2))}
+@media(max-width:760px){.banner{height:200px}}
+section{padding:70px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:2rem;margin-bottom:8px}
+.sec-head h2 span{color:var(--teal)}
+.sec-head p{color:var(--muted);max-width:560px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 12px rgba(20,105,107,.07)}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(20,105,107,.15)}
+.card .icon{font-size:2rem;margin-bottom:12px}
+.card h3{margin-bottom:8px;font-size:1.15rem}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.card .price{color:var(--gold);font-weight:700}
+.illus{font-size:.8rem;color:var(--muted);text-align:center;margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:center}
+.steps .card .num{font-size:2rem;color:var(--teal);font-weight:800}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.visit{grid-template-columns:1fr}}
+.visit .card ul{list-style:none;color:var(--muted)}
+.visit .card li{margin-bottom:10px}
+.visit .card b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem;text-align:center}
+.demo-note{background:#eef6f6;border:1px dashed var(--teal);color:#2b6b6d;padding:10px 18px;border-radius:12px;font-size:.85rem;margin-bottom:18px;display:inline-block}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">JIYA <span>BOUTIQUE</span></div>
+    <div class="navlinks">
+      <a href="#services">Services</a><a href="#visit">Visit Us</a>
+    </div>
+    <a class="btn" href="https://wa.me/917974307415?text=Hi%20Jiya%20Boutique!%20I%27d%20like%20to%20book%20a%20tailoring%20appointment.">Book Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Sukhliya &middot; Indore</div>
+    <h1>Stitched to fit<br><em>you, perfectly.</em></h1>
+    <p>Custom tailoring for every occasion — blouses, suits, lehengas and bridal trousseau, crafted stitch by stitch in our Sukhliya boutique.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/917974307415?text=Hi%20Jiya%20Boutique!%20I%27d%20like%20to%20book%20a%20tailoring%20appointment.">WhatsApp Us</a>
+      <a class="btn ghost" href="tel:+917974307415">Call +91 79743 07415</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>Our <span>Craft</span></h2><p>Bespoke tailoring services, from everyday wear to wedding trousseaus.</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">👗</div><h3>Custom Blouse Stitching</h3><p>Designer blouses with perfect necklines, sleeves and finishing.</p><span class="price">from ₹599*</span></div>
+      <div class="card"><div class="icon">🪡</div><h3>Suit &amp; Kurti Sets</h3><p>Salwar suits, kurtis and coord sets tailored to your measurements.</p><span class="price">from ₹799*</span></div>
+      <div class="card"><div class="icon">👑</div><h3>Bridal &amp; Festive Wear</h3><p>Lehengas, gowns and trousseau pieces with fine embroidery work.</p><span class="price">Enquire →</span></div>
+      <div class="card"><div class="icon">🧵</div><h3>Embroidery &amp; Design</h3><p>Hand embroidery, lace work and embellishments on your fabric.</p><span class="price">from ₹399*</span></div>
+      <div class="card"><div class="icon">✂️</div><h3>Alterations &amp; Repairs</h3><p>Perfect-fit alterations, refits, zips and hemming — quick turnaround.</p><span class="price">from ₹99*</span></div>
+      <div class="card"><div class="icon">👔</div><h3>Men's Tailoring</h3><p>Kurtas, shirts and trousers with a sharp, comfortable fit.</p><span class="price">from ₹499*</span></div>
+    </div>
+    <p class="illus">*Sample prices shown for illustration — confirm exact pricing on WhatsApp.</p>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/portfolio.webp')" role="img" aria-label="Designer garments displayed at the boutique"></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>How It <span>Works</span></h2><p>Your perfect fit in four easy steps.</p></div>
+    <div class="steps">
+      <div class="card"><div class="num">1</div><h3>Book</h3><p>Message us on WhatsApp to fix your appointment.</p></div>
+      <div class="card"><div class="num">2</div><h3>Measure</h3><p>Visit the boutique for precise measurements and fabric selection.</p></div>
+      <div class="card"><div class="num">3</div><h3>Stitch</h3><p>Our tailors craft your garment with careful hand finishing.</p></div>
+      <div class="card"><div class="num">4</div><h3>Fit &amp; Collect</h3><p>Try it on, get final tweaks, and take it home.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/tailoring.webp')" role="img" aria-label="Tailor hand-stitching gold embroidery on silk"></div>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head"><h2>Visit <span>Us</span></h2></div>
+    <div class="visit">
+      <div class="card">
+        <h3>📍 Find us</h3>
+        <ul>
+          <li><b>Jiya Boutique (Jiya-Tailor)</b></li>
+          <li>G-80, New Shabri,<br>Sukhliya, Indore, Madhya Pradesh</li>
+        </ul>
+        <h3 style="margin-top:18px">🕒 Hours</h3>
+        <ul>
+          <li>Mon – Sat: <b>10:30 AM – 8:30 PM*</b></li>
+          <li>Sunday: <b>11:00 AM – 2:00 PM*</b></li>
+        </ul>
+        <p class="illus" style="text-align:left">*Typical hours shown — confirm on WhatsApp.</p>
+      </div>
+      <div class="card">
+        <h3>📞 Book an appointment</h3>
+        <ul>
+          <li><b>Phone:</b> <a href="tel:+917974307415">+91 79743 07415</a></li>
+          <li><b>Email:</b> <a href="mailto:harishnamdev338@gmail.com">harishnamdev338@gmail.com</a></li>
+          <li>Share a photo of your design idea on WhatsApp and we'll quote you.</li>
+        </ul>
+        <br>
+        <a class="btn" href="https://wa.me/917974307415?text=Hi%20Jiya%20Boutique!%20I%27d%20like%20to%20book%20a%20tailoring%20appointment.">Book Appointment on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="demo-note">Demo preview — free mockup, not affiliated with the business</span>
+    <p>© 2026 Jiya Boutique, Indore. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

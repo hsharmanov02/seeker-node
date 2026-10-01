@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Secret Sandwich — Sandwiches &amp; Coffee | Cateaton St, Manchester</title>
+<meta name="description" content="The Secret Sandwich, 14 Cateaton St, Manchester — fresh sandwiches, coffee and bakes in the city centre. Your own home on the web.">
+<style>
+:root{--bg:#faf4ea;--ink:#2e241c;--amber:#c07a2e;--green:#5a7a3a;--muted:#8d7d6d;--card:#ffffff;--line:rgba(192,122,46,.2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,244,234,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;gap:12px;flex-wrap:wrap}
+.brand{font-size:1.1rem;letter-spacing:1px;font-weight:800}
+.brand span{color:var(--amber)}
+.navlinks{display:flex;gap:22px;font-size:.95rem;color:var(--muted)}
+.navlinks a:hover{color:var(--amber)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--amber),#9a5f1f);color:#fff;font-weight:700;padding:12px 28px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;letter-spacing:.4px;transition:transform .15s;box-shadow:0 6px 18px rgba(192,122,46,.3)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--amber);box-shadow:none}
+.hero{position:relative;padding:110px 0 96px;background:linear-gradient(rgba(46,36,28,.55),rgba(46,36,28,.68)),url('images/hero.webp') center/cover no-repeat,#2e241c;color:#fff}
+.eyebrow{color:#f2c979;letter-spacing:3px;font-size:.8rem;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.15;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:#f2c979}
+.hero p{color:#f0e2cf;max-width:560px;font-size:1.08rem;margin-bottom:30px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.5);color:#f0e2cf;padding:8px 16px;border-radius:999px;font-size:.85rem;margin-top:26px;margin-right:10px}
+.banner{height:320px;background-size:cover;background-position:center;position:relative}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(46,36,28,.08),rgba(46,36,28,.3))}
+@media(max-width:760px){.banner{height:200px}}
+section{padding:70px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:2rem;margin-bottom:8px}
+.sec-head h2 span{color:var(--amber)}
+.sec-head p{color:var(--muted);max-width:580px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .15s,border-color .15s;box-shadow:0 4px 14px rgba(46,36,28,.05)}
+.card:hover{transform:translateY(-4px);border-color:var(--amber)}
+.card .icon{font-size:2rem;margin-bottom:12px}
+.card h3{margin-bottom:8px;font-size:1.15rem}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.card .price{color:var(--amber);font-weight:700}
+.illus{font-size:.8rem;color:var(--muted);text-align:center;margin-top:18px}
+.menu-item{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.menu-item:last-child{border-bottom:0}
+.menu-item h4{font-size:1.05rem;margin-bottom:4px}
+.menu-item p{color:var(--muted);font-size:.9rem}
+.menu-item .p{color:var(--amber);font-weight:700;white-space:nowrap}
+.menucats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.ownhome{background:#2e241c;color:#f0e2cf;border-radius:20px;padding:44px;text-align:center}
+.ownhome h3{font-size:1.7rem;margin-bottom:12px}
+.ownhome h3 span{color:#f2c979}
+.ownhome p{color:#cbb9a2;max-width:620px;margin:0 auto 24px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.visit{grid-template-columns:1fr}}
+.visit .card ul{list-style:none;color:var(--muted)}
+.visit .card li{margin-bottom:10px}
+.visit .card b{color:var(--ink)}
+.contact-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem;text-align:center;background:#fff}
+.demo-note{background:#faf0dd;border:1px dashed var(--amber);color:var(--amber);padding:10px 18px;border-radius:12px;font-size:.85rem;margin-bottom:18px;display:inline-block}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">THE SECRET <span>SANDWICH</span></div>
+    <div class="navlinks">
+      <a href="#menu">Menu</a><a href="#about">About</a><a href="#visit">Visit</a>
+    </div>
+    <a class="btn" href="mailto:hello@secretsandwich.co.uk?subject=Order%20enquiry">Order Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Cateaton Street &middot; Manchester City Centre</div>
+    <h1>Manchester's best-kept<br><em>lunch secret.</em></h1>
+    <p>Freshly made sandwiches, proper coffee and daily bakes — a stone's throw from the Arndale. Pop in, grab a seat, or order ahead.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:hello@secretsandwich.co.uk?subject=Order%20enquiry">✉️ Order Ahead</a>
+      <a class="btn ghost" style="color:#fff;border-color:#f2c979" href="#menu">See the Menu</a>
+    </div>
+    <div><span class="tag">🥪 Fresh daily</span><span class="tag">☕ Proper coffee</span><span class="tag">📍 City centre</span></div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The <span>menu</span></h2>
+      <p>Made fresh every morning. Sample menu and prices below are illustrative — the real thing tastes even better.</p>
+    </div>
+    <div class="menucats">
+      <div class="card">
+        <h3>🥪 Signature Sandwiches</h3>
+        <div class="menu-item"><div><h4>The Secret Club</h4><p>Chicken, bacon, egg, lettuce &amp; house mayo on toasted bloomer</p></div><span class="p">£6.50</span></div>
+        <div class="menu-item"><div><h4>Manchester Melt</h4><p>Grilled cheese, caramelised onions &amp; tomato on sourdough</p></div><span class="p">£5.95</span></div>
+        <div class="menu-item"><div><h4>Garden Fresh</h4><p>Hummus, roasted veg &amp; rocket on multigrain</p></div><span class="p">£5.50</span></div>
+      </div>
+      <div class="card">
+        <h3>☕ Coffee &amp; Drinks</h3>
+        <div class="menu-item"><div><h4>Flat White</h4><p>Double shot, velvety steamed milk</p></div><span class="p">£3.20</span></div>
+        <div class="menu-item"><div><h4>Cappuccino</h4><p>Classic, dusted with cocoa</p></div><span class="p">£3.00</span></div>
+        <div class="menu-item"><div><h4>Fresh Orange Juice</h4><p>Squeezed to order</p></div><span class="p">£2.80</span></div>
+      </div>
+      <div class="card">
+        <h3>🍰 Bakes &amp; Sides</h3>
+        <div class="menu-item"><div><h4>Butter Croissant</h4><p>Flaky, golden, baked daily</p></div><span class="p">£2.20</span></div>
+        <div class="menu-item"><div><h4>Skin-on Fries</h4><p>With house salt</p></div><span class="p">£2.95</span></div>
+        <div class="menu-item"><div><h4>Cake of the Day</h4><p>Ask at the counter</p></div><span class="p">£3.50</span></div>
+      </div>
+    </div>
+    <p class="illus">Menu items and prices shown are illustrative samples only.</p>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner1.webp')"></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="ownhome">
+      <h3>Your own home <span>on the web</span></h3>
+      <p>Right now, the only way to find The Secret Sandwich online is through a third-party ordering app. A proper website means your brand, your menu, your story — found on Google by every hungry office worker in the city centre, with no middleman taking a cut of every order.</p>
+      <a class="btn" href="mailto:hello@secretsandwich.co.uk?subject=Website%20enquiry">Tell Me More</a>
+    </div>
+  </div>
+</section>
+
+<div class="banner" style="background-image:url('images/banner2.webp')"></div>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head"><h2>Find <span>us</span></h2></div>
+    <div class="visit">
+      <div class="card">
+        <h3>📍 Visit</h3>
+        <ul>
+          <li><b>The Secret Sandwich</b></li>
+          <li>Unit 9, 14 Cateaton Street</li>
+          <li>Manchester, UK</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=14+Cateaton+Street+Manchester" style="color:var(--amber)">Open in Google Maps →</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🕒 Hours</h3>
+        <ul>
+          <li>Opening hours aren't listed on their own site yet —</li>
+          <li><b><a href="mailto:hello@secretsandwich.co.uk">email us</a></b> to check hours or place a large order.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap" style="text-align:center">
+    <div class="sec-head"><h2>Get in <span>touch</span></h2><p>Orders, catering enquiries and feedback — we read everything.</p></div>
+    <div class="contact-btns">
+      <a class="btn" href="mailto:hello@secretsandwich.co.uk?subject=Order%20enquiry">✉️ Email hello@secretsandwich.co.uk</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="demo-note">Demo preview — free mockup, not affiliated with the business.</div>
+    <p>The Secret Sandwich · Unit 9, 14 Cateaton St, Manchester · <a href="mailto:hello@secretsandwich.co.uk">hello@secretsandwich.co.uk</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
