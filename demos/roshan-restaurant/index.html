@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roshan Restaurant — Authentic Indian Food, MI Road Jaipur</title>
+<meta name="description" content="Roshan Restaurant on MI Road, Jaipur — authentic Indian cuisine, comfortable rooms, open daily. Call or WhatsApp to order.">
+<style>
+  :root{
+    --maroon:#7a1f1f; --maroon-d:#5c1414; --gold:#d4a24e; --cream:#faf6ee;
+    --ink:#2b2320; --muted:#7a6a5f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header.top{position:sticky;top:0;z-index:50;background:rgba(122,31,31,.97);backdrop-filter:blur(6px);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .brand{font-size:1.35rem;font-weight:800;letter-spacing:.5px}
+  .brand small{display:block;font-size:.68rem;font-weight:400;letter-spacing:2px;color:var(--gold)}
+  nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:.92rem;opacity:.92}
+  nav a:hover{color:var(--gold)}
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-d) 60%,#3d0d0d 100%);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(212,162,78,.25),transparent 55%)}
+  .hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;font-weight:800;position:relative;z-index:1}
+  .hero h1 .accent{color:var(--gold)}
+  .hero p.sub{margin:16px 0 28px;max-width:560px;font-size:1.08rem;opacity:.92;position:relative;z-index:1}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.98rem;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .btn.call{background:var(--gold);color:#3d0d0d}
+  .btn.wa{background:#1faa55;color:#fff}
+  section{padding:60px 0}
+  h2.sec{font-size:1.9rem;margin-bottom:6px;color:var(--maroon)}
+  p.lead{color:var(--muted);margin-bottom:28px;max-width:640px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .card{background:#fff;border-radius:14px;padding:26px 22px;box-shadow:0 4px 18px rgba(90,30,20,.08);border-top:4px solid var(--gold)}
+  .card h3{font-size:1.08rem;margin-bottom:8px;color:var(--maroon)}
+  .card p{font-size:.93rem;color:var(--muted)}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .menu-cat{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(90,30,20,.08)}
+  .menu-cat h3{background:var(--maroon);color:#fff;padding:14px 20px;font-size:1.05rem;letter-spacing:.4px}
+  .menu-cat ul{list-style:none;padding:8px 20px 16px}
+  .menu-cat li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #e4d9c8;font-size:.95rem}
+  .menu-cat li:last-child{border-bottom:none}
+  .menu-cat .price{font-weight:800;color:var(--maroon);white-space:nowrap}
+  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .info .box{background:#fff;border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(90,30,20,.08)}
+  .info h3{color:var(--maroon);margin-bottom:10px;font-size:1.1rem}
+  .info p,.info a{font-size:.95rem;color:var(--ink)}
+  .info a{color:var(--maroon);font-weight:600}
+  footer{background:#241a17;color:#cbb9a8;padding:34px 0;text-align:center;font-size:.88rem}
+  footer .brand{color:#fff;margin-bottom:6px}
+  .preview-badge{position:fixed;bottom:16px;right:16px;z-index:99;background:#241a17;color:#f5e9d4;font-size:.75rem;padding:10px 14px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.35);max-width:230px;line-height:1.4}
+  .preview-badge b{color:var(--gold)}
+  @media(max-width:640px){nav a{margin-left:12px;font-size:.85rem}.hero{padding:52px 0 48px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <div class="brand">ROSHAN<small>RESTAURANT · JAIPUR</small></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Authentic Indian Flavours<br><span class="accent">in the Heart of Jaipur</span></h1>
+    <p class="sub">On MI Road for years — hearty North Indian classics, comfortable rooms for travellers, and food that keeps the neighbourhood coming back. Open every day.</p>
+    <div class="cta-row">
+      <a class="btn call" href="tel:+919983786000">📞 Call +91 99837 86000</a>
+      <a class="btn wa" href="https://wa.me/919983786000?text=Hello%20Roshan%20Restaurant%2C%20I%20would%20like%20to%20place%20an%20order.">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="sec">Why Roshan?</h2>
+    <p class="lead">A local favourite on MI Road — honest food, fair prices, and a warm welcome whether you're dining in or staying over.</p>
+    <div class="cards">
+      <div class="card"><h3>🍛 Classic North Indian</h3><p>Tandoor, curries, dals and breads cooked the traditional way — rich, fresh and full of flavour.</p></div>
+      <div class="card"><h3>🛏️ Rooms Available</h3><p>Comfortable, affordable lodging right on MI Road — ideal for travellers passing through Jaipur.</p></div>
+      <div class="card"><h3>📍 Prime Location</h3><p>143 Main Road, MI Road — minutes from the railway station and the old city's bazaars.</p></div>
+      <div class="card"><h3>⏰ Open Daily</h3><p>Serving breakfast to dinner, seven days a week. Walk-ins always welcome.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="background:#fff">
+  <div class="wrap">
+    <h2 class="sec">Our Menu</h2>
+    <p class="lead">Sample favourites — call or WhatsApp for the full menu and today's specials.</p>
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <h3>Starters & Tandoor</h3>
+        <ul>
+          <li><span>Tandoori Chicken (Half)</span><span class="price">₹180</span></li>
+          <li><span>Chicken Tikka</span><span class="price">₹200</span></li>
+          <li><span>Paneer Tikka</span><span class="price">₹180</span></li>
+          <li><span>Veg Pakora Basket</span><span class="price">₹120</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <h3>Main Course</h3>
+        <ul>
+          <li><span>Butter Chicken</span><span class="price">₹240</span></li>
+          <li><span>Dal Makhani</span><span class="price">₹160</span></li>
+          <li><span>Shahi Paneer</span><span class="price">₹190</span></li>
+          <li><span>Mix Veg</span><span class="price">₹150</span></li>
+          <li><span>Jeera Rice</span><span class="price">₹120</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <h3>Breads & More</h3>
+        <ul>
+          <li><span>Butter Naan</span><span class="price">₹40</span></li>
+          <li><span>Tandoori Roti</span><span class="price">₹15</span></li>
+          <li><span>Laccha Paratha</span><span class="price">₹50</span></li>
+          <li><span>Sweet Lassi</span><span class="price">₹60</span></li>
+          <li><span>Masala Chai</span><span class="price">₹30</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <h2 class="sec">Visit Us</h2>
+    <p class="lead">Drop in, call ahead, or message us on WhatsApp — we respond fast.</p>
+    <div class="info">
+      <div class="box">
+        <h3>📍 Address</h3>
+        <p>143, Main Road, MI Road,<br>Jaipur, Rajasthan</p>
+      </div>
+      <div class="box">
+        <h3>📞 Contact</h3>
+        <p><a href="tel:+919983786000">+91 99837 86000</a><br>
+        <a href="https://wa.me/919983786000">Chat on WhatsApp</a></p>
+      </div>
+      <div class="box">
+        <h3>⏰ Hours</h3>
+        <p>Monday – Sunday<br>9:00 AM – 11:00 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">ROSHAN RESTAURANT</div>
+    143 Main Road, MI Road, Jaipur · +91 99837 86000<br>
+    © 2026 Roshan Restaurant. All rights reserved.
+  </div>
+<div style="margin-top:14px;padding:12px 18px;background:#16a34a;color:#fff;border-radius:10px;font-size:.95rem"><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/order/index.html" style="color:#fff;font-weight:700;text-decoration:none">Like this site? Get your own business website for $50 →</a></div><div style="margin-top:14px;padding:12px 18px;background:#16a34a;color:#fff;border-radius:10px;font-size:.95rem"><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/order/index.html" style="color:#fff;font-weight:700;text-decoration:none">Like this site? Get your own business website for $50 →</a></div></footer>
+
+<div class="preview-badge"><b>Free preview</b> — this is a demo website concept made for Roshan Restaurant. Reply to Harsh's email to make it yours.</div>
+
+</body>
+</html>
