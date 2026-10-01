@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharma Sweets Caters — Traditional Sweets, Snacks & Catering | Jaipur</title>
+<meta name="description" content="Sharma Sweets Caters, Hawa Mahal Road, Jaipur. Fresh traditional Indian sweets, namkeen, fast food and event catering. Open daily 6:30 AM – 10:00 PM. Call +91 98291 03767.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#6d1a2d; --maroon-dark:#4a0f1e; --gold:#d4a017; --gold-light:#f3d27a;
+  --cream:#fdf6ea; --cream-dark:#f7ead3; --ink:#2b1d16; --muted:#7a6a5c;
+  --green:#1f7a4d; --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(74,15,30,.96);backdrop-filter:blur(6px);box-shadow:0 2px 18px rgba(0,0,0,.25)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand-mark{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-light),var(--gold) 60%,#a67c00);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:800;font-size:22px;color:var(--maroon-dark)}
+.brand-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.15}
+.brand-sub{font-size:11px;letter-spacing:2.5px;color:var(--gold-light);text-transform:uppercase}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:#f5e9d2;font-size:14px;font-weight:500;letter-spacing:.4px}
+.nav-links a:hover{color:var(--gold-light)}
+.btn{display:inline-block;padding:13px 30px;border-radius:50px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--maroon-dark)}
+.btn-green{background:var(--green);color:#fff}
+.btn-outline{background:transparent;color:#fff;border:2px solid var(--gold-light)}
+.nav-cta{padding:9px 22px;font-size:13px}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+@media(max-width:820px){
+  .nav-links{position:fixed;top:66px;left:0;right:0;background:var(--maroon-dark);flex-direction:column;padding:22px;gap:18px;display:none}
+  .nav-links.open{display:flex}
+  .hamburger{display:block}
+}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(212,160,23,.35), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, rgba(109,26,45,.55), transparent 60%),
+    linear-gradient(160deg,#3a0b17 0%,var(--maroon-dark) 45%,#5c1626 100%);}
+.hero::before{content:"";position:absolute;inset:0;opacity:.14;
+  background-image:radial-gradient(circle at 20% 30%, var(--gold) 2px, transparent 3px),
+                   radial-gradient(circle at 70% 60%, var(--gold) 2px, transparent 3px),
+                   radial-gradient(circle at 40% 80%, var(--gold-light) 1.5px, transparent 2.5px),
+                   radial-gradient(circle at 90% 20%, var(--gold-light) 1.5px, transparent 2.5px);
+  background-size:340px 340px,420px 420px,300px 300px,380px 380px;}
+.hero-inner{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:130px 22px 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.eyebrow{display:inline-block;color:var(--gold-light);letter-spacing:3px;font-size:12px;text-transform:uppercase;font-weight:600;margin-bottom:18px;border:1px solid rgba(243,210,122,.5);padding:7px 16px;border-radius:50px}
+.hero h1{color:#fff;font-size:clamp(38px,5.4vw,64px);line-height:1.12;margin-bottom:20px}
+.hero h1 span{color:var(--gold-light);font-style:italic}
+.hero p{color:#ecdcc2;font-size:17px;font-weight:300;max-width:520px;margin-bottom:34px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+.badge{color:#f0e2c8;font-size:13px}
+.badge strong{display:block;color:var(--gold-light);font-size:22px;font-family:'Playfair Display',serif}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(243,210,122,.35);border-radius:22px;padding:34px;color:#f5ead3;backdrop-filter:blur(4px)}
+.hero-card h3{color:var(--gold-light);font-size:22px;margin-bottom:6px}
+.hero-card .hours{font-size:14px;color:#e6d3ae;margin-bottom:20px}
+.special-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px dashed rgba(243,210,122,.3);font-size:15px}
+.special-row:last-of-type{border:none}
+.special-row .price{color:var(--gold-light);font-weight:700;white-space:nowrap;margin-left:14px}
+.hero-card .btn{margin-top:22px;width:100%;text-align:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;padding-top:120px}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:86px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+.sec-eyebrow{color:var(--maroon);letter-spacing:3px;font-size:12px;text-transform:uppercase;font-weight:700}
+.sec-head h2{font-size:clamp(30px,4vw,44px);color:var(--maroon-dark);margin:10px 0 14px}
+.sec-head p{color:var(--muted);font-size:16px}
+.divider{width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:0 auto 0}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about h2{font-size:clamp(28px,3.6vw,40px);color:var(--maroon-dark);margin:10px 0 18px}
+.about p{color:var(--muted);margin-bottom:16px;font-size:16px}
+.about-list{list-style:none;margin-top:22px}
+.about-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;font-size:15px}
+.tick{flex:0 0 30px;height:30px;border-radius:50%;background:var(--maroon);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:700}
+.about-visual{border-radius:24px;min-height:420px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(212,160,23,.5), transparent 45%),
+    radial-gradient(circle at 75% 70%, rgba(109,26,45,.6), transparent 50%),
+    linear-gradient(150deg,#8a5a1e,#6d1a2d 70%);}
+.about-visual .big-word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(50px,7vw,84px);color:rgba(255,255,255,.92);text-align:center;line-height:1.15;padding:30px;font-style:italic}
+.about-visual .corner{position:absolute;background:rgba(255,255,255,.14);border-radius:50%}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- MENU ---------- */
+.menu-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:40px;flex-wrap:wrap}
+.tab{padding:11px 28px;border-radius:50px;border:2px solid var(--maroon);background:transparent;color:var(--maroon);font-weight:600;font-size:14px;cursor:pointer;font-family:'Poppins',sans-serif;transition:all .2s}
+.tab.active,.tab:hover{background:var(--maroon);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.dish{background:#fff;border-radius:18px;padding:26px;box-shadow:0 6px 24px rgba(109,26,45,.08);border-top:4px solid var(--gold);transition:transform .2s,box-shadow .2s;display:none}
+.dish.show{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.dish:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(109,26,45,.14)}
+.dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.dish h3{font-size:19px;color:var(--maroon-dark)}
+.dish .price{color:var(--green);font-weight:700;font-size:17px;white-space:nowrap}
+.dish p{font-size:13.5px;color:var(--muted)}
+.dish .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--maroon);background:var(--cream-dark);padding:4px 12px;border-radius:50px}
+.menu-note{text-align:center;margin-top:34px;color:var(--muted);font-size:14px;font-style:italic}
+
+/* ---------- CATERING ---------- */
+.catering{background:linear-gradient(150deg,var(--maroon-dark),#5c1626);color:#f3e6cc}
+.catering .sec-head h2{color:#fff}
+.catering .sec-head p{color:#d9c39a}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:44px}
+.cat-card{background:rgba(255,255,255,.07);border:1px solid rgba(243,210,122,.35);border-radius:18px;padding:30px}
+.cat-card .icon{font-size:34px;margin-bottom:14px}
+.cat-card h3{color:var(--gold-light);font-size:20px;margin-bottom:10px}
+.cat-card p{font-size:14.5px;color:#e8d5ae}
+.cat-cta{text-align:center}
+.cat-cta p{margin-bottom:20px;font-size:16px}
+
+/* ---------- VISIT ---------- */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.visit-card{background:#fff;border-radius:18px;padding:36px;box-shadow:0 6px 24px rgba(109,26,45,.08)}
+.visit-card h3{color:var(--maroon-dark);font-size:22px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hours-table{width:100%;font-size:15px}
+.hours-table tr{border-bottom:1px solid #f0e4cd}
+.hours-table tr:last-child{border:none}
+.hours-table td{padding:10px 4px}
+.hours-table td:last-child{text-align:right;font-weight:600;color:var(--maroon)}
+.visit-card address{font-style:normal;font-size:15.5px;color:var(--muted);line-height:1.9}
+.visit-card .btn{margin-top:20px}
+@media(max-width:760px){.visit-grid{grid-template-columns:1fr}}
+
+/* ---------- CONTACT STRIP ---------- */
+.contact-strip{background:var(--gold);padding:60px 0;text-align:center}
+.contact-strip h2{font-size:clamp(26px,3.6vw,40px);color:var(--maroon-dark);margin-bottom:12px}
+.contact-strip p{color:#5c3d05;margin-bottom:28px;font-size:16px}
+.contact-strip .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- FOOTER ---------- */
+footer{background:#2a0a13;color:#c9ae7e;padding:44px 0 30px;font-size:14px}
+.foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:26px}
+.foot-brand{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:8px}
+.foot-note{border-top:1px solid rgba(212,160,23,.25);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#8f7350}
+
+/* ---------- FLOATING CALL ---------- */
+.float-call{position:fixed;bottom:22px;right:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(0,0,0,.3);transition:transform .2s}
+.float-call:hover{transform:scale(1.08)}
+.float-call svg{width:28px;height:28px;fill:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <div class="brand-mark">S</div>
+      <div><div class="brand-name">Sharma Sweets Caters</div><div class="brand-sub">Jaipur &bull; Since Generations</div></div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#catering">Catering</a>
+      <a href="#visit">Visit Us</a>
+      <a class="btn btn-gold nav-cta" href="tel:+919829103767">Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Hawa Mahal Road &bull; Jaipur</span>
+      <h1>Jaipur&rsquo;s Trusted Taste of <span>Tradition</span></h1>
+      <p>Fresh mithai made every morning, crispy namkeen, delicious fast food — and full event catering across Jaipur. One shop, every celebration.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="tel:+919829103767">Call +91 98291 03767</a>
+        <a class="btn btn-outline" href="https://wa.me/919829103767?text=Hello%20Sharma%20Sweets!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><strong>6:30 AM – 10 PM</strong>Open all 7 days</div>
+        <div class="badge"><strong>100%</strong>Fresh, made daily</div>
+        <div class="badge"><strong>Events</strong>Weddings &amp; parties catered</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Today&rsquo;s Specials</h3>
+      <div class="hours">Fresh from the kadhai, every morning</div>
+      <div class="special-row"><span>Kaju Katli (1 kg)</span><span class="price">&#8377;950</span></div>
+      <div class="special-row"><span>Rasmalai (4 pc)</span><span class="price">&#8377;160</span></div>
+      <div class="special-row"><span>Special Samosa (2 pc)</span><span class="price">&#8377;40</span></div>
+      <div class="special-row"><span>Motichoor Ladoo (1 kg)</span><span class="price">&#8377;380</span></div>
+      <a class="btn btn-gold" href="#menu">See Full Menu</a>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="sec-eyebrow">Our Story</span>
+      <h2>A Jaipur Institution Near Hawa Mahal</h2>
+      <p>Located opposite Shimla Hotel on Hawa Mahal Road, Sharma Sweets Caters has been serving Jaipur&rsquo;s sweet tooth for years. Every batch of mithai is prepared fresh each morning in pure desi ghee — no shortcuts, no stale stock.</p>
+      <p>From daily snacks to grand wedding catering, families across the Pink City trust us when taste matters most.</p>
+      <ul class="about-list">
+        <li><span class="tick">&#10003;</span><span><strong>Made fresh daily</strong> — sweets prepared every morning, never stored for days.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>Pure ingredients</strong> — desi ghee, quality dry fruits, no artificial shortcuts.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>Event catering</strong> — weddings, engagements, corporate events across Jaipur.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>Easy ordering</strong> — call or WhatsApp; bulk &amp; festive orders welcome.</span></li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <span class="corner" style="width:180px;height:180px;top:-50px;right:-50px"></span>
+      <span class="corner" style="width:110px;height:110px;bottom:30px;left:30px"></span>
+      <div class="big-word">Shuddh<br>Desi<br>Ghee</div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Taste The Tradition</span>
+      <h2>Our Menu</h2>
+      <div class="divider"></div>
+      <p style="margin-top:14px">Indicative prices — call us for today&rsquo;s fresh rates and bulk discounts.</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab active" data-tab="sweets">Mithai</button>
+      <button class="tab" data-tab="namkeen">Namkeen &amp; Snacks</button>
+      <button class="tab" data-tab="fastfood">Fast Food</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Kaju Katli</h3><span class="price">&#8377;950/kg</span></div><p>Silky cashew fudge topped with silver varq — our signature sweet.</p><span class="tag">Bestseller</span></div>
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Motichoor Ladoo</h3><span class="price">&#8377;380/kg</span></div><p>Fine boondi pearls bound in desi ghee. A festive favourite.</p></div>
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Rasmalai</h3><span class="price">&#8377;40/pc</span></div><p>Soft chenna discs soaked in saffron-kesar milk.</p><span class="tag">Made Fresh Daily</span></div>
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Milk Cake (Alwar)</h3><span class="price">&#8377;420/kg</span></div><p>Caramelised, grainy, melt-in-mouth Rajasthani classic.</p></div>
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Ghewar</h3><span class="price">&#8377;480/kg</span></div><p>Honeycomb-crisp disc soaked in sugar syrup, crowned with rabri.</p><span class="tag">Seasonal</span></div>
+      <div class="dish show" data-cat="sweets"><div class="dish-top"><h3>Rasgulla</h3><span class="price">&#8377;300/kg</span></div><p>Spongy, light, served in delicate syrup.</p></div>
+      <div class="dish show" data-cat="namkeen"><div class="dish-top"><h3>Special Samosa</h3><span class="price">&#8377;20/pc</span></div><p>Crisp golden pastry, spiced aloo filling, imli chutney.</p><span class="tag">Bestseller</span></div>
+      <div class="dish show" data-cat="namkeen"><div class="dish-top"><h3>Kachori (Pyaaz)</h3><span class="price">&#8377;25/pc</span></div><p>Flaky, stuffed with caramelised onion masala.</p></div>
+      <div class="dish show" data-cat="namkeen"><div class="dish-top"><h3>Bread Pakora</h3><span class="price">&#8377;25/pc</span></div><p>Stuffed bread fritters, fried crisp to order.</p></div>
+      <div class="dish show" data-cat="namkeen"><div class="dish-top"><h3>Mixture Namkeen</h3><span class="price">&#8377;280/kg</span></div><p>Our house blend — perfect with evening chai.</p></div>
+      <div class="dish show" data-cat="fastfood"><div class="dish-top"><h3>Chole Bhature</h3><span class="price">&#8377;90/plate</span></div><p>Fluffy bhature with rich, dark chole masala.</p><span class="tag">Lunch Favourite</span></div>
+      <div class="dish show" data-cat="fastfood"><div class="dish-top"><h3>Pav Bhaji</h3><span class="price">&#8377;80/plate</span></div><p>Buttery bhaji, toasted pav, extra maska on request.</p></div>
+      <div class="dish show" data-cat="fastfood"><div class="dish-top"><h3>Veg Chowmein</h3><span class="price">&#8377;70/plate</span></div><p>Smoky wok-tossed noodles, street style.</p></div>
+      <div class="dish show" data-cat="fastfood"><div class="dish-top"><h3>Aloo Tikki Chaat</h3><span class="price">&#8377;60/plate</span></div><p>Crisp tikkis, dahi, chutneys, crunchy papdi.</p></div>
+    </div>
+    <p class="menu-note">Festive gift boxes &amp; bulk orders available on request — just call or WhatsApp us.</p>
+  </div>
+</section>
+
+<section class="catering" id="catering">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow" style="color:var(--gold-light)">Sharma Caters</span>
+      <h2>Weddings &amp; Event Catering</h2>
+      <div class="divider"></div>
+      <p style="margin-top:14px">From intimate family functions to grand baraats — we cater across Jaipur.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="icon">&#127881;</div><h3>Weddings</h3><p>Full mithai counters, live chaat stations and dinner setups for 100 to 2000+ guests.</p></div>
+      <div class="cat-card"><div class="icon">&#127880;</div><h3>Engagements &amp; Parties</h3><p>Custom sweet boxes, snacks platters and chaat counters for every celebration.</p></div>
+      <div class="cat-card"><div class="icon">&#128188;</div><h3>Corporate Events</h3><p>Bulk breakfast, lunch boxes and festive gifting for offices across Jaipur.</p></div>
+    </div>
+    <div class="cat-cta">
+      <p>Share your event date and guest count — we&rsquo;ll plan the menu with you.</p>
+      <a class="btn btn-gold" href="https://wa.me/919829103767?text=Hello!%20I%20need%20catering%20for%20an%20event.%20Please%20share%20details." target="_blank" rel="noopener">Get a Catering Quote on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Find Us</span>
+      <h2>Visit Our Shop</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>&#128336; Opening Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Sunday</td><td>6:30 AM – 10:00 PM</td></tr>
+          <tr><td>Festivals (Diwali, Teej)</td><td>Extended hours</td></tr>
+        </table>
+        <p style="margin-top:16px;font-size:14px;color:var(--muted)">Open all 7 days, all year round.</p>
+      </div>
+      <div class="visit-card">
+        <h3>&#128205; Address</h3>
+        <address>
+          Shop No. 3, Hawa Mahal Road,<br>
+          Opposite Shimla Hotel,<br>
+          Jaipur, Rajasthan, India
+        </address>
+        <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&query=Sharma+Sweets+Caters+Hawa+Mahal+Road+Jaipur" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="container">
+    <h2>Craving Something Sweet Right Now?</h2>
+    <p>Call or WhatsApp us — we&rsquo;ll keep your order hot and ready.</p>
+    <div class="row">
+      <a class="btn" style="background:var(--maroon);color:#fff" href="tel:+919829103767">Call +91 98291 03767</a>
+      <a class="btn btn-green" href="https://wa.me/919829103767" target="_blank" rel="noopener">WhatsApp Order</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Sharma Sweets Caters</div>
+        <div>Shop No. 3, Hawa Mahal Road, Opp. Shimla Hotel, Jaipur, Rajasthan</div>
+        <div style="margin-top:8px">Phone: <a href="tel:+919829103767" style="color:var(--gold-light)">+91 98291 03767</a> &nbsp;|&nbsp; Hours: 6:30 AM – 10:00 PM daily</div>
+      </div>
+      <div>
+        <div style="margin-bottom:8px;color:#fff;font-weight:600">Quick Links</div>
+        <div><a href="#about">About</a> &nbsp;&bull;&nbsp; <a href="#menu">Menu</a> &nbsp;&bull;&nbsp; <a href="#catering">Catering</a> &nbsp;&bull;&nbsp; <a href="#visit">Visit Us</a></div>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>&copy; 2026 Sharma Sweets Caters, Jaipur. All rights reserved.</span>
+      <span>Demo website concept — built as a free sample by Harsh.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:+919829103767" aria-label="Call Sharma Sweets">
+  <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.4 11.4 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.57 1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+</a>
+
+<script>
+document.getElementById('hamburger').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+var tabs=document.querySelectorAll('.tab');
+tabs.forEach(function(tab){
+  tab.addEventListener('click',function(){
+    tabs.forEach(function(t){t.classList.remove('active');});
+    tab.classList.add('active');
+    var cat=tab.getAttribute('data-tab');
+    document.querySelectorAll('.dish').forEach(function(d){
+      d.classList.toggle('show', d.getAttribute('data-cat')===cat);
+    });
+  });
+});
+</script>
+</body>
+</html>
