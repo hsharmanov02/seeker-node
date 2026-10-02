@@ -5,135 +5,238 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhols MasterFade — Calgary</title>
 <meta name="description" content="Bhols MasterFade, 170 Silverado Blvd SW, Calgary, AB T2X 4C9. Silverado's 4.98-star master barber Call +1 403 397 7458.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0a0d12; --bg2:#0f141c; --accent:#f5b942; --accent2:#cfe6ff;
-    --text:#eef3f9; --muted:#9aa8bc; --card:#131a25; --line:#243043}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  a{color:var(--accent2)}
-  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,13,18,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-  .brand{font-size:1.1rem;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:2px}
-  .brand span{color:var(--accent)}
-  .navlinks a{color:var(--text);text-decoration:none;margin-left:18px;font-size:.92rem;font-weight:500}
-  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
-    background:url('images/hero.webp') center/cover no-repeat #05070a;margin-top:54px}
-  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,7,10,.55),rgba(5,7,10,.78))}
-  .hero-inner{position:relative;z-index:2;padding:80px 20px;max-width:780px}
-  .hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800;text-transform:uppercase;line-height:1.1}
-  .hero h1 span{color:var(--accent)}
-  .rule{display:block;width:64px;height:3px;background:var(--accent);margin:18px auto}
-  .hero p.tag{font-size:1.15rem;color:var(--accent2);margin-top:10px}
-  .hero p.addr{color:var(--muted);margin-top:14px}
-  .btn{display:inline-block;margin-top:26px;padding:14px 32px;background:var(--accent);color:#06121f;text-decoration:none;
-    font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.88rem;border-radius:4px;border:1px solid var(--accent)}
-  .btn:hover{background:transparent;color:var(--accent)}
-  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--text);margin-left:10px}
-  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
-  section{padding:70px 0}
-  section h2{text-align:center;font-size:clamp(1.6rem,3.5vw,2.3rem);text-transform:uppercase;font-weight:800}
-  section h2 span{color:var(--accent)}
-  section .sub{text-align:center;color:var(--muted);margin:10px auto 40px;max-width:620px}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px 24px;text-align:center;transition:transform .2s}
-  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
-  .card h3{color:var(--accent2);margin-bottom:10px;font-size:1.15rem}
-  .card .price{font-size:1.5rem;color:var(--accent);font-weight:800;margin:8px 0}
-  .card p{color:var(--muted);font-size:.94rem}
-  .note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:26px;font-style:italic}
-  .banner{height:300px;background-size:cover;background-position:center;position:relative}
-  .banner::before{content:'';position:absolute;inset:0;background:rgba(5,7,10,.3)}
-  @media(max-width:640px){.banner{height:200px}}
-  .visit{background:var(--bg2)}
-  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
-  @media(max-width:700px){.visit-grid{grid-template-columns:1fr}}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:30px}
-  .panel h3{color:var(--accent2);margin-bottom:14px}
-  .panel p{color:var(--muted);margin-bottom:8px}
-  .panel p strong{color:var(--text)}
-  .big-addr{font-size:1.25rem;color:var(--text)}
-  .contact{background:var(--bg2);text-align:center}
-  .wa{background:#25d366;border-color:#25d366;color:#062b17}
-  .wa:hover{color:#25d366;background:transparent}
-  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:#5d6b82;font-size:.82rem}
-  footer p{margin:4px 0}
+:root{--bg:#14100a;--panel:#161a21;--ink:#f4f1ea;--muted:#a7adba;--accent:#d9a441;--line:rgba(255,255,255,.09)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Fraunces',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+a{color:var(--accent)}
+img{display:block;max-width:100%}
+nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(10,10,14,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.brand em{font-style:italic;color:var(--accent)}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:500;opacity:.85}
+.navlinks a:hover{opacity:1;color:var(--accent)}
+.navcall{background:var(--accent);color:#131313!important;padding:9px 18px;border-radius:999px;font-weight:600;opacity:1!important}
+@media(max-width:720px){.navlinks a:not(.navcall){display:none}}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.06)}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.42) 0%,rgba(5,5,8,.18) 38%,rgba(5,5,8,.88) 82%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:2;padding:150px 24px 90px;width:100%}
+.eyebrow{text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:560;font-size:clamp(2.9rem,8.5vw,6.2rem);line-height:.98;letter-spacing:-0.015em;max-width:12ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .tag{margin-top:22px;font-size:clamp(1.02rem,2vw,1.3rem);color:#e8e4da;max-width:52ch;font-weight:400}
+.ratepill{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);padding:9px 16px;border-radius:999px;font-size:.92rem;font-weight:600}
+.ratepill .stars{color:#ffc531;letter-spacing:2px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-acc{background:var(--accent);color:#161310;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.btn-wa{background:#25d366;color:#0b2e1a}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border-color:rgba(255,255,255,.25)}
+.marquee{overflow:hidden;padding:26px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.02)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:scroll 36s linear infinite}
+.marquee img{width:300px;height:190px;object-fit:cover;border-radius:14px;flex:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
+section{padding:96px 0}
+.sec-head{max-width:720px;margin-bottom:48px}
+.sec-head h2{font-family:'Fraunces',serif;font-weight:560;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.05;letter-spacing:-.01em}
+.sec-head h2 em{font-style:italic;color:var(--accent)}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:1.05rem}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.about-img img{width:100%;height:520px;object-fit:cover}
+.big-stat{font-family:'Fraunces',serif;font-size:clamp(3.4rem,7vw,5.4rem);line-height:1;color:var(--accent)}
+.about-copy p{color:var(--muted);margin-top:18px;font-size:1.06rem;max-width:46ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 24px 44px rgba(0,0,0,.35)}
+.card h3{font-family:'Fraunces',serif;font-weight:560;font-size:1.35rem;margin-bottom:8px}
+.card .price{color:var(--accent);font-weight:700;font-size:1.2rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.95rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:18px;transition:transform .4s}
+.gallery img:hover{transform:scale(1.025)}
+.reviews{background:linear-gradient(140deg,rgba(255,255,255,.05),transparent 60%);border:1px solid var(--line);border-radius:24px;padding:52px 44px;text-align:center}
+.reviews .stars{color:#ffc531;font-size:1.7rem;letter-spacing:8px}
+.reviews .score{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,4.6rem);line-height:1.1}
+.reviews p{color:var(--muted);margin-top:10px}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.visit-grid{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px}
+.panel h3{font-family:'Fraunces',serif;font-weight:560;font-size:1.4rem;margin-bottom:14px}
+.panel p{color:var(--muted);margin-bottom:10px}
+.panel p strong{color:var(--ink)}
+.big-addr{font-size:1.3rem;line-height:1.45}
+.final-cta{text-align:center}
+.final-cta h2{font-family:'Fraunces',serif;font-weight:560;font-size:clamp(2.2rem,5vw,3.6rem)}
+.final-cta p{color:var(--muted);margin:18px auto 34px;max-width:52ch}
+footer{border-top:1px solid var(--line);padding:44px 0 110px;text-align:center;color:#767d8c;font-size:.85rem}
+footer p{margin:5px 0}
+.order-cta{display:inline-block;margin-top:22px;background:#16a34a;color:#fff!important;padding:14px 26px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.98rem}
+.wa-float{position:fixed;right:20px;bottom:88px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.4);text-decoration:none;font-size:1.5rem}
+.call-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(8,8,12,.82);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.call-bar a{flex:1;text-align:center;padding:13px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem}
+.call-bar .c1{background:var(--accent);color:#161310}
+.call-bar .c2{background:#25d366;color:#0b2e1a}
+@media(max-width:720px){.call-bar{display:flex}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:28px;font-style:italic}
 </style>
 </head>
 <body>
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top">BHOLS <span>MASTERFADE</span></a>
+    <a class="brand" href="#top">Bhols <em>MasterFade</em></a>
     <div class="navlinks">
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#visit">Visit</a>
-      <a href="#contact">Contact</a>
+      <a class="navcall" href="tel:14033977458">Call Now</a>
     </div>
   </div>
 </nav>
+
 <header class="hero" id="top">
-  <div class="hero-inner">
-    <h1>Bhols<br><span>MasterFade</span></h1>
-    <span class="rule"></span>
-    <p class="tag">Silverado's 4.98-star master barber</p>
-    <p class="addr">170 Silverado Blvd SW, Calgary, AB T2X 4C9 &nbsp;·&nbsp; <a href="tel:14033977458" style="color:var(--accent2)">+1 403 397 7458</a></p>
-    <div>
-      <a class="btn" href="tel:14033977458">Call to Book</a>
-      <a class="btn ghost" href="#services">Services</a>
+  <div class="bgimg" style="background-image:url('images/hero.webp')"></div>
+  <div class="hero-inner wrap">
+    <div class="eyebrow reveal">Calgary · Barbershop</div>
+    <h1 class="reveal">Bhols<br><em>MasterFade</em></h1>
+    <p class="tag reveal">Silverado's 4.98-star master barber</p>
+    <div class="ratepill reveal"><span class="stars">★★★★★</span> 4.98 · from 66 customer reviews</div>
+    <div class="cta-row reveal">
+      <a class="btn btn-acc" href="tel:14033977458">📞 Call +1 403 397 7458</a>
+      <a class="btn btn-wa" href="https://wa.me/14033977458?text=Hi%20Bhols%20MasterFade%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="#services">See Services ↓</a>
     </div>
   </div>
 </header>
-<section id="services">
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <img src="images/hero.webp" alt=""><img src="images/banner1.webp" alt=""><img src="images/banner2.webp" alt="">
+    <img src="images/hero.webp" alt=""><img src="images/banner1.webp" alt=""><img src="images/banner2.webp" alt="">
+  </div>
+</div>
+
+<section>
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><img src="images/banner1.webp" alt="Bhols MasterFade"></div>
+    <div class="reveal">
+      <div class="eyebrow">Why Bhols</div>
+      <div class="big-stat">4.98★</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:560;line-height:1.1">Rated by the people<br>who <em style="color:var(--accent)">actually visit.</em></h2>
+      <div class="about-copy"><p>A near-perfect 4.98 rating in Silverado with no website. This page brings it all together — services, prices, directions and one-tap booking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:20px">
   <div class="wrap">
-    <h2>Our <span>Services</span></h2>
-    <p class="sub">What we do at Bhols MasterFade.</p>
+    <div class="sec-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>Services & <em>prices</em></h2>
+      <p>Straightforward pricing, no surprises. Tap call or WhatsApp to book your slot.</p>
+    </div>
     <div class="cards">
-      <div class="card"><h3>Precision Haircut</h3><div class="price">from $35</div><p>Consultation, precision cut and styled finish — fades, tapers and classic styles.</p></div>
-      <div class="card"><h3>Skin Fade</h3><div class="price">from $38</div><p>Seamless blend from skin to length with a crisp line-up and razor detail.</p></div>
-      <div class="card"><h3>Beard Sculpt & Shave</h3><div class="price">from $28</div><p>Beard shaping, hot-towel treatment and straight-razor finish.</p></div>
-      <div class="card"><h3>The Full Service</h3><div class="price">from $55</div><p>Signature package — cut, hot-towel shave and beard sculpt in one session.</p></div>
+      <div class="card reveal"><h3>Precision Haircut</h3><div class="price">from $35</div><p>Consultation, precision cut and styled finish — fades, tapers and classic styles.</p></div>
+      <div class="card reveal"><h3>Skin Fade</h3><div class="price">from $38</div><p>Seamless blend from skin to length with a crisp line-up and razor detail.</p></div>
+      <div class="card reveal"><h3>Beard Sculpt & Shave</h3><div class="price">from $28</div><p>Beard shaping, hot-towel treatment and straight-razor finish.</p></div>
+      <div class="card reveal"><h3>The Full Service</h3><div class="price">from $55</div><p>Signature package — cut, hot-towel shave and beard sculpt in one session.</p></div>
     </div>
     <p class="note">Prices shown are illustrative sample prices in CAD, for demo purposes only.</p>
   </div>
 </section>
-<div class="banner" style="background-image:url('images/banner1.webp')" role="img" aria-label="Bhols MasterFade"></div>
-<section id="visit" class="visit">
+
+<section id="gallery" style="padding-top:20px">
   <div class="wrap">
-    <h2>Visit <span>Us</span></h2>
-    <p class="sub">Find us here — walk-ins and bookings welcome.</p>
+    <div class="sec-head reveal">
+      <div class="eyebrow">Inside</div>
+      <h2>The <em>gallery</em></h2>
+    </div>
+    <div class="gallery">
+      <img class="reveal" src="images/hero.webp" alt="Bhols MasterFade">
+      <img class="reveal" src="images/banner1.webp" alt="Bhols MasterFade">
+      <img class="reveal" src="images/banner2.webp" alt="Bhols MasterFade">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="reviews reveal">
+      <div class="stars">★★★★★</div>
+      <div class="score">4.98 / 5</div>
+      <p>from 66 customer reviews — and counting. Come see why.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-acc" href="tel:14033977458">Book Your Visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Find us</div>
+      <h2>Visit <em>us</em></h2>
+    </div>
     <div class="visit-grid">
-      <div class="panel">
-        <h3>Find Us</h3>
+      <div class="panel reveal">
+        <h3>Address</h3>
         <p class="big-addr"><strong>170 Silverado Blvd SW, Calgary, AB T2X 4C9</strong></p>
         <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=Bhols+MasterFade+170+Silverado+Blvd+SW%2C+Calgary%2C+AB+T2X+4C9" target="_blank" rel="noopener">Open in Google Maps →</a></p>
       </div>
-      <div class="panel">
-        <h3>Hours</h3>
-        <p>Hours vary — <a href="https://www.google.com/maps/search/?api=1&query=Bhols+MasterFade+170+Silverado+Blvd+SW%2C+Calgary%2C+AB+T2X+4C9" target="_blank" rel="noopener">check our Google profile</a> for current opening hours.</p>
-        <p>Call ahead at <a href="tel:14033977458">+1 403 397 7458</a> to book your spot.</p>
+      <div class="panel reveal">
+        <h3>Hours & Booking</h3>
+        <p>Hours vary — <a href="https://www.google.com/maps/search/?api=1&query=Bhols+MasterFade+170+Silverado+Blvd+SW%2C+Calgary%2C+AB+T2X+4C9" target="_blank" rel="noopener">check our Google profile</a> for today's opening hours.</p>
+        <p>Fastest booking: call <a href="tel:14033977458"><strong>+1 403 397 7458</strong></a> or message us on WhatsApp.</p>
+        <p>Email: <a href="mailto:enrique.soriano1981@gmail.com">enrique.soriano1981@gmail.com</a></p>
       </div>
     </div>
   </div>
 </section>
-<div class="banner" style="background-image:url('images/banner2.webp')" role="img" aria-label="Bhols MasterFade"></div>
-<section id="contact" class="contact">
-  <div class="wrap">
-    <h2>Get in <span>Touch</span></h2>
-    <p class="sub">Call, message or email — booking takes a minute.</p>
-    <div class="btns">
-      <a class="btn" href="tel:14033977458">Call +1 403 397 7458</a>
-      <a class="btn wa" href="https://wa.me/14033977458?text=Hi%20Bhols%20MasterFade%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener">WhatsApp Us</a>
-      <a class="btn ghost" href="mailto:enrique.soriano1981@gmail.com?subject=Booking%20enquiry%20—%20Bhols%20MasterFade">Email Us</a>
+
+<section class="final-cta" style="padding-top:20px">
+  <div class="wrap reveal">
+    <h2>Ready when <em style="color:var(--accent)">you are.</em></h2>
+    <p>One tap and you're booked — call or WhatsApp Bhols MasterFade today.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-acc" href="tel:14033977458">📞 +1 403 397 7458</a>
+      <a class="btn btn-wa" href="https://wa.me/14033977458?text=Hi%20Bhols%20MasterFade%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
-    <p style="margin-top:22px;color:var(--muted)">enrique.soriano1981@gmail.com</p>
   </div>
 </section>
+
 <footer>
   <div class="wrap">
     <p>Bhols MasterFade — 170 Silverado Blvd SW, Calgary, AB T2X 4C9 · +1 403 397 7458</p>
     <p>Demo preview — free mockup, not affiliated with the business.</p>
-    <div style="margin-top:14px;padding:12px 18px;background:#16a34a;color:#fff;border-radius:10px;font-size:.95rem"><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/order/index.html" style="color:#fff;font-weight:700;text-decoration:none">Like this site? Get your own business website for $50 →</a></div>
+    <a class="order-cta" href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/order/index.html">Like this site? Get your own business website for $50 →</a>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/14033977458?text=Hi%20Bhols%20MasterFade%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<div class="call-bar">
+  <a class="c1" href="tel:14033977458">📞 Call</a>
+  <a class="c2" href="https://wa.me/14033977458?text=Hi%20Bhols%20MasterFade%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
