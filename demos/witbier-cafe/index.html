@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Witbier Café — Singapore</title>
+<meta name="description" content="Witbier Café, 14 Aliwal Street, Singapore 199907. Kampong Glam café & bar — 4.5 stars, 134 reviews Call +65 8866 1366.">
+<style>
+  :root{--bg:#0a0d12; --bg2:#0f141c; --accent:#4ade80; --accent2:#cfe6ff;
+    --text:#eef3f9; --muted:#9aa8bc; --card:#131a25; --line:#243043}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent2)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,13,18,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  .brand{font-size:1.1rem;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:2px}
+  .brand span{color:var(--accent)}
+  .navlinks a{color:var(--text);text-decoration:none;margin-left:18px;font-size:.92rem;font-weight:500}
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:url('images/hero.webp') center/cover no-repeat #05070a;margin-top:54px}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,7,10,.55),rgba(5,7,10,.78))}
+  .hero-inner{position:relative;z-index:2;padding:80px 20px;max-width:780px}
+  .hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800;text-transform:uppercase;line-height:1.1}
+  .hero h1 span{color:var(--accent)}
+  .rule{display:block;width:64px;height:3px;background:var(--accent);margin:18px auto}
+  .hero p.tag{font-size:1.15rem;color:var(--accent2);margin-top:10px}
+  .hero p.addr{color:var(--muted);margin-top:14px}
+  .btn{display:inline-block;margin-top:26px;padding:14px 32px;background:var(--accent);color:#06121f;text-decoration:none;
+    font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.88rem;border-radius:4px;border:1px solid var(--accent)}
+  .btn:hover{background:transparent;color:var(--accent)}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--text);margin-left:10px}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  section{padding:70px 0}
+  section h2{text-align:center;font-size:clamp(1.6rem,3.5vw,2.3rem);text-transform:uppercase;font-weight:800}
+  section h2 span{color:var(--accent)}
+  section .sub{text-align:center;color:var(--muted);margin:10px auto 40px;max-width:620px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px 24px;text-align:center;transition:transform .2s}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .card h3{color:var(--accent2);margin-bottom:10px;font-size:1.15rem}
+  .card .price{font-size:1.5rem;color:var(--accent);font-weight:800;margin:8px 0}
+  .card p{color:var(--muted);font-size:.94rem}
+  .note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:26px;font-style:italic}
+  .banner{height:300px;background-size:cover;background-position:center;position:relative}
+  .banner::before{content:'';position:absolute;inset:0;background:rgba(5,7,10,.3)}
+  @media(max-width:640px){.banner{height:200px}}
+  .visit{background:var(--bg2)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media(max-width:700px){.visit-grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:30px}
+  .panel h3{color:var(--accent2);margin-bottom:14px}
+  .panel p{color:var(--muted);margin-bottom:8px}
+  .panel p strong{color:var(--text)}
+  .big-addr{font-size:1.25rem;color:var(--text)}
+  .contact{background:var(--bg2);text-align:center}
+  .wa{background:#25d366;border-color:#25d366;color:#062b17}
+  .wa:hover{color:#25d366;background:transparent}
+  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:#5d6b82;font-size:.82rem}
+  footer p{margin:4px 0}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">WITBIER <span>CAFÉ</span></a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <h1>Witbier<br><span>Café</span></h1>
+    <span class="rule"></span>
+    <p class="tag">Kampong Glam café & bar — 4.5 stars, 134 reviews</p>
+    <p class="addr">14 Aliwal Street, Singapore 199907 &nbsp;·&nbsp; <a href="tel:6588661366" style="color:var(--accent2)">+65 8866 1366</a></p>
+    <div>
+      <a class="btn" href="tel:6588661366">Call to Book</a>
+      <a class="btn ghost" href="#services">Services</a>
+    </div>
+  </div>
+</header>
+<section id="services">
+  <div class="wrap">
+    <h2>Our <span>Services</span></h2>
+    <p class="sub">What we do at Witbier Café.</p>
+    <div class="cards">
+      <div class="card"><h3>Coffee & Craft Drinks</h3><div class="price">from S$8</div><p>Specialty coffee, craft beer and house drinks.</p></div>
+      <div class="card"><h3>Brunch & Mains</h3><div class="price">from S$16</div><p>Cafe mains and brunch plates, served all day.</p></div>
+      <div class="card"><h3>Bar Bites</h3><div class="price">from S$12</div><p>Snacks and small plates for the table.</p></div>
+      <div class="card"><h3>Private Hire</h3><div class="price">by enquiry</div><p>Events and private hire — ask us for packages.</p></div>
+    </div>
+    <p class="note">Prices shown are illustrative sample prices in SGD, for demo purposes only.</p>
+  </div>
+</section>
+<div class="banner" style="background-image:url('images/banner1.webp')" role="img" aria-label="Witbier Café"></div>
+<section id="visit" class="visit">
+  <div class="wrap">
+    <h2>Visit <span>Us</span></h2>
+    <p class="sub">Find us here — walk-ins and bookings welcome.</p>
+    <div class="visit-grid">
+      <div class="panel">
+        <h3>Find Us</h3>
+        <p class="big-addr"><strong>14 Aliwal Street, Singapore 199907</strong></p>
+        <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=Witbier+Caf%C3%A9+14+Aliwal+Street%2C+Singapore+199907" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+      </div>
+      <div class="panel">
+        <h3>Hours</h3>
+        <p>Hours vary — <a href="https://www.google.com/maps/search/?api=1&query=Witbier+Caf%C3%A9+14+Aliwal+Street%2C+Singapore+199907" target="_blank" rel="noopener">check our Google profile</a> for current opening hours.</p>
+        <p>Call ahead at <a href="tel:6588661366">+65 8866 1366</a> to book your spot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="banner" style="background-image:url('images/banner2.webp')" role="img" aria-label="Witbier Café"></div>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get in <span>Touch</span></h2>
+    <p class="sub">Call, message or email — booking takes a minute.</p>
+    <div class="btns">
+      <a class="btn" href="tel:6588661366">Call +65 8866 1366</a>
+      <a class="btn wa" href="https://wa.me/6588661366?text=Hi%20Witbier%20Caf%C3%A9%2C%20I%27d%20like%20to%20book" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="btn ghost" href="mailto:witbiercafe@gmail.com?subject=Booking%20enquiry%20—%20Witbier%20Caf%C3%A9">Email Us</a>
+    </div>
+    <p style="margin-top:22px;color:var(--muted)">witbiercafe@gmail.com</p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <p>Witbier Café — 14 Aliwal Street, Singapore 199907 · +65 8866 1366</p>
+    <p>Demo preview — free mockup, not affiliated with the business.</p>
+    <div style="margin-top:14px;padding:12px 18px;background:#16a34a;color:#fff;border-radius:10px;font-size:.95rem"><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/order/index.html" style="color:#fff;font-weight:700;text-decoration:none">Like this site? Get your own business website for $50 →</a></div>
+  </div>
+</footer>
+</body>
+</html>
