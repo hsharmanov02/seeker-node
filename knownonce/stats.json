@@ -1,9 +1,9 @@
 {
   "findings_by_status": {
-    "verified": 20
+    "verified": 24
   },
-  "verified_now": 20,
-  "total_listed_ever": 20,
+  "verified_now": 24,
+  "total_listed_ever": 24,
   "real_sales": 0,
   "real_fee_revenue_usdc": 0,
   "simulated_dogfood_sales": 0,
