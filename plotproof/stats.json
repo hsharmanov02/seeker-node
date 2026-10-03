@@ -3,14 +3,17 @@
  "demand_kill": "0 external calls of any kind after 7 days live -> park (see designer_q_untried.md)",
  "metrics": {
   "counters": {
-   "queries_total": 2,
+   "queries_total": 3,
+   "tier_probable": 1,
    "tier_uncertifiable": 2
   },
   "paid_quotes": 0,
-  "pending_quotes": 0,
-  "quotes_by_tier": {},
+  "pending_quotes": 1,
+  "quotes_by_tier": {
+   "PROBABLE": 1
+  },
   "revenue_usd_recognised": 0
  },
  "service": "plotproof",
- "updated_at": "2026-10-03T14:49:59Z"
+ "updated_at": "2026-10-03T14:54:52Z"
 }
