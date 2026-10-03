@@ -61,6 +61,16 @@
     </tr></thead><tbody id="ledger"><tr><td colspan="5">loading…</td></tr></tbody></table>
   </div>
 
+  <div class="card">
+    <h2>Pairbook — the shared book for machine payments</h2>
+    <p>When a buyer pays a FirstLook endpoint, that payment can become one
+       canonical <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/pairbook/index.html">Pairbook</a>
+       entry co-signed by both payer and payee — one shared record instead
+       of two adversarial ones. Sellers: attach the
+       <code>X-Pairbook-Entry</code> invite header from our API response so
+       your buyer can pair the entry in a single $0.02 call.</p>
+  </div>
+
   <p class="muted">FirstLook is in a free public live test. Planned pricing
      (not active): Pro $15/mo, pay-as-you-go $0.02 per instant alert,
      $2 Priority Blasts for posters. Payments, when they open, are

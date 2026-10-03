@@ -1,7 +1,37 @@
 {
  "delay_seconds": 900,
- "generated_at": "2026-10-03T13:56:01+00:00",
+ "generated_at": "2026-10-03T14:07:43+00:00",
  "items": [
+  {
+   "budget_currency": "USD",
+   "budget_max": 50.0,
+   "budget_min": null,
+   "category": "BasedHardware/omi",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:52:19+00:00",
+   "id": 118,
+   "kind": "bounty",
+   "poster": "garvijunagadh",
+   "rail": null,
+   "source": "github",
+   "title": "Bounty Proposal: Backend Router Exception & Information Disclosure Sanitization (0 USD)",
+   "url": "https://github.com/BasedHardware/omi/issues/20461"
+  },
+  {
+   "budget_currency": null,
+   "budget_max": null,
+   "budget_min": null,
+   "category": "verdikta/verdikta-applications",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:49:54+00:00",
+   "id": 117,
+   "kind": "bounty",
+   "poster": "blucca",
+   "rail": null,
+   "source": "github",
+   "title": "Bounty 122 preflight: missing project brief and Base form evidence requirements",
+   "url": "https://github.com/verdikta/verdikta-applications/issues/56"
+  },
   {
    "budget_currency": null,
    "budget_max": null,
