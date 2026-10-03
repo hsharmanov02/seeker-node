@@ -1,6 +1,23 @@
 {
  "entries": [
   {
+   "budget_currency": "USD",
+   "budget_max": 25.0,
+   "budget_min": null,
+   "category": "2510034127qq-wq/BountyScout",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:01:16+00:00",
+   "id": 113,
+   "kind": "bounty",
+   "latency_s": 14.786118,
+   "poster": "github-actions[bot]",
+   "rail": null,
+   "source": "github",
+   "source_created_at": "2026-10-03T13:01:02+00:00",
+   "title": "\ud83c\udfaf Micro Bounty Alert: 4 New Opportunities",
+   "url": "https://github.com/2510034127qq-wq/BountyScout/issues/220"
+  },
+  {
    "budget_currency": null,
    "budget_max": null,
    "budget_min": null,
@@ -103,5 +120,5 @@
    "url": "https://github.com/Ikalus1988/MisakaNet/issues/2757"
   }
  ],
- "generated_at": "2026-10-03T12:56:17+00:00"
+ "generated_at": "2026-10-03T13:01:44+00:00"
 }
