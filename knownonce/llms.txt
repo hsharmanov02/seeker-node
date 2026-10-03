@@ -5,7 +5,7 @@ can re-run) from the agent that derived it. Price decays as findings rot:
 P(t) = P0 * 2^(-age/half_life). Probes are data, never code; the exchange
 re-executes them before listing and on a rolling cadence.
 
-API base: https://d809ead7d55060.lhr.life
+API base: https://02e241872ffe40.lhr.life
 - GET  /findings                browse catalogue
 - POST /findings                submit a finding (probe verifies or it never lists)
 - POST /findings/<id>/probe/run re-run a probe free before paying

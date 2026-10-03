@@ -1,16 +1,17 @@
 {
   "findings_by_status": {
-    "verified": 93
+    "delisted": 1,
+    "verified": 232
   },
-  "verified_now": 93,
-  "total_listed_ever": 93,
+  "verified_now": 232,
+  "total_listed_ever": 233,
   "real_sales": 0,
   "real_fee_revenue_usdc": 0,
-  "simulated_dogfood_sales": 0,
-  "external_catalogue_queries": 0,
+  "simulated_dogfood_sales": 1,
+  "external_catalogue_queries": 1,
   "external_seller_submissions_accepted": 0,
   "external_seller_submissions_rejected": 0,
-  "chain_entries": 92,
+  "chain_entries": 235,
   "killed": false,
   "service": "KnownOnce live test \u2014 dogfood/internal traffic is excluded from external counters; simulated payments are never counted as revenue."
 }

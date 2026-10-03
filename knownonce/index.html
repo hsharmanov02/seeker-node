@@ -17,390 +17,950 @@ can re-run any probe <b>free before paying</b>.</p>
 on Base and the 10% fee (min $0.005) directly to
 <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>. KnownOnce never touches money — it confirms
 both public transfers read-only and releases the evidence-pack key.</p>
-<p class="meta">Live API: <code>https://d809ead7d55060.lhr.life</code> ·
+<p class="meta">Live API: <code>https://02e241872ffe40.lhr.life</code> ·
 <a href="catalogue.json">catalogue.json</a> ·
 <a href="log/entries.jsonl">verification log</a> ·
 <a href="openapi.json">openapi.json</a> · <a href="llms.txt">llms.txt</a> ·
 <a href="x402.json">x402 discovery</a></p>
 <h2>Honest gauges</h2>
-<p class="meta">{"findings_by_status": {"verified": 93}, "verified_now": 93, "total_listed_ever": 93, "real_sales": 0, "real_fee_revenue_usdc": 0, "simulated_dogfood_sales": 0, "external_catalogue_queries": 0, "external_seller_submissions_accepted": 0, "external_seller_submissions_rejected": 0, "chain_entries": 92, "killed": false, "service": "KnownOnce live test \u2014 dogfood/internal traffic is excluded from external counters; simulated payments are never counted as revenue."}</p>
+<p class="meta">{"findings_by_status": {"delisted": 1, "verified": 232}, "verified_now": 232, "total_listed_ever": 233, "real_sales": 0, "real_fee_revenue_usdc": 0, "simulated_dogfood_sales": 1, "external_catalogue_queries": 1, "external_seller_submissions_accepted": 0, "external_seller_submissions_rejected": 0, "chain_entries": 235, "killed": false, "service": "KnownOnce live test \u2014 dogfood/internal traffic is excluded from external counters; simulated payments are never counted as revenue."}</p>
 <p class="meta">Simulated (dogfood) sales are labelled and never counted
 as revenue. Real fee revenue is shown exactly as confirmed on-chain.</p>
 <h2>Catalogue</h2>
 <table><tr><th>ID</th><th>Claim</th><th>Class</th><th>Status</th>
 <th>Last verified (UTC)</th><th>Age</th><th>Price now</th><th>Seller</th>
-<th>Sales</th></tr><tr><td><code>kf-76074214de49</code></td><td>mempool.space/tip · tip_height · bitcoin tip height returned</td>
-<td>liveness</td><td>verified</td>
-<td>2026-10-03T15:09:52Z</td><td>0.0h</td>
+<th>Sales</th></tr><tr><td><code>kf-adad09e22db0</code></td><td>drift3/solana-slot-window · gauntlet_check · grading item</td>
+<td>liveness</td><td>delisted</td>
+<td>2026-10-03T16:03:39Z</td><td>0.1h</td>
+<td>$0.0166 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-ba11e50dad3e</code></td><td>grading3/TRUE/jsdelivr react latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:35Z</td><td>0.2h</td>
 <td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-175864cc5b94</code></td><td>grading3/TRUE/github rate-limit shape · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:34Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-ed2f7adedc10</code></td><td>grading3/TRUE/x402 spot-prices 200 (current fleet truth) · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:34Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6106cc088a1d</code></td><td>grading3/TRUE/npm-downloads react gt0 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:31Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-a50760dffad5</code></td><td>grading3/TRUE/pypi certifi version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:30Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6b2209b118fe</code></td><td>grading3/TRUE/jsdelivr viem latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:29Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-91a4de143cfc</code></td><td>grading3/TRUE/npm-downloads viem gt0 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:28Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-5d6a0596d3fb</code></td><td>grading3/TRUE/gazette feed live · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:26Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-7427698cd6ca</code></td><td>grading3/TRUE/HN item 8863 author · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:25Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-57c6a2b73c74</code></td><td>grading3/TRUE/frankfurter base · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:25Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-ae04ce22e475</code></td><td>grading3/TRUE/google DoH · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:23Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-5be60646b41f</code></td><td>grading3/TRUE/HN maxitem · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:23Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-fe320c4ccd6d</code></td><td>grading3/TRUE/github huggingface/transformers · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:22Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-44d9ed27e426</code></td><td>grading3/TRUE/cloudflare DoH · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:22Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-2dc5f557150d</code></td><td>grading3/TRUE/github ollama/ollama · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:20Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-26ecb91c4221</code></td><td>grading3/TRUE/mempool fastestFee · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:20Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-9c76c607c838</code></td><td>grading3/TRUE/github wevm/viem · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:19Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-34af8aaf8519</code></td><td>grading3/TRUE/pypi pydantic version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:14Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-fb602577aa90</code></td><td>grading3/TRUE/pypi flask version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:13Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-ac3f7927a6a3</code></td><td>grading3/TRUE/pypi httpx version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:06Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f705fc15bbb5</code></td><td>grading3/TRUE/pypi requests version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:05Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-98e9ee5d9328</code></td><td>grading3/TRUE/npm axios latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:01Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6df8787543be</code></td><td>grading3/TRUE/npm zod latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:57:00Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6222b65024b2</code></td><td>grading3/TRUE/npm ethers latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:59Z</td><td>0.2h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f8ccb390caad</code></td><td>grading3/TRUE/ethereum chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:44Z</td><td>0.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-84d13a6edd88</code></td><td>grading3/TRUE/solana health · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:44Z</td><td>0.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-775c1edc54e7</code></td><td>grading3/TRUE/base blockNumber exists · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:44Z</td><td>0.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-1a89f1893d0b</code></td><td>grading3/TRUE/example.com 200 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:44Z</td><td>0.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f1203434bcfc</code></td><td>grading3/TRUE/base chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:56:43Z</td><td>0.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-7635dfabd78f</code></td><td>grading2/TRUE/coingecko ping · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:42:52Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f28029a7775d</code></td><td>grading2/TRUE/npm-downloads react gt0 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:42:40Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-a1019effe7d4</code></td><td>grading2/TRUE/pypi certifi version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:42:39Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-98e2104e1810</code></td><td>grading2/TRUE/npm-downloads viem gt0 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:42:31Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-46916a86647d</code></td><td>grading2/TRUE/github huggingface/transformers · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:29Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-456bfca54d2a</code></td><td>grading2/TRUE/pypi pydantic version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:16Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-65836e2ce788</code></td><td>grading2/TRUE/pypi flask version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:15Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f7c9e854bc8f</code></td><td>grading2/TRUE/npm ethers latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:05Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-a6d5b93ea496</code></td><td>grading2/TRUE/npm zod latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:04Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-4b121f4f2e15</code></td><td>grading2/TRUE/pypi requests version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:04Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-2225b753c1b7</code></td><td>grading2/TRUE/npm axios latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:03Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-4debf7a53e3e</code></td><td>grading2/TRUE/pypi httpx version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:41:01Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-d5d3763d5732</code></td><td>grading2/TRUE/example.com 200 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:40:27Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-ef6a7c8914b7</code></td><td>grading2/TRUE/base blockNumber exists · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:40:13Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-358b1436e793</code></td><td>grading2/TRUE/solana health · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:40:13Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-163ae281847e</code></td><td>grading2/TRUE/ethereum chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:40:13Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-5ef46f1682be</code></td><td>grading2/TRUE/base chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:40:13Z</td><td>0.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-8aa0ad8f7044</code></td><td>repro/x402 spot-prices 200 (FALSE-miss mirror) · gauntlet_repro · miss reproduction</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:29:14Z</td><td>0.7h</td>
+<td>$0.0499 (P0 $0.05)</td>
+<td><code>0x8b8b8b8b…</code></td><td>0</td></tr><tr><td><code>kf-83c21890ab9d</code></td><td>grading/FALSE/worker not 200 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:24:39Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-d6f817d81942</code></td><td>grading/TRUE/jsdelivr viem latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:24:04Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-08404c6b1a6c</code></td><td>grading/TRUE/gazette feed live · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:24:02Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-7980c059ed28</code></td><td>grading/TRUE/HN item 8863 author · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:54Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-f9bb5a28e740</code></td><td>grading/TRUE/HN maxitem · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:54Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-71cc40605098</code></td><td>grading/TRUE/frankfurter base · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:53Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-b3313cb715c2</code></td><td>grading/TRUE/cloudflare DoH · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:48Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-1cff4c6835e6</code></td><td>grading/TRUE/google DoH · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:48Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-4f97b9d535cb</code></td><td>grading/TRUE/github huggingface/transformers · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:41Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-c93a5811b436</code></td><td>grading/TRUE/mempool fastestFee · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:40Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6bbbf4b7335f</code></td><td>grading/TRUE/github ollama/ollama · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:39Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-3f20f40cc1cf</code></td><td>grading/TRUE/pypi pydantic version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:36Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-6e9fea1e1962</code></td><td>grading/TRUE/github openai/openai-python · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:35Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-93a1871ce8c2</code></td><td>grading/TRUE/github wevm/viem · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:35Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-a5620e807dbf</code></td><td>grading/TRUE/pypi requests version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:33Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-8d4b9ce60e23</code></td><td>grading/TRUE/pypi httpx version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:30Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-bc9204d4b62d</code></td><td>grading/TRUE/pypi flask version · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:30Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-64663f059588</code></td><td>grading/TRUE/npm ethers latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:23Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-dc0cbffa2917</code></td><td>grading/TRUE/npm axios latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:23Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-863e517b1e71</code></td><td>grading/TRUE/npm zod latest · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:23Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-51231629ecb7</code></td><td>grading/TRUE/base chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:18Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-45b9d422ef7f</code></td><td>grading/TRUE/example.com 200 · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:18Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-a518e0bc942d</code></td><td>grading/TRUE/ethereum chainId · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:18Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-b084d026021a</code></td><td>grading/TRUE/solana health · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:18Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-00bdd3e94c7c</code></td><td>grading/TRUE/base blockNumber exists · gauntlet_check · grading item</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:23:17Z</td><td>0.8h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x9a9a9a9a…</code></td><td>0</td></tr><tr><td><code>kf-77e12bb559bc</code></td><td>npm/three · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:37Z</td><td>0.8h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>1</td></tr><tr><td><code>kf-67a06ade1b6c</code></td><td>npm-downloads/inquirer · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:29Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-788dce405185</code></td><td>npm-downloads/dayjs · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:29Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-5fb949d4c698</code></td><td>npm/debug · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:24Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-18311050a6bb</code></td><td>npm/dayjs · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:23Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c07d5ca10f8b</code></td><td>npm-downloads/node-fetch · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:13Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-0f37e86142b9</code></td><td>npm-downloads/@solana/web3.js · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:11Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-dac4c9d917da</code></td><td>npm/node-fetch · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:10Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-e36205948320</code></td><td>npm/lodash · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:02Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-3fbf2e322789</code></td><td>npm-downloads/lodash · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:20:02Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ab4da1f9a5b4</code></td><td>npm-downloads/next · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:54Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-d0d9b5268296</code></td><td>npm-downloads/vite · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:54Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-9813ccf141cb</code></td><td>npm/eslint · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:48Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-95c091102d43</code></td><td>npm-downloads/eslint · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:44Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-43c724fa0241</code></td><td>npm-downloads/prettier · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:38Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-35a854b0f0bc</code></td><td>npm/prettier · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:28Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-080e79926a5d</code></td><td>npm-downloads/chalk · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:27Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-045af162998d</code></td><td>npm/chalk · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:25Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7c516df53830</code></td><td>npm/commander · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:20Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-deb2622de693</code></td><td>npm-downloads/commander · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:16Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-37d7d7473419</code></td><td>npm-downloads/uuid · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:12Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ef43f53b5c19</code></td><td>npm/uuid · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:08Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7302b6e6abad</code></td><td>npm-downloads/puppeteer · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:04Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6d631b84ffb0</code></td><td>npm-downloads/dotenv · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:02Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-2eaea3c2a586</code></td><td>npm-downloads/ws · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:19:01Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-504b8623b622</code></td><td>npm/zod · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:58Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-532b37ad9cc0</code></td><td>npm/dotenv · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:55Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ec673d89fe98</code></td><td>npm-downloads/typescript · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:51Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c59facf93adc</code></td><td>npm-downloads/react · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:48Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-329a48745bd8</code></td><td>npm/express · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:41Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-9e491cdbc943</code></td><td>npm-downloads/express · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:40Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-e77d8466d3a2</code></td><td>npm/axios · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:35Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b05359c9db4f</code></td><td>npm-downloads/axios · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:32Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-5fb807b1696a</code></td><td>npm-downloads/@langchain/core · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:32Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-157e41f01e07</code></td><td>npm/@langchain/core · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:30Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-19d382e57a5a</code></td><td>npm-downloads/langchain · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:21Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6db58ea68662</code></td><td>npm-downloads/@modelcontextprotocol/sdk · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:13Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-de9cd9208cc7</code></td><td>npm-downloads/@anthropic-ai/sdk · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:13Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-f87bb4e3a495</code></td><td>npm/@modelcontextprotocol/sdk · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:13Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7c35745e4759</code></td><td>npm/@anthropic-ai/sdk · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:09Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-bb98f6a56dbc</code></td><td>npm-downloads/openai · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:18:03Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-05bef1ba438c</code></td><td>npm/openai · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:17:58Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-9519ae0c2106</code></td><td>npm-downloads/ethers · downloads_last_week · positive download count (count in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:17:56Z</td><td>0.9h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-8fe8dd7c919d</code></td><td>npm/ethers · dist-tags.latest_present · latest tag published (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:17:56Z</td><td>0.9h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-aceb7baf4a1d</code></td><td>base/usdc · our_receiving_balance_nonnegative · Base USDC balanceOf(receiving address) readable</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:49Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c843ef0be276</code></td><td>rpc/bsc@bsc.publicnode.com · eth_blockNumber_advancing · latest block number returned</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:44Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b4c5d25efa80</code></td><td>rpc/optimism@optimism.publicnode.com · eth_chainId · chain id 0xa (10)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:39Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6b1eb94e60fb</code></td><td>rpc/ethereum@cloudflare-eth.com · eth_chainId · chain id 0x1 (1)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:36Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-76e456863d61</code></td><td>rpc/optimism@optimism.publicnode.com · eth_blockNumber_advancing · latest block number returned</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:36Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-70f6e47d55bb</code></td><td>rpc/bsc@bsc.publicnode.com · eth_chainId · chain id 0x38 (56)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:17:36Z</td><td>0.9h</td>
+<td>$0.0451 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-08e1371eebdb</code></td><td>status/cloudflare-status · status.indicator_present · indicator published (value in pack)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:11:08Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-72c166190096</code></td><td>status/openai-status · status.indicator_present · indicator published (value in pack)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:11:07Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-089bd6ea5fc4</code></td><td>status/base-status · status.indicator_present · indicator published (value in pack)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:11:04Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7f3d86a23216</code></td><td>status/githubstatus · status.indicator_present · indicator published (value in pack)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:11:04Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-794ab98640c1</code></td><td>ens/vitalik.eth · address · vitalik.eth resolves (address in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:11:00Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ca404a690987</code></td><td>google-dns/example.com · Status · Google DoH query for example.com returns Status 0</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:10:59Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-69aecfc8ae65</code></td><td>cloudflare-dns/example.com · Status · DoH query for example.com A returns Status 0</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:10:56Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-fee04c93ccb7</code></td><td>jsdelivr/typescript · tags.latest_present · CDN-resolved latest version (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:54Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-d45a28d313ca</code></td><td>jsdelivr/react · tags.latest_present · CDN-resolved latest version (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:53Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-0a9e50a80812</code></td><td>coingecko/ping · gecko_says_present · CoinGecko API ping response (text in pack)</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:10:50Z</td><td>1.0h</td>
+<td>$0.0445 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b236a8793600</code></td><td>jsdelivr/ethers · tags.latest_present · CDN-resolved latest version (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:45Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b9e467902089</code></td><td>jsdelivr/openai · tags.latest_present · CDN-resolved latest version (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:45Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-5356646a3fd0</code></td><td>jsdelivr/viem · tags.latest_present · CDN-resolved latest version (version in pack)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:41Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-351e2a3aa487</code></td><td>hackernews/item/8863 · by · dhouston (Dropbox YC story, historical record)</td>
+<td>reliability</td><td>verified</td>
+<td>2026-10-03T15:10:33Z</td><td>1.0h</td>
+<td>$0.0500 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-62a2df9e92c2</code></td><td>hackernews/maxitem · maxitem_id · largest item id returned</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:10:29Z</td><td>1.0h</td>
+<td>$0.0444 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-bfa765bf51d9</code></td><td>frankfurter/fx · rates.GBP_positive · USD-&gt;GBP rate present and positive</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:10:12Z</td><td>1.0h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-af7d5da7a14f</code></td><td>frankfurter/fx · base_currency_USD · frankfurter latest rates based in USD</td>
+<td>schema</td><td>verified</td>
+<td>2026-10-03T15:10:06Z</td><td>1.0h</td>
+<td>$0.0498 (P0 $0.05)</td>
+<td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-76074214de49</code></td><td>mempool.space/tip · tip_height · bitcoin tip height returned</td>
+<td>liveness</td><td>verified</td>
+<td>2026-10-03T15:09:52Z</td><td>1.0h</td>
+<td>$0.0444 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a9924616f6dc</code></td><td>mempool.space/fees · fastestFee_positive · recommended fastest fee &gt; 0 sat/vB</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T15:09:45Z</td><td>0.0h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:09:45Z</td><td>1.0h</td>
+<td>$0.0444 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-241b61dc3de7</code></td><td>github/continuedev/continue · full_name · continuedev/continue</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:44Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:44Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c3534447c70e</code></td><td>github/api · rate_limit_core_eq_60 · unauthenticated core limit 60/h</td>
 <td>schema</td><td>verified</td>
-<td>2026-10-03T15:09:44Z</td><td>0.0h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:09:44Z</td><td>1.0h</td>
+<td>$0.0498 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7356daea6808</code></td><td>github/solana-labs/solana · full_name · solana-labs/solana</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:16Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:16Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-d284ea0b166c</code></td><td>github/punkpeye/awesome-mcp-servers · full_name · punkpeye/awesome-mcp-servers</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:15Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:15Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-0760d2e794a1</code></td><td>github/cline/cline · full_name · cline/cline</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:10Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:10Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-036e38f0ba3c</code></td><td>github/SWE-agent/SWE-agent · full_name · SWE-agent/SWE-agent</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:07Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:07Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-273b83079432</code></td><td>github/microsoft/semantic-kernel · full_name · microsoft/semantic-kernel</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:02Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:02Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-9b937fd1cbcf</code></td><td>github/BerriAI/litellm · full_name · BerriAI/litellm</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:09:02Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:09:02Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-565b15fdce16</code></td><td>github/run-llama/llama_index · full_name · run-llama/llama_index</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:59Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:59Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-0e27b2b95e0f</code></td><td>github/Significant-Gravitas/AutoGPT · full_name · Significant-Gravitas/AutoGPT</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:59Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:59Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-daa300e03bf7</code></td><td>github/google-gemini/gemini-cli · full_name · google-gemini/gemini-cli</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:53Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:53Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-53f0257f2e00</code></td><td>github/Aider-AI/aider · full_name · Aider-AI/aider</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:52Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:52Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ff658f50eb91</code></td><td>github/ollama/ollama · full_name · ollama/ollama</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:49Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:49Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1605580be7bd</code></td><td>github/openai/codex · full_name · openai/codex</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:49Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:49Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-fa4ff6852328</code></td><td>github/huggingface/transformers · full_name · huggingface/transformers</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:46Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:46Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-8ab5abca3df5</code></td><td>github/modelcontextprotocol/python-sdk · full_name · modelcontextprotocol/python-sdk</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:45Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:45Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-2626dc3329ab</code></td><td>github/ethers-io/ethers.js · full_name · ethers-io/ethers.js</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:42Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:42Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-10b6ab4acf95</code></td><td>github/modelcontextprotocol/servers · full_name · modelcontextprotocol/servers</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:41Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:41Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-474ed5760022</code></td><td>github/wevm/viem · full_name · wevm/viem</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:37Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:37Z</td><td>1.0h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-06e8b41bcfed</code></td><td>github/crewAIInc/crewAI · full_name · crewAIInc/crewAI</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:35Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:35Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c8b1f4043d8e</code></td><td>github/microsoft/autogen · full_name · microsoft/autogen</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:34Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:34Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-559030cc25bf</code></td><td>github/openai/openai-python · full_name · openai/openai-python</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:29Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:29Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6e3eb0bcb0d5</code></td><td>github/langchain-ai/langchain · full_name · langchain-ai/langchain</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:29Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:29Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-93c125ef943a</code></td><td>github/anthropics/anthropic-sdk-python · full_name · anthropics/anthropic-sdk-python</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:26Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:26Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1a5da31d2a47</code></td><td>pypi/black · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:21Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:21Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-30470c3ab784</code></td><td>pypi/uvicorn · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:15Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:15Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-2b8b69ca8dc2</code></td><td>pypi/pytest · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:14Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:14Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-fcb33e58e741</code></td><td>pypi/selenium · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:14Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:14Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-861933e29878</code></td><td>pypi/beautifulsoup4 · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:05Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:05Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-08d00e5e4578</code></td><td>pypi/scrapy · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:03Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:03Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-2c4d1357b9ce</code></td><td>pypi/python-dotenv · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:03Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:03Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ad66eeebbca9</code></td><td>pypi/mcp · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:08:01Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:08:01Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-980b69f94ebf</code></td><td>pypi/llama-index · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:59Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:59Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-28b1bd3b17eb</code></td><td>pypi/crewai · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:58Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:58Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-624fbcb31019</code></td><td>pypi/transformers · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:48Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:48Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-fd067d1067f7</code></td><td>pypi/chromadb · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:48Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:48Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-ce3b6768a436</code></td><td>pypi/tiktoken · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:48Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:48Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1b50b653d898</code></td><td>pypi/django · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:43Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:43Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-cc1701dcfcf5</code></td><td>pypi/fastapi · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:33Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:33Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c9ceaabc83b1</code></td><td>pypi/pydantic · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:32Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:32Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b94fbddf4a72</code></td><td>pypi/flask · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:31Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:31Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-eb781db7d71f</code></td><td>pypi/solders · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:26Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:26Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-c8855c47406c</code></td><td>pypi/httpx · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:26Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:26Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6739bedaace3</code></td><td>pypi/requests · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:25Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:25Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-497f44cf5d46</code></td><td>pypi/web3 · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:15Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:15Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-f73b2c3b43df</code></td><td>pypi/solana · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:14Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:14Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7aa20c675b7b</code></td><td>pypi/langchain-core · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:13Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:13Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6a9b5b6bd3a4</code></td><td>pypi/anthropic · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:08Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:08Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-51d42da50f7f</code></td><td>pypi/langchain · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:08Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:08Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-e767ba3a552b</code></td><td>pypi/openai · info.version_present · current version published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:07Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:07:07Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a0df471f31a5</code></td><td>npm-downloads/nestjs · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:07:04Z</td><td>0.0h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:07:04Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-b461c6501cba</code></td><td>npm/fastify · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:59Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:59Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-cbcd654825b3</code></td><td>npm/nestjs · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:59Z</td><td>0.0h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:59Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-325cecf3a7b2</code></td><td>npm-downloads/@prisma/client · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:55Z</td><td>0.0h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:55Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-d7b56e9c0585</code></td><td>npm-downloads/fastify · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:55Z</td><td>0.0h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:55Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1377dcc59fcd</code></td><td>npm-downloads/prisma · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:48Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:48Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1fd9ca0cb403</code></td><td>npm-downloads/pg · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:45Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:45Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-941cb04ecada</code></td><td>npm/pg · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:43Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:43Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-549cbdff0184</code></td><td>npm-downloads/redis · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:41Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:41Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-52fd8e9b4249</code></td><td>npm-downloads/jsonwebtoken · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:35Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:35Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-40d32998aad9</code></td><td>npm/redis · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:34Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:34Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1daa9c67e555</code></td><td>npm/@metamask/providers · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:29Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:29Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-8ba0dc2d2eca</code></td><td>npm-downloads/three · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:28Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:28Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-5e0653e065e8</code></td><td>npm/jose · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:25Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:25Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-9186fef6e2c3</code></td><td>npm/siwe · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:25Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:25Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7ab20096d171</code></td><td>npm/jsonwebtoken · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:18Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:06:18Z</td><td>1.1h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a2d781656d0f</code></td><td>npm-downloads/jose · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:06:17Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:06:17Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-15796f46ace0</code></td><td>npm-downloads/@metamask/providers · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:05:00Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:05:00Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-f3f379a11f85</code></td><td>npm-downloads/siwe · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:05:00Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:05:00Z</td><td>1.1h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-f85aa0fa6633</code></td><td>npm/inquirer · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:02:06Z</td><td>0.1h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T15:02:06Z</td><td>1.2h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a1eb15ee93f0</code></td><td>npm-downloads/debug · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T15:02:03Z</td><td>0.1h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T15:02:03Z</td><td>1.2h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-63299bd120c0</code></td><td>npm/puppeteer · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:54:58Z</td><td>0.2h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T14:54:58Z</td><td>1.3h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-acc03fb8db2d</code></td><td>npm-downloads/playwright · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:54:57Z</td><td>0.2h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T14:54:57Z</td><td>1.3h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-6f7baa0efe3d</code></td><td>npm/ws · dist-tags.latest_present · latest tag published (version in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:54:56Z</td><td>0.2h</td>
-<td>$0.1000 (P0 $0.10)</td>
+<td>2026-10-03T14:54:56Z</td><td>1.3h</td>
+<td>$0.0999 (P0 $0.10)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1c3aecca41d2</code></td><td>npm-downloads/viem · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:51:52Z</td><td>0.3h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T14:51:52Z</td><td>1.3h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-4092a0c8d1ca</code></td><td>rpc/solana@api.mainnet-beta.solana.com · getSlot · current slot returned</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:51:48Z</td><td>0.3h</td>
-<td>$0.0483 (P0 $0.05)</td>
+<td>2026-10-03T14:51:48Z</td><td>1.3h</td>
+<td>$0.0429 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-575ce339b0eb</code></td><td>rpc/polygon@polygon-bor.publicnode.com · eth_blockNumber_advancing · latest block number returned</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:51:02Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:51:02Z</td><td>1.3h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a4b8bd87534a</code></td><td>rpc/arbitrum@arbitrum-one.publicnode.com · eth_chainId · chain id 0xa4b1 (42161)</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:51:01Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:51:01Z</td><td>1.3h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-5d832a215e06</code></td><td>rpc/base-sepolia@sepolia.base.org · eth_blockNumber_advancing · latest block number returned</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:22Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:50:22Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-e146c7665661</code></td><td>rpc/ethereum@ethereum.publicnode.com · eth_chainId · chain id 0x1 (1)</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:22Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:50:22Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-1ad8c8cae596</code></td><td>rpc/base-mainnet@base.publicnode.com · eth_blockNumber_advancing · latest block number returned</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:21Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:50:21Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-8a21443db8c6</code></td><td>rpc/base-sepolia@sepolia.base.org · eth_chainId · chain id 0x14a34 (84532)</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:21Z</td><td>0.3h</td>
-<td>$0.0482 (P0 $0.05)</td>
+<td>2026-10-03T14:50:21Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-97234413ac73</code></td><td>rpc/base-mainnet@base.publicnode.com · eth_chainId · chain id 0x2105 (8453)</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:16Z</td><td>0.3h</td>
-<td>$0.0481 (P0 $0.05)</td>
+<td>2026-10-03T14:50:16Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-e56b9b146ef5</code></td><td>rpc/base-mainnet@mainnet.base.org · eth_blockNumber_advancing · latest block number returned</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:15Z</td><td>0.3h</td>
-<td>$0.0481 (P0 $0.05)</td>
+<td>2026-10-03T14:50:15Z</td><td>1.4h</td>
+<td>$0.0428 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-53aacda92c79</code></td><td>rpc/base-mainnet@mainnet.base.org · eth_chainId · chain id 0x2105 (8453)</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:50:09Z</td><td>0.3h</td>
-<td>$0.0481 (P0 $0.05)</td>
+<td>2026-10-03T14:50:09Z</td><td>1.4h</td>
+<td>$0.0427 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-36bfc26e9b46</code></td><td>firstlook/ledger.json · proof_of_earliness_ledger_live · public latency ledger published</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:45:05Z</td><td>0.4h</td>
-<td>$0.0477 (P0 $0.05)</td>
+<td>2026-10-03T14:45:05Z</td><td>1.4h</td>
+<td>$0.0423 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-a2618cc9b179</code></td><td>firstlook/feed.json · public_feed_live · delayed opportunity feed published</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:45:04Z</td><td>0.4h</td>
-<td>$0.0477 (P0 $0.05)</td>
+<td>2026-10-03T14:45:04Z</td><td>1.4h</td>
+<td>$0.0423 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-d26796f0bb13</code></td><td>goneproof/gp-att-0001 · attestation_page_live · signed erasure attestation retrievable</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:44:50Z</td><td>0.4h</td>
-<td>$0.1499 (P0 $0.15)</td>
+<td>2026-10-03T14:44:50Z</td><td>1.4h</td>
+<td>$0.1498 (P0 $0.15)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-fe1b57458bbe</code></td><td>firstlook/stats.json · public_stats_live · wire statistics published</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:44:44Z</td><td>0.4h</td>
-<td>$0.0476 (P0 $0.05)</td>
+<td>2026-10-03T14:44:44Z</td><td>1.4h</td>
+<td>$0.0423 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-dfb9006759f6</code></td><td>gazette/feed.json · registry_feed_live · constructive-notice registry feed published</td>
 <td>liveness</td><td>verified</td>
-<td>2026-10-03T14:44:43Z</td><td>0.4h</td>
-<td>$0.0476 (P0 $0.05)</td>
+<td>2026-10-03T14:44:43Z</td><td>1.4h</td>
+<td>$0.0423 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr><tr><td><code>kf-7355e9a3cd58</code></td><td>npm-downloads/zod · downloads_last_week · positive download count (count in pack)</td>
 <td>reliability</td><td>verified</td>
-<td>2026-10-03T14:41:36Z</td><td>0.5h</td>
-<td>$0.0500 (P0 $0.05)</td>
+<td>2026-10-03T14:41:36Z</td><td>1.5h</td>
+<td>$0.0499 (P0 $0.05)</td>
 <td><code>0x48Cda0da…</code></td><td>0</td></tr></table>
 <p class="meta">KnownOnce is an experiment in selling second-hand,
 machine-checkable knowledge. A finding's guarantee is its re-runnable

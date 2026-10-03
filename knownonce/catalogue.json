@@ -1,23 +1,4671 @@
 {
-  "generated_at": "2026-10-03T15:09:52Z",
-  "api": "https://d809ead7d55060.lhr.life",
+  "generated_at": "2026-10-03T16:11:36Z",
+  "api": "https://02e241872ffe40.lhr.life",
   "stats": {
     "findings_by_status": {
-      "verified": 93
+      "delisted": 1,
+      "verified": 232
     },
-    "verified_now": 93,
-    "total_listed_ever": 93,
+    "verified_now": 232,
+    "total_listed_ever": 233,
     "real_sales": 0,
     "real_fee_revenue_usdc": 0,
-    "simulated_dogfood_sales": 0,
-    "external_catalogue_queries": 0,
+    "simulated_dogfood_sales": 1,
+    "external_catalogue_queries": 1,
     "external_seller_submissions_accepted": 0,
     "external_seller_submissions_rejected": 0,
-    "chain_entries": 92,
+    "chain_entries": 235,
     "killed": false,
     "service": "KnownOnce live test \u2014 dogfood/internal traffic is excluded from external counters; simulated payments are never counted as revenue."
   },
   "findings": [
+    {
+      "id": "kf-adad09e22db0",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "drift3/solana-slot-window",
+        "value": "grading item"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"getSlot\", \"params\": []}",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "lte",
+          "value": 452982099
+        },
+        "url": "https://api.mainnet-beta.solana.com"
+      },
+      "pack_sha256": "05b62d0a4aa8fcef4545b978a9d340ed4f87e6c967b816ac312800ca152f65f6",
+      "p0_usd": 0.05,
+      "half_life_s": 300,
+      "price_now_usd": 0.016596,
+      "captured_at": "2026-10-03T16:03:39Z",
+      "last_verified_at": "2026-10-03T16:03:39Z",
+      "age_s": 477.3,
+      "status": "delisted",
+      "sales": 0,
+      "delisted_at": "2026-10-03T16:06:30Z",
+      "delist_reason": "rolling_recheck: predicate_false (http 200)"
+    },
+    {
+      "id": "kf-ba11e50dad3e",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/jsdelivr react latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/react"
+      },
+      "pack_sha256": "5482e9a8299a7b7a96f51e7534762db7f82d8ff67bfa8badc63f072369da4bce",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049952,
+      "captured_at": "2026-10-03T15:57:35Z",
+      "last_verified_at": "2026-10-03T15:57:35Z",
+      "age_s": 841.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-175864cc5b94",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/github rate-limit shape",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.resources.core.limit",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 60
+        },
+        "url": "https://api.github.com/rate_limit"
+      },
+      "pack_sha256": "c9658b87a0db483359cc65d0d8f096aa3567182bd72cf268f3cff3c8bbfba843",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049952,
+      "captured_at": "2026-10-03T15:57:34Z",
+      "last_verified_at": "2026-10-03T15:57:34Z",
+      "age_s": 842.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ed2f7adedc10",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/x402 spot-prices 200 (current fleet truth)",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": null,
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://x402-spot-prices.hsharmanov02.workers.dev/"
+      },
+      "pack_sha256": "02cf5a7b2249892f564de21687e7132c0614cf1d3e5b5a1fca67c9373b418d82",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049952,
+      "captured_at": "2026-10-03T15:57:34Z",
+      "last_verified_at": "2026-10-03T15:57:34Z",
+      "age_s": 842.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6106cc088a1d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/npm-downloads react gt0",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/react"
+      },
+      "pack_sha256": "52d88bf9176deaa55659fb0e6dcfab67e00244f76f1c84e21d597aab6c53ab0f",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049952,
+      "captured_at": "2026-10-03T15:57:31Z",
+      "last_verified_at": "2026-10-03T15:57:31Z",
+      "age_s": 845.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a50760dffad5",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/pypi certifi version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/certifi/json"
+      },
+      "pack_sha256": "a21de9999b3d9e01255dced7ee3864bd9b77a720d945c7c47a8b11491310613e",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049952,
+      "captured_at": "2026-10-03T15:57:30Z",
+      "last_verified_at": "2026-10-03T15:57:30Z",
+      "age_s": 846.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6b2209b118fe",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/jsdelivr viem latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/viem"
+      },
+      "pack_sha256": "299218315e6c842ee3f4ca227b7cf4c21d59aa3f3ff1ad3d176d4c8eaafd3158",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:29Z",
+      "last_verified_at": "2026-10-03T15:57:29Z",
+      "age_s": 847.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-91a4de143cfc",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/npm-downloads viem gt0",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/viem"
+      },
+      "pack_sha256": "88f31a0012674b866cc0504d33079157f9d2fbcbecac7a3083aca6ed00146d3f",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:28Z",
+      "last_verified_at": "2026-10-03T15:57:28Z",
+      "age_s": 848.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5d6a0596d3fb",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/gazette feed live",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.notices",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/feed.json"
+      },
+      "pack_sha256": "2e8ab869af41f3c983926f62f94c864ca1abbe7c30d837f4d3c8be67b50a0119",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:26Z",
+      "last_verified_at": "2026-10-03T15:57:26Z",
+      "age_s": 850.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7427698cd6ca",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/HN item 8863 author",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.by",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "dhouston"
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/item/8863.json"
+      },
+      "pack_sha256": "af2a2796929a13e2c388e56d19d75369c821c42707f8712bd6a3bbad942c1497",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:25Z",
+      "last_verified_at": "2026-10-03T15:57:25Z",
+      "age_s": 851.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-57c6a2b73c74",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/frankfurter base",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.base",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "USD"
+        },
+        "url": "https://api.frankfurter.app/latest?from=USD"
+      },
+      "pack_sha256": "173746fef540b47a8ed6ee471001b049f30884f729c6cfea7fd9cffe0eb4d5c8",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:25Z",
+      "last_verified_at": "2026-10-03T15:57:25Z",
+      "age_s": 851.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ae04ce22e475",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/google DoH",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://dns.google/resolve?name=example.com&type=A"
+      },
+      "pack_sha256": "801c7f9864b54fdf7fbf13a598e523c1c78bc06676d77d2f9dfefd7c88bcd55b",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:23Z",
+      "last_verified_at": "2026-10-03T15:57:23Z",
+      "age_s": 853.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5be60646b41f",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/HN maxitem",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 1000000
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/maxitem.json"
+      },
+      "pack_sha256": "bd74bff0b3de08e9238d732b44a8a3a9ed1bac2eb4019ac54e64a447ec05e975",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:23Z",
+      "last_verified_at": "2026-10-03T15:57:23Z",
+      "age_s": 853.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fe320c4ccd6d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/github huggingface/transformers",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "huggingface/transformers"
+        },
+        "url": "https://api.github.com/repos/huggingface/transformers"
+      },
+      "pack_sha256": "1fa0852bc1bf1eb036508d5a5865955d607ba25ced1a0004d05472aadedc0565",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:22Z",
+      "last_verified_at": "2026-10-03T15:57:22Z",
+      "age_s": 854.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-44d9ed27e426",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/cloudflare DoH",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/dns-json"
+        },
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://cloudflare-dns.com/dns-query?name=example.com&type=A"
+      },
+      "pack_sha256": "915f8fabfac64e93249f433181b2893d00fbadcfcecfe18136728341b8dbb472",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:22Z",
+      "last_verified_at": "2026-10-03T15:57:22Z",
+      "age_s": 854.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2dc5f557150d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/github ollama/ollama",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "ollama/ollama"
+        },
+        "url": "https://api.github.com/repos/ollama/ollama"
+      },
+      "pack_sha256": "1252c234143789d59c533458c8bb92b0c620613bcb9f885fce1deb1df3e1a5de",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:20Z",
+      "last_verified_at": "2026-10-03T15:57:20Z",
+      "age_s": 856.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-26ecb91c4221",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/mempool fastestFee",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.fastestFee",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://mempool.space/api/v1/fees/recommended"
+      },
+      "pack_sha256": "fe06455eba2134b89a8b6a81abc811d87244408f2a5b00c1deca947fcdb2686d",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:20Z",
+      "last_verified_at": "2026-10-03T15:57:20Z",
+      "age_s": 856.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-9c76c607c838",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/github wevm/viem",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "wevm/viem"
+        },
+        "url": "https://api.github.com/repos/wevm/viem"
+      },
+      "pack_sha256": "773cce68f9d74ef581267e3ac306feba6ba14f159d86f797d095a05345e3141c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:19Z",
+      "last_verified_at": "2026-10-03T15:57:19Z",
+      "age_s": 857.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-34af8aaf8519",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/pypi pydantic version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/pydantic/json"
+      },
+      "pack_sha256": "c246d5c941e872cbc994297dfd42a44a09048432475d754997b47e91ce79a30c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:14Z",
+      "last_verified_at": "2026-10-03T15:57:14Z",
+      "age_s": 862.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fb602577aa90",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/pypi flask version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/flask/json"
+      },
+      "pack_sha256": "e43f17b3041c72ac51d680241cacd8924bdf7ad823972bee21d04fc4c882e232",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:57:13Z",
+      "last_verified_at": "2026-10-03T15:57:13Z",
+      "age_s": 863.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ac3f7927a6a3",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/pypi httpx version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/httpx/json"
+      },
+      "pack_sha256": "c537f77c14d8a7b97bedd7b3d8ee1fd227be2636550f08c574a293c60b7bb562",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.04995,
+      "captured_at": "2026-10-03T15:57:06Z",
+      "last_verified_at": "2026-10-03T15:57:06Z",
+      "age_s": 870.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f705fc15bbb5",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/pypi requests version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/requests/json"
+      },
+      "pack_sha256": "2b58afa8798f71b91f8d16b68ea6e9b8d649ac336c3bfb2564c18dcea50e7686",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.04995,
+      "captured_at": "2026-10-03T15:57:05Z",
+      "last_verified_at": "2026-10-03T15:57:05Z",
+      "age_s": 871.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-98e9ee5d9328",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/npm axios latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/axios"
+      },
+      "pack_sha256": "5932d0c47218b68c507090159e28cd946750e31cb5f33a44dbf6c22cb0aadb34",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.04995,
+      "captured_at": "2026-10-03T15:57:01Z",
+      "last_verified_at": "2026-10-03T15:57:01Z",
+      "age_s": 875.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6df8787543be",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/npm zod latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/zod"
+      },
+      "pack_sha256": "9499203651a708d7c5b9978579d9552eff9b85ecc9f774941c8b72000b7a2f6b",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.04995,
+      "captured_at": "2026-10-03T15:57:00Z",
+      "last_verified_at": "2026-10-03T15:57:00Z",
+      "age_s": 876.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6222b65024b2",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/npm ethers latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/ethers"
+      },
+      "pack_sha256": "ad574c115286233db876a040d48f9e4a45f34b3543b42f888da1761f9f44e034",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.04995,
+      "captured_at": "2026-10-03T15:56:59Z",
+      "last_verified_at": "2026-10-03T15:56:59Z",
+      "age_s": 877.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f8ccb390caad",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/ethereum chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x1"
+        },
+        "url": "https://ethereum.publicnode.com"
+      },
+      "pack_sha256": "0623b7e85addd7347d2393916fe2af07cae9e0327b8b6bbba547535e8da44fef",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049949,
+      "captured_at": "2026-10-03T15:56:44Z",
+      "last_verified_at": "2026-10-03T15:56:44Z",
+      "age_s": 892.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-84d13a6edd88",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/solana health",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"getHealth\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "ok"
+        },
+        "url": "https://api.mainnet-beta.solana.com"
+      },
+      "pack_sha256": "f33283a6c85f876ef572cbf00e0bd515b8914c30c10fb7517173ad79c33f853f",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049949,
+      "captured_at": "2026-10-03T15:56:44Z",
+      "last_verified_at": "2026-10-03T15:56:44Z",
+      "age_s": 892.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-775c1edc54e7",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/base blockNumber exists",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_blockNumber\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "fd673063662adab86cb9ca9279a6d77a38c21b28382e0bdff1da860ee2aa7299",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049949,
+      "captured_at": "2026-10-03T15:56:44Z",
+      "last_verified_at": "2026-10-03T15:56:44Z",
+      "age_s": 892.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1a89f1893d0b",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/example.com 200",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://example.com/"
+      },
+      "pack_sha256": "aa3881712ea8cc458e8f7f3a0ddd4a8cdfdb6da3a6bb434cf302e0f9448362c6",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049949,
+      "captured_at": "2026-10-03T15:56:44Z",
+      "last_verified_at": "2026-10-03T15:56:44Z",
+      "age_s": 892.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f1203434bcfc",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading3/TRUE/base chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x2105"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "66b03bd9d7260f9338ab3c69e0ce447fd6843ebe14a5fc2a8abba7b028647466",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049949,
+      "captured_at": "2026-10-03T15:56:43Z",
+      "last_verified_at": "2026-10-03T15:56:43Z",
+      "age_s": 893.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7635dfabd78f",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/coingecko ping",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.gecko_says",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://api.coingecko.com/api/v3/ping"
+      },
+      "pack_sha256": "5c30068da5b39116c676980d627a0303220371063a41ddc5086b9cbbee89f283",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049901,
+      "captured_at": "2026-10-03T15:42:52Z",
+      "last_verified_at": "2026-10-03T15:42:52Z",
+      "age_s": 1724.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f28029a7775d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/npm-downloads react gt0",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/react"
+      },
+      "pack_sha256": "1132260ead4e049d1868caa7285019a301cb059e01ddefc240e3d21b5bcb4fff",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049901,
+      "captured_at": "2026-10-03T15:42:40Z",
+      "last_verified_at": "2026-10-03T15:42:40Z",
+      "age_s": 1736.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a1019effe7d4",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/pypi certifi version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/certifi/json"
+      },
+      "pack_sha256": "9bb62fea07f0a5096d570999285da0ef21efbaeb9771984d429d2eba266acee6",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049901,
+      "captured_at": "2026-10-03T15:42:39Z",
+      "last_verified_at": "2026-10-03T15:42:39Z",
+      "age_s": 1737.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-98e2104e1810",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/npm-downloads viem gt0",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/viem"
+      },
+      "pack_sha256": "a7a98cf6588911bbc24c74390f7629449ca6d4261ef3f0f8c9e8eeedde62284d",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.0499,
+      "captured_at": "2026-10-03T15:42:31Z",
+      "last_verified_at": "2026-10-03T15:42:31Z",
+      "age_s": 1745.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-46916a86647d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/github huggingface/transformers",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "huggingface/transformers"
+        },
+        "url": "https://api.github.com/repos/huggingface/transformers"
+      },
+      "pack_sha256": "39abbee9dedae01a58932a89204811bda26613620832ca99c4035d4a3a0806e4",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049897,
+      "captured_at": "2026-10-03T15:41:29Z",
+      "last_verified_at": "2026-10-03T15:41:29Z",
+      "age_s": 1807.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-456bfca54d2a",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/pypi pydantic version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/pydantic/json"
+      },
+      "pack_sha256": "cac6ebae0af814d0db4f219cef56cce162970e226fdf965123520453c01e4771",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049896,
+      "captured_at": "2026-10-03T15:41:16Z",
+      "last_verified_at": "2026-10-03T15:41:16Z",
+      "age_s": 1820.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-65836e2ce788",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/pypi flask version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/flask/json"
+      },
+      "pack_sha256": "d3a5b726d1aefe416beec290997eab888e09e527cd799df11861313a1723bab0",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049896,
+      "captured_at": "2026-10-03T15:41:15Z",
+      "last_verified_at": "2026-10-03T15:41:15Z",
+      "age_s": 1821.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f7c9e854bc8f",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/npm ethers latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/ethers"
+      },
+      "pack_sha256": "7f219ed2f89e04bcfed72f2217a010cfb96fca8945c6b513b8e186c4b5a0ae29",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049895,
+      "captured_at": "2026-10-03T15:41:05Z",
+      "last_verified_at": "2026-10-03T15:41:05Z",
+      "age_s": 1831.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a6d5b93ea496",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/npm zod latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/zod"
+      },
+      "pack_sha256": "8f70fdf86776f2e264ff25d580d6d1afb29c8c610b9bb6a1f2add279ee07f649",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049895,
+      "captured_at": "2026-10-03T15:41:04Z",
+      "last_verified_at": "2026-10-03T15:41:04Z",
+      "age_s": 1832.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-4b121f4f2e15",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/pypi requests version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/requests/json"
+      },
+      "pack_sha256": "f02dcc30e499964cfd104e283390a59cb6fa885887b43ff77d2810fbc2b73815",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049895,
+      "captured_at": "2026-10-03T15:41:04Z",
+      "last_verified_at": "2026-10-03T15:41:04Z",
+      "age_s": 1832.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2225b753c1b7",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/npm axios latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/axios"
+      },
+      "pack_sha256": "feabb896371bea639126974e96c11560d94051a99348f3fba69171fde4f090c2",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049895,
+      "captured_at": "2026-10-03T15:41:03Z",
+      "last_verified_at": "2026-10-03T15:41:03Z",
+      "age_s": 1833.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-4debf7a53e3e",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/pypi httpx version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/httpx/json"
+      },
+      "pack_sha256": "45a35e66d5b81a74f4e425d93590cdbabcd240399d08ce68010e15e1de907098",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049895,
+      "captured_at": "2026-10-03T15:41:01Z",
+      "last_verified_at": "2026-10-03T15:41:01Z",
+      "age_s": 1835.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d5d3763d5732",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/example.com 200",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://example.com/"
+      },
+      "pack_sha256": "145916ea7f6f592f8aec1dc447972273ee97d9a554691b01e96436776fa70b65",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049893,
+      "captured_at": "2026-10-03T15:40:27Z",
+      "last_verified_at": "2026-10-03T15:40:27Z",
+      "age_s": 1869.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ef6a7c8914b7",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/base blockNumber exists",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_blockNumber\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "f22e2153bb7cfc723b648abb835e29f9953ab0d5ccfd450ce777853dc5150887",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049892,
+      "captured_at": "2026-10-03T15:40:13Z",
+      "last_verified_at": "2026-10-03T15:40:13Z",
+      "age_s": 1883.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-358b1436e793",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/solana health",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"getHealth\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "ok"
+        },
+        "url": "https://api.mainnet-beta.solana.com"
+      },
+      "pack_sha256": "7b89df7578f7296c9d5ee4f2ac565d237338d6bc3216855de5d8a3bde14a14a9",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049892,
+      "captured_at": "2026-10-03T15:40:13Z",
+      "last_verified_at": "2026-10-03T15:40:13Z",
+      "age_s": 1883.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-163ae281847e",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/ethereum chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x1"
+        },
+        "url": "https://ethereum.publicnode.com"
+      },
+      "pack_sha256": "38b451d2ca74090a77410b62e4e073da58b139bc078daae2ed9ca2fec159fa79",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049892,
+      "captured_at": "2026-10-03T15:40:13Z",
+      "last_verified_at": "2026-10-03T15:40:13Z",
+      "age_s": 1883.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5ef46f1682be",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading2/TRUE/base chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x2105"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "ffcf05b6a28f73d2c3035d852e890c3f02aef4fc3c0eaea28e17323b3347f221",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049892,
+      "captured_at": "2026-10-03T15:40:13Z",
+      "last_verified_at": "2026-10-03T15:40:13Z",
+      "age_s": 1883.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-8aa0ad8f7044",
+      "seller": "0x8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b",
+      "claim": {
+        "predicate": "gauntlet_repro",
+        "subject": "repro/x402 spot-prices 200 (FALSE-miss mirror)",
+        "value": "miss reproduction"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": null,
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://x402-spot-prices.hsharmanov02.workers.dev/"
+      },
+      "pack_sha256": "c45f0558e37f14b8302cea9630ea12eaf394b82a9c9399a2139ff47996be509b",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049855,
+      "captured_at": "2026-10-03T15:29:14Z",
+      "last_verified_at": "2026-10-03T15:29:14Z",
+      "age_s": 2542.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-83c21890ab9d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/FALSE/worker not 200",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": null,
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://x402-spot-prices.hsharmanov02.workers.dev/"
+      },
+      "pack_sha256": "ed049e00721a35fb1b6c33d995d9c448e7d5d8b31edc7c37ab210cb291af14c6",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049839,
+      "captured_at": "2026-10-03T15:24:39Z",
+      "last_verified_at": "2026-10-03T15:24:39Z",
+      "age_s": 2817.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d6f817d81942",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/jsdelivr viem latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/viem"
+      },
+      "pack_sha256": "0180008eb64a1c1b98003b28c0cb08c19861a131fc72fd8cbca97aec85f76266",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049837,
+      "captured_at": "2026-10-03T15:24:04Z",
+      "last_verified_at": "2026-10-03T15:24:04Z",
+      "age_s": 2852.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-08404c6b1a6c",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/gazette feed live",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.notices",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/feed.json"
+      },
+      "pack_sha256": "027c32d4ccf2637e465fb6a9ea676bcb930b409ceae5405e4c39f829a5f0e3bf",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049837,
+      "captured_at": "2026-10-03T15:24:02Z",
+      "last_verified_at": "2026-10-03T15:24:02Z",
+      "age_s": 2854.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7980c059ed28",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/HN item 8863 author",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.by",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "dhouston"
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/item/8863.json"
+      },
+      "pack_sha256": "211f2135d49f72fce6ef846725de5cfcc30e4a62c18b6bf0048e00f2b7025d16",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:54Z",
+      "last_verified_at": "2026-10-03T15:23:54Z",
+      "age_s": 2862.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f9bb5a28e740",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/HN maxitem",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 1000000
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/maxitem.json"
+      },
+      "pack_sha256": "3faedc3a758e358066837f7e418ff42ef69e98bfd2f2c601006c6d5bf77aff78",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:54Z",
+      "last_verified_at": "2026-10-03T15:23:54Z",
+      "age_s": 2862.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-71cc40605098",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/frankfurter base",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.base",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "USD"
+        },
+        "url": "https://api.frankfurter.app/latest?from=USD"
+      },
+      "pack_sha256": "36e378aea64334903ee50037af051549feda8dfaad909a9e653847c9e21f9462",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:53Z",
+      "last_verified_at": "2026-10-03T15:23:53Z",
+      "age_s": 2863.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b3313cb715c2",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/cloudflare DoH",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/dns-json"
+        },
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://cloudflare-dns.com/dns-query?name=example.com&type=A"
+      },
+      "pack_sha256": "68d2cc49e8b2dc437a0589f0116d95804d44b625f2e9bdd08749ade819ccdd3c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:48Z",
+      "last_verified_at": "2026-10-03T15:23:48Z",
+      "age_s": 2868.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1cff4c6835e6",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/google DoH",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://dns.google/resolve?name=example.com&type=A"
+      },
+      "pack_sha256": "6f10b8c566ec679826524f9043c097da3a32f795ba2dfe69ce28089e2ff4697b",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:48Z",
+      "last_verified_at": "2026-10-03T15:23:48Z",
+      "age_s": 2868.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-4f97b9d535cb",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/github huggingface/transformers",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "huggingface/transformers"
+        },
+        "url": "https://api.github.com/repos/huggingface/transformers"
+      },
+      "pack_sha256": "80b959b677194f0a30338ceaff0672934aa0eae048758bcca0d5b729196657d7",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049836,
+      "captured_at": "2026-10-03T15:23:41Z",
+      "last_verified_at": "2026-10-03T15:23:41Z",
+      "age_s": 2875.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c93a5811b436",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/mempool fastestFee",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.fastestFee",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://mempool.space/api/v1/fees/recommended"
+      },
+      "pack_sha256": "d258a8e4913e2beea5326f5baf859b9392a5358cdc76eee671ec71f13512d34c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:40Z",
+      "last_verified_at": "2026-10-03T15:23:40Z",
+      "age_s": 2876.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6bbbf4b7335f",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/github ollama/ollama",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "ollama/ollama"
+        },
+        "url": "https://api.github.com/repos/ollama/ollama"
+      },
+      "pack_sha256": "c1e63c53e59b595a2a1918d1db7d6b820b0678f411e6d33c957baf2bba9036de",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:39Z",
+      "last_verified_at": "2026-10-03T15:23:39Z",
+      "age_s": 2877.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-3f20f40cc1cf",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/pypi pydantic version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/pydantic/json"
+      },
+      "pack_sha256": "7a10fca12bc7c5fd1546367693c8c9ee58d3be8c28d907ac62cfaf8afe593108",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:36Z",
+      "last_verified_at": "2026-10-03T15:23:36Z",
+      "age_s": 2880.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6e9fea1e1962",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/github openai/openai-python",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "openai/openai-python"
+        },
+        "url": "https://api.github.com/repos/openai/openai-python"
+      },
+      "pack_sha256": "77b6d80d2bb022e94ec57a7b2d451e53b46641a95f99f3d6e506220f070e946a",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:35Z",
+      "last_verified_at": "2026-10-03T15:23:35Z",
+      "age_s": 2881.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-93a1871ce8c2",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/github wevm/viem",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Gauntlet/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "wevm/viem"
+        },
+        "url": "https://api.github.com/repos/wevm/viem"
+      },
+      "pack_sha256": "1497fd4a39f1dc1b679c8f66023a8c22f3906b024814dc5333e6685ace8b7b1e",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:35Z",
+      "last_verified_at": "2026-10-03T15:23:35Z",
+      "age_s": 2881.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a5620e807dbf",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/pypi requests version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/requests/json"
+      },
+      "pack_sha256": "2955a8c11dc2baa7eaa63129c31f9032ce33f39deab754dd2f459309b36d41a1",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:33Z",
+      "last_verified_at": "2026-10-03T15:23:33Z",
+      "age_s": 2883.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-8d4b9ce60e23",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/pypi httpx version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/httpx/json"
+      },
+      "pack_sha256": "62154fab561b7e7d9a340a42bd5e3ae19e462487453131128ea08f341df3138c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:30Z",
+      "last_verified_at": "2026-10-03T15:23:30Z",
+      "age_s": 2886.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-bc9204d4b62d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/pypi flask version",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/flask/json"
+      },
+      "pack_sha256": "9beb359927c46fd00c13fcfe3b95cae44ad1f1f9a2e3f978e19989b3e626d94e",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049835,
+      "captured_at": "2026-10-03T15:23:30Z",
+      "last_verified_at": "2026-10-03T15:23:30Z",
+      "age_s": 2886.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-64663f059588",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/npm ethers latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/ethers"
+      },
+      "pack_sha256": "9c7769f3461b915efc0e92292147d553298fe48fc15def28195b36537d23b965",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:23Z",
+      "last_verified_at": "2026-10-03T15:23:23Z",
+      "age_s": 2893.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-dc0cbffa2917",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/npm axios latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/axios"
+      },
+      "pack_sha256": "60960cce665066d054ab9234dd981642cbbda39591e31372b8dea485aa10ad4c",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:23Z",
+      "last_verified_at": "2026-10-03T15:23:23Z",
+      "age_s": 2893.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-863e517b1e71",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/npm zod latest",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/zod"
+      },
+      "pack_sha256": "9d9a2d505f3f57dce0045149087ab486d4f10b97911764d8022ac1551512bcc8",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:23Z",
+      "last_verified_at": "2026-10-03T15:23:23Z",
+      "age_s": 2893.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-51231629ecb7",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/base chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x2105"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "135afe345ebd5cd51e8052ca89d234304fb005e3ea83050a050bda610aacd807",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:18Z",
+      "last_verified_at": "2026-10-03T15:23:18Z",
+      "age_s": 2898.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-45b9d422ef7f",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/example.com 200",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "status_eq",
+          "value": 200
+        },
+        "url": "https://example.com/"
+      },
+      "pack_sha256": "828ff8b04b79236693df9f3af660170ff9f3f4cfb769b5dd7e3dde4812c78f19",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:18Z",
+      "last_verified_at": "2026-10-03T15:23:18Z",
+      "age_s": 2898.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a518e0bc942d",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/ethereum chainId",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x1"
+        },
+        "url": "https://ethereum.publicnode.com"
+      },
+      "pack_sha256": "7674226aa9e0614ec5cb3fb4e52471184c40ab9df7709663e7861d74e2fa4e2d",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:18Z",
+      "last_verified_at": "2026-10-03T15:23:18Z",
+      "age_s": 2898.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b084d026021a",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/solana health",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"getHealth\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "ok"
+        },
+        "url": "https://api.mainnet-beta.solana.com"
+      },
+      "pack_sha256": "1ec223679c29f6a9030fe8464022aad5669e5936f04024fba876b896269d8037",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:18Z",
+      "last_verified_at": "2026-10-03T15:23:18Z",
+      "age_s": 2898.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-00bdd3e94c7c",
+      "seller": "0x9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a",
+      "claim": {
+        "predicate": "gauntlet_check",
+        "subject": "grading/TRUE/base blockNumber exists",
+        "value": "grading item"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_blockNumber\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "535cf359f49d81202480fbc50e24a114ff1ca53bad9e772900c4300b59de2658",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049834,
+      "captured_at": "2026-10-03T15:23:17Z",
+      "last_verified_at": "2026-10-03T15:23:17Z",
+      "age_s": 2899.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-77e12bb559bc",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/three",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/three"
+      },
+      "pack_sha256": "fca3812bd85b50e1389f9c462d6603003c1cba15fcc3c7074a4c31930a29b4cf",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099918,
+      "captured_at": "2026-10-03T15:20:37Z",
+      "last_verified_at": "2026-10-03T15:20:37Z",
+      "age_s": 3059.3,
+      "status": "verified",
+      "sales": 1,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-67a06ade1b6c",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/inquirer",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/inquirer"
+      },
+      "pack_sha256": "68e54576dd819bcca2fedd1bfe53850fc2592e952dab2a1c56358b1c953102eb",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:20:29Z",
+      "last_verified_at": "2026-10-03T15:20:29Z",
+      "age_s": 3067.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-788dce405185",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/dayjs",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/dayjs"
+      },
+      "pack_sha256": "37347b6d7cec9592824a293dcbef6a9695b70ce92c54243357eda585e1340743",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:20:29Z",
+      "last_verified_at": "2026-10-03T15:20:29Z",
+      "age_s": 3067.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5fb949d4c698",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/debug",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/debug"
+      },
+      "pack_sha256": "2a64294a76ee5ae93e146271e6ab72199f864883838ad1a91e9b560f11fbdb27",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099918,
+      "captured_at": "2026-10-03T15:20:24Z",
+      "last_verified_at": "2026-10-03T15:20:24Z",
+      "age_s": 3072.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-18311050a6bb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/dayjs",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/dayjs"
+      },
+      "pack_sha256": "bb5119acb4b118cfe698b15b6b3962e7c886404169043e7eb97f6e5bad379fba",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099918,
+      "captured_at": "2026-10-03T15:20:23Z",
+      "last_verified_at": "2026-10-03T15:20:23Z",
+      "age_s": 3073.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c07d5ca10f8b",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/node-fetch",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/node-fetch"
+      },
+      "pack_sha256": "9daba490e205e6065e1e40bd32bf5287286e27b7f432d68da6f869687be8d6a7",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:20:13Z",
+      "last_verified_at": "2026-10-03T15:20:13Z",
+      "age_s": 3083.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-0f37e86142b9",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/@solana/web3.js",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/%40solana%2Fweb3.js"
+      },
+      "pack_sha256": "0a729475264e95c8167b86eb065769afb4164455ff82a3ad4e841b42654c5c03",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:20:11Z",
+      "last_verified_at": "2026-10-03T15:20:11Z",
+      "age_s": 3085.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-dac4c9d917da",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/node-fetch",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/node-fetch"
+      },
+      "pack_sha256": "954d1a3d044b1819aa1ea2a833e960a89cfeb752396683c2cb77e9efb50cd42b",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099918,
+      "captured_at": "2026-10-03T15:20:10Z",
+      "last_verified_at": "2026-10-03T15:20:10Z",
+      "age_s": 3086.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-e36205948320",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/lodash",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/lodash"
+      },
+      "pack_sha256": "8e84ae06bd4c8e3d02625806eea1f04168b6a747c5558866200a0cdc4526ce9d",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099917,
+      "captured_at": "2026-10-03T15:20:02Z",
+      "last_verified_at": "2026-10-03T15:20:02Z",
+      "age_s": 3094.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-3fbf2e322789",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/lodash",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/lodash"
+      },
+      "pack_sha256": "03d64f1e1c9e48346608318eb9f06275f3111cf6af6fe755b98426d83893bdfc",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:20:02Z",
+      "last_verified_at": "2026-10-03T15:20:02Z",
+      "age_s": 3094.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ab4da1f9a5b4",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/next",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/next"
+      },
+      "pack_sha256": "e5b91c0cd377f9ceb7808ef48e620dde2b5a01d328a83d95ce537ba8b137d5cb",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:19:54Z",
+      "last_verified_at": "2026-10-03T15:19:54Z",
+      "age_s": 3102.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d0d9b5268296",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/vite",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/vite"
+      },
+      "pack_sha256": "743b68c9921b6a90bf3914852397bde9c4e91ec7ee577b25bc3eb6de7bf1741d",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049959,
+      "captured_at": "2026-10-03T15:19:54Z",
+      "last_verified_at": "2026-10-03T15:19:54Z",
+      "age_s": 3102.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-9813ccf141cb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/eslint",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/eslint"
+      },
+      "pack_sha256": "231eff2541e63b2fd20035f57b106533fe874bc28fddb7d8c21eb1516092231e",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099917,
+      "captured_at": "2026-10-03T15:19:48Z",
+      "last_verified_at": "2026-10-03T15:19:48Z",
+      "age_s": 3108.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-95c091102d43",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/eslint",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/eslint"
+      },
+      "pack_sha256": "bda2b0ac359682fd03a4b88ef91c2626bd7ce54297317ac8fa1a4e6b5ecffff7",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:44Z",
+      "last_verified_at": "2026-10-03T15:19:44Z",
+      "age_s": 3112.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-43c724fa0241",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/prettier",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/prettier"
+      },
+      "pack_sha256": "20737a34b1a5021ae2a29a275bd9bbac275b5d99323fbd1d9fe589aedcb7be33",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:38Z",
+      "last_verified_at": "2026-10-03T15:19:38Z",
+      "age_s": 3118.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-35a854b0f0bc",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/prettier",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/prettier"
+      },
+      "pack_sha256": "cb0bc2da803c5e4ee38ace9e3a76158976f8570e9b1ccbceef0aa46ab0742cb7",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099916,
+      "captured_at": "2026-10-03T15:19:28Z",
+      "last_verified_at": "2026-10-03T15:19:28Z",
+      "age_s": 3128.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-080e79926a5d",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/chalk",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/chalk"
+      },
+      "pack_sha256": "e289e59998021f204f29905f5652a5465c10053ee9c025252ecc5e8b6a25b105",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:27Z",
+      "last_verified_at": "2026-10-03T15:19:27Z",
+      "age_s": 3129.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-045af162998d",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/chalk",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/chalk"
+      },
+      "pack_sha256": "3d29efa12ae9580c9e874da6a3876896510449a8de4f71c7956904bcbb0918be",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099916,
+      "captured_at": "2026-10-03T15:19:25Z",
+      "last_verified_at": "2026-10-03T15:19:25Z",
+      "age_s": 3131.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7c516df53830",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/commander",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/commander"
+      },
+      "pack_sha256": "1dcc766cee2dc8da5ef968678e11b5de61d2b09854872dd13cbe0063642a0d4a",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099916,
+      "captured_at": "2026-10-03T15:19:20Z",
+      "last_verified_at": "2026-10-03T15:19:20Z",
+      "age_s": 3136.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-deb2622de693",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/commander",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/commander"
+      },
+      "pack_sha256": "01f1f3d14479e9a468e8b46511c4c8264c5a2f9b3c5c6ff3398b988ab9636d03",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:16Z",
+      "last_verified_at": "2026-10-03T15:19:16Z",
+      "age_s": 3140.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-37d7d7473419",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/uuid",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/uuid"
+      },
+      "pack_sha256": "0a91a1e5f9c1e9c879f31d43ddc6ff230261b0719d4423aed03c262e89c378f2",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:12Z",
+      "last_verified_at": "2026-10-03T15:19:12Z",
+      "age_s": 3144.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ef43f53b5c19",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/uuid",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/uuid"
+      },
+      "pack_sha256": "7a98ffe44b6a1c2a807951dd488080674d61a62a1cd99fc232e9e670db119871",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099916,
+      "captured_at": "2026-10-03T15:19:08Z",
+      "last_verified_at": "2026-10-03T15:19:08Z",
+      "age_s": 3148.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7302b6e6abad",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/puppeteer",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/puppeteer"
+      },
+      "pack_sha256": "0ffd9eb852cece9b1e9d93eda3a038451d78383005f39af58422be10c993948a",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:04Z",
+      "last_verified_at": "2026-10-03T15:19:04Z",
+      "age_s": 3152.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6d631b84ffb0",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/dotenv",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/dotenv"
+      },
+      "pack_sha256": "fff3983ac492b429dbf7687647bdbd4e3d37c05b330ec7ba792878285253959f",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:02Z",
+      "last_verified_at": "2026-10-03T15:19:02Z",
+      "age_s": 3154.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2eaea3c2a586",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/ws",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/ws"
+      },
+      "pack_sha256": "0cb56163f0cf265cfc049910a313f46219abf1c2ed7b093a898bccfb3d2fa8f7",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:19:01Z",
+      "last_verified_at": "2026-10-03T15:19:01Z",
+      "age_s": 3155.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-504b8623b622",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/zod",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/zod"
+      },
+      "pack_sha256": "6d2dea989ac3a91cd4605eb0ce6ddd74dbe534fbc6d51000d4774174d33494a2",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099916,
+      "captured_at": "2026-10-03T15:18:58Z",
+      "last_verified_at": "2026-10-03T15:18:58Z",
+      "age_s": 3158.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-532b37ad9cc0",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/dotenv",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/dotenv"
+      },
+      "pack_sha256": "8eeae9e99fbb6048deae3391350cc83c321e9d1b7432b09ee97395394327bdb2",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099915,
+      "captured_at": "2026-10-03T15:18:55Z",
+      "last_verified_at": "2026-10-03T15:18:55Z",
+      "age_s": 3161.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ec673d89fe98",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/typescript",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/typescript"
+      },
+      "pack_sha256": "b91b2a25148c889dc9222b16e8f4185166005a16b92ba6b8443f9e3db27f0c4e",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:18:51Z",
+      "last_verified_at": "2026-10-03T15:18:51Z",
+      "age_s": 3165.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c59facf93adc",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/react",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/react"
+      },
+      "pack_sha256": "dad16b6b87123c5f53efa05ded7acd3477f0eea73ca8018deaae11650e37caf0",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:18:48Z",
+      "last_verified_at": "2026-10-03T15:18:48Z",
+      "age_s": 3168.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-329a48745bd8",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/express",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/express"
+      },
+      "pack_sha256": "9731a8b5346b36c1e18be95c45ce403bfdf35f7edd4020b690f785907d366a08",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099915,
+      "captured_at": "2026-10-03T15:18:41Z",
+      "last_verified_at": "2026-10-03T15:18:41Z",
+      "age_s": 3175.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-9e491cdbc943",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/express",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/express"
+      },
+      "pack_sha256": "80aa3d6143e2ec87f1e44a8869e5aca67fb8f27aa58583baebabe5ad53bb880c",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049958,
+      "captured_at": "2026-10-03T15:18:40Z",
+      "last_verified_at": "2026-10-03T15:18:40Z",
+      "age_s": 3176.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-e77d8466d3a2",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/axios",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/axios"
+      },
+      "pack_sha256": "75721bcca102c3df1b9c5f08fc9f867a134256483feb02b46b8707fe374de22f",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099915,
+      "captured_at": "2026-10-03T15:18:35Z",
+      "last_verified_at": "2026-10-03T15:18:35Z",
+      "age_s": 3181.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b05359c9db4f",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/axios",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/axios"
+      },
+      "pack_sha256": "7e9972231b917791113c55457b67f8215513d937b4d78a602dd959f26ba53265",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:32Z",
+      "last_verified_at": "2026-10-03T15:18:32Z",
+      "age_s": 3184.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5fb807b1696a",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/@langchain/core",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/%40langchain%2Fcore"
+      },
+      "pack_sha256": "0d90ef29cd88e1cc3d22ce311bd8cb2b3eda2c4be8d1ad7b0afb108da38347ac",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:32Z",
+      "last_verified_at": "2026-10-03T15:18:32Z",
+      "age_s": 3184.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-157e41f01e07",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/@langchain/core",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/%40langchain%2Fcore"
+      },
+      "pack_sha256": "85b9bfa89c4f403753ae26b41a359e8d7a076e4e1b6e2e5013a7f4b1c327729d",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099915,
+      "captured_at": "2026-10-03T15:18:30Z",
+      "last_verified_at": "2026-10-03T15:18:30Z",
+      "age_s": 3186.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-19d382e57a5a",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/langchain",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/langchain"
+      },
+      "pack_sha256": "3e1f95a7c04d0c04cd6b4f0f4ed6bde0299c67f84ef03ea906240e24f0f5fcfc",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:21Z",
+      "last_verified_at": "2026-10-03T15:18:21Z",
+      "age_s": 3195.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6db58ea68662",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/@modelcontextprotocol/sdk",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/%40modelcontextprotocol%2Fsdk"
+      },
+      "pack_sha256": "5423ebb829b694eec03e69c1b28d75c245100e177b534b800f5d287c4f9b51f6",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:13Z",
+      "last_verified_at": "2026-10-03T15:18:13Z",
+      "age_s": 3203.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-de9cd9208cc7",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/@anthropic-ai/sdk",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/%40anthropic-ai%2Fsdk"
+      },
+      "pack_sha256": "0b5435e4b1a53c2df309dfc07bb7081b24478bd72da08a7e85af8f25627e077a",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:13Z",
+      "last_verified_at": "2026-10-03T15:18:13Z",
+      "age_s": 3203.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f87bb4e3a495",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/@modelcontextprotocol/sdk",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/%40modelcontextprotocol%2Fsdk"
+      },
+      "pack_sha256": "57816625b013485922e5aece25998f6800a481d406fb34957ba0de706206a868",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099914,
+      "captured_at": "2026-10-03T15:18:13Z",
+      "last_verified_at": "2026-10-03T15:18:13Z",
+      "age_s": 3203.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7c35745e4759",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/@anthropic-ai/sdk",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/%40anthropic-ai%2Fsdk"
+      },
+      "pack_sha256": "539c519c0e44d1f3e2f40d62fb1d7e0c79c47999984281d0201b9d6f065d27c7",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099914,
+      "captured_at": "2026-10-03T15:18:09Z",
+      "last_verified_at": "2026-10-03T15:18:09Z",
+      "age_s": 3207.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-bb98f6a56dbc",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/openai",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/openai"
+      },
+      "pack_sha256": "61744524ecb83ba7bb9d5da3e0b88da02d984deae8d6d9060a9f94444129375f",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:18:03Z",
+      "last_verified_at": "2026-10-03T15:18:03Z",
+      "age_s": 3213.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-05bef1ba438c",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/openai",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/openai"
+      },
+      "pack_sha256": "e8fd965d4dbb8020002952d102039832093ab9de40f409a6bc61989486ee78b3",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099914,
+      "captured_at": "2026-10-03T15:17:58Z",
+      "last_verified_at": "2026-10-03T15:17:58Z",
+      "age_s": 3218.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-9519ae0c2106",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/ethers",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/ethers"
+      },
+      "pack_sha256": "2e934f75368f2893d10007c9e14ebe30d21e2b340b99e2d8cd79e61ab1de89b3",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049957,
+      "captured_at": "2026-10-03T15:17:56Z",
+      "last_verified_at": "2026-10-03T15:17:56Z",
+      "age_s": 3220.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-8fe8dd7c919d",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/ethers",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/ethers"
+      },
+      "pack_sha256": "78500a79d46d21948427ec7409c51fae11a6d729625963af9337ff39e808b251",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099914,
+      "captured_at": "2026-10-03T15:17:56Z",
+      "last_verified_at": "2026-10-03T15:17:56Z",
+      "age_s": 3220.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-aceb7baf4a1d",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "our_receiving_balance_nonnegative",
+        "subject": "base/usdc",
+        "value": "Base USDC balanceOf(receiving address) readable"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_call\", \"params\": [{\"to\": \"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\", \"data\": \"0x70a0823100000000000000000000000048cda0da34816db1f997c3d3b167a4f6af850cb2\"}, \"latest\"]}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://mainnet.base.org"
+      },
+      "pack_sha256": "d0dfbdc7c3b16f375e98ad40adaca04b57aa087e04d8dc99fd3ca9ed5a68c26e",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045081,
+      "captured_at": "2026-10-03T15:17:49Z",
+      "last_verified_at": "2026-10-03T15:17:49Z",
+      "age_s": 3227.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c843ef0be276",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "eth_blockNumber_advancing",
+        "subject": "rpc/bsc@bsc.publicnode.com",
+        "value": "latest block number returned"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_blockNumber\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://bsc.publicnode.com"
+      },
+      "pack_sha256": "fd74dc261c9c39f0a72504def0be699c14aa3fdc5b931b947712d16574114332",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045074,
+      "captured_at": "2026-10-03T15:17:44Z",
+      "last_verified_at": "2026-10-03T15:17:44Z",
+      "age_s": 3232.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b4c5d25efa80",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "eth_chainId",
+        "subject": "rpc/optimism@optimism.publicnode.com",
+        "value": "chain id 0xa (10)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0xa"
+        },
+        "url": "https://optimism.publicnode.com"
+      },
+      "pack_sha256": "a3b1a067202d2b439bc29342a42dc1f35a0368603d429592809a7f14fac4793d",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045066,
+      "captured_at": "2026-10-03T15:17:39Z",
+      "last_verified_at": "2026-10-03T15:17:39Z",
+      "age_s": 3237.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6b1eb94e60fb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "eth_chainId",
+        "subject": "rpc/ethereum@cloudflare-eth.com",
+        "value": "chain id 0x1 (1)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x1"
+        },
+        "url": "https://cloudflare-eth.com"
+      },
+      "pack_sha256": "7de7460ae4ba9b3439b25db9762f6de0c6d8ac700444dd6948e9497f01553e86",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045062,
+      "captured_at": "2026-10-03T15:17:36Z",
+      "last_verified_at": "2026-10-03T15:17:36Z",
+      "age_s": 3240.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-76e456863d61",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "eth_blockNumber_advancing",
+        "subject": "rpc/optimism@optimism.publicnode.com",
+        "value": "latest block number returned"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_blockNumber\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://optimism.publicnode.com"
+      },
+      "pack_sha256": "767cff3a47c4b1057fff70ab8dc3a1b5aad4be60394f05a1b472e73fdb20e589",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045062,
+      "captured_at": "2026-10-03T15:17:36Z",
+      "last_verified_at": "2026-10-03T15:17:36Z",
+      "age_s": 3240.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-70f6e47d55bb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "eth_chainId",
+        "subject": "rpc/bsc@bsc.publicnode.com",
+        "value": "chain id 0x38 (56)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"eth_chainId\", \"params\": []}",
+        "headers": {},
+        "jsonpath": "$.result",
+        "method": "POST",
+        "predicate": {
+          "op": "eq",
+          "value": "0x38"
+        },
+        "url": "https://bsc.publicnode.com"
+      },
+      "pack_sha256": "88466c1c4db03ea2976deecfe67345b1e1f952ed72edabdd1597be8411ab2612",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.045062,
+      "captured_at": "2026-10-03T15:17:36Z",
+      "last_verified_at": "2026-10-03T15:17:36Z",
+      "age_s": 3240.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-08e1371eebdb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "status.indicator_present",
+        "subject": "status/cloudflare-status",
+        "value": "indicator published (value in pack)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.status.indicator",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://www.cloudflarestatus.com/api/v2/status.json"
+      },
+      "pack_sha256": "4690e9d61345610e9db43ecfdcf103715b5917070f5549913abd860bf149b4b4",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044504,
+      "captured_at": "2026-10-03T15:11:08Z",
+      "last_verified_at": "2026-10-03T15:11:08Z",
+      "age_s": 3628.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-72c166190096",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "status.indicator_present",
+        "subject": "status/openai-status",
+        "value": "indicator published (value in pack)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.status.indicator",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://status.openai.com/api/v2/status.json"
+      },
+      "pack_sha256": "dcf31b7a12c86f656f1307ad5ed618b171a77f622b46774a8e3b6c613ca8b2a7",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044503,
+      "captured_at": "2026-10-03T15:11:07Z",
+      "last_verified_at": "2026-10-03T15:11:07Z",
+      "age_s": 3629.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-089bd6ea5fc4",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "status.indicator_present",
+        "subject": "status/base-status",
+        "value": "indicator published (value in pack)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.status.indicator",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://status.base.org/api/v2/status.json"
+      },
+      "pack_sha256": "028a3115f01772c52f88fd99f8c6dea67758430392ba557ce0f955e006b6f038",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044499,
+      "captured_at": "2026-10-03T15:11:04Z",
+      "last_verified_at": "2026-10-03T15:11:04Z",
+      "age_s": 3632.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7f3d86a23216",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "status.indicator_present",
+        "subject": "status/githubstatus",
+        "value": "indicator published (value in pack)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.status.indicator",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://www.githubstatus.com/api/v2/status.json"
+      },
+      "pack_sha256": "8e8a42cc54f32ca5db2c2eb2199daf8123b29d3c8c342c9bd794bded749b9702",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044499,
+      "captured_at": "2026-10-03T15:11:04Z",
+      "last_verified_at": "2026-10-03T15:11:04Z",
+      "age_s": 3632.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-794ab98640c1",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "address",
+        "subject": "ens/vitalik.eth",
+        "value": "vitalik.eth resolves (address in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.address",
+        "method": "GET",
+        "predicate": {
+          "op": "regex",
+          "value": "(?i)^0xd8da6bf26964af9d7eed9e03e53415d37aa96045$"
+        },
+        "url": "https://api.ensideas.com/ens/resolve/vitalik.eth"
+      },
+      "pack_sha256": "cd75bd1c0b8d05acbb3f2d40c447c9168a390770c6b93b3ddb12e8cade2bad1b",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099903,
+      "captured_at": "2026-10-03T15:11:00Z",
+      "last_verified_at": "2026-10-03T15:11:00Z",
+      "age_s": 3636.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ca404a690987",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "Status",
+        "subject": "google-dns/example.com",
+        "value": "Google DoH query for example.com returns Status 0"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://dns.google/resolve?name=example.com&type=A"
+      },
+      "pack_sha256": "323c44ed500e01e1765d61d335b6e6cbd4b72e677dc18e5cc5e4b141470dc994",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044492,
+      "captured_at": "2026-10-03T15:10:59Z",
+      "last_verified_at": "2026-10-03T15:10:59Z",
+      "age_s": 3637.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-69aecfc8ae65",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "Status",
+        "subject": "cloudflare-dns/example.com",
+        "value": "DoH query for example.com A returns Status 0"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/dns-json"
+        },
+        "jsonpath": "$.Status",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 0
+        },
+        "url": "https://cloudflare-dns.com/dns-query?name=example.com&type=A"
+      },
+      "pack_sha256": "d302205a2a04bee549de122ffa331a8edf7eb34c7075ce26c0daba3d9e122592",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044487,
+      "captured_at": "2026-10-03T15:10:56Z",
+      "last_verified_at": "2026-10-03T15:10:56Z",
+      "age_s": 3640.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fee04c93ccb7",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tags.latest_present",
+        "subject": "jsdelivr/typescript",
+        "value": "CDN-resolved latest version (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/typescript"
+      },
+      "pack_sha256": "08d23d9089b8aaa3457b524305c0f255fb2c26233b536b169435b247cd6c1f8b",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:54Z",
+      "last_verified_at": "2026-10-03T15:10:54Z",
+      "age_s": 3642.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d45a28d313ca",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tags.latest_present",
+        "subject": "jsdelivr/react",
+        "value": "CDN-resolved latest version (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/react"
+      },
+      "pack_sha256": "f56e36df375190974a871b5d9c70416abe3c048840b8dcc9f1d52b823a54dcab",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:53Z",
+      "last_verified_at": "2026-10-03T15:10:53Z",
+      "age_s": 3643.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-0a9e50a80812",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "gecko_says_present",
+        "subject": "coingecko/ping",
+        "value": "CoinGecko API ping response (text in pack)"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.gecko_says",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://api.coingecko.com/api/v3/ping"
+      },
+      "pack_sha256": "1cc4371e4b4c0bb03777e274b38e92f8dc9797e240b88ef726e75e4e0dcd1cc7",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044479,
+      "captured_at": "2026-10-03T15:10:50Z",
+      "last_verified_at": "2026-10-03T15:10:50Z",
+      "age_s": 3646.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b236a8793600",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tags.latest_present",
+        "subject": "jsdelivr/ethers",
+        "value": "CDN-resolved latest version (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/ethers"
+      },
+      "pack_sha256": "70b8e21d4d52a5b109e53080999f6f22ed9623adf61c3717563fbb3fec85ac34",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:45Z",
+      "last_verified_at": "2026-10-03T15:10:45Z",
+      "age_s": 3651.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b9e467902089",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tags.latest_present",
+        "subject": "jsdelivr/openai",
+        "value": "CDN-resolved latest version (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/openai"
+      },
+      "pack_sha256": "53dafa3f4e3fe49d0b899a91d2fabd7581885adbe7776b647bb53a367243837e",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:45Z",
+      "last_verified_at": "2026-10-03T15:10:45Z",
+      "age_s": 3651.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-5356646a3fd0",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tags.latest_present",
+        "subject": "jsdelivr/viem",
+        "value": "CDN-resolved latest version (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://data.jsdelivr.com/v1/packages/npm/viem"
+      },
+      "pack_sha256": "ec0ba0a3705c89e82d166c6b5c7239b6017cdf2d59fedfad7fe2cd4e7b3bcec6",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:41Z",
+      "last_verified_at": "2026-10-03T15:10:41Z",
+      "age_s": 3655.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-351e2a3aa487",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "by",
+        "subject": "hackernews/item/8863",
+        "value": "dhouston (Dropbox YC story, historical record)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.by",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "dhouston"
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/item/8863.json"
+      },
+      "pack_sha256": "dfa71068559d8e37ba7efac6aa543e782d5c7a111996f9ca20577d6078eb3187",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049951,
+      "captured_at": "2026-10-03T15:10:33Z",
+      "last_verified_at": "2026-10-03T15:10:33Z",
+      "age_s": 3663.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-62a2df9e92c2",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "maxitem_id",
+        "subject": "hackernews/maxitem",
+        "value": "largest item id returned"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 1000000
+        },
+        "url": "https://hacker-news.firebaseio.com/v0/maxitem.json"
+      },
+      "pack_sha256": "e6f775611ba66a0aab14ad0bcca9a0c5ad08ca22fa53df98609f859c80ed737a",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.044449,
+      "captured_at": "2026-10-03T15:10:29Z",
+      "last_verified_at": "2026-10-03T15:10:29Z",
+      "age_s": 3667.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-bfa765bf51d9",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "rates.GBP_positive",
+        "subject": "frankfurter/fx",
+        "value": "USD->GBP rate present and positive"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.rates.GBP",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.frankfurter.app/latest?from=USD"
+      },
+      "pack_sha256": "05544101e14ee4547733fc98a7b85317020ec95f80e47f9512a1a4e57017626b",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049789,
+      "captured_at": "2026-10-03T15:10:12Z",
+      "last_verified_at": "2026-10-03T15:10:12Z",
+      "age_s": 3684.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-af7d5da7a14f",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "base_currency_USD",
+        "subject": "frankfurter/fx",
+        "value": "frankfurter latest rates based in USD"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.base",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "USD"
+        },
+        "url": "https://api.frankfurter.app/latest?from=USD"
+      },
+      "pack_sha256": "abc895074a69b6d5ba8453305c5a269c9931b36b76d904297132057ecabe7d82",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.049789,
+      "captured_at": "2026-10-03T15:10:06Z",
+      "last_verified_at": "2026-10-03T15:10:06Z",
+      "age_s": 3690.3,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
     {
       "id": "kf-76074214de49",
       "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
@@ -42,10 +4690,10 @@
       "pack_sha256": "2a359ecbc382369bfb74a4210526b4c25625328edcfd18ecb3f764d7da4ab605",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.044396,
       "captured_at": "2026-10-03T15:09:52Z",
       "last_verified_at": "2026-10-03T15:09:52Z",
-      "age_s": 0.2,
+      "age_s": 3704.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -75,10 +4723,10 @@
       "pack_sha256": "d0e577d2323230dbb37e5e270936cf30bf90c08d2ab1e83d7a603086a43aca93",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.049988,
+      "price_now_usd": 0.044386,
       "captured_at": "2026-10-03T15:09:45Z",
       "last_verified_at": "2026-10-03T15:09:45Z",
-      "age_s": 7.2,
+      "age_s": 3711.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -111,10 +4759,10 @@
       "pack_sha256": "1c5566ec0e2afeff50786eca848e19e15acc36288611cf3dc038273c989985c4",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.1,
+      "price_now_usd": 0.099901,
       "captured_at": "2026-10-03T15:09:44Z",
       "last_verified_at": "2026-10-03T15:09:44Z",
-      "age_s": 8.2,
+      "age_s": 3712.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -147,10 +4795,10 @@
       "pack_sha256": "03db2374c4422ab9fa9fa7a2889b4944ceccc493da5d3505c83710f2f1d89f57",
       "p0_usd": 0.05,
       "half_life_s": 604800,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.049788,
       "captured_at": "2026-10-03T15:09:44Z",
       "last_verified_at": "2026-10-03T15:09:44Z",
-      "age_s": 8.2,
+      "age_s": 3712.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -183,10 +4831,10 @@
       "pack_sha256": "70f4f6b2c502d3360e2c42edde9e2a9221686ba24c15e5597d29050446890aeb",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:16Z",
       "last_verified_at": "2026-10-03T15:09:16Z",
-      "age_s": 36.2,
+      "age_s": 3740.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -219,10 +4867,10 @@
       "pack_sha256": "9b85ca9e20f8b8295f9fdfed8258367e1684e5ce13941d13367eacd46018e182",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:15Z",
       "last_verified_at": "2026-10-03T15:09:15Z",
-      "age_s": 37.2,
+      "age_s": 3741.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -255,10 +4903,10 @@
       "pack_sha256": "2d43002259fef31eb2471dbb999619de85349b4e01d163750d3e42f88513351d",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:10Z",
       "last_verified_at": "2026-10-03T15:09:10Z",
-      "age_s": 42.2,
+      "age_s": 3746.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -291,10 +4939,10 @@
       "pack_sha256": "e7e0bd5503db1ca90a8eed40761146844de899b7107fa9796e27947e82383ecd",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:07Z",
       "last_verified_at": "2026-10-03T15:09:07Z",
-      "age_s": 45.2,
+      "age_s": 3749.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -327,10 +4975,10 @@
       "pack_sha256": "dcefdc28adecb82930f571b2a18ffa63844fa7a51cf12ce8a18811a26687891a",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:02Z",
       "last_verified_at": "2026-10-03T15:09:02Z",
-      "age_s": 50.2,
+      "age_s": 3754.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -363,10 +5011,10 @@
       "pack_sha256": "877ab50afa916a148568066c118c879da1c5b83a43e3f58a88c577b1bfeb5469",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:09:02Z",
       "last_verified_at": "2026-10-03T15:09:02Z",
-      "age_s": 50.2,
+      "age_s": 3754.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -399,10 +5047,10 @@
       "pack_sha256": "aebaf8c963d1404ebde8e7925713e1990513d0475a2b8476be96d6621942b8cf",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:08:59Z",
       "last_verified_at": "2026-10-03T15:08:59Z",
-      "age_s": 53.2,
+      "age_s": 3757.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -435,10 +5083,10 @@
       "pack_sha256": "2170b5f30e9049420b5aa3bec6462b4722c8f2e6a8b66178ca025a232a0dd623",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.0999,
       "captured_at": "2026-10-03T15:08:59Z",
       "last_verified_at": "2026-10-03T15:08:59Z",
-      "age_s": 53.2,
+      "age_s": 3757.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -471,10 +5119,10 @@
       "pack_sha256": "273781d074a0971f53faca3ae7cf632b3de5ac60afbcaa171aabfefe65f70ef7",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:53Z",
       "last_verified_at": "2026-10-03T15:08:53Z",
-      "age_s": 59.2,
+      "age_s": 3763.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -507,10 +5155,10 @@
       "pack_sha256": "5ce15a83afaca23ce097e4f63a2cf02cbd57822a3ad6db90b638b3c6f4006e0f",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:52Z",
       "last_verified_at": "2026-10-03T15:08:52Z",
-      "age_s": 60.2,
+      "age_s": 3764.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -543,10 +5191,10 @@
       "pack_sha256": "edfa64ed280881bbf5a09641b2f403480015d7e0855aee935f5cc1fdc9ebc8e5",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:49Z",
       "last_verified_at": "2026-10-03T15:08:49Z",
-      "age_s": 63.2,
+      "age_s": 3767.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -579,10 +5227,10 @@
       "pack_sha256": "18456bbac8c6fdb076d3206f3e246e2c26f0bab94ace56cffae27c82fc124bea",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:49Z",
       "last_verified_at": "2026-10-03T15:08:49Z",
-      "age_s": 63.2,
+      "age_s": 3767.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -615,10 +5263,10 @@
       "pack_sha256": "50d7506c9f1f9d57380c5e86f4d9cb2cdc8cdfa60fba7635cd02241841662708",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:46Z",
       "last_verified_at": "2026-10-03T15:08:46Z",
-      "age_s": 66.2,
+      "age_s": 3770.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -651,10 +5299,10 @@
       "pack_sha256": "668bceec3ac268aa67eae590ecee07b03b1d0941be61274b1be671dd5d075870",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:45Z",
       "last_verified_at": "2026-10-03T15:08:45Z",
-      "age_s": 67.2,
+      "age_s": 3771.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -687,10 +5335,10 @@
       "pack_sha256": "0db7bee598de0dbba76c6e863c74f4ab509de56154bd68ef9b354661b254186d",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:42Z",
       "last_verified_at": "2026-10-03T15:08:42Z",
-      "age_s": 70.2,
+      "age_s": 3774.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -723,10 +5371,10 @@
       "pack_sha256": "3397be8ddb5a72ab53a673dcc2dd96fabd29eeec3c60be96490dd153e6107bc4",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:41Z",
       "last_verified_at": "2026-10-03T15:08:41Z",
-      "age_s": 71.2,
+      "age_s": 3775.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -759,10 +5407,10 @@
       "pack_sha256": "b572835fe122a4787a3c9be6b782bba4158b27093517df19f010dc16bf1c13f4",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:37Z",
       "last_verified_at": "2026-10-03T15:08:37Z",
-      "age_s": 75.2,
+      "age_s": 3779.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -795,10 +5443,10 @@
       "pack_sha256": "a2c7fdb8ca8552fd422b8536e76c161ac1df71678ca2e9a136365532e1ab7e72",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:35Z",
       "last_verified_at": "2026-10-03T15:08:35Z",
-      "age_s": 77.2,
+      "age_s": 3781.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -831,10 +5479,10 @@
       "pack_sha256": "5b1b5bb2406dcb6629a50689a61449777f7f7ee734d25cb5b1691257e461e95e",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:34Z",
       "last_verified_at": "2026-10-03T15:08:34Z",
-      "age_s": 78.2,
+      "age_s": 3782.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -867,10 +5515,10 @@
       "pack_sha256": "f6ad540ebb5cad524ed1b3cc593b45e5c3b73af79ec184cb8a15e89a47c521c7",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:29Z",
       "last_verified_at": "2026-10-03T15:08:29Z",
-      "age_s": 83.2,
+      "age_s": 3787.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -903,10 +5551,10 @@
       "pack_sha256": "d3060ffa5288d6cfff555e40435226d318ab7e9e45bd1c91c6c1e62005129d52",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:29Z",
       "last_verified_at": "2026-10-03T15:08:29Z",
-      "age_s": 83.2,
+      "age_s": 3787.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -939,10 +5587,10 @@
       "pack_sha256": "98aff168685273007d280f0e3bd69b256fe3cb3cbde728e39cbc316ea091d504",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:26Z",
       "last_verified_at": "2026-10-03T15:08:26Z",
-      "age_s": 86.2,
+      "age_s": 3790.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -971,10 +5619,10 @@
       "pack_sha256": "81827aadb3425f9e3ee98b421c539fcd19a21bdf17009fa3a6c731112aba70ce",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099998,
+      "price_now_usd": 0.099899,
       "captured_at": "2026-10-03T15:08:21Z",
       "last_verified_at": "2026-10-03T15:08:21Z",
-      "age_s": 91.2,
+      "age_s": 3795.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1003,10 +5651,10 @@
       "pack_sha256": "46a9ef4a9581fa14dca61149cc7c4b1847ceabeca906bcc90147ca0c18caf012",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:15Z",
       "last_verified_at": "2026-10-03T15:08:15Z",
-      "age_s": 97.2,
+      "age_s": 3801.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1035,10 +5683,10 @@
       "pack_sha256": "8f3b03f50f3fb86a4cd14af1f92da9982da4fd7465ffc3aac7c5a3c1c4109ba3",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:14Z",
       "last_verified_at": "2026-10-03T15:08:14Z",
-      "age_s": 98.2,
+      "age_s": 3802.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1067,10 +5715,10 @@
       "pack_sha256": "9f3fa8cb1c62f50dadef187fb06b699581b053f23cce37e89e518a078be03a38",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:14Z",
       "last_verified_at": "2026-10-03T15:08:14Z",
-      "age_s": 98.2,
+      "age_s": 3802.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1099,10 +5747,10 @@
       "pack_sha256": "bfe3195704d383a5772858b9b5fe0a287cd69c2363ef90aff16e28dceed6d4a9",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:05Z",
       "last_verified_at": "2026-10-03T15:08:05Z",
-      "age_s": 107.2,
+      "age_s": 3811.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1131,10 +5779,10 @@
       "pack_sha256": "e5f91692695188e6c61f809733239814d93dee7b1d3a406689b148abcbd23e5a",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:03Z",
       "last_verified_at": "2026-10-03T15:08:03Z",
-      "age_s": 109.2,
+      "age_s": 3813.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1163,10 +5811,10 @@
       "pack_sha256": "22e05a72794acf566c082345d19f207d5ac1859370e7ebdcf8aaac93f6d74890",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:03Z",
       "last_verified_at": "2026-10-03T15:08:03Z",
-      "age_s": 109.2,
+      "age_s": 3813.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1195,10 +5843,10 @@
       "pack_sha256": "e839dc34a0b3cb48644a7f1a8b3e717198745cd7b7557df1fe6a5328550347dd",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:08:01Z",
       "last_verified_at": "2026-10-03T15:08:01Z",
-      "age_s": 111.2,
+      "age_s": 3815.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1227,10 +5875,10 @@
       "pack_sha256": "e36650f94fb7bb97d1f294d855bfb72a49446cf2cd49afd6ca14615e4950c69b",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:59Z",
       "last_verified_at": "2026-10-03T15:07:59Z",
-      "age_s": 113.2,
+      "age_s": 3817.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1259,10 +5907,10 @@
       "pack_sha256": "5e5406b08c54cc79d23d2ed8c880c7f82e9bf7e1975598d3688de8525dca9736",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:58Z",
       "last_verified_at": "2026-10-03T15:07:58Z",
-      "age_s": 114.2,
+      "age_s": 3818.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1291,10 +5939,10 @@
       "pack_sha256": "8d25d0eebc5b173c728e590cd6d07ca9a3cb84d4f458ab11e96bed244d35b928",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:48Z",
       "last_verified_at": "2026-10-03T15:07:48Z",
-      "age_s": 124.2,
+      "age_s": 3828.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1323,10 +5971,10 @@
       "pack_sha256": "fbadaa746ba40c1f51a4492a1d029a8367294602f45c43bf10c1db60737672d6",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:48Z",
       "last_verified_at": "2026-10-03T15:07:48Z",
-      "age_s": 124.2,
+      "age_s": 3828.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1355,10 +6003,10 @@
       "pack_sha256": "0ac2be83d73354dde264a0e436ca977ed123ba156411e4b576735bf39b22607b",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:48Z",
       "last_verified_at": "2026-10-03T15:07:48Z",
-      "age_s": 124.2,
+      "age_s": 3828.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1387,10 +6035,10 @@
       "pack_sha256": "9397b329c6600e2ab18e6571f14f9fd6dbd487d04504eee1b24ae4d0f2a4bc5c",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099997,
+      "price_now_usd": 0.099898,
       "captured_at": "2026-10-03T15:07:43Z",
       "last_verified_at": "2026-10-03T15:07:43Z",
-      "age_s": 129.2,
+      "age_s": 3833.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1419,10 +6067,10 @@
       "pack_sha256": "e98f7d6be6030b4e82dce05c50013ee458af3ccda8d7cd34675dba187c4c0da7",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:33Z",
       "last_verified_at": "2026-10-03T15:07:33Z",
-      "age_s": 139.2,
+      "age_s": 3843.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1451,10 +6099,10 @@
       "pack_sha256": "e429db4df9a3526457f7179e7b3a143cf75eb0a22d47cbfd7d0ad78943f2c495",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:32Z",
       "last_verified_at": "2026-10-03T15:07:32Z",
-      "age_s": 140.2,
+      "age_s": 3844.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1483,10 +6131,10 @@
       "pack_sha256": "435c84649ce916e8949ff02d9f7f67888c692b9d6ad52d404b272f76d0f1ff6c",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:31Z",
       "last_verified_at": "2026-10-03T15:07:31Z",
-      "age_s": 141.2,
+      "age_s": 3845.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1515,10 +6163,10 @@
       "pack_sha256": "7eb31d6855db15554a4a231679d0f4404bbac4af55dda2408cd51308e1a902f5",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:26Z",
       "last_verified_at": "2026-10-03T15:07:26Z",
-      "age_s": 146.2,
+      "age_s": 3850.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1547,10 +6195,10 @@
       "pack_sha256": "aa5b24648567537eb7bd7313625eba22bb4b1b26a14d395f480238a5ac80ad50",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:26Z",
       "last_verified_at": "2026-10-03T15:07:26Z",
-      "age_s": 146.2,
+      "age_s": 3850.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1579,10 +6227,10 @@
       "pack_sha256": "54eaef0ae0c97eda1fa0c3aa412e3b0cb5d521438850c8124aacc693e2df0f37",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:25Z",
       "last_verified_at": "2026-10-03T15:07:25Z",
-      "age_s": 147.2,
+      "age_s": 3851.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1611,10 +6259,10 @@
       "pack_sha256": "8fdf8ec2208f7e0abc958d1d0cb9c670d6c06ed775501be01a1d55070278f097",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:15Z",
       "last_verified_at": "2026-10-03T15:07:15Z",
-      "age_s": 157.2,
+      "age_s": 3861.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1643,10 +6291,10 @@
       "pack_sha256": "b3af182c7457afc12b63e1a52520e8b4cf67f083b30fffbf96d24e23e9a5878f",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:14Z",
       "last_verified_at": "2026-10-03T15:07:14Z",
-      "age_s": 158.2,
+      "age_s": 3862.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1675,10 +6323,10 @@
       "pack_sha256": "fd142ae7a19ee1a09b5bc7f4353367fdbceed5747fc2f9af39a6953ee509e49e",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:13Z",
       "last_verified_at": "2026-10-03T15:07:13Z",
-      "age_s": 159.2,
+      "age_s": 3863.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1707,10 +6355,10 @@
       "pack_sha256": "ef291155c39415264b13dc12e428464999b3ccba28dcd37c0c25d08cf707322e",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:08Z",
       "last_verified_at": "2026-10-03T15:07:08Z",
-      "age_s": 164.2,
+      "age_s": 3868.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1739,10 +6387,10 @@
       "pack_sha256": "21042c076222b99f0d22378fcc98585d4c0d6194f2407917f9930df090224e60",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:08Z",
       "last_verified_at": "2026-10-03T15:07:08Z",
-      "age_s": 164.2,
+      "age_s": 3868.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1771,10 +6419,10 @@
       "pack_sha256": "e558896ea7f9c743a0e727f4712225a71bb912c1225b34e9314ab74b3c7e4086",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099996,
+      "price_now_usd": 0.099897,
       "captured_at": "2026-10-03T15:07:07Z",
       "last_verified_at": "2026-10-03T15:07:07Z",
-      "age_s": 165.2,
+      "age_s": 3869.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1804,10 +6452,10 @@
       "pack_sha256": "99cdb7de48ca9f5f5fe3d5c8152c409f8e12ccf55e28a934facc1f11ae36657a",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049998,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:07:04Z",
       "last_verified_at": "2026-10-03T15:07:04Z",
-      "age_s": 168.2,
+      "age_s": 3872.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1838,10 +6486,10 @@
       "pack_sha256": "d4387e3527a964ec4df0ba1b0c15fcce0efc9dd47c527778c10e77a7e5607131",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099995,
+      "price_now_usd": 0.099896,
       "captured_at": "2026-10-03T15:06:59Z",
       "last_verified_at": "2026-10-03T15:06:59Z",
-      "age_s": 173.2,
+      "age_s": 3877.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1872,10 +6520,10 @@
       "pack_sha256": "cc234e650b4d45420b60ef526658f43bd6405a28dccf04c7c2e22f2ab2e58ddf",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099995,
+      "price_now_usd": 0.099896,
       "captured_at": "2026-10-03T15:06:59Z",
       "last_verified_at": "2026-10-03T15:06:59Z",
-      "age_s": 173.2,
+      "age_s": 3877.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1905,10 +6553,10 @@
       "pack_sha256": "502fa45939e30a6457ac711f8a7c1c79049ae854010d51aab7eebbc7ae24b5ac",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049998,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:55Z",
       "last_verified_at": "2026-10-03T15:06:55Z",
-      "age_s": 177.2,
+      "age_s": 3881.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1938,10 +6586,10 @@
       "pack_sha256": "9186a1241f1691c2ed2767437867caff627cee7a1fad6d5e9de28c5f7be9cabb",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049998,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:55Z",
       "last_verified_at": "2026-10-03T15:06:55Z",
-      "age_s": 177.2,
+      "age_s": 3881.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1971,10 +6619,10 @@
       "pack_sha256": "f1c8e8b9eb3006b7666ba53b32f9c5777f7367f1e357c0d44283460ede69caac",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049998,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:48Z",
       "last_verified_at": "2026-10-03T15:06:48Z",
-      "age_s": 184.2,
+      "age_s": 3888.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2004,10 +6652,10 @@
       "pack_sha256": "5b7bde599dc531909e8292881dbc2d4c44f18a31badbf024f881e5179ba808df",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049997,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:45Z",
       "last_verified_at": "2026-10-03T15:06:45Z",
-      "age_s": 187.2,
+      "age_s": 3891.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2038,10 +6686,10 @@
       "pack_sha256": "69318199d9591c111bbf15bcca76e6f210695a0f36fda5635f540ece29ab42d4",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099995,
+      "price_now_usd": 0.099896,
       "captured_at": "2026-10-03T15:06:43Z",
       "last_verified_at": "2026-10-03T15:06:43Z",
-      "age_s": 189.2,
+      "age_s": 3893.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2071,10 +6719,10 @@
       "pack_sha256": "b97af5bd4b23e5d88d4adfa9ce08d1e94418f4b7d7f377cffe1e39f7d0a950e1",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049997,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:41Z",
       "last_verified_at": "2026-10-03T15:06:41Z",
-      "age_s": 191.2,
+      "age_s": 3895.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2104,10 +6752,10 @@
       "pack_sha256": "6af66a716c07b1d04e3a08ff3efc468aab0ed09f77b136f41bea46bad8f5a9ef",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049997,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:35Z",
       "last_verified_at": "2026-10-03T15:06:35Z",
-      "age_s": 197.2,
+      "age_s": 3901.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2138,10 +6786,10 @@
       "pack_sha256": "2f43932c4218af6d9494bf56b2254a18273d53b960918ef967d707b3b8916bf2",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099995,
+      "price_now_usd": 0.099896,
       "captured_at": "2026-10-03T15:06:34Z",
       "last_verified_at": "2026-10-03T15:06:34Z",
-      "age_s": 198.2,
+      "age_s": 3902.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2172,10 +6820,10 @@
       "pack_sha256": "b35ff61d9524fc785a28920cc1c325bcea06a136ef407e3c827a93241541021b",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099995,
+      "price_now_usd": 0.099896,
       "captured_at": "2026-10-03T15:06:29Z",
       "last_verified_at": "2026-10-03T15:06:29Z",
-      "age_s": 203.2,
+      "age_s": 3907.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2205,10 +6853,10 @@
       "pack_sha256": "23e8a2b24ef13f1db70fa89f56b636096f15d39882f438cae43bf8dff59f362a",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049997,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:28Z",
       "last_verified_at": "2026-10-03T15:06:28Z",
-      "age_s": 204.2,
+      "age_s": 3908.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2239,10 +6887,10 @@
       "pack_sha256": "e0379ed07e30a3a3bf56f865373ce0b73f5c1aaf7db0823358725591a7a35238",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099994,
+      "price_now_usd": 0.099895,
       "captured_at": "2026-10-03T15:06:25Z",
       "last_verified_at": "2026-10-03T15:06:25Z",
-      "age_s": 207.2,
+      "age_s": 3911.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2273,10 +6921,10 @@
       "pack_sha256": "df6e15463cdce8f7d7d2e2a5d723774a67a710ced49b0e4f1a7e8380cce5e338",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099994,
+      "price_now_usd": 0.099895,
       "captured_at": "2026-10-03T15:06:25Z",
       "last_verified_at": "2026-10-03T15:06:25Z",
-      "age_s": 207.2,
+      "age_s": 3911.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2307,10 +6955,10 @@
       "pack_sha256": "f3a6f23057c56080f0a55cbf9ad80f5ee1bf2e7a98ba27855dbb6f0d4ed2c442",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099994,
+      "price_now_usd": 0.099895,
       "captured_at": "2026-10-03T15:06:18Z",
       "last_verified_at": "2026-10-03T15:06:18Z",
-      "age_s": 214.2,
+      "age_s": 3918.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2340,10 +6988,10 @@
       "pack_sha256": "9418cb43d2f2bf4b34a26aa0f163f8ece4498d28875166183e120b0429a3f489",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049997,
+      "price_now_usd": 0.049948,
       "captured_at": "2026-10-03T15:06:17Z",
       "last_verified_at": "2026-10-03T15:06:17Z",
-      "age_s": 215.2,
+      "age_s": 3919.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2373,10 +7021,10 @@
       "pack_sha256": "7c7303f8a6a7f1f81b0210c7e39143c24899ad38df872482f508bf4ea1428a8f",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049996,
+      "price_now_usd": 0.049947,
       "captured_at": "2026-10-03T15:05:00Z",
       "last_verified_at": "2026-10-03T15:05:00Z",
-      "age_s": 292.2,
+      "age_s": 3996.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2406,10 +7054,10 @@
       "pack_sha256": "17ecab718a2db7aa8d8064740da01fcdb10c9f37b932d766018b10113253ab5e",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049996,
+      "price_now_usd": 0.049947,
       "captured_at": "2026-10-03T15:05:00Z",
       "last_verified_at": "2026-10-03T15:05:00Z",
-      "age_s": 292.2,
+      "age_s": 3996.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2440,10 +7088,10 @@
       "pack_sha256": "051764ea126076d16bbd5e2301f5d35aebce47d7f4342db7235b9d2b4b5e8757",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099988,
+      "price_now_usd": 0.099889,
       "captured_at": "2026-10-03T15:02:06Z",
       "last_verified_at": "2026-10-03T15:02:06Z",
-      "age_s": 466.2,
+      "age_s": 4170.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2473,10 +7121,10 @@
       "pack_sha256": "c4ddd45ba8803171df41bdac020fd097ae7a0bc8f63570de2aecd533547c9449",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049994,
+      "price_now_usd": 0.049944,
       "captured_at": "2026-10-03T15:02:03Z",
       "last_verified_at": "2026-10-03T15:02:03Z",
-      "age_s": 469.2,
+      "age_s": 4173.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2507,10 +7155,10 @@
       "pack_sha256": "a269defceee5c24cbe0b732f6e7037f0039afca8ad65e1ca85aad55a975f5577",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099976,
+      "price_now_usd": 0.099877,
       "captured_at": "2026-10-03T14:54:58Z",
       "last_verified_at": "2026-10-03T14:54:58Z",
-      "age_s": 894.2,
+      "age_s": 4598.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2540,10 +7188,10 @@
       "pack_sha256": "5f94495b68a8d8e4d7d82c1d82be26501a7576ae1ae56696787c361bbfea43f8",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049988,
+      "price_now_usd": 0.049939,
       "captured_at": "2026-10-03T14:54:57Z",
       "last_verified_at": "2026-10-03T14:54:57Z",
-      "age_s": 895.2,
+      "age_s": 4599.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2574,10 +7222,10 @@
       "pack_sha256": "4121a67930b1ae7816bcf393ef693a94eab3dbff9c3e036c398b881a0486270e",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099976,
+      "price_now_usd": 0.099877,
       "captured_at": "2026-10-03T14:54:56Z",
       "last_verified_at": "2026-10-03T14:54:56Z",
-      "age_s": 896.2,
+      "age_s": 4600.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2607,10 +7255,10 @@
       "pack_sha256": "b3fc6981188905b9f1a2888073d064516bbec4c9ba01384930fd3c5927bc0a87",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049986,
+      "price_now_usd": 0.049936,
       "captured_at": "2026-10-03T14:51:52Z",
       "last_verified_at": "2026-10-03T14:51:52Z",
-      "age_s": 1080.2,
+      "age_s": 4784.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2640,10 +7288,10 @@
       "pack_sha256": "e425c9cf95ad54d058d73f93b2aeff7cb1efcefeaee0f50756a8daece4139335",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.04829,
+      "price_now_usd": 0.042878,
       "captured_at": "2026-10-03T14:51:48Z",
       "last_verified_at": "2026-10-03T14:51:48Z",
-      "age_s": 1084.2,
+      "age_s": 4788.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2672,10 +7320,10 @@
       "pack_sha256": "b3c33b0c77b2795cf65c67b6ea5181a2e2b7aab95e94b650153602cbda1010e1",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048219,
+      "price_now_usd": 0.042815,
       "captured_at": "2026-10-03T14:51:02Z",
       "last_verified_at": "2026-10-03T14:51:02Z",
-      "age_s": 1130.2,
+      "age_s": 4834.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2705,10 +7353,10 @@
       "pack_sha256": "7847e4dd44bc0a2d92e99492c1a1d71f61da32cccf2684820dc76017680368b5",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048217,
+      "price_now_usd": 0.042814,
       "captured_at": "2026-10-03T14:51:01Z",
       "last_verified_at": "2026-10-03T14:51:01Z",
-      "age_s": 1131.2,
+      "age_s": 4835.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2737,10 +7385,10 @@
       "pack_sha256": "2b057ad928d403d936df63190872534aa46d020ca67a693e7da16cab03557a90",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048157,
+      "price_now_usd": 0.04276,
       "captured_at": "2026-10-03T14:50:22Z",
       "last_verified_at": "2026-10-03T14:50:22Z",
-      "age_s": 1170.2,
+      "age_s": 4874.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2770,10 +7418,10 @@
       "pack_sha256": "57772602df3ee50dadfe9388c33c379c4cb5017e159099f19529ecefe3622f03",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048157,
+      "price_now_usd": 0.04276,
       "captured_at": "2026-10-03T14:50:22Z",
       "last_verified_at": "2026-10-03T14:50:22Z",
-      "age_s": 1170.2,
+      "age_s": 4874.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2802,10 +7450,10 @@
       "pack_sha256": "07e3ed5de9550ffb83dbe4251e28ea1d70a29e43e5f7a0065eb0a61ff0d19052",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048156,
+      "price_now_usd": 0.042759,
       "captured_at": "2026-10-03T14:50:21Z",
       "last_verified_at": "2026-10-03T14:50:21Z",
-      "age_s": 1171.2,
+      "age_s": 4875.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2835,10 +7483,10 @@
       "pack_sha256": "17c05d5b03f5b1f48fbcf32a669c15efdab61a503ad81727fc3035beb7bfa4fc",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048156,
+      "price_now_usd": 0.042759,
       "captured_at": "2026-10-03T14:50:21Z",
       "last_verified_at": "2026-10-03T14:50:21Z",
-      "age_s": 1171.2,
+      "age_s": 4875.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2868,10 +7516,10 @@
       "pack_sha256": "3229e8d3a47010213e2f89255d4ab819652a020474f44dbf5df65ed464d855ac",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048148,
+      "price_now_usd": 0.042752,
       "captured_at": "2026-10-03T14:50:16Z",
       "last_verified_at": "2026-10-03T14:50:16Z",
-      "age_s": 1176.2,
+      "age_s": 4880.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2900,10 +7548,10 @@
       "pack_sha256": "ba458097a06fba49b961d880189818c8c6f5cd5c88f0fc50df3dd007e1403f93",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048146,
+      "price_now_usd": 0.04275,
       "captured_at": "2026-10-03T14:50:15Z",
       "last_verified_at": "2026-10-03T14:50:15Z",
-      "age_s": 1177.2,
+      "age_s": 4881.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2933,10 +7581,10 @@
       "pack_sha256": "037e1b67ab29a3d1da895b510a116eb32a930627a613b9d20460a0e3425c2261",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048137,
+      "price_now_usd": 0.042742,
       "captured_at": "2026-10-03T14:50:09Z",
       "last_verified_at": "2026-10-03T14:50:09Z",
-      "age_s": 1183.2,
+      "age_s": 4887.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2965,10 +7613,10 @@
       "pack_sha256": "9d167a2fb041fc6f0e42e49753220b8c54e883ba053b3b921e7993469439a5ed",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.04767,
+      "price_now_usd": 0.042327,
       "captured_at": "2026-10-03T14:45:05Z",
       "last_verified_at": "2026-10-03T14:45:05Z",
-      "age_s": 1487.2,
+      "age_s": 5191.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -2997,10 +7645,10 @@
       "pack_sha256": "5c9494e0f60864eccc76c25f4c21459df1fdb4c942d792544873b661db2f531f",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047668,
+      "price_now_usd": 0.042326,
       "captured_at": "2026-10-03T14:45:04Z",
       "last_verified_at": "2026-10-03T14:45:04Z",
-      "age_s": 1488.2,
+      "age_s": 5192.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -3030,10 +7678,10 @@
       "pack_sha256": "008199b577dd7ee6c86f17d3174746c01bf02c732b98b53a92b2185e6fb405c4",
       "p0_usd": 0.15,
       "half_life_s": 2592000,
-      "price_now_usd": 0.14994,
+      "price_now_usd": 0.149791,
       "captured_at": "2026-10-03T14:44:50Z",
       "last_verified_at": "2026-10-03T14:44:50Z",
-      "age_s": 1502.2,
+      "age_s": 5206.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -3062,10 +7710,10 @@
       "pack_sha256": "26ba349ff60d0fa82f851e7367936ddabcc70db1d66012f017702b205146a651",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047638,
+      "price_now_usd": 0.042299,
       "captured_at": "2026-10-03T14:44:44Z",
       "last_verified_at": "2026-10-03T14:44:44Z",
-      "age_s": 1508.2,
+      "age_s": 5212.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -3094,10 +7742,10 @@
       "pack_sha256": "eaa4e458d7626b7db10407016e48afdb6bd719a4bddb2e60f6cf606c81ca9591",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047636,
+      "price_now_usd": 0.042297,
       "captured_at": "2026-10-03T14:44:43Z",
       "last_verified_at": "2026-10-03T14:44:43Z",
-      "age_s": 1509.2,
+      "age_s": 5213.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -3127,10 +7775,10 @@
       "pack_sha256": "936069769a2771be1ddee1b370ba1857c10dd2c7fcb4db049be2bfdeab89779a",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049977,
+      "price_now_usd": 0.049928,
       "captured_at": "2026-10-03T14:41:36Z",
       "last_verified_at": "2026-10-03T14:41:36Z",
-      "age_s": 1696.2,
+      "age_s": 5400.3,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,

@@ -2,7 +2,7 @@
   "x402Version": 1,
   "resources": [
     {
-      "resource": "https://d809ead7d55060.lhr.life/findings",
+      "resource": "https://02e241872ffe40.lhr.life/findings",
       "description": "KnownOnce settled-findings exchange. Catalogue reads and probe re-runs are free; findings are settled buyer->seller directly on Base with a 10% fee (min $0.005) paid directly to 0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2.",
       "mimeType": "application/json"
     }
