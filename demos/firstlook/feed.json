@@ -1,7 +1,22 @@
 {
  "delay_seconds": 900,
- "generated_at": "2026-10-03T13:39:54+00:00",
+ "generated_at": "2026-10-03T13:45:17+00:00",
  "items": [
+  {
+   "budget_currency": null,
+   "budget_max": null,
+   "budget_min": null,
+   "category": "paraloom-labs/paraloom-core",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:26:00+00:00",
+   "id": 116,
+   "kind": "bounty",
+   "poster": "williamleewilliam1-star",
+   "rail": null,
+   "source": "github",
+   "title": "[BOUNTY] Medium: submitted private swap is marked successful before confirmation, disabling recovery if the tx drops",
+   "url": "https://github.com/paraloom-labs/paraloom-core/issues/856"
+  },
   {
    "budget_currency": null,
    "budget_max": null,
