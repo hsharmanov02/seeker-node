@@ -1,0 +1,32 @@
+{
+ "dogfood": {
+  "avg_saving_pct_on_deals": 0,
+  "close_rate": 0,
+  "closed_over_5pct_saving": 0,
+  "deals": 0,
+  "negotiations": 0,
+  "pct_closed_over_5pct_saving": 0
+ },
+ "external": {
+  "avg_saving_pct_on_deals": 0,
+  "close_rate": 0,
+  "closed_over_5pct_saving": 0,
+  "deals": 0,
+  "negotiations": 0,
+  "pct_closed_over_5pct_saving": 0
+ },
+ "external_mandates_total": 0,
+ "fees": {
+  "fee_address_base": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "fee_address_solana": "H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw",
+  "note": "dogfood fees are simulated; revenue counts only as USDC actually landed at the fee address",
+  "success_fee": "10% of verified saving, min $0.02, cap $5",
+  "upfront_usd": 0.03
+ },
+ "mandate_violations": 0,
+ "parked": false,
+ "pass_criteria": ">=10 dogfood negotiations, >=30% closing at >5% saving, AND >=1 external mandate in 7 days; instant park on any mandate violation",
+ "seller_optouts_honoured": 0,
+ "service": "SecondChair/1.0",
+ "started_at": "2026-10-03T14:56:58Z"
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecondChair — open negotiation spec v1.0</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 46rem; padding: 0 1rem; line-height: 1.55; color: #1a1a2e; }
+  code { background: #f0f0f5; padding: 0.1em 0.35em; border-radius: 4px; }
+  pre { background: #14141f; color: #d8f3dc; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.82rem; }
+</style>
+</head>
+<body>
+<h1>SecondChair negotiation protocol — open spec v1.0</h1>
+<p>Anyone may implement either side. Sellers opt in by publishing the
+agent-card block; buyers opt in by signing a mandate. SecondChair is a
+negotiator, never a party to the sale and never a custodian of funds.</p>
+
+<h2>1. The mandate (buyer → SecondChair)</h2>
+<pre>{
+  "mandate_id": "md_…", "buyer_pubkey": "0x…(buyer agent wallet)",
+  "seller_endpoint": "https://seller.example/negotiate",
+  "item_ref": "dataset-10k-rows",
+  "ask_price": 40.00, "target_price": 32.00, "max_price": 36.00,
+  "currency": "USD", "deadline_ts": 1790000000, "max_rounds": 12,
+  "strategy": {"curve": "faratin", "beta": 1.4,
+               "extras": {"flexible_delivery": true}},
+  "alternates": [{"seller_endpoint": "…", "ask_price": 41.00}],
+  "nonce": "…"
+}</pre>
+<p>Signed EIP-191 over the canonical (sorted-key) JSON of the mandate
+core. The signature proves the ceiling is the buyer's own: our engine
+enforces <code>max_price</code> in code at offer construction and the
+token validator rejects any agreement above it by construction. A
+mandate never binds the buyer to buy — only the seller's final quote
+is committed, and the buyer still chooses whether to pay it.</p>
+
+<h2>2. Negotiation turns (SecondChair → seller <code>/negotiate</code>)</h2>
+<pre>{"protocol": "secondchair/1.0", "agent": "SecondChair/1.0",
+ "msg_type": "offer | best_final | accept | walk",
+ "negotiation_id": "neg_…", "mandate_hash": "sha256…",
+ "item_ref": "…", "round": 3, "price": 33.50,
+ "extras": {"flexible_delivery": true}, "ts": 1790000100,
+ "prev_hash": "sha256…"}</pre>
+<p>Seller replies with <code>counter</code> (with <code>price</code>),
+<code>accept</code> (with a deal token), <code>reject</code>, or
+<code>no_negotiate</code>. Every message is hash-chained into a
+transcript both sides can audit. We identify ourselves in headers
+(<code>Agent: SecondChair/1.0</code>, <code>X-SecondChair-Mandate</code>)
+on every turn. Seller prose is never parsed — numbers only.</p>
+
+<h2>3. The deal token (seller-signed)</h2>
+<pre>{"quote_id": "q_…", "negotiation_id": "neg_…", "mandate_hash": "…",
+ "item_ref": "…", "agreed_price": 33.50, "currency": "USD",
+ "payTo": "seller's own payment address", "expiry": 1790001000,
+ "seller_pubkey": "…", "seller_sig": "ed25519…"}</pre>
+<p>Short-lived (~15 min). The buyer redeems by paying the seller's
+<code>payTo</code> directly, presenting the token; the seller verifies
+its own signature + expiry and delivers at the agreed price.
+SecondChair countersigns as <em>witness only</em> (the bargain happened
+under this mandate) — never as a party to the sale.</p>
+
+<h2>4. Seller opt-in (agent card)</h2>
+<pre>"negotiation": {"supported": true, "protocol": "secondchair/1.0",
+                "endpoint": "/negotiate", "token_signing": "ed25519"}</pre>
+<p>Why opt in: a negotiator with a provably real ceiling converts "maybe
+a buyer" into a closed deal at a price your own concession policy chose.</p>
+
+<h2>5. Anti-manipulation charter (hard-coded, public)</h2>
+<ul>
+<li>One active negotiation per (buyer, seller, item); one negotiation per mandate.</li>
+<li>Global per-seller cap: ≤ 6 negotiations/day across <em>all</em> our buyers, with minimum turn intervals.</li>
+<li>Seller opt-out registry + instant respect of an <code>X-No-Negotiate</code> signal — permanent, no retries, ever.</li>
+<li>Upfront fee on every mandate (no free fake negotiators). Opening offers floored at 50% of ask — no insult-spam.</li>
+<li>Transcripts seller-auditable; public anonymised stats ledger; savings reported against the best alternative, not just the ask.</li>
+</ul>
+
+<h2>6. Fees</h2>
+<p>$0.03 upfront per negotiation + 10% of verified saving (ask −
+agreed), min $0.02, cap $5, charged only when a token is issued.
+NO_DEAL returns the full transcript, the estimated seller floor, and a
+BATNA report; no success fee. Fees settle buyer → SecondChair directly,
+verified on-chain, receive-only. We never hold funds, never pay on
+anyone's behalf, never sign purchases.</p>
+</body>
+</html>

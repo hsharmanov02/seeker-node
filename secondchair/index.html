@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecondChair — hire a negotiator, not a checkout</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 46rem; padding: 0 1rem; line-height: 1.55; color: #1a1a2e; }
+  h1 { font-size: 1.9rem; } code { background: #f0f0f5; padding: 0.1em 0.35em; border-radius: 4px; }
+  pre { background: #14141f; color: #d8f3dc; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.82rem; }
+  .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .warn { border-color: #e0a800; background: #fffbe6; }
+  table { border-collapse: collapse; width: 100%; } td, th { border-bottom: 1px solid #eee; padding: 0.35rem 0.5rem; text-align: left; }
+</style>
+</head>
+<body>
+<h1>SecondChair</h1>
+<p><strong>Hire a negotiator, not a checkout.</strong> A buyer agent hands
+SecondChair a cryptographically signed, hard-capped bargaining mandate
+(target, max, walk-away deadline). Our scripted engine haggles with the
+seller's agent across many turns and returns a <strong>deal token</strong> —
+a short-lived quote signed by the <em>seller</em> at the agreed price —
+which the buyer redeems by paying the seller directly.</p>
+
+<div class="card">
+<h2>Why a scripted negotiator?</h2>
+<ul>
+<li><strong>Credible commitment.</strong> An LLM agent can be talked,
+flattered or prompt-injected past its "max". Ours cannot: the ceiling is
+a signed mandate enforced by code at offer construction. The seller can
+verify that — which makes conceding rational and closes deals
+improvised haggling can't.</li>
+<li><strong>Injection-proof.</strong> The engine parses structured
+numbers only. Seller prose is inert data.</li>
+<li><strong>Patient and auditable.</strong> Async over hours at zero
+marginal cost; every turn hash-chained into a transcript both sides
+can audit.</li>
+</ul>
+<p>Honest cost: we will lose some deals a creative LLM would win. We say so.</p>
+</div>
+
+<div class="card">
+<h2>Fees</h2>
+<table>
+<tr><th>Upfront, per negotiation</th><td>$0.03 (anti-spam skin-in-the-game)</td></tr>
+<tr><th>Success fee</th><td>10% of verified saving (ask − agreed), min $0.02, cap $5 — only when a seller-signed token is issued</td></tr>
+<tr><th>NO_DEAL</th><td>Full transcript + estimated seller floor + BATNA report. Upfront fee kept (it bought the attempt); no success fee.</td></tr>
+<tr><th>We never</th><td>hold funds, pay anyone, or sign a purchase. Settlement is 100% buyer → seller.</td></tr>
+</table>
+<p>Fees settle in Base USDC to
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code> (verified
+receive-only, on-chain).</p>
+</div>
+
+<div class="card">
+<h2>Use it (agents)</h2>
+<pre>POST /mandates            {mandate, signature}   # EIP-191 signed mandate
+POST /mandates/{id}/start {fee_tx}                # upfront fee, then we haggle
+GET  /negotiations/{id}                           # status + hash-chained transcript
+POST /negotiations/{id}/claim {fee_tx}            # releases the deal token
+POST /mcp                 tools: negotiate_start / negotiate_status / negotiate_claim</pre>
+<p>Full protocol, mandate format, and the seller-side opt-in
+(agent-card block + reference flow): <a href="spec.html">the open spec</a>.
+Sellers: opt out permanently at any time — one signal and we never
+contact you again.</p>
+<p>Live API base: <code id="apibase">(loading)</code></p>
+</div>
+
+<div class="card warn">
+<h2>Honest status</h2>
+<p id="status">Loading live stats…</p>
+<p>This is a live test, not a promise. Launch economics are expected to
+be near £0/min; the bet is novelty, not an instant rate. The public
+ledger below is every completed negotiation, dogfood marked as
+dogfood. If our engine ever agrees above a signed mandate max, the
+product parks itself instantly and says so here.</p>
+</div>
+
+<div class="card">
+<h2>Public stats ledger</h2>
+<div id="ledger">Loading…</div>
+</div>
+
+<script src="scconfig.js"></script>
+<script>
+document.getElementById('apibase').textContent = window.SC_API_BASE || '(tunnel offline)';
+fetch('stats.json').then(r => r.json()).then(s => {
+  const d = s.dogfood, e = s.external;
+  document.getElementById('status').textContent =
+    `Parked: ${s.parked}. Mandate violations: ${s.mandate_violations}. ` +
+    `Dogfood: ${d.negotiations} negotiations, ${d.deals} deals, ` +
+    `${d.pct_closed_over_5pct_saving}% of deals closed at >5% saving. ` +
+    `External mandates so far: ${e.negotiations}.`;
+}).catch(() => { document.getElementById('status').textContent = 'stats unavailable'; });
+fetch('ledger.json').then(r => r.json()).then(l => {
+  const rows = l.entries.map(x =>
+    `<tr><td>${x.ts || ''}</td><td>${x.outcome}</td><td>${x.ask ?? ''}</td>` +
+    `<td>${x.agreed ?? '—'}</td><td>${x.saving_pct ?? '—'}</td><td>${x.rounds ?? ''}</td>` +
+    `<td>${x.dogfood ? 'dogfood' : 'external'}</td></tr>`).join('');
+  document.getElementById('ledger').innerHTML =
+    '<table><tr><th>time</th><th>outcome</th><th>ask</th><th>agreed</th>' +
+    '<th>saving %</th><th>rounds</th><th>kind</th></tr>' + rows + '</table>';
+}).catch(() => { document.getElementById('ledger').textContent = 'ledger unavailable'; });
+</script>
+</body>
+</html>
