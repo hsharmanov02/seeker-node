@@ -1,0 +1,68 @@
+{
+  "chain": [
+    {
+      "seq": 1,
+      "ts": "2026-10-03T12:52:44+00:00",
+      "kind": "commitment",
+      "ref": "dc-suite-v1",
+      "payload_hash": "74b57aea11843b783eff61a86e865b6c0dd89718f5901cbecdb2af72f3a92395",
+      "prev_hash": "GENESIS",
+      "hash": "b84fbe16bba01253356f05fdeb08e1e14d746f0a55167b48f62dbcb2b5ed5c94"
+    },
+    {
+      "seq": 2,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "firstlook",
+      "payload_hash": "2cac86ec0888df797d935149b6ccf1b2b7bc9850959294c94a8fe93248f9225d",
+      "prev_hash": "b84fbe16bba01253356f05fdeb08e1e14d746f0a55167b48f62dbcb2b5ed5c94",
+      "hash": "e950b6ee69514be00dd8198140dce0acd70db549f32efc1d59639d6173dd2fb4"
+    },
+    {
+      "seq": 3,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "futurecapture",
+      "payload_hash": "a446338f8a861a8ef8b14dc61f7f3a41968dc8362ec3205998803a2f647cb627",
+      "prev_hash": "e950b6ee69514be00dd8198140dce0acd70db549f32efc1d59639d6173dd2fb4",
+      "hash": "956d35be3318009e5dfcb411ddf4e0290e8ee611c74d185e58a8fab5655e2d13"
+    },
+    {
+      "seq": 4,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "gazette",
+      "payload_hash": "e8f69ad7b0c766097b390f0ddc800795e21d988f6cec560a9e1ec3c8fd6c36ea",
+      "prev_hash": "956d35be3318009e5dfcb411ddf4e0290e8ee611c74d185e58a8fab5655e2d13",
+      "hash": "fcddf076707f188414741dfe40a9f50ef3a314a835162c8f043ec6b26f8684f1"
+    },
+    {
+      "seq": 5,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "instantaudit",
+      "payload_hash": "da2ab3d23520fecbbf1ce861fd9155037d9f9147ae06c8dd45ae74afd9d155f8",
+      "prev_hash": "fcddf076707f188414741dfe40a9f50ef3a314a835162c8f043ec6b26f8684f1",
+      "hash": "7bdaaaf5fab26e3a4338308cd5be5e1181faf8ee1b5ca7a11c00dfbecfb45bd6"
+    },
+    {
+      "seq": 6,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "ipgeo-worker",
+      "payload_hash": "a7cd25d7ffea8640b09c62f4523ad2bb6b36f049e90ba7f61f08381d42ae38e3",
+      "prev_hash": "7bdaaaf5fab26e3a4338308cd5be5e1181faf8ee1b5ca7a11c00dfbecfb45bd6",
+      "hash": "4d5028eec4c53e0ddc60c04e3e5a0cdcb818d15deac1b3087269f655dcc458a7"
+    },
+    {
+      "seq": 7,
+      "ts": "2026-10-03T12:52:45+00:00",
+      "kind": "register",
+      "ref": "rig-test",
+      "payload_hash": "8f53d659b526eb83eae1f98be55fdc80b160d387596a7e0e4d0ac65c99aaec44",
+      "prev_hash": "4d5028eec4c53e0ddc60c04e3e5a0cdcb818d15deac1b3087269f655dcc458a7",
+      "hash": "7af3e243642b116af53f47d6e5dfcec6ab864e1795ed528b4087a9bcce3c3b3d"
+    }
+  ],
+  "tip": "7af3e243642b116af53f47d6e5dfcec6ab864e1795ed528b4087a9bcce3c3b3d"
+}

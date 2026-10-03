@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DecayCert</title>
+<style>body{font-family:system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.35rem .6rem;font-size:.9rem}
+code{word-break:break-all}</style></head><body>
+<h1>DecayCert</h1>
+<p>Continuously-probed behavioural certificates for live seller-agent endpoints.
+DecayCert probes registered endpoints unannounced, at randomised intervals, with a
+secret test suite whose SHA-256 hash was committed to a public hash-chained log
+<em>before</em> probing began — so no seller can game tests it cannot see, and we
+cannot post-select tests after seeing answers. Every certificate is Ed25519-signed
+and <strong>decays with a 36-hour half-life</strong>: stop passing, and the score
+halves every 36 hours until it expires. All scorers are deterministic (schema,
+known-answer canaries, repeat-consistency, latency, x402 payment shape) — no LLM
+judges, fully reproducible.</p>
+<p><strong>Buyers:</strong> check an endpoint before paying it —
+<code>GET /status/{endpoint_id}</code> is free (status + decayed score);
+the full signed certificate + probe-history hashes cost $0.15 USDC on Base via
+the x402 402 flow at <code>GET /certificate/{endpoint_id}</code>
+(pay to <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>, then retry with header
+<code>X-PAYMENT-TX: &lt;base-tx-hash&gt;</code>).</p>
+<p><strong>Sellers:</strong> registration is free and name-free: POST an endpoint
+URL + task class to <code>/register</code> on the API. Identity is the endpoint.</p>
+<p><strong>Suite commitment (SHA-256):</strong> <code>567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0</code><br>
+<strong>Public key (Ed25519, hex):</strong> <code>90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1</code><br>
+<strong>Public hash-chained log:</strong> <a href="log.json">log.json</a> ·
+<strong>Commitment record:</strong> <a href="commitment.json">commitment.json</a></p>
+<h2>Certified endpoints</h2>
+<table><tr><th>endpoint</th><th>url</th><th>task class</th><th>status</th>
+<th>effective score</th><th>probes</th></tr>
+<tr><td><a href="certs/firstlook/index.html">firstlook</a></td><td><code>http://127.0.0.1:8799</code></td><td>agent-opportunity wire API</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+<tr><td><a href="certs/futurecapture/index.html">futurecapture</a></td><td><code>http://127.0.0.1:8803</code></td><td>pre-sold future data capture API</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+<tr><td><a href="certs/gazette/index.html">gazette</a></td><td><code>http://127.0.0.1:8801</code></td><td>constructive-notice registry API</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+<tr><td><a href="certs/instantaudit/index.html">instantaudit</a></td><td><code>http://127.0.0.1:8791</code></td><td>smart-contract audit API</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+<tr><td><a href="certs/ipgeo-worker/index.html">ipgeo-worker</a></td><td><code>https://ip-geo.hsharmanov02.workers.dev</code></td><td>x402 paid IP geolocation API</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+<tr><td><a href="certs/rig-test/index.html">rig-test</a></td><td><code>http://127.0.0.1:8807</code></td><td>TEST rig - decay/degradation/fingerprint drills</td><td>never-tested</td><td>0.0</td><td>0</td></tr>
+</table>
+<p>Probe rounds run at randomised intervals (live-test cadence; production
+cadence is a Poisson mean of ~6 rounds/day). Entries marked TEST are our own
+sacrificial rigs used to prove decay and drift-detection. The certificate key
+is an off-chain key holding no funds; receiving addresses are public and
+receive-only.</p>
+</body></html>

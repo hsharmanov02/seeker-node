@@ -1,0 +1,6 @@
+{
+  "suite_id": "dc-suite-v1",
+  "suite_commitment_sha256": "567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0",
+  "committed_before_probing": true,
+  "public_key_hex": "90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1"
+}
