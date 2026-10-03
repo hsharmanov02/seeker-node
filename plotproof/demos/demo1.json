@@ -1,0 +1,127 @@
+{
+ "bundle_sha256": "1d42ee57ce9a7973f5c84bf8bc1bf7660617f37fb0a587c677c3642c4009bd91",
+ "claim_supported": false,
+ "families": [
+  {
+   "estimate_mm": 6.56,
+   "evidence_sha256": "cdaf2b8781121848afabd05a02ced42632b53d99373b621df82fc2b7b882ebaa",
+   "family": "EA",
+   "label": "Environment Agency rainfall gauges (UK, 15-min)",
+   "licence": "Open Government Licence v3.0",
+   "margin_mm": 1.64,
+   "nearest_km": 4.94,
+   "notes": [],
+   "side": "below",
+   "source_url": "https://environment.data.gov.uk/flood-monitoring/id/stations",
+   "stations": [
+    {
+     "coverage": 1.0,
+     "dist_km": 25.17,
+     "id": "E6380-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 50.989632,
+     "lon": 0.75505,
+     "name": "SCOTS FLOAT SLUICE RL",
+     "total_mm": 0.05
+    },
+    {
+     "coverage": 1.0,
+     "dist_km": 82.21,
+     "id": "238605TP-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 51.722932,
+     "lon": 0.136235,
+     "name": "Rainfall station",
+     "total_mm": 0.0
+    },
+    {
+     "coverage": 1.0,
+     "dist_km": 68.38,
+     "id": "E8770-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 50.893868,
+     "lon": 0.081008,
+     "name": "Rainfall station",
+     "total_mm": 0.0
+    },
+    {
+     "coverage": 1.0,
+     "dist_km": 12.43,
+     "id": "E4753-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 51.160348,
+     "lon": 1.119955,
+     "name": "Rainfall station",
+     "total_mm": 8.0
+    },
+    {
+     "coverage": 1.0,
+     "dist_km": 4.94,
+     "id": "E4500-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 51.154584,
+     "lon": 0.889296,
+     "name": "Rainfall station",
+     "total_mm": 5.24
+    },
+    {
+     "coverage": 1.0,
+     "dist_km": 5.3,
+     "id": "E4530-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+     "lat": 51.156945,
+     "lon": 1.009589,
+     "name": "Rainfall station",
+     "total_mm": 8.2
+    }
+   ],
+   "strong": true,
+   "strong_side": "below"
+  },
+  {
+   "estimate_mm": null,
+   "evidence_sha256": "1f822332698ae7fb50cb04947270eebbb39af322e4a24ed8180418ebfa6e3b39",
+   "family": "GHCN",
+   "label": "NOAA GHCN-Daily station archive (global)",
+   "licence": "US public domain (NOAA/NCEI)",
+   "margin_mm": null,
+   "notes": [],
+   "side": null,
+   "source_url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/",
+   "stations": [],
+   "strong": false
+  },
+  {
+   "estimate_mm": null,
+   "evidence_sha256": "985d9bc4d97ceb932d2ea03552ece1c75d2b3a0a8d95c2b5bd27836a4b6c4512",
+   "family": "ISD",
+   "label": "NOAA Integrated Surface Database (global-hourly, airports/synop)",
+   "licence": "US public domain (NOAA/NCEI)",
+   "margin_mm": null,
+   "notes": [],
+   "side": null,
+   "source_url": "https://www.ncei.noaa.gov/data/global-hourly/",
+   "stations": [],
+   "strong": false
+  },
+  {
+   "estimate_mm": null,
+   "evidence_sha256": "bf87e5d53275d1eee15da0d6fbb86b62f91b0db3773df3de3438f35c303b0d68",
+   "family": "DWD",
+   "label": "Deutscher Wetterdienst hourly precipitation (Germany)",
+   "licence": "Free of charge per DWD Act; attribution: Deutscher Wetterdienst",
+   "margin_mm": null,
+   "notes": [],
+   "side": null,
+   "source_url": "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/precipitation/recent/",
+   "stations": [],
+   "strong": false
+  }
+ ],
+ "price_usd": 0.25,
+ "query": {
+  "end": "2026-09-29T00:00:00Z",
+  "lat": 51.182,
+  "lon": 0.945,
+  "start": "2026-09-28T00:00:00Z",
+  "threshold_mm": 10.0
+ },
+ "recheck": "Recompute from the listed station ids at each family's source_url; every station total, distance, weight input and the rule (rules_id) is in this bundle.",
+ "retrieved_at": "2026-10-03T14:48:54Z",
+ "rules_id": "plotproof-rules-v1",
+ "verdict": "PROBABLE"
+}
