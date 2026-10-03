@@ -2,7 +2,7 @@
   "product": "AbsenceSeal",
   "chain": "base",
   "service_public_key_ed25519": "2e464640ed13bd5ca3883b0dc848652fb75064ee7d9d36a1e95dc2143bbaa893",
-  "chain_tip": "3851485e21abb8cbbc1a2053c26edf4a56988976e336fe5bcf9a556f5fa91170",
+  "chain_tip": "0e997f41cf2394c664b3bdc3efd2791ef23b6d246caae24b450de6c10657fa5e",
   "windows": [
     {
       "from": 51944400,
@@ -73,6 +73,20 @@
       "chain_hash": "3851485e21abb8cbbc1a2053c26edf4a56988976e336fe5bcf9a556f5fa91170",
       "signature": "2d82f0a93c7af73e81d4b81f703e2d141ab1de9bf526ce89188eb59238d2574295b7a59d2e0d0343920ebb250cb0e36c1d12d790fb0836f435b41ecf316cf104",
       "captured_at": "2026-10-03T15:38:04Z"
+    },
+    {
+      "from": 52126200,
+      "to": 52127999,
+      "events_root": "a50bfb65d5537b53704073337eaf879e9550f36d2489e877e577006c07ba9a59",
+      "pairs_root": "414bb50a8cf6d31e5310556c7a76f1bc3b7fc0cd807acdcebac46583d4f28365",
+      "event_count": 166998,
+      "pair_count": 32337,
+      "first_hash": "0xb9e09497c86d7ea8752f072ff63b673ae88a0cd8e2097d6fb2b257105eec1cba",
+      "last_hash": "0x8e5211a7abd22bdead45514e52a1ce4f69b3e4c1e1662ce9acd75a1b7e070c38",
+      "prev_chain": "3851485e21abb8cbbc1a2053c26edf4a56988976e336fe5bcf9a556f5fa91170",
+      "chain_hash": "0e997f41cf2394c664b3bdc3efd2791ef23b6d246caae24b450de6c10657fa5e",
+      "signature": "c718f7c16581cc19820ecedd2c30db8f4e0c5d02b304d30032f56c6e47836fec97ffd9d81447642612b8ff703db0e3ea06672badcf7a6fe9f2605ad8d09b590d",
+      "captured_at": "2026-10-03T16:37:02Z"
     }
   ]
 }

@@ -9,7 +9,7 @@
   "external_uncertifiable": 0,
   "external_cert_requests": 1,
   "certs_issued_total": 5,
-  "windows_complete": 5,
+  "windows_complete": 6,
   "pass_criteria": ">=1 external paid cert OR >=10 external verifications OR 1 marketplace inbound",
   "pass": false
 }
