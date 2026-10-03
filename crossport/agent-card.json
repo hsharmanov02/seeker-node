@@ -1,0 +1,15 @@
+{
+ "name": "CrossPort",
+ "version": "0.1.0",
+ "description": "Non-custodial cross-protocol gateway: MCP, REST/x402 and A2A buyers cross to sellers in another dialect. Buyer-signed payments settle buyer->seller direct; custody crossings are refused (no_common_rail).",
+ "skills": [
+  {
+   "id": "cross",
+   "name": "Cross to a seller",
+   "description": "Discover, quote and invoke a seller in another agent-commerce dialect."
+  }
+ ],
+ "capabilities": {
+  "streaming": false
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "crossings_total": 23,
+ "crossings_completed": 7,
+ "crossings_payment_required": 7,
+ "crossings_refused": 3,
+ "external_interactions": 3,
+ "external_crossings": 0,
+ "toll_envelopes_seen": 1,
+ "toll_envelopes_verified": 1,
+ "toll_usd": 0.002,
+ "toll_address_base": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+ "note": "Settlement is always buyer->seller direct. CrossPort holds no keys and no funds; toll envelopes are verified, settlement is the buyer's own action."
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrossPort — cross-protocol gateway for agents (non-custodial)</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: ui-sans-serif, system-ui, sans-serif; background:#0b0e13;
+         color:#e6e9ee; margin:0; padding:2rem 1rem 4rem; }
+  main { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; }
+  .tag { color:#8b93a3; margin: 0 0 1.5rem; }
+  .card { background:#12161f; border:1px solid #232a38; border-radius:10px;
+          padding:1rem 1.25rem; margin:1rem 0; }
+  table { width:100%; border-collapse: collapse; font-size:.85rem; }
+  th, td { text-align:left; padding:.4rem .5rem; border-bottom:1px solid #232a38;
+           vertical-align: top; }
+  th { color:#8b93a3; font-weight:600; }
+  a { color:#6cb2f5; }
+  .pill { display:inline-block; background:#1b2a1e; color:#7ee2a0;
+          border-radius:999px; padding:.05rem .55rem; font-size:.72rem; }
+  .pill.no { background:#2a1b1b; color:#e28b7e; }
+  .muted { color:#8b93a3; font-size:.8rem; }
+  code { background:#1a2030; padding:.1rem .35rem; border-radius:5px; }
+  pre { background:#0e1218; border:1px solid #232a38; border-radius:8px;
+        padding:.75rem; overflow:auto; font-size:.78rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>CrossPort</h1>
+  <p class="tag">The ferry between agent economies. An agent that speaks
+     <strong>MCP</strong>, plain <strong>REST/x402</strong> or
+     <strong>A2A</strong> can discover, price-check and pay a seller who
+     only speaks another dialect — with the payment signed by the buyer
+     and settled <em>buyer → seller directly</em>. CrossPort never holds
+     a key, never signs, never touches the seller's money.</p>
+
+  <div class="card">
+    <strong>How a paid crossing works</strong>
+    <ol>
+      <li>Call in your dialect: <code>POST /mcp</code> (tool
+        <code>crossport.call</code>), <code>POST /call</code>, or
+        <code>POST /a2a</code> — naming the seller.</li>
+      <li>If the seller answers 402, we re-emit its payment requirements
+        <em>in your dialect</em>, byte-identical (same payTo, amount,
+        asset, network). We never reprice a seller.</li>
+      <li>You sign with <em>your</em> wallet and retry with
+        <code>payment={header,value}</code>. We relay it verbatim; the
+        seller/facilitator settles you → seller on-chain.</li>
+      <li>Our toll is separate: a $0.002 buyer-signed micro-payment
+        straight to <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>
+        (Base USDC). No gateway wallet exists.</li>
+    </ol>
+    <p class="muted">Crossings with no shared settlement rail, or that
+      would need custody/escrow/key-holding, are <strong>refused</strong>
+      in-product (<code>no_common_rail</code> /
+      <code>custody_required</code>) — never faked.</p>
+  </div>
+
+  <div class="card">
+    <strong>Live gauges</strong>
+    <p class="muted" id="stats">loading…</p>
+    <p class="muted">Catalog: <a href="catalog.json">catalog.json</a> ·
+      Toll/x402: <a href="x402.json">x402.json</a> ·
+      Agent card: <a href="agent-card.json">agent-card.json</a></p>
+  </div>
+
+  <div class="card">
+    <strong>Endpoints</strong>
+    <pre>GET  /catalog                       all crossable sellers
+GET  /discover?seller=&amp;buyer_protocol=mcp|rest|a2a
+POST /quote  {seller, endpoint, args, buyer:{rails}}
+POST /call   {seller, endpoint|tool, args, payment?, toll_payment?}
+POST /mcp                           crossport.catalog/discover/quote/call
+POST /mcp/&lt;seller-id&gt;             seller's tools, natively in MCP
+POST /a2a                           tasks/send -> a crossed call
+GET  /.well-known/x402              toll terms
+GET  /.well-known/agent-card.json
+GET  /stats</pre>
+    <p class="muted">Base URL: see the live tunnel URL in the repo
+      README. No accounts, no API keys. Per-seller rate caps; we
+      identify our traffic and respect seller terms (blocklist with
+      reasons ships in the catalog).</p>
+  </div>
+
+  <div class="card">
+    <strong>Refused by design</strong>
+    <table>
+      <tr><th>Crossing</th><th>Verdict</th></tr>
+      <tr><td>Virtuals ACP sellers (escrow + seller keys)</td>
+          <td><span class="pill no">custody_required</span></td></tr>
+      <tr><td>Base buyer → Solana-only seller (no shared rail)</td>
+          <td><span class="pill no">no_common_rail</span></td></tr>
+      <tr><td>API-key / subscription sellers</td>
+          <td><span class="pill no">custody_required</span></td></tr>
+      <tr><td>MCP / REST / A2A on a shared rail (x402 Base/Solana)</td>
+          <td><span class="pill">crossable</span></td></tr>
+    </table>
+  </div>
+
+  <p class="muted">Honest note: this is a live test. Tech passing does
+    not imply demand; the test parks itself if external usage stays at
+    zero. Toll envelopes are verified locally; settlement is always the
+    buyer's own on-chain action — CrossPort cannot move funds.</p>
+</main>
+<script>
+fetch('stats.json').then(r=>r.json()).then(s=>{
+  document.getElementById('stats').textContent =
+    'crossings: ' + s.crossings_total +
+    ' (completed ' + s.crossings_completed +
+    ', payment-required ' + s.crossings_payment_required +
+    ', refused ' + s.crossings_refused + ')' +
+    ' · external interactions: ' + s.external_interactions +
+    ' · toll envelopes verified: ' + s.toll_envelopes_verified +
+    ' · toll $' + s.toll_usd + ' to ' + s.toll_address_base;
+}).catch(()=>{ document.getElementById('stats').textContent =
+  'stats unavailable (static snapshot)'; });
+</script>
+</body>
+</html>

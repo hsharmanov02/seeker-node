@@ -1,0 +1,374 @@
+{
+ "service": "CrossPort",
+ "toll_usd": 0.002,
+ "toll_address_base": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+ "sellers": [
+  {
+   "id": "firstlook-rest",
+   "name": "FirstLook (REST)",
+   "owner": "fleet",
+   "protocol": "rest",
+   "display_url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/firstlook/index.html",
+   "rails": [],
+   "crossable": true,
+   "endpoints": [
+    {
+     "name": "feed",
+     "price_usd": 0
+    },
+    {
+     "name": "ledger",
+     "price_usd": 0
+    },
+    {
+     "name": "stats",
+     "price_usd": 0
+    },
+    {
+     "name": "instant",
+     "price_usd": 0
+    }
+   ],
+   "tools": []
+  },
+  {
+   "id": "firstlook-mcp",
+   "name": "FirstLook (MCP)",
+   "owner": "fleet",
+   "protocol": "mcp",
+   "display_url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/firstlook/index.html",
+   "rails": [],
+   "crossable": true,
+   "endpoints": [],
+   "tools": [
+    "get_instant_opportunities"
+   ]
+  },
+  {
+   "id": "x402-spot-prices",
+   "name": "Liminal Spot Prices",
+   "owner": "fleet",
+   "protocol": "rest-x402",
+   "display_url": "https://x402-spot-prices.hsharmanov02.workers.dev",
+   "rails": [
+    "eip155:8453",
+    "eip155:143",
+    "eip155:42161",
+    "eip155:10",
+    "eip155:137",
+    "eip155:43114",
+    "solana"
+   ],
+   "crossable": true,
+   "endpoints": [
+    {
+     "name": "price",
+     "price_usd": 0.01
+    }
+   ],
+   "tools": []
+  },
+  {
+   "id": "threat-reputation",
+   "name": "Threat Reputation API",
+   "owner": "fleet",
+   "protocol": "rest-x402",
+   "display_url": "https://threat-reputation-api.hsharmanov02.workers.dev",
+   "rails": [
+    "eip155:8453"
+   ],
+   "crossable": true,
+   "endpoints": [
+    {
+     "name": "reputation",
+     "price_usd": 0.01
+    }
+   ],
+   "tools": []
+  },
+  {
+   "id": "stack-intel",
+   "name": "Stack Intel",
+   "owner": "fleet",
+   "protocol": "rest-x402",
+   "display_url": "https://stack-intel.hsharmanov02.workers.dev",
+   "rails": [
+    "eip155:8453"
+   ],
+   "crossable": true,
+   "endpoints": [
+    {
+     "name": "intel",
+     "price_usd": 0.01
+    }
+   ],
+   "tools": []
+  },
+  {
+   "id": "url-to-text",
+   "name": "URL to Text",
+   "owner": "fleet",
+   "protocol": "rest-x402",
+   "display_url": "https://url-to-text.hsharmanov02.workers.dev",
+   "rails": [
+    "eip155:8453"
+   ],
+   "crossable": true,
+   "endpoints": [
+    {
+     "name": "text",
+     "price_usd": 0.005
+    }
+   ],
+   "tools": []
+  }
+ ],
+ "external_sellers_live": [
+  {
+   "id": "ext-api-onesource-io-0",
+   "name": "ERC20 token balance for any Ethereum wallet - USDC, USDT, DAI, or any token - vi",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/erc20-balance",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-1",
+   "name": "Latest Ethereum block height - current chain tip via eth_blockNumber",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/block-number",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-2",
+   "name": "Live wallet balance - native ETH plus up to 20 caller-supplied ERC20 tokens in o",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/live-balance",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-stableenrich-dev-3",
+   "name": "FullEnrich People Search \u2014 filter by company domain/name/LinkedIn URL, seniority",
+   "protocol": "rest-x402",
+   "display_url": "https://stableenrich.dev/api/fullenrich/people-search",
+   "rails": [
+    "eip155:8453",
+    "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-exa-ai-4",
+   "name": "Exa /search endpoint",
+   "protocol": "rest-x402",
+   "display_url": "https://api.exa.ai/search",
+   "rails": [
+    "eip155:8453",
+    "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+    "eip155:8453",
+    "eip155:480",
+    "eip155:5042",
+    "eip155:5042",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-5",
+   "name": "ENS resolve - turn a .eth name into an address, or an address into its primary .",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/ens/:input",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-6",
+   "name": "Best-effort contract introspection via batched RPC - bytecode presence, token me",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/contract/:address",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-7",
+   "name": "ERC20 Transfer logs via eth_getLogs - raw Transfer events for a token or wallet",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/erc20-transfers",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-8",
+   "name": "Fetch an Ethereum block header and transaction hashes by number, tag, or hex via",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/block/:number",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-9",
+   "name": "Total supply of an ERC20 or ERC721 token contract via totalSupply (eth_call)",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/total-supply",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-10",
+   "name": "Next transaction nonce for any Ethereum wallet via eth_getTransactionCount - how",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/nonce/:address",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-crypto-apitoll-cloud-11",
+   "name": "Latest crypto token prices by ticker symbol, CoinGecko id, or chain:address (BTC",
+   "protocol": "rest-x402",
+   "display_url": "https://crypto.apitoll.cloud/v1/crypto/price",
+   "rails": [
+    "eip155:8453",
+    "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-12",
+   "name": "Full Ethereum transaction details by hash via eth_getTransactionByHash - from, t",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/tx/:hash",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-13",
+   "name": "EVM network info - chain ID, block height, gas price, chain head age, and chain ",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/network-info",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-stableupload-dev-14",
+   "name": "Buy an upload slot. Agent uploads file via returned URL.",
+   "protocol": "rest-x402",
+   "display_url": "https://stableupload.dev/api/upload",
+   "rails": [
+    "eip155:8453",
+    "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-15",
+   "name": "Transaction receipt via eth_getTransactionReceipt - status, gas, and event logs ",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/receipt/:hash",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-16",
+   "name": "Query Ethereum contract event logs via eth_getLogs - filter by contract, topic, ",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/events",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-17",
+   "name": "List every ERC721 NFT token_id a wallet owns in a collection via tokenOfOwnerByI",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/erc721-tokens",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-api-onesource-io-18",
+   "name": "NFT metadata for ERC721 or ERC1155 tokens via eth_call, with IPFS, Arweave, data",
+   "protocol": "rest-x402",
+   "display_url": "https://api.onesource.io/api/chain/nft-metadata",
+   "rails": [
+    "eip155:8453",
+    "eip155:8453"
+   ],
+   "crossable": true
+  },
+  {
+   "id": "ext-stableenrich-dev-19",
+   "name": "Exa Search - Neural search across the web",
+   "protocol": "rest-x402",
+   "display_url": "https://stableenrich.dev/api/exa/search",
+   "rails": [
+    "eip155:8453",
+    "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+   ],
+   "crossable": true
+  }
+ ],
+ "refused_categories": [
+  {
+   "id": "virtuals-acp-sellers",
+   "protocol": "acp",
+   "reason": "custody_required",
+   "detail": "ACP escrow lifecycle + seller dev-wallet keys; a hosted crossing would hold third-party funds or keys."
+  },
+  {
+   "id": "cross-chain-only-sellers",
+   "protocol": "rest-x402",
+   "reason": "no_common_rail",
+   "detail": "Buyer and seller share no settlement rail; converting rails means fronting/bridging funds (custody)."
+  },
+  {
+   "id": "api-key-subscription-sellers",
+   "protocol": "rest",
+   "reason": "custody_required",
+   "detail": "Paying them means reselling our account or holding buyer credentials."
+  }
+ ],
+ "note": "External sellers merged live from CDP Bazaar discovery (/catalog?refresh=1). Quote them via POST /quote."
+}

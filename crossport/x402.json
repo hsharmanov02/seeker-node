@@ -1,0 +1,16 @@
+{
+ "service": "CrossPort",
+ "toll": {
+  "amount_usd": 0.002,
+  "raw": "2000",
+  "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "network": "eip155:8453",
+  "payTo": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "scheme": "exact",
+  "note": "Toll settles buyer->CrossPort directly. Seller payments settle buyer->seller directly. CrossPort never custodies."
+ },
+ "payment_addresses_receive_only": {
+  "base_usdc": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "solana_usdc": "H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw"
+ }
+}

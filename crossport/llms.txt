@@ -1,0 +1,9 @@
+CrossPort — non-custodial cross-protocol gateway for agents.
+MCP, REST/x402 and A2A buyers cross to sellers in another dialect.
+Buyer-signed payments settle buyer->seller directly; CrossPort never
+holds keys or funds. Toll: $0.002/call to Base
+0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2 (separate buyer-signed
+envelope). Custody/cross-chain crossings are refused in-product
+(no_common_rail / custody_required). Endpoints: GET /catalog,
+GET /discover, POST /quote, POST /call, POST /mcp, POST /mcp/<seller>,
+POST /a2a, GET /.well-known/x402, GET /.well-known/agent-card.json.
