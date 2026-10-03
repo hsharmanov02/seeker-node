@@ -1,0 +1,33 @@
+{
+ "tapes_listed": 8,
+ "external_listings": 0,
+ "purchases_by_kind": {
+  "dogfood": {
+   "paid": 5,
+   "delivered": 4
+  }
+ },
+ "outcome_mix_all": {
+  "FAILED_ENV_MISMATCH": 1,
+  "SUCCESS_ADAPTED": 2,
+  "SUCCESS_AS_TAPED": 1
+ },
+ "flagged_sellers": [
+  {
+   "seller": "0xb8a2129d4f1f6a7607b1b9191c0215291971cea5",
+   "non_deliveries": 1,
+   "flagged": 1,
+   "updated_at": 1791041455
+  }
+ ],
+ "searches_total": 12,
+ "external_search_keys": 0,
+ "metering_fee_usdc": 0.4,
+ "fee_addresses": {
+  "base": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "solana": "H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw"
+ },
+ "fee_waiver_first_n_listings": 25,
+ "revenue_note": "dogfood payments are simulated with throwaway keys and are never counted as revenue",
+ "registry_pubkey_ed25519": "6c3950a506817d6cfbcfcdc64db6c265b2e05049eb0d0b16b700b132cf616b76"
+}

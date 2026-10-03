@@ -1,0 +1,165 @@
+{
+ "tapes": [
+  {
+   "tape_id": "rr-crossport-crossing",
+   "version": 1,
+   "seller": "0xcb018174ee6d1a8652e63e42ef300d39203b2c29",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "fleet",
+   "stats": {
+    "paid": 1,
+    "paid_deliveries": 1,
+    "non_deliveries": 0,
+    "outcomes_returned": 1,
+    "response_rate": 1.0,
+    "outcome_mix": {
+     "SUCCESS_AS_TAPED": 1
+    },
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-secondchair-negotiation",
+   "version": 1,
+   "seller": "0xcb018174ee6d1a8652e63e42ef300d39203b2c29",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "fleet",
+   "stats": {
+    "paid": 1,
+    "paid_deliveries": 1,
+    "non_deliveries": 0,
+    "outcomes_returned": 1,
+    "response_rate": 1.0,
+    "outcome_mix": {
+     "SUCCESS_ADAPTED": 1
+    },
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-goingrate-pricecheck",
+   "version": 1,
+   "seller": "0xcb018174ee6d1a8652e63e42ef300d39203b2c29",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "fleet",
+   "stats": {
+    "paid": 1,
+    "paid_deliveries": 1,
+    "non_deliveries": 0,
+    "outcomes_returned": 1,
+    "response_rate": 1.0,
+    "outcome_mix": {
+     "SUCCESS_ADAPTED": 1
+    },
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-gazette-notice",
+   "version": 1,
+   "seller": "0xcb018174ee6d1a8652e63e42ef300d39203b2c29",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "fleet",
+   "stats": {
+    "paid": 0,
+    "paid_deliveries": 0,
+    "non_deliveries": 0,
+    "outcomes_returned": 0,
+    "response_rate": null,
+    "outcome_mix": {},
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-absenceseal-cert",
+   "version": 1,
+   "seller": "0xcb018174ee6d1a8652e63e42ef300d39203b2c29",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "fleet",
+   "stats": {
+    "paid": 0,
+    "paid_deliveries": 0,
+    "non_deliveries": 0,
+    "outcomes_returned": 0,
+    "response_rate": null,
+    "outcome_mix": {},
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-synth-pricecensus",
+   "version": 1,
+   "seller": "0xde273421385beb379845a2827ee00c2df8b273a0",
+   "status": "BROKEN",
+   "evidence_tier": "C",
+   "source": "synthetic",
+   "stats": {
+    "paid": 0,
+    "paid_deliveries": 0,
+    "non_deliveries": 0,
+    "outcomes_returned": 0,
+    "response_rate": null,
+    "outcome_mix": {},
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-synth-queuejoin",
+   "version": 1,
+   "seller": "0xde273421385beb379845a2827ee00c2df8b273a0",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "synthetic",
+   "stats": {
+    "paid": 1,
+    "paid_deliveries": 1,
+    "non_deliveries": 0,
+    "outcomes_returned": 1,
+    "response_rate": 1.0,
+    "outcome_mix": {
+     "FAILED_ENV_MISMATCH": 1
+    },
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-badseller-tape",
+   "version": 1,
+   "seller": "0xb8a2129d4f1f6a7607b1b9191c0215291971cea5",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "synthetic",
+   "stats": {
+    "paid": 1,
+    "paid_deliveries": 0,
+    "non_deliveries": 1,
+    "outcomes_returned": 0,
+    "response_rate": null,
+    "outcome_mix": {},
+    "unknown_outcomes": 0
+   }
+  },
+  {
+   "tape_id": "rr-synth-pricecensus",
+   "version": 2,
+   "seller": "0xde273421385beb379845a2827ee00c2df8b273a0",
+   "status": "FRESH",
+   "evidence_tier": "C",
+   "source": "synthetic",
+   "stats": {
+    "paid": 0,
+    "paid_deliveries": 0,
+    "non_deliveries": 0,
+    "outcomes_returned": 0,
+    "response_rate": null,
+    "outcome_mix": {},
+    "unknown_outcomes": 0
+   }
+  }
+ ]
+}
