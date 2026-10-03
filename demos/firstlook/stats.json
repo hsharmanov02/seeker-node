@@ -1,13 +1,13 @@
 {
- "at": "2026-10-03T13:12:40+00:00",
+ "at": "2026-10-03T13:18:10+00:00",
  "delay_seconds": 900,
  "external_api_keys": 0,
- "feed_api_calls": 12,
+ "feed_api_calls": 18,
  "instant_api_calls_external": 1,
  "latency_overall": {
-  "count": 8,
+  "count": 9,
   "max_s": 324.7,
-  "median_s": 14.9,
+  "median_s": 14.8,
   "min_s": 5.7
  },
  "note": "Superteam publishes no creation timestamp; its items carry latency_s=null in the ledger.",
@@ -16,18 +16,18 @@
   "github": {
    "baseline_items": 44,
    "errors": 0,
-   "last_ok": "2026-10-03T13:12:25+00:00",
+   "last_ok": "2026-10-03T13:18:04+00:00",
    "latency": {
-    "count": 7,
+    "count": 8,
     "max_s": 23.9,
-    "median_s": 14.8,
+    "median_s": 11.3,
     "min_s": 5.7
    },
-   "live_items": 7
+   "live_items": 8
   },
   "superteam": {
    "baseline_items": 25,
-   "errors": 16,
+   "errors": 17,
    "last_ok": "2026-10-03T12:00:38+00:00",
    "latency": {
     "count": 0,
@@ -37,8 +37,8 @@
   },
   "ugig": {
    "baseline_items": 37,
-   "errors": 4,
-   "last_ok": "2026-10-03T13:06:53+00:00",
+   "errors": 3,
+   "last_ok": "2026-10-03T13:16:23+00:00",
    "latency": {
     "count": 1,
     "max_s": 324.7,
