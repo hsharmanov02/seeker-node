@@ -29,27 +29,37 @@ class SwapError(Exception):
 
 
 class Client:
-    def __init__(self, base, selftest=False, timeout=15):
+    def __init__(self, base, selftest=False, timeout=30):
         self.base = base.rstrip("/")
         self.selftest = selftest
         self.timeout = timeout
 
     def _req(self, method, path, body=None):
+        """Transport failures (dropped tunnel responses etc.) are retried up
+        to 3 times; HTTP error statuses are returned, never retried. Note a
+        lost deposit response can leave the deposit landed server-side: a
+        retry then returns 409 'already deposited', which means success."""
         data = json.dumps(body).encode() if body is not None else None
-        req = urllib.request.Request(self.base + path, data=data, method=method,
-                                     headers={"Content-Type": "application/json"})
-        if self.selftest:
-            req.add_header("X-Swapwindow-Selftest", "1")
-        try:
-            with urllib.request.urlopen(req, timeout=self.timeout) as r:
-                return r.status, json.loads(r.read() or b"{}")
-        except urllib.error.HTTPError as e:
-            raw = e.read().decode("utf-8", "replace")
+        last_exc = None
+        for attempt in range(3):
+            req = urllib.request.Request(self.base + path, data=data, method=method,
+                                         headers={"Content-Type": "application/json"})
+            if self.selftest:
+                req.add_header("X-Swapwindow-Selftest", "1")
             try:
-                parsed = json.loads(raw or "{}")
-            except Exception:
-                parsed = {"raw": raw}
-            return e.code, parsed
+                with urllib.request.urlopen(req, timeout=self.timeout) as r:
+                    return r.status, json.loads(r.read() or b"{}")
+            except urllib.error.HTTPError as e:
+                raw = e.read().decode("utf-8", "replace")
+                try:
+                    parsed = json.loads(raw or "{}")
+                except Exception:
+                    parsed = {"raw": raw}
+                return e.code, parsed
+            except Exception as e:
+                last_exc = e
+                time.sleep(1.0 * (attempt + 1))
+        raise SwapError(0, {"transport_error": str(last_exc)})
 
     def create(self, ttl_seconds=3600):
         status, body = self._req("POST", "/v1/capsules", {"ttl_seconds": ttl_seconds})
