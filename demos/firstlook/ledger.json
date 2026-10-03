@@ -4,6 +4,40 @@
    "budget_currency": null,
    "budget_max": null,
    "budget_min": null,
+   "category": "ngempruy/ngempruy",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:53:32+00:00",
+   "id": 119,
+   "kind": "bounty",
+   "latency_s": 28.656476,
+   "poster": "FjrREPO",
+   "rail": null,
+   "source": "github",
+   "source_created_at": "2026-10-03T13:53:04+00:00",
+   "title": "epic: Hedera DeFi Kit v1 (scaffold-hbar template bounty)",
+   "url": "https://github.com/ngempruy/ngempruy/issues/20"
+  },
+  {
+   "budget_currency": "USD",
+   "budget_max": 50.0,
+   "budget_min": null,
+   "category": "BasedHardware/omi",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:52:19+00:00",
+   "id": 118,
+   "kind": "bounty",
+   "latency_s": 14.752647,
+   "poster": "garvijunagadh",
+   "rail": null,
+   "source": "github",
+   "source_created_at": "2026-10-03T13:52:05+00:00",
+   "title": "Bounty Proposal: Backend Router Exception & Information Disclosure Sanitization (0 USD)",
+   "url": "https://github.com/BasedHardware/omi/issues/20461"
+  },
+  {
+   "budget_currency": null,
+   "budget_max": null,
+   "budget_min": null,
    "category": "verdikta/verdikta-applications",
    "deadline": null,
    "detected_at": "2026-10-03T13:49:54+00:00",
@@ -188,5 +222,5 @@
    "url": "https://github.com/Ikalus1988/MisakaNet/issues/2757"
   }
  ],
- "generated_at": "2026-10-03T13:50:40+00:00"
+ "generated_at": "2026-10-03T13:56:01+00:00"
 }
