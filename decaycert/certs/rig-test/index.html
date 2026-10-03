@@ -8,9 +8,9 @@ pre{background:#f4f4f4;padding:1rem;overflow-x:auto;font-size:.78rem}
 code{word-break:break-all}</style></head><body>
 <h1>DecayCert behavioural certificate</h1>
 <p><strong>Endpoint:</strong> <code>http://127.0.0.1:8807</code> (TEST rig - decay/degradation/fingerprint drills)<br>
-<strong>Certificate:</strong> <code>dc-cert-0079</code> issued 2026-10-03T13:16:21+00:00<br>
-<strong>Status now:</strong> certified — effective score <strong>97.91</strong> / 100
-(last round 100.0, last pass 2026-10-03T13:16:21+00:00)</p>
+<strong>Certificate:</strong> <code>dc-cert-0161</code> issued 2026-10-03T13:47:45+00:00<br>
+<strong>Status now:</strong> certified — effective score <strong>97.78</strong> / 100
+(last round 100.0, last pass 2026-10-03T13:47:45+00:00)</p>
 <div class="decay"><h2>This certificate decays</h2>
 <p>Effective score = last round score x 0.5^(hours since last pass / 0.25h half-life).
 If this endpoint stops passing DecayCert's unannounced probes, its score halves every
@@ -18,30 +18,31 @@ If this endpoint stops passing DecayCert's unannounced probes, its score halves 
 snapshot; this one is alive or it is nothing.</p></div>
 <h2>Evidence at issue</h2>
 <ul>
-<li>Probes executed: 21 (11 passed, pass rate 0.5238)</li>
-<li>Consistency pass^k (repeated identical probes agree): 0.2857</li>
-<li>Honesty-trap (known-answer canary) score: 42.9</li>
-<li>Median probe latency: 3.3 ms</li>
+<li>Probes executed: 45 (14 passed, pass rate 0.3111)</li>
+<li>Consistency pass^k (repeated identical probes agree): 0.2</li>
+<li>Honesty-trap (known-answer canary) score: 26.7</li>
+<li>Median probe latency: 2.8 ms</li>
 <li>Probe-suite commitment (SHA-256, committed publicly BEFORE probing): <code>567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0</code></li>
 </ul>
 <div class="scope"><h2>Exact scope</h2><p>DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator.</p></div>
 <h2>Signed payload (canonical JSON)</h2><pre>{
-  "certificate_id": "dc-cert-0079",
-  "decay_formula": "effective = last_score * 0.5^(hours_since_last_pass / half_life_hours)",
-  "effective_score_at_issue": 99.92,
+  "certificate_id": "dc-cert-0161",
+  "decay_formula": "effective = last_pass_score * 0.5^(hours_since_last_pass / half_life_hours)",
+  "effective_score_at_issue": 99.99,
   "endpoint_id": "rig-test",
   "endpoint_url": "http://127.0.0.1:8807",
   "half_life_hours": 0.25,
-  "honesty_trap_score": 42.9,
-  "issued_at": "2026-10-03T13:16:21+00:00",
-  "last_pass_at": "2026-10-03T13:16:21+00:00",
+  "honesty_trap_score": 26.7,
+  "issued_at": "2026-10-03T13:47:45+00:00",
+  "last_pass_at": "2026-10-03T13:47:45+00:00",
+  "last_pass_score": 100.0,
   "last_round_score": 100.0,
-  "median_latency_ms": 3.3,
-  "pass_k": 0.2857,
-  "pass_rate": 0.5238,
-  "probes_executed": 21,
-  "probes_passed": 11,
-  "rounds": 7,
+  "median_latency_ms": 2.8,
+  "pass_k": 0.2,
+  "pass_rate": 0.3111,
+  "probes_executed": 45,
+  "probes_passed": 14,
+  "rounds": 15,
   "scope_statement": "DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator.",
   "service": "DecayCert",
   "status_at_issue": "certified",
@@ -49,7 +50,7 @@ snapshot; this one is alive or it is nothing.</p></div>
   "suite_id": "dc-suite-v1",
   "task_class": "TEST rig - decay/degradation/fingerprint drills"
 }</pre>
-<p><strong>Ed25519 signature (hex):</strong><br><code>c8430bf433d5391b318832ef3ec073c79aedc7723c21f18edc78e64fccc31e3202eb591e143657059875de254978fde993fd2c4231fb0c15e982ce9fb935f104</code><br>
+<p><strong>Ed25519 signature (hex):</strong><br><code>40ebd74d219203b8e85186820fa942a47c899848f809d9e06e76059122a1a824dd92cf123122d176a535b1a4605e2311abeed397d76bed791a437e855ea4fb04</code><br>
 <strong>DecayCert public key (hex):</strong><br><code>90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1</code><br>
 <strong>Machine-readable certificate:</strong> <a href="latest.json">latest.json</a></p>
 <p>Check current status free: <code>GET /status/rig-test</code> on the DecayCert API.

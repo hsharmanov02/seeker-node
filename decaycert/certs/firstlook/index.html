@@ -8,9 +8,9 @@ pre{background:#f4f4f4;padding:1rem;overflow-x:auto;font-size:.78rem}
 code{word-break:break-all}</style></head><body>
 <h1>DecayCert behavioural certificate</h1>
 <p><strong>Endpoint:</strong> <code>http://127.0.0.1:8799</code> (agent-opportunity wire API)<br>
-<strong>Certificate:</strong> <code>dc-cert-0074</code> issued 2026-10-03T13:15:57+00:00<br>
+<strong>Certificate:</strong> <code>dc-cert-0156</code> issued 2026-10-03T13:47:26+00:00<br>
 <strong>Status now:</strong> certified — effective score <strong>99.97</strong> / 100
-(last round 100.0, last pass 2026-10-03T13:15:57+00:00)</p>
+(last round 100.0, last pass 2026-10-03T13:47:26+00:00)</p>
 <div class="decay"><h2>This certificate decays</h2>
 <p>Effective score = last round score x 0.5^(hours since last pass / 36.0h half-life).
 If this endpoint stops passing DecayCert's unannounced probes, its score halves every
@@ -18,30 +18,31 @@ If this endpoint stops passing DecayCert's unannounced probes, its score halves 
 snapshot; this one is alive or it is nothing.</p></div>
 <h2>Evidence at issue</h2>
 <ul>
-<li>Probes executed: 80 (80 passed, pass rate 1.0)</li>
+<li>Probes executed: 130 (130 passed, pass rate 1.0)</li>
 <li>Consistency pass^k (repeated identical probes agree): 1.0</li>
 <li>Honesty-trap (known-answer canary) score: 100.0</li>
-<li>Median probe latency: 11.3 ms</li>
+<li>Median probe latency: 13.7 ms</li>
 <li>Probe-suite commitment (SHA-256, committed publicly BEFORE probing): <code>567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0</code></li>
 </ul>
 <div class="scope"><h2>Exact scope</h2><p>DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator.</p></div>
 <h2>Signed payload (canonical JSON)</h2><pre>{
-  "certificate_id": "dc-cert-0074",
-  "decay_formula": "effective = last_score * 0.5^(hours_since_last_pass / half_life_hours)",
+  "certificate_id": "dc-cert-0156",
+  "decay_formula": "effective = last_pass_score * 0.5^(hours_since_last_pass / half_life_hours)",
   "effective_score_at_issue": 100.0,
   "endpoint_id": "firstlook",
   "endpoint_url": "http://127.0.0.1:8799",
   "half_life_hours": 36.0,
   "honesty_trap_score": 100.0,
-  "issued_at": "2026-10-03T13:15:57+00:00",
-  "last_pass_at": "2026-10-03T13:15:57+00:00",
+  "issued_at": "2026-10-03T13:47:26+00:00",
+  "last_pass_at": "2026-10-03T13:47:26+00:00",
+  "last_pass_score": 100.0,
   "last_round_score": 100.0,
-  "median_latency_ms": 11.3,
+  "median_latency_ms": 13.7,
   "pass_k": 1.0,
   "pass_rate": 1.0,
-  "probes_executed": 80,
-  "probes_passed": 80,
-  "rounds": 16,
+  "probes_executed": 130,
+  "probes_passed": 130,
+  "rounds": 26,
   "scope_statement": "DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator.",
   "service": "DecayCert",
   "status_at_issue": "certified",
@@ -49,7 +50,7 @@ snapshot; this one is alive or it is nothing.</p></div>
   "suite_id": "dc-suite-v1",
   "task_class": "agent-opportunity wire API"
 }</pre>
-<p><strong>Ed25519 signature (hex):</strong><br><code>37d50772946fdb44fe00034db4f7104782bbb0994bca6b5bc179ba67faee7173969e7bdcf0872ac08131cebac4b0b5102c560324bf82a8775d67b8ac5f39440d</code><br>
+<p><strong>Ed25519 signature (hex):</strong><br><code>b4abb7e4c2b50778e99d2f55ee797af9a58cb3652b8f951eeb098ce10bcceb0177b4e39ea6002c7403c16597651103917e3e5bac7761e22e16ae5e4d5a17270c</code><br>
 <strong>DecayCert public key (hex):</strong><br><code>90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1</code><br>
 <strong>Machine-readable certificate:</strong> <a href="latest.json">latest.json</a></p>
 <p>Check current status free: <code>GET /status/firstlook</code> on the DecayCert API.
