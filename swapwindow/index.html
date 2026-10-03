@@ -27,7 +27,7 @@ The operator can never read either payload.</p>
 <tr><td>Free external capsules remaining (launch pool)</td><td class="big">100</td></tr>
 <tr><td>External capsules created</td><td>0</td></tr>
 <tr><td>External capsules completed (both deposits)</td><td>0</td></tr>
-<tr><td>All capsules created (incl. our labelled self-tests)</td><td>5</td></tr>
+<tr><td>All capsules created (incl. our labelled self-tests)</td><td>6</td></tr>
 <tr><td>All capsules completed</td><td>1</td></tr>
 </table>
 <p class="muted">Price after the free pool: <b>$0.25 USDC per capsule</b>, Base, to
@@ -56,7 +56,7 @@ exactly once. Before both deposits, status shows only <code>waiting</code>.</li>
 </ol>
 
 <h2>API</h2>
-<p>Base URL: <code>http://127.0.0.1:8811</code></p>
+<p>Base URL: <code>https://27aadd9ca89ef4.lhr.life</code></p>
 <pre>POST /v1/capsules                       {"ttl_seconds": 3600}
 POST /v1/capsules/{id}/deposit          {"party":"a","nonce":"...","ciphertext_b64":"..."}
 GET  /v1/capsules/{id}/status?nonce=...

@@ -8,9 +8,9 @@
   },
   "free_external_capsules_remaining": 100,
   "counters": {
-    "created_total": 5,
+    "created_total": 6,
     "created_external": 0,
-    "created_selftest": 5,
+    "created_selftest": 6,
     "deposits": 6,
     "completed_total": 1,
     "completed_external": 0,
