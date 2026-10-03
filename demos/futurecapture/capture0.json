@@ -2,11 +2,11 @@
  "baseline_records": 63,
  "capture_id": "capture-0",
  "chain_root": "e41e1a57e3f50b8d6c743ade3d7128da3291a8b87b2d9fa7d5d9c65e2b2eb8ae",
- "completeness_aggregate": null,
- "completeness_found": 0,
- "completeness_sampled": 0,
+ "completeness_aggregate": 1.0,
+ "completeness_found": 50,
+ "completeness_sampled": 50,
  "gap_intervals": 1,
- "generated_at": "2026-10-03T13:15:39Z",
+ "generated_at": "2026-10-03T13:31:05Z",
  "only_in_archive": null,
  "orders_external_paid": 0,
  "pay_to": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
@@ -20,7 +20,15 @@
  "site_dir": "demos/futurecapture/",
  "spec_downloads_external": 1,
  "spec_sha256": "fdc8d8221d76859b132c6447440606103780258fd347ae5f87f8a367a9ce83d2",
- "spotchecks": [],
+ "spotchecks": [
+  {
+   "at": "2026-10-03T13:26:43Z",
+   "completeness": 1.0,
+   "found": 50,
+   "sampled": 50,
+   "tag": "auto_0h"
+  }
+ ],
  "status": "open",
  "verdict": null,
  "window": {
