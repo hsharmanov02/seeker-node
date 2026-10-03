@@ -1,0 +1,1286 @@
+{
+ "product": "FirstCrowd synthetic demand rehearsal",
+ "notice": "REHEARSAL, NOT PROPHECY \u2014 a green grid means these scripted personas completed these checkpoints today; it is not a promise that real buyers will succeed.",
+ "run_id": "fc-20261003-0013",
+ "endpoint": "https://raw.githubusercontent.com/hsharmanov02/seeker-node/main/instantaudit/index.html",
+ "panel": "full",
+ "seed": "dogfood-instantaudit-v2",
+ "source": "dogfood",
+ "started_utc": "2026-10-03T16:13:56Z",
+ "payment_mode": "DRY-RUN (payloads constructed + validated; nothing signed, no keys, no funds moved)",
+ "coverage": {
+  "personas": [
+   "careful-reader",
+   "speedy-skimmer",
+   "bargain-hunter",
+   "confused-novice",
+   "fault-finder",
+   "low-balance",
+   "stale-replayer",
+   "double-submitter"
+  ],
+  "stages": [
+   "discover",
+   "understand",
+   "attempt-payment(dry-run)",
+   "error-paths",
+   "complete-or-complain"
+  ],
+  "fault_classes_rehearsed": [
+   "penny-short",
+   "wrong-asset",
+   "stale-quote-replay",
+   "double-submit",
+   "malformed-body",
+   "impatient",
+   "leave-and-return",
+   "no-skill-reader"
+  ]
+ },
+ "personas": [
+  {
+   "persona": "careful-reader",
+   "skill": "exact",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 13375
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 34616
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 28471
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 16895
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 12159
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 16332
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 16148
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 15659
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 3318
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 4276
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 3739
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 4118
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 4565
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 5728
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "speedy-skimmer",
+   "skill": "partial",
+   "faults_scripted": [
+    "impatient"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 13261
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 34735
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 29173
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 18408
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 10999
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 20306
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 24630
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 3837
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 3559
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 5049
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 2863
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 5093
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 5508
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 6336
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "bargain-hunter",
+   "skill": "partial",
+   "faults_scripted": [
+    "leave-and-return"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 23764
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 42819
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 16032
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 18273
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 13654
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 18074
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 19497
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 3156
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 2590
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 3772
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 3568
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 5416
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 6620
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 20060
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "confused-novice",
+   "skill": "none",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated 'USD' vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 23761
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 40371
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 18669
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 19832
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 12558
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 22700
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 16178
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 3335
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 2521
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 4109
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 3618
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 6466
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 6640
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 23001
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": "USD",
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "fault-finder",
+   "skill": "exact",
+   "faults_scripted": [
+    "malformed-probes"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 4094
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 32523
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 6038
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 8436
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 10079
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 6603
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 8961
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 9588
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 8228
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 11489
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 30589
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 14906
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 24939
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 9301
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "low-balance",
+   "skill": "exact",
+   "faults_scripted": [
+    "penny-short"
+   ],
+   "wallet_usdc": "price-minus-0.01",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 12957
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 15111
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 7151
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 6109
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 10206
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 6811
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 5214
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 9501
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 8097
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 10204
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 10912
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 29844
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 14049
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 24537
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "stale-replayer",
+   "skill": "exact",
+   "faults_scripted": [
+    "stale-replay"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 9596
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 9376
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 6299
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 8940
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 8404
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 5522
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 6403
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 9337
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 7883
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 11925
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 12224
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 31196
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 9741
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 24943
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "double-submitter",
+   "skill": "exact",
+   "faults_scripted": [
+    "double-submit"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "warn",
+     "detail": "only an HTML price string, no structured offer"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 79"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted None"
+    },
+    "payment.path": {
+     "status": "fail",
+     "detail": "no payment/order path discoverable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "pricing was understandable but no payment/order path could be found"
+    }
+   },
+   "outcome": "PAYMENT_PATH_MISSING",
+   "transport_failed": false,
+   "faults_found": [
+    "PAYMENT_PATH_MISSING"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 8506
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 404,
+     "ms": 7123
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 6625
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 10432
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 7536
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 7958
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 9780
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 8439
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 12539
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 403,
+     "ms": 8502
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 34966
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 9019
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 25640
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 16011
+    }
+   ],
+   "restated": {
+    "amount": "79",
+    "asset": null,
+    "network": null,
+    "pay_to": null
+   }
+  }
+ ],
+ "checkpoint_grid": {
+  "careful-reader": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "speedy-skimmer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "bargain-hunter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "confused-novice": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "fault-finder": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "low-balance": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "stale-replayer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  },
+  "double-submitter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "warn",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "payment.path": "fail",
+   "journey.outcome": "fail"
+  }
+ },
+ "failure_taxonomy": {
+  "PAYMENT_PATH_MISSING": 8
+ },
+ "faults_total": 8,
+ "complaints": [
+  {
+   "persona": "careful-reader",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[careful-reader] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "speedy-skimmer",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[speedy-skimmer] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "bargain-hunter",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[bargain-hunter] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "confused-novice",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[confused-novice] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "fault-finder",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[fault-finder] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "low-balance",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[low-balance] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "stale-replayer",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[stale-replayer] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  },
+  {
+   "persona": "double-submitter",
+   "reason": "PAYMENT_PATH_MISSING",
+   "text": "[double-submitter] I understood your price and then could not find anywhere to actually pay it.",
+   "wording": "template"
+  }
+ ]
+}

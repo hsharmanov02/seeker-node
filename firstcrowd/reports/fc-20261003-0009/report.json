@@ -1,0 +1,828 @@
+{
+ "product": "FirstCrowd synthetic demand rehearsal",
+ "notice": "REHEARSAL, NOT PROPHECY \u2014 a green grid means these scripted personas completed these checkpoints today; it is not a promise that real buyers will succeed.",
+ "run_id": "fc-20261003-0009",
+ "endpoint": "https://raw.githubusercontent.com/hsharmanov02/seeker-node/main/demos/firstlook/index.html",
+ "panel": "full",
+ "seed": "dogfood-firstlook-v1",
+ "source": "dogfood",
+ "started_utc": "2026-10-03T15:57:10Z",
+ "payment_mode": "DRY-RUN (payloads constructed + validated; nothing signed, no keys, no funds moved)",
+ "coverage": {
+  "personas": [
+   "careful-reader",
+   "speedy-skimmer",
+   "bargain-hunter",
+   "confused-novice",
+   "fault-finder",
+   "low-balance",
+   "stale-replayer",
+   "double-submitter"
+  ],
+  "stages": [
+   "discover",
+   "understand",
+   "attempt-payment(dry-run)",
+   "error-paths",
+   "complete-or-complain"
+  ],
+  "fault_classes_rehearsed": [
+   "penny-short",
+   "wrong-asset",
+   "stale-quote-replay",
+   "double-submit",
+   "malformed-body",
+   "impatient",
+   "leave-and-return",
+   "no-skill-reader"
+  ]
+ },
+ "personas": [
+  {
+   "persona": "careful-reader",
+   "skill": "exact",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 33426
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 47759
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 36544
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 27127
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 32595
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 23083
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 0,
+     "ms": 23162
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 0,
+     "ms": 23117
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 23204
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 23225
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "speedy-skimmer",
+   "skill": "partial",
+   "faults_scripted": [
+    "impatient"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 35037
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 47355
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 46189
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 37829
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23081
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 23158
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 0,
+     "ms": 23090
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 0,
+     "ms": 23126
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 23338
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 35198
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "bargain-hunter",
+   "skill": "partial",
+   "faults_scripted": [
+    "leave-and-return"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 45824
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 47458
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 36770
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 26864
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23268
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 23087
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 0,
+     "ms": 23201
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 0,
+     "ms": 23391
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 23281
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 23134
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "confused-novice",
+   "skill": "none",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 47164
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 47310
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 48795
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 25708
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23254
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 23180
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 0,
+     "ms": 23263
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 0,
+     "ms": 23331
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 23237
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 35331
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "fault-finder",
+   "skill": "exact",
+   "faults_scripted": [
+    "malformed-probes"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 12085
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 35274
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 23364
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 23166
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23127
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 47432
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 200,
+     "ms": 47011
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 200,
+     "ms": 26321
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 32106
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 47401
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "low-balance",
+   "skill": "exact",
+   "faults_scripted": [
+    "penny-short"
+   ],
+   "wallet_usdc": "price-minus-0.01",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 12041
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 35371
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 23150
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 23193
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23101
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 47194
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 200,
+     "ms": 41234
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 200,
+     "ms": 26855
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 23094
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 47340
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "stale-replayer",
+   "skill": "exact",
+   "faults_scripted": [
+    "stale-replay"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 12153
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 23207
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 23306
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 23131
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23244
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 47341
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 200,
+     "ms": 40985
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 200,
+     "ms": 21665
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 31151
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 47360
+    }
+   ],
+   "restated": {}
+  },
+  {
+   "persona": "double-submitter",
+   "skill": "exact",
+   "faults_scripted": [
+    "double-submit"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "fail",
+     "detail": "nothing parseable"
+    },
+    "journey.outcome": {
+     "status": "fail",
+     "detail": "no machine-parseable offer found (no x402 challenge, offer doc, or parseable price)"
+    }
+   },
+   "outcome": "NO_MACHINE_OFFER",
+   "faults_found": [],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 0,
+     "ms": 12039
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 0,
+     "ms": 23154
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 0,
+     "ms": 23183
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 0,
+     "ms": 23143
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 0,
+     "ms": 23082
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 0,
+     "ms": 47200
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 200,
+     "ms": 41825
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 200,
+     "ms": 21902
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 0,
+     "ms": 39118
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 0,
+     "ms": 47348
+    }
+   ],
+   "restated": {}
+  }
+ ],
+ "checkpoint_grid": {
+  "careful-reader": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "speedy-skimmer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "bargain-hunter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "confused-novice": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "fault-finder": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "low-balance": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "stale-replayer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  },
+  "double-submitter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "fail",
+   "journey.outcome": "fail"
+  }
+ },
+ "failure_taxonomy": {},
+ "faults_total": 0,
+ "complaints": [
+  {
+   "persona": "careful-reader",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[careful-reader] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "speedy-skimmer",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[speedy-skimmer] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "bargain-hunter",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[bargain-hunter] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "confused-novice",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[confused-novice] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "fault-finder",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[fault-finder] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "low-balance",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[low-balance] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "stale-replayer",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[stale-replayer] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  },
+  {
+   "persona": "double-submitter",
+   "reason": "NO_MACHINE_OFFER",
+   "text": "[double-submitter] I arrived ready to buy and found no machine-readable price, no payment challenge, and nothing my wallet could act on. If a human can't see how to pay you, an agent definitely can't.",
+   "wording": "template"
+  }
+ ]
+}

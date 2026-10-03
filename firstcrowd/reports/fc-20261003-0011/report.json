@@ -1,0 +1,1626 @@
+{
+ "product": "FirstCrowd synthetic demand rehearsal",
+ "notice": "REHEARSAL, NOT PROPHECY \u2014 a green grid means these scripted personas completed these checkpoints today; it is not a promise that real buyers will succeed.",
+ "run_id": "fc-20261003-0011",
+ "endpoint": "http://127.0.0.1:8824/",
+ "panel": "full",
+ "seed": "st-seed-1",
+ "source": "selftest",
+ "started_utc": "2026-10-03T16:01:59Z",
+ "payment_mode": "DRY-RUN (payloads constructed + validated; nothing signed, no keys, no funds moved)",
+ "coverage": {
+  "personas": [
+   "careful-reader",
+   "speedy-skimmer",
+   "bargain-hunter",
+   "confused-novice",
+   "fault-finder",
+   "low-balance",
+   "stale-replayer",
+   "double-submitter"
+  ],
+  "stages": [
+   "discover",
+   "understand",
+   "attempt-payment(dry-run)",
+   "error-paths",
+   "complete-or-complain"
+  ],
+  "fault_classes_rehearsed": [
+   "penny-short",
+   "wrong-asset",
+   "stale-quote-replay",
+   "double-submit",
+   "malformed-body",
+   "impatient",
+   "leave-and-return",
+   "no-skill-reader"
+  ]
+ },
+ "personas": [
+  {
+   "persona": "careful-reader",
+   "skill": "exact",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1407ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "pass",
+     "detail": "stated base"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 162
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 244
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 451
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 161
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 113
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 177
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 301
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 168
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 172
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 136
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 363
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 103
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 110
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 413
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 958
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 320
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 664
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": "base",
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "speedy-skimmer",
+   "skill": "partial",
+   "faults_scripted": [
+    "impatient"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1409ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 229
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 173
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 441
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 206
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 167
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 198
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 165
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 193
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 119
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 155
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 300
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 126
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 131
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 187
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 529
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 53
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 229
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": null,
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "bargain-hunter",
+   "skill": "partial",
+   "faults_scripted": [
+    "leave-and-return"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1620ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.return_visit": {
+     "status": "pass",
+     "detail": "returned, status 402"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 376
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 241
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 606
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 399
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 140
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 241
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 128
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 92
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 115
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 230
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 93
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 57
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 152
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 256
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 969
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 302
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 713
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 595
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": null,
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "confused-novice",
+   "skill": "none",
+   "faults_scripted": [],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1552ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "fail",
+     "detail": "stated 'USD' vs quoted 'USDC'"
+    },
+    "understand.network": {
+     "status": "warn",
+     "detail": "persona did not restate optional field"
+    },
+    "understand.pay_to": {
+     "status": "fail",
+     "detail": "stated None vs quoted '0x1111111111111111111111111111111111111111'"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 453
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 98
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 549
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 476
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 144
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 220
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 116
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 106
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 141
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 253
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 74
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 33
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 65
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 330
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 786
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 114
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 556
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USD",
+    "network": null,
+    "pay_to": null
+   }
+  },
+  {
+   "persona": "fault-finder",
+   "skill": "exact",
+   "faults_scripted": [
+    "malformed-probes"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "2084ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "pass",
+     "detail": "stated base"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "error.malformed_body": {
+     "status": "pass",
+     "detail": "status 402, actionable=True"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 444
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 626
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 1111
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 79
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 1579
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 555
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 293
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 148
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 289
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 198
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 107
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 167
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 107
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 354
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 171
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 167
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 117
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 402,
+     "ms": 357
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": "base",
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "low-balance",
+   "skill": "exact",
+   "faults_scripted": [
+    "penny-short"
+   ],
+   "wallet_usdc": "price-minus-0.01",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1182ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "pass",
+     "detail": "stated base"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.underpayment": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 133
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 46
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 733
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 336
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 904
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 1076
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 176
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 122
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 144
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 313
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 200
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 308
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 153
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 180
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 147
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 131
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 143
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 71
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": "base",
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "stale-replayer",
+   "skill": "exact",
+   "faults_scripted": [
+    "stale-replay"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1424ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "pass",
+     "detail": "stated base"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "error.stale_quote": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 287
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 137
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 627
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 375
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 1400
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 250
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 173
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 305
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 358
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 319
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 114
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 100
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 172
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 112
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 140
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 125
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 107
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 199
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": "base",
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  },
+  {
+   "persona": "double-submitter",
+   "skill": "exact",
+   "faults_scripted": [
+    "double-submit"
+   ],
+   "wallet_usdc": "50",
+   "checks": {
+    "discover.mcp_tools": {
+     "status": "skip",
+     "detail": "no MCP tools/list"
+    },
+    "discover.machine_offer": {
+     "status": "pass",
+     "detail": "via json-offer"
+    },
+    "discover.time_to_price": {
+     "status": "pass",
+     "detail": "1720ms"
+    },
+    "understand.amount": {
+     "status": "pass",
+     "detail": "stated 9.99"
+    },
+    "understand.asset": {
+     "status": "pass",
+     "detail": "stated USDC"
+    },
+    "understand.network": {
+     "status": "pass",
+     "detail": "stated base"
+    },
+    "understand.pay_to": {
+     "status": "pass",
+     "detail": "stated 0x1111111111111111111111111111111111111111"
+    },
+    "quote.arithmetic": {
+     "status": "fail",
+     "detail": "docs say 9.99 but challenge demands 10.99"
+    },
+    "quote.freshness": {
+     "status": "pass",
+     "detail": "timeout 300s"
+    },
+    "payment.payload_built": {
+     "status": "pass",
+     "detail": "amount+payTo present"
+    },
+    "error.wrong_asset": {
+     "status": "fail",
+     "detail": "status 500: dead-end error"
+    },
+    "error.double_submit": {
+     "status": "fail",
+     "detail": "two distinct orders created: fake-34 + fake-36"
+    },
+    "journey.outcome": {
+     "status": "pass",
+     "detail": "completed the journey to a validated, unsigned payment payload (dry-run terminus: ready to pay, stopped before any signature by design)"
+    }
+   },
+   "outcome": "COMPLETED_DRY_RUN",
+   "transport_failed": false,
+   "faults_found": [
+    "DOUBLE_CHARGE_RISK",
+    "ERROR_DEAD_END",
+    "PRICE_MISMATCH"
+   ],
+   "requests": [
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 413
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402.json",
+     "status": 200,
+     "ms": 300
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/x402",
+     "status": 404,
+     "ms": 598
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 1448
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 224
+    },
+    {
+     "method": "GET",
+     "path": ".well-known/agent.json",
+     "status": 404,
+     "ms": 82
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 67
+    },
+    {
+     "method": "GET",
+     "path": "x402.json",
+     "status": 404,
+     "ms": 269
+    },
+    {
+     "method": "GET",
+     "path": "pricing.json",
+     "status": 404,
+     "ms": 236
+    },
+    {
+     "method": "POST",
+     "path": "",
+     "status": 404,
+     "ms": 142
+    },
+    {
+     "method": "GET",
+     "path": "openapi.json",
+     "status": 404,
+     "ms": 247
+    },
+    {
+     "method": "GET",
+     "path": "agent.json",
+     "status": 404,
+     "ms": 298
+    },
+    {
+     "method": "GET",
+     "path": "llms.txt",
+     "status": 404,
+     "ms": 126
+    },
+    {
+     "method": "GET",
+     "path": "",
+     "status": 200,
+     "ms": 106
+    },
+    {
+     "method": "GET",
+     "path": "buy",
+     "status": 402,
+     "ms": 56
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 77
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 500,
+     "ms": 103
+    },
+    {
+     "method": "POST",
+     "path": "buy",
+     "status": 200,
+     "ms": 208
+    }
+   ],
+   "restated": {
+    "amount": "9.99",
+    "asset": "USDC",
+    "network": "base",
+    "pay_to": "0x1111111111111111111111111111111111111111"
+   }
+  }
+ ],
+ "checkpoint_grid": {
+  "careful-reader": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "pass",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "journey.outcome": "pass"
+  },
+  "speedy-skimmer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "warn",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "journey.outcome": "pass"
+  },
+  "bargain-hunter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "warn",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "journey.return_visit": "pass",
+   "journey.outcome": "pass"
+  },
+  "confused-novice": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "fail",
+   "understand.network": "warn",
+   "understand.pay_to": "fail",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "journey.outcome": "pass"
+  },
+  "fault-finder": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "pass",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "error.malformed_body": "pass",
+   "journey.outcome": "pass"
+  },
+  "low-balance": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "pass",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.underpayment": "fail",
+   "error.wrong_asset": "fail",
+   "journey.outcome": "pass"
+  },
+  "stale-replayer": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "pass",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "error.stale_quote": "fail",
+   "journey.outcome": "pass"
+  },
+  "double-submitter": {
+   "discover.mcp_tools": "skip",
+   "discover.machine_offer": "pass",
+   "discover.time_to_price": "pass",
+   "understand.amount": "pass",
+   "understand.asset": "pass",
+   "understand.network": "pass",
+   "understand.pay_to": "pass",
+   "quote.arithmetic": "fail",
+   "quote.freshness": "pass",
+   "payment.payload_built": "pass",
+   "error.wrong_asset": "fail",
+   "error.double_submit": "fail",
+   "journey.outcome": "pass"
+  }
+ },
+ "failure_taxonomy": {
+  "ERROR_DEAD_END": 8,
+  "PRICE_MISMATCH": 8,
+  "DOUBLE_CHARGE_RISK": 1
+ },
+ "faults_total": 17,
+ "complaints": [
+  {
+   "persona": "speedy-skimmer",
+   "reason": "COMPLETED_DRY_RUN",
+   "text": "[speedy-skimmer] I reached your till with a valid payment payload. (Rehearsal stops before signature by design; a real buyer would have paid here.)",
+   "wording": "template"
+  },
+  {
+   "persona": "bargain-hunter",
+   "reason": "COMPLETED_DRY_RUN",
+   "text": "[bargain-hunter] I reached your till with a valid payment payload. (Rehearsal stops before signature by design; a real buyer would have paid here.)",
+   "wording": "template"
+  },
+  {
+   "persona": "confused-novice",
+   "reason": "COMPLETED_DRY_RUN",
+   "text": "[confused-novice] I reached your till with a valid payment payload. (Rehearsal stops before signature by design; a real buyer would have paid here.)",
+   "wording": "template"
+  }
+ ]
+}
