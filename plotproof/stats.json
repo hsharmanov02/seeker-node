@@ -1,0 +1,16 @@
+{
+ "api_base": "https://edfcf9476b61d3.lhr.life",
+ "demand_kill": "0 external calls of any kind after 7 days live -> park (see designer_q_untried.md)",
+ "metrics": {
+  "counters": {
+   "queries_total": 2,
+   "tier_uncertifiable": 2
+  },
+  "paid_quotes": 0,
+  "pending_quotes": 0,
+  "quotes_by_tier": {},
+  "revenue_usd_recognised": 0
+ },
+ "service": "plotproof",
+ "updated_at": "2026-10-03T14:47:06Z"
+}

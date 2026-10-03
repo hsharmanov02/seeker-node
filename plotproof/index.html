@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlotProof — adjudicated field-level weather actuals for machines</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; color: #14213d; background: #f7f9f4; }
+  header { background: #1d3557; color: #fff; padding: 2.2rem 1.2rem 1.6rem; }
+  header h1 { margin: 0 0 .4rem; font-size: 2rem; }
+  header p { margin: .2rem 0; max-width: 62rem; }
+  main { max-width: 62rem; margin: 0 auto; padding: 1.2rem; }
+  section { background: #fff; border: 1px solid #d9e2d0; border-radius: 10px; padding: 1rem 1.2rem; margin: 1rem 0; }
+  h2 { margin-top: .2rem; }
+  code, pre { background: #eef3e6; border-radius: 6px; }
+  code { padding: .1rem .3rem; }
+  pre { padding: .8rem; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { border: 1px solid #d9e2d0; padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  .tier-CERTIFIED { color: #137547; font-weight: 700; }
+  .tier-PROBABLE { color: #b7791f; font-weight: 700; }
+  .tier-UNCERTIFIABLE { color: #9d0208; font-weight: 700; }
+  .btn { background: #1d3557; color: #fff; border: 0; border-radius: 6px; padding: .5rem .9rem; cursor: pointer; }
+  label { display: block; margin: .4rem 0; }
+  input { padding: .35rem; width: 12rem; }
+  footer { max-width: 62rem; margin: 0 auto; padding: 1rem 1.2rem 2rem; color: #445; font-size: .92rem; }
+  .muted { color: #5a6b52; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PlotProof</h1>
+  <p><strong>Adjudicated physical facts for machines.</strong> Ask one question — <em>“did ≥10&nbsp;mm of rain actually fall on this field in this window?”</em> — and get a verdict cross-checked across independent public station networks, with an evidence bundle your own system can re-check.</p>
+  <p>Not a forecast. Not a model grid value. Not weather data resale. One adjudicated fact, priced like a fact.</p>
+</header>
+<main>
+
+<section>
+  <h2>Verdicts &amp; prices</h2>
+  <table>
+    <tr><th>Tier</th><th>Meaning</th><th>Price</th></tr>
+    <tr><td class="tier-CERTIFIED">CERTIFIED</td><td>≥2 independent source families agree beyond the published uncertainty margin</td><td>$1.00</td></tr>
+    <tr><td class="tier-PROBABLE">PROBABLE</td><td>All evidence leans one way, but independence or margin is insufficient for certification</td><td>$0.25</td></tr>
+    <tr><td class="tier-UNCERTIFIABLE">UNCERTIFIABLE</td><td>Sources conflict or evidence is too thin. We refuse to guess.</td><td>free</td></tr>
+  </table>
+  <p class="muted">Payment is an x402-style flow: <code>POST /facts</code> answers HTTP 402 with an exact Base-USDC amount; pay it, then <code>GET /facts/{quote_id}</code> releases the verdict and the full evidence bundle. UNCERTIFIABLE answers are delivered free, immediately.</p>
+</section>
+
+<section>
+  <h2>How a verdict is decided (rules <span id="rules-id">plotproof-rules-v1</span>)</h2>
+  <ol>
+    <li>Per source family, take stations within 60&nbsp;km with usable coverage of the window (EA ≥50% of 15-min slots; hourly networks ≥60% of hours; GHCN ≥90% of days).</li>
+    <li>Point estimate per family: inverse-distance-weighted mean of station window totals.</li>
+    <li>Margin M = max(1.0&nbsp;mm, 25% of estimate, 0.6 × spread) + distance allowance. A family is <strong>strong</strong> when the estimate clears the threshold beyond M.</li>
+    <li><span class="tier-CERTIFIED">CERTIFIED</span> needs ≥2 strong, agreeing, nearby families. <span class="tier-PROBABLE">PROBABLE</span> is one-sided but thinner evidence. Anything conflicting is <span class="tier-UNCERTIFIABLE">UNCERTIFIABLE</span> — free.</li>
+  </ol>
+  <p>Machine-readable rules: <code>GET /rules</code> on the API. A verdict certifies that the listed public observations support the claim beyond the stated margin under the stated rule — the bundle (station IDs, raw totals, distances, hashes) lets you re-run the check yourself instead of trusting us.</p>
+</section>
+
+<section>
+  <h2>Sources — and the ones we refuse to use</h2>
+  <table>
+    <tr><th>Family</th><th>What</th><th>Terms</th></tr>
+    <tr><td>EA</td><td>Environment Agency rainfall gauges (UK, 15-min)</td><td>Open Government Licence v3.0</td></tr>
+    <tr><td>GHCN</td><td>NOAA GHCN-Daily station archive</td><td>US public domain</td></tr>
+    <tr><td>ISD</td><td>NOAA Integrated Surface Database (hourly)</td><td>US public domain</td></tr>
+    <tr><td>DWD</td><td>Deutscher Wetterdienst hourly precipitation</td><td>Free per DWD Act (attribution)</td></tr>
+  </table>
+  <p><strong>Deliberately not used:</strong> Open-Meteo (its free tier is non-commercial — reselling it would breach its terms) and RainViewer (free API is personal/educational use only). If a weather API looks free to resell, read its terms twice.</p>
+</section>
+
+<section>
+  <h2>Worked examples (real UK farmland, recent windows)</h2>
+  <div id="demos"><p class="muted">Loading…</p></div>
+</section>
+
+<section>
+  <h2>Blind accuracy trial</h2>
+  <p>50 certification queries where one gauge is withheld as ground truth and the verdict is produced without it. Pass ≥85% accuracy on decidable verdicts; kill &lt;70%.</p>
+  <div id="trial"><p class="muted">Loading…</p></div>
+</section>
+
+<section>
+  <h2>API</h2>
+  <pre>POST /facts
+{"lat": 51.18, "lon": 0.94,
+ "start": "2026-09-28T00:00:00Z", "end": "2026-09-29T00:00:00Z",
+ "threshold_mm": 10}
+
+→ 200  UNCERTIFIABLE verdict + evidence bundle (free), or
+→ 402  {quote_id, verdict_tier, x402.accepts[…], result_url}
+       pay the exact USDC amount on Base, then GET /facts/{quote_id}</pre>
+  <p>Live stats: <code>GET /metrics</code>. Rules: <code>GET /rules</code>. Trial detail: <code>GET /trial</code>.</p>
+  <h3>Try it</h3>
+  <form id="qform">
+    <label>latitude <input id="q-lat" value="51.18"></label>
+    <label>longitude <input id="q-lon" value="0.94"></label>
+    <label>start (UTC) <input id="q-start" value="2026-09-28T00:00:00Z"></label>
+    <label>end (UTC) <input id="q-end" value="2026-09-29T00:00:00Z"></label>
+    <label>threshold mm <input id="q-thr" value="10"></label>
+    <button class="btn" type="submit">Ask PlotProof</button>
+  </form>
+  <pre id="qout" class="muted">The form calls the live API. Paid tiers return a 402 quote — no wallet needed to look.</pre>
+  <p class="muted">API base: <span id="api-base">(loading)</span></p>
+</section>
+
+<section>
+  <h2>Live counters</h2>
+  <div id="stats"><p class="muted">Loading…</p></div>
+</section>
+
+</main>
+<footer>
+  <p><strong>Demand kill, stated up front:</strong> if PlotProof receives 0 external calls of any kind after 7 days live, it gets parked — an accurate referee nobody calls is a mirage, not a business.</p>
+  <p>Attributions: Environment Agency flood and river level data from the real-time data API (Beta), © Environment Agency, Open Government Licence v3.0 · NOAA/NCEI GHCN-Daily and ISD (US public domain) · © Deutscher Wetterdienst (CDC open data).</p>
+  <p>PlotProof verdicts are evidence-graded statements about public observations, not insurance settlements and not a guarantee about a specific square metre. Re-check the bundle.</p>
+</footer>
+
+<script src="./plotproof-config.js"></script>
+<script>
+const apiBase = (window.PP_API_BASE || "").replace(/\/$/, "");
+document.getElementById("api-base").textContent = apiBase || "(offline)";
+
+async function jget(url) { const r = await fetch(url); return r.json(); }
+
+function verdictLine(v) {
+  const side = v.claim_supported === null || v.claim_supported === undefined ? "" :
+    (v.claim_supported ? " — claim supported (rain ≥ threshold)" : " — claim refuted (rain < threshold)");
+  return `<p><span class="tier-${v.verdict}">${v.verdict}</span>${side} · price $${v.price_usd}</p>`;
+}
+
+jget("./demos.json").then(d => {
+  const el = document.getElementById("demos");
+  if (!d.demos || !d.demos.length) { el.innerHTML = '<p class="muted">Demo verdicts are being computed.</p>'; return; }
+  el.innerHTML = d.demos.map(x => `
+    <h3>${x.title}</h3>
+    <p class="muted">${x.where} · window ${x.window} · threshold ${x.threshold_mm} mm</p>
+    ${verdictLine(x.result)}
+    <p><a href="${x.bundle}">Full evidence bundle (JSON)</a> · bundle sha256 <code>${(x.result.bundle_sha256||"").slice(0,16)}…</code></p>`).join("");
+}).catch(() => { document.getElementById("demos").innerHTML = '<p class="muted">Demo verdicts are being computed.</p>'; });
+
+jget("./trial.json").then(t => {
+  const el = document.getElementById("trial");
+  if (!t || t.status === "trial not run yet" || !t.summary) { el.innerHTML = '<p class="muted">Trial pending.</p>'; return; }
+  const s = t.summary;
+  el.innerHTML = `<p>${t.queries} blind queries · decidable ${s.decidable} · correct ${s.correct} ·
+    <strong>accuracy ${s.accuracy_pct}%</strong> (pass ≥85%, kill &lt;70%) ·
+    CERTIFIED accuracy ${s.certified_accuracy_pct}% · uncertifiable ${s.uncertifiable}</p>
+    <p>Verdict: <strong>${t.verdict}</strong> · <a href="./trial.json">full per-query detail</a></p>`;
+}).catch(() => { document.getElementById("trial").innerHTML = '<p class="muted">Trial pending.</p>'; });
+
+jget("./stats.json").then(s => {
+  const m = s.metrics || {};
+  document.getElementById("stats").innerHTML =
+    `<p>queries total <strong>${(m.counters||{}).queries_total||0}</strong> · external <strong>${(m.counters||{}).queries_external||0}</strong> · paid quotes <strong>${m.paid_quotes||0}</strong> · recognised revenue <strong>$${m.revenue_usd_recognised||0}</strong> · updated ${s.updated_at}</p>`;
+}).catch(() => {});
+
+document.getElementById("qform").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const out = document.getElementById("qout");
+  out.textContent = "Adjudicating — fetching station evidence can take a while…";
+  const body = {
+    lat: parseFloat(document.getElementById("q-lat").value),
+    lon: parseFloat(document.getElementById("q-lon").value),
+    start: document.getElementById("q-start").value,
+    end: document.getElementById("q-end").value,
+    threshold_mm: parseFloat(document.getElementById("q-thr").value)
+  };
+  try {
+    const r = await fetch(apiBase + "/facts", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+    const j = await r.json();
+    out.textContent = "HTTP " + r.status + "\n" + JSON.stringify(j, null, 1).slice(0, 4000);
+  } catch (e) {
+    out.textContent = "API unreachable: " + e;
+  }
+});
+</script>
+</body>
+</html>
