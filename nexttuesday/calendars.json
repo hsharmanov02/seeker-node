@@ -1,0 +1,175 @@
+{
+ "service_pubkey_ed25519": "5d848876ea2bbd6050f1dda47eca346fee97d52e2f64b82095885595c28999a0",
+ "claim": "signed future-capacity calendars; hash-chained versions; nobody's funds touch the registrar",
+ "calendars": [
+  {
+   "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+   "chain": [
+    {
+     "version": 1,
+     "cal_hash": "3d750b77711987e4639249d34142c9af1f6bf686cd9e0ca62197ecddde61adb7",
+     "prev_hash": "GENESIS",
+     "doc": {
+      "prev_hash": "GENESIS",
+      "seller_pub": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+      "version": 1,
+      "windows": [
+       {
+        "cancel_deadline": "2026-10-03T15:11:57.455821Z",
+        "end": "2026-10-03T15:16:27.455821Z",
+        "endpoint": "http://127.0.0.1:8839/dogfood/W1",
+        "grace_s": 150,
+        "pay_to": "0xcf0506ca71923a7f65018ecd54dd8fea011fbb8b",
+        "payment_mode": "at_booking",
+        "price_chain": "base",
+        "price_raw": 2000000,
+        "service": "nt-scarce-demo",
+        "slots": 5,
+        "start": "2026-10-03T15:13:27.455821Z",
+        "window_id": "W1"
+       }
+      ]
+     },
+     "signature": "01861814e80b3fed530e307c78e288dcf6366cb85713005a3e6d6ab0d3aadae1b8a8fb91e8a43a855e39199c11bc0ee21e66461afd6fdae3cb1c9a100705d30a",
+     "external": false
+    },
+    {
+     "version": 2,
+     "cal_hash": "a6cdfb1ac743e651984c535e2315c938b6ed4d15c0532fb78e7821fa57b36a9d",
+     "prev_hash": "3d750b77711987e4639249d34142c9af1f6bf686cd9e0ca62197ecddde61adb7",
+     "doc": {
+      "prev_hash": "3d750b77711987e4639249d34142c9af1f6bf686cd9e0ca62197ecddde61adb7",
+      "seller_pub": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+      "version": 2,
+      "windows": [
+       {
+        "cancel_deadline": "2026-10-03T15:11:57.455821Z",
+        "end": "2026-10-03T15:16:27.455821Z",
+        "endpoint": "http://127.0.0.1:8839/dogfood/W1",
+        "grace_s": 150,
+        "pay_to": "0xcf0506ca71923a7f65018ecd54dd8fea011fbb8b",
+        "payment_mode": "at_booking",
+        "price_chain": "base",
+        "price_raw": 2000000,
+        "service": "nt-scarce-demo",
+        "slots": 5,
+        "start": "2026-10-03T15:13:27.455821Z",
+        "window_id": "W1"
+       },
+       {
+        "cancel_deadline": "2026-10-03T17:06:07.455821Z",
+        "end": "2026-10-03T17:19:27.455821Z",
+        "endpoint": "http://127.0.0.1:8839/dogfood/W4",
+        "grace_s": 150,
+        "pay_to": "0xcf0506ca71923a7f65018ecd54dd8fea011fbb8b",
+        "payment_mode": "at_booking",
+        "price_chain": "base",
+        "price_raw": 500000,
+        "service": "nt-scarce-demo",
+        "slots": 3,
+        "start": "2026-10-03T17:09:27.455821Z",
+        "window_id": "W4"
+       }
+      ]
+     },
+     "signature": "8999119cc14b197d4a00d919afee3e9b308cfa423492606384419a45f07b582824f33bd66ca0031fd58a8cf544c836d998745f5184735b83bbbd369927505203",
+     "external": false
+    }
+   ],
+   "windows": [
+    {
+     "cancel_deadline": "2026-10-03T15:11:57.455821Z",
+     "end": "2026-10-03T15:16:27.455821Z",
+     "endpoint": "http://127.0.0.1:8839/dogfood/W1",
+     "grace_s": 150,
+     "pay_to": "0xcf0506ca71923a7f65018ecd54dd8fea011fbb8b",
+     "payment_mode": "at_booking",
+     "price_chain": "base",
+     "price_raw": 2000000,
+     "service": "nt-scarce-demo",
+     "slots": 5,
+     "start": "2026-10-03T15:13:27.455821Z",
+     "window_id": "W1",
+     "booked_active": 0,
+     "slots_committed": 5,
+     "highest_slot_issued": 5,
+     "oversell_evidence": false,
+     "oversell_note": null
+    },
+    {
+     "cancel_deadline": "2026-10-03T17:06:07.455821Z",
+     "end": "2026-10-03T17:19:27.455821Z",
+     "endpoint": "http://127.0.0.1:8839/dogfood/W4",
+     "grace_s": 150,
+     "pay_to": "0xcf0506ca71923a7f65018ecd54dd8fea011fbb8b",
+     "payment_mode": "at_booking",
+     "price_chain": "base",
+     "price_raw": 500000,
+     "service": "nt-scarce-demo",
+     "slots": 3,
+     "start": "2026-10-03T17:09:27.455821Z",
+     "window_id": "W4",
+     "booked_active": 0,
+     "slots_committed": 3,
+     "highest_slot_issued": null,
+     "oversell_evidence": false,
+     "oversell_note": null
+    }
+   ]
+  },
+  {
+   "seller": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+   "chain": [
+    {
+     "version": 1,
+     "cal_hash": "b1d88f52f6c583718d226db691fdc3732f6dc6464e53ac6663a9df928b6f3a04",
+     "prev_hash": "GENESIS",
+     "doc": {
+      "prev_hash": "GENESIS",
+      "seller_pub": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+      "version": 1,
+      "windows": [
+       {
+        "cancel_deadline": "2026-10-03T15:11:57.455821Z",
+        "end": "2026-10-03T15:16:27.455821Z",
+        "endpoint": "http://127.0.0.1:8839/dogfood/W2",
+        "grace_s": 150,
+        "pay_to": "0x4d05c7d67ff39bb05f3aa0338aaa1c44cc6ce293",
+        "payment_mode": "at_booking",
+        "price_chain": "base",
+        "price_raw": 1000000,
+        "service": "nt-scarce-demo",
+        "slots": 2,
+        "start": "2026-10-03T15:13:27.455821Z",
+        "window_id": "W2"
+       }
+      ]
+     },
+     "signature": "83c7a8b1bbed9351c490e58266e637e9285a2b2937ba3ea3c3719b4b31d7d270ebb43c6c56246cf4d7e555c66a1246b61324fbe75bebf1daa07eb2f0c5e85f0f",
+     "external": false
+    }
+   ],
+   "windows": [
+    {
+     "cancel_deadline": "2026-10-03T15:11:57.455821Z",
+     "end": "2026-10-03T15:16:27.455821Z",
+     "endpoint": "http://127.0.0.1:8839/dogfood/W2",
+     "grace_s": 150,
+     "pay_to": "0x4d05c7d67ff39bb05f3aa0338aaa1c44cc6ce293",
+     "payment_mode": "at_booking",
+     "price_chain": "base",
+     "price_raw": 1000000,
+     "service": "nt-scarce-demo",
+     "slots": 2,
+     "start": "2026-10-03T15:13:27.455821Z",
+     "window_id": "W2",
+     "booked_active": 0,
+     "slots_committed": 2,
+     "highest_slot_issued": 1,
+     "oversell_evidence": false,
+     "oversell_note": null
+    }
+   ]
+  }
+ ]
+}

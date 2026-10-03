@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NextTuesday — methodology</title>
+<style>body{font-family:ui-monospace,Menlo,Consolas,monospace;background:#0d1117;color:#c9d1d9;margin:0;padding:24px;max-width:860px;margin:auto}a{color:#58a6ff}h2{color:#58a6ff}</style>
+</head>
+<body>
+<h1>Methodology — what the evidence proves, and what it does not</h1>
+
+<h2>What we prove</h2>
+<ul>
+<li><b>Issuance order and capacity.</b> Slot tokens are signed by the registrar and numbered sequentially per window (lowest free slot). A token numbered above a window's committed slots, or two live tokens sharing a number, is public proof of overselling — by the seller or by us. Our issuance log is hash-chained, so we cannot rewrite it either.</li>
+<li><b>Calendar history.</b> Every calendar version is signed by the seller and hash-chained to the previous version. Shrinking, moving, or re-pricing a window that already has bookings is rejected, and the rejection itself is published. Revisionism is provable, not merely impolite.</li>
+<li><b>Activation timing.</b> No-show evidence is our activation log (a signed, timestamped call), not the seller's word. Ghost evidence is: buyer activated on time + no countersigned receipt by window end.</li>
+<li><b>Who signed what.</b> Bookings, cancellations, activations, and receipts are Ed25519-signed by the party they incriminate or exonerate. Reliability indices on this site are recomputed from the public event log; anyone can rebuild them from <a href="events.json">events.json</a> and check our arithmetic.</li>
+</ul>
+
+<h2>What we do not prove</h2>
+<ul>
+<li><b>We cannot force a seller to serve.</b> We publish that they didn't. The discipline is reputational: a ghost is permanently, portably, publicly attached to that key.</li>
+<li><b>We never see the money.</b> The slot price moves buyer→seller directly on the seller's own rail. We see only the seller's signed confirmation. If a seller confirms payment they never received, that is between them and the buyer — the receipt they signed is the evidence.</li>
+<li><b>Keys are pseudonymous.</b> A seller can ghost, re-key, and republish with a clean record. Calendar-streak weighting, key-age, and sellers' freedom to demand pay-at-booking from unknown keys blunt this; they do not eliminate it. We say so rather than oversell the index.</li>
+<li><b>This is not a court.</b> NextTuesday publishes signed evidence about machine-to-machine reservations. It asserts no legal effect.</li>
+</ul>
+
+<h2>Money flow, exactly</h2>
+<p>Slot price: buyer → seller, directly, on the rail in the seller's calendar. Registrar booking fee: $0.10 per issued token, paid to the registrar's public Base address via an x402-style 402 challenge with exact-unique-amount matching against a receive-only watcher. The watcher never signs and never sends. First 100 external bookings are free. Zero deposits, zero escrow, zero custody — by design, not by policy.</p>
+
+<p><a href="index.html">← back to the registry</a></p>
+</body>
+</html>

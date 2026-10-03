@@ -1,0 +1,82 @@
+{
+ "sellers": [
+  {
+   "key": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+   "bookings": 5,
+   "honoured": 2,
+   "ghosts": 0,
+   "cancelled_by_seller_late": 0,
+   "cancelled_by_seller_in_time": 0,
+   "oversell_evidence": 0,
+   "external": false,
+   "honour_rate": 1.0,
+   "calendar_streak_weeks": 1
+  },
+  {
+   "key": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+   "bookings": 1,
+   "honoured": 0,
+   "ghosts": 1,
+   "cancelled_by_seller_late": 0,
+   "cancelled_by_seller_in_time": 0,
+   "oversell_evidence": 0,
+   "external": false,
+   "honour_rate": 0.0,
+   "calendar_streak_weeks": 1
+  }
+ ],
+ "buyers": [
+  {
+   "key": "7f026af6ad3551ea7693e9f6b60a2e67aab0608caa47d2bfe16d3502c029baed",
+   "bookings": 1,
+   "honoured": 1,
+   "no_shows": 0,
+   "cancelled_late": 0,
+   "cancelled_in_time": 0,
+   "external": false,
+   "no_show_rate": 0.0
+  },
+  {
+   "key": "3f4435d75483889b1fd7f545f831cdbad48e54b278447a5b48c4d43549c230c7",
+   "bookings": 1,
+   "honoured": 0,
+   "no_shows": 1,
+   "cancelled_late": 0,
+   "cancelled_in_time": 0,
+   "external": false,
+   "no_show_rate": 1.0
+  },
+  {
+   "key": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+   "bookings": 2,
+   "honoured": 0,
+   "no_shows": 1,
+   "cancelled_late": 0,
+   "cancelled_in_time": 0,
+   "external": false,
+   "no_show_rate": 1.0
+  },
+  {
+   "key": "44513bbfeb46059a195950f53b91fa5fbb844fe44e27007bb35dc59a98a896e3",
+   "bookings": 1,
+   "honoured": 0,
+   "no_shows": 0,
+   "cancelled_late": 0,
+   "cancelled_in_time": 1,
+   "external": false,
+   "no_show_rate": null
+  },
+  {
+   "key": "11b49fbba33f92adae28e51f6c808ee752e027b0aa742ae2a76c601cdfbbae1f",
+   "bookings": 1,
+   "honoured": 1,
+   "no_shows": 0,
+   "cancelled_late": 0,
+   "cancelled_in_time": 0,
+   "external": false,
+   "no_show_rate": 0.0
+  }
+ ],
+ "generated_at": "2026-10-03T15:21:18.012810Z",
+ "method": "recomputed from the signed public event log; anyone can rebuild these from events.json"
+}

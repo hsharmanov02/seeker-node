@@ -1,0 +1,328 @@
+{
+ "claim": "hash-chained public evidence log: who honoured, who no-showed, who ghosted",
+ "events": [
+  {
+   "seq": 1,
+   "ts": 1791040167.555469,
+   "type": "calendar_published",
+   "data": {
+    "cal_hash": "3d750b77711987e4639249d34142c9af1f6bf686cd9e0ca62197ecddde61adb7",
+    "external": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "version": 1,
+    "windows": [
+     "W1"
+    ]
+   },
+   "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+   "hash": "c159e055c865e173600c4014737093fb0147353dd3d8db6aa37c3d34d3ee9bd2"
+  },
+  {
+   "seq": 2,
+   "ts": 1791040167.7103043,
+   "type": "calendar_published",
+   "data": {
+    "cal_hash": "b1d88f52f6c583718d226db691fdc3732f6dc6464e53ac6663a9df928b6f3a04",
+    "external": false,
+    "seller": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+    "version": 1,
+    "windows": [
+     "W2"
+    ]
+   },
+   "prev_hash": "c159e055c865e173600c4014737093fb0147353dd3d8db6aa37c3d34d3ee9bd2",
+   "hash": "fe9df080c82efe3cd00741467262bcf2213059b6684b0e513393fec77a3fa9fd"
+  },
+  {
+   "seq": 3,
+   "ts": 1791040167.9274797,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "7f026af6ad3551ea7693e9f6b60a2e67aab0608caa47d2bfe16d3502c029baed",
+    "capacity": 5,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 1,
+    "token_id": "tk-97b31cfc2795",
+    "window_id": "W1"
+   },
+   "prev_hash": "fe9df080c82efe3cd00741467262bcf2213059b6684b0e513393fec77a3fa9fd",
+   "hash": "1eb429f651577200645a0f5a4714fb4d4e7cd9d7964de29d1aa5bc83383e1f60"
+  },
+  {
+   "seq": 4,
+   "ts": 1791040168.0397885,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "3f4435d75483889b1fd7f545f831cdbad48e54b278447a5b48c4d43549c230c7",
+    "capacity": 5,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 2,
+    "token_id": "tk-3e1337dd3b11",
+    "window_id": "W1"
+   },
+   "prev_hash": "1eb429f651577200645a0f5a4714fb4d4e7cd9d7964de29d1aa5bc83383e1f60",
+   "hash": "60837c3fd8c3fd09bfea02c5b005f639a9af5699ec30e3f420ce3a88f5c8e2c1"
+  },
+  {
+   "seq": 5,
+   "ts": 1791040168.148471,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+    "capacity": 5,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 3,
+    "token_id": "tk-f571c2c8d695",
+    "window_id": "W1"
+   },
+   "prev_hash": "60837c3fd8c3fd09bfea02c5b005f639a9af5699ec30e3f420ce3a88f5c8e2c1",
+   "hash": "cb1c751d14c215d61d6880ec7faa5aca1e95da724ccb8578973852952e292424"
+  },
+  {
+   "seq": 6,
+   "ts": 1791040168.338477,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "44513bbfeb46059a195950f53b91fa5fbb844fe44e27007bb35dc59a98a896e3",
+    "capacity": 5,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 4,
+    "token_id": "tk-cac8a2fd6453",
+    "window_id": "W1"
+   },
+   "prev_hash": "cb1c751d14c215d61d6880ec7faa5aca1e95da724ccb8578973852952e292424",
+   "hash": "e48c0d2d93fc24f485ffa6c5ff24839115c083ee9aa0555ff1fac2d1f2f037c9"
+  },
+  {
+   "seq": 7,
+   "ts": 1791040168.4835336,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "11b49fbba33f92adae28e51f6c808ee752e027b0aa742ae2a76c601cdfbbae1f",
+    "capacity": 5,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 5,
+    "token_id": "tk-a41a3d26d2f8",
+    "window_id": "W1"
+   },
+   "prev_hash": "e48c0d2d93fc24f485ffa6c5ff24839115c083ee9aa0555ff1fac2d1f2f037c9",
+   "hash": "bb82ee5bf0acdef5ad42ef36823a2ded85194e061920e7c1d89e7ba6204836de"
+  },
+  {
+   "seq": 8,
+   "ts": 1791040168.553255,
+   "type": "booking_refused_capacity",
+   "data": {
+    "buyer": "793d1d754603579af8e8324bff1d663ebdc9334523f4a29d2b45a031b3acf009",
+    "capacity": 5,
+    "note": "registrar refused to issue beyond committed slots; overselling is impossible here and any token numbered above capacity is public proof",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "window_id": "W1"
+   },
+   "prev_hash": "bb82ee5bf0acdef5ad42ef36823a2ded85194e061920e7c1d89e7ba6204836de",
+   "hash": "f4062d03dcd7f945c2dad6a5331a0d36c03709f092c432d20f12f2364ea63157"
+  },
+  {
+   "seq": 9,
+   "ts": 1791040168.6538246,
+   "type": "booking_refused_capacity",
+   "data": {
+    "buyer": "793d1d754603579af8e8324bff1d663ebdc9334523f4a29d2b45a031b3acf009",
+    "capacity": 5,
+    "note": "registrar refused to issue beyond committed slots; overselling is impossible here and any token numbered above capacity is public proof",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "window_id": "W1"
+   },
+   "prev_hash": "f4062d03dcd7f945c2dad6a5331a0d36c03709f092c432d20f12f2364ea63157",
+   "hash": "bc596f24437ad9f07b3d44b1596646d129bcc60b41bfc3b2ad039e09fb6ecedc"
+  },
+  {
+   "seq": 10,
+   "ts": 1791040168.9026802,
+   "type": "slot_issued",
+   "data": {
+    "buyer": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+    "capacity": 2,
+    "external": false,
+    "oversell_evidence": false,
+    "seller": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+    "slot_no": 1,
+    "token_id": "tk-e871b44b02bb",
+    "window_id": "W2"
+   },
+   "prev_hash": "bc596f24437ad9f07b3d44b1596646d129bcc60b41bfc3b2ad039e09fb6ecedc",
+   "hash": "bfebdfef08bc444a4f63600e099996f3057f8741e771d9beb83481213a9318fa"
+  },
+  {
+   "seq": 11,
+   "ts": 1791040169.0459588,
+   "type": "calendar_revision_rejected",
+   "data": {
+    "attempted_version": 2,
+    "reason": "booked window shrunk below active bookings",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "window_id": "W1"
+   },
+   "prev_hash": "bfebdfef08bc444a4f63600e099996f3057f8741e771d9beb83481213a9318fa",
+   "hash": "6d8e087a851728a8d1a712b805179b7370028e1f809dc7e66ef166fae1a34cd7"
+  },
+  {
+   "seq": 12,
+   "ts": 1791040169.1538577,
+   "type": "calendar_published",
+   "data": {
+    "cal_hash": "a6cdfb1ac743e651984c535e2315c938b6ed4d15c0532fb78e7821fa57b36a9d",
+    "external": false,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "version": 2,
+    "windows": [
+     "W1",
+     "W4"
+    ]
+   },
+   "prev_hash": "6d8e087a851728a8d1a712b805179b7370028e1f809dc7e66ef166fae1a34cd7",
+   "hash": "61ab337cc15eca09140756cbfe4a6dc2129a09ba9ff6a502ba80e7ac949c6e69"
+  },
+  {
+   "seq": 13,
+   "ts": 1791040287.4934676,
+   "type": "cancelled",
+   "data": {
+    "buyer": "44513bbfeb46059a195950f53b91fa5fbb844fe44e27007bb35dc59a98a896e3",
+    "in_time": true,
+    "late_by_s": 0,
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "side": "buyer",
+    "token_id": "tk-cac8a2fd6453",
+    "window_id": "W1"
+   },
+   "prev_hash": "61ab337cc15eca09140756cbfe4a6dc2129a09ba9ff6a502ba80e7ac949c6e69",
+   "hash": "8191c51a37a45042971cee265300e24b9819611c7c9109b799c6bc583f36f9a6"
+  },
+  {
+   "seq": 14,
+   "ts": 1791040410.514626,
+   "type": "activated",
+   "data": {
+    "buyer": "7f026af6ad3551ea7693e9f6b60a2e67aab0608caa47d2bfe16d3502c029baed",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 1,
+    "token_id": "tk-97b31cfc2795",
+    "window_id": "W1"
+   },
+   "prev_hash": "8191c51a37a45042971cee265300e24b9819611c7c9109b799c6bc583f36f9a6",
+   "hash": "237a9c9590202199fbe6d3630120930630c2246ffb5a158a9739a03ccb648f7d"
+  },
+  {
+   "seq": 15,
+   "ts": 1791040410.6755004,
+   "type": "honoured",
+   "data": {
+    "buyer": "7f026af6ad3551ea7693e9f6b60a2e67aab0608caa47d2bfe16d3502c029baed",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 1,
+    "token_id": "tk-97b31cfc2795",
+    "window_id": "W1"
+   },
+   "prev_hash": "237a9c9590202199fbe6d3630120930630c2246ffb5a158a9739a03ccb648f7d",
+   "hash": "441e9dad9ad79dac36b9fda2558af486f365cb8bb460c01222384ee0a5ffae21"
+  },
+  {
+   "seq": 16,
+   "ts": 1791040410.746102,
+   "type": "activated",
+   "data": {
+    "buyer": "11b49fbba33f92adae28e51f6c808ee752e027b0aa742ae2a76c601cdfbbae1f",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 5,
+    "token_id": "tk-a41a3d26d2f8",
+    "window_id": "W1"
+   },
+   "prev_hash": "441e9dad9ad79dac36b9fda2558af486f365cb8bb460c01222384ee0a5ffae21",
+   "hash": "1068fa74ff123b8fd1c084efa878f2dcd495ebe58fbeaac7d7da3a95a7e55a84"
+  },
+  {
+   "seq": 17,
+   "ts": 1791040410.8663058,
+   "type": "honoured",
+   "data": {
+    "buyer": "11b49fbba33f92adae28e51f6c808ee752e027b0aa742ae2a76c601cdfbbae1f",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 5,
+    "token_id": "tk-a41a3d26d2f8",
+    "window_id": "W1"
+   },
+   "prev_hash": "1068fa74ff123b8fd1c084efa878f2dcd495ebe58fbeaac7d7da3a95a7e55a84",
+   "hash": "208639407d73c5c20237f3fde3d176e06105b75dd00ce3da0c004f2da009d578"
+  },
+  {
+   "seq": 18,
+   "ts": 1791040410.9336042,
+   "type": "activated",
+   "data": {
+    "buyer": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+    "seller": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+    "slot_no": 1,
+    "token_id": "tk-e871b44b02bb",
+    "window_id": "W2"
+   },
+   "prev_hash": "208639407d73c5c20237f3fde3d176e06105b75dd00ce3da0c004f2da009d578",
+   "hash": "8396c26be70861215f15f3f252582207e401927443777619c36af77b5f573bd8"
+  },
+  {
+   "seq": 19,
+   "ts": 1791040562.0414302,
+   "type": "buyer_no_show",
+   "data": {
+    "buyer": "3f4435d75483889b1fd7f545f831cdbad48e54b278447a5b48c4d43549c230c7",
+    "evidence": "no activation in the registrar log by start+grace",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 2,
+    "token_id": "tk-3e1337dd3b11",
+    "window_id": "W1"
+   },
+   "prev_hash": "8396c26be70861215f15f3f252582207e401927443777619c36af77b5f573bd8",
+   "hash": "21a7adee3bd4f490c434acb3d9be6c63b9d4a246b48dfca2a6d6bf746cbd13dd"
+  },
+  {
+   "seq": 20,
+   "ts": 1791040562.081237,
+   "type": "buyer_no_show",
+   "data": {
+    "buyer": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+    "evidence": "no activation in the registrar log by start+grace",
+    "seller": "a61be00452a97adfbda85bc61a93f909568a25969b9a6cccc8c0681d4b282f7d",
+    "slot_no": 3,
+    "token_id": "tk-f571c2c8d695",
+    "window_id": "W1"
+   },
+   "prev_hash": "21a7adee3bd4f490c434acb3d9be6c63b9d4a246b48dfca2a6d6bf746cbd13dd",
+   "hash": "9a608830bfbbf7f5145a6be5002516ea14f501a01bf494322694a05960114819"
+  },
+  {
+   "seq": 21,
+   "ts": 1791040712.1227646,
+   "type": "seller_ghost",
+   "data": {
+    "buyer": "a5f26b2a67d2ffea30d0f2018e2dbd272ccb541d85b56d21317abe26a54fe6a1",
+    "evidence": "buyer activated on time; no countersigned receipt by window end",
+    "seller": "46f9a227c4ffb72fb581b652c2679d1b1f2bb6910a6610c5a6046a9a8b3bb103",
+    "slot_no": 1,
+    "token_id": "tk-e871b44b02bb",
+    "window_id": "W2"
+   },
+   "prev_hash": "9a608830bfbbf7f5145a6be5002516ea14f501a01bf494322694a05960114819",
+   "hash": "794f78ced709a87a85f3427612892c78938bdac8483b4157c06dac2344d0fb4c"
+  }
+ ]
+}

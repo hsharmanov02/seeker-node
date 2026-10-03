@@ -1,0 +1,35 @@
+{
+ "all": {
+  "calendars": 3,
+  "sellers": 2,
+  "bookings": 7,
+  "tokens_issued": 6,
+  "honoured": 2,
+  "buyer_no_shows": 2,
+  "seller_ghosts": 1,
+  "cancelled_in_time": 1,
+  "cancelled_late": 0,
+  "oversell_refusals": 2,
+  "oversold_tokens": 0,
+  "external_lookups": 2,
+  "fees_free_remaining": 0,
+  "fees_settled_usdc": 0.0
+ },
+ "external": {
+  "calendars": 0,
+  "sellers": 0,
+  "bookings": 1,
+  "tokens_issued": 6,
+  "honoured": 2,
+  "buyer_no_shows": 2,
+  "seller_ghosts": 1,
+  "cancelled_in_time": 1,
+  "cancelled_late": 0,
+  "oversell_refusals": 2,
+  "oversold_tokens": 0,
+  "external_lookups": 2,
+  "fees_free_remaining": 0,
+  "fees_settled_usdc": 0.0
+ },
+ "generated_at": "2026-10-03T15:21:18.014951Z"
+}
