@@ -1,1 +1,1 @@
-window.FT_API_BASE = "https://99629781c4adfb.lhr.life";
+window.FT_API_BASE = "https://8eb0352ddfd205.lhr.life";
