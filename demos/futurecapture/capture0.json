@@ -1,19 +1,20 @@
 {
- "baseline_records": 26,
+ "baseline_records": 63,
  "capture_id": "capture-0",
- "chain_root": "9905c00fe3bee0d0516bd33ba507c4b0b60a35195b093860bdc9010a7364fe45",
+ "chain_root": "e41e1a57e3f50b8d6c743ade3d7128da3291a8b87b2d9fa7d5d9c65e2b2eb8ae",
  "completeness_aggregate": null,
  "completeness_found": 0,
  "completeness_sampled": 0,
  "gap_intervals": 1,
- "generated_at": "2026-10-03T13:00:15Z",
+ "generated_at": "2026-10-03T13:15:39Z",
  "only_in_archive": null,
  "orders_external_paid": 0,
  "pay_to": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
  "per_source": {
-  "superteam": 26
+  "superteam": 26,
+  "ugig": 38
  },
- "records": 26,
+ "records": 64,
  "repo": "https://github.com/hsharmanov02/seeker-node",
  "sample_downloads_external": 0,
  "site_dir": "demos/futurecapture/",
