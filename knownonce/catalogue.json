@@ -1,23 +1,2018 @@
 {
-  "generated_at": "2026-10-03T15:06:44Z",
+  "generated_at": "2026-10-03T15:09:52Z",
   "api": "https://d809ead7d55060.lhr.life",
   "stats": {
     "findings_by_status": {
-      "verified": 34
+      "verified": 93
     },
-    "verified_now": 34,
-    "total_listed_ever": 34,
+    "verified_now": 93,
+    "total_listed_ever": 93,
     "real_sales": 0,
     "real_fee_revenue_usdc": 0,
     "simulated_dogfood_sales": 0,
     "external_catalogue_queries": 0,
     "external_seller_submissions_accepted": 0,
     "external_seller_submissions_rejected": 0,
-    "chain_entries": 13,
+    "chain_entries": 92,
     "killed": false,
     "service": "KnownOnce live test \u2014 dogfood/internal traffic is excluded from external counters; simulated payments are never counted as revenue."
   },
   "findings": [
+    {
+      "id": "kf-76074214de49",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "tip_height",
+        "subject": "mempool.space/tip",
+        "value": "bitcoin tip height returned"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 800000
+        },
+        "url": "https://mempool.space/api/blocks/tip/height"
+      },
+      "pack_sha256": "2a359ecbc382369bfb74a4210526b4c25625328edcfd18ecb3f764d7da4ab605",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.05,
+      "captured_at": "2026-10-03T15:09:52Z",
+      "last_verified_at": "2026-10-03T15:09:52Z",
+      "age_s": 0.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a9924616f6dc",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "fastestFee_positive",
+        "subject": "mempool.space/fees",
+        "value": "recommended fastest fee > 0 sat/vB"
+      },
+      "category": "liveness",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.fastestFee",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://mempool.space/api/v1/fees/recommended"
+      },
+      "pack_sha256": "d0e577d2323230dbb37e5e270936cf30bf90c08d2ab1e83d7a603086a43aca93",
+      "p0_usd": 0.05,
+      "half_life_s": 21600,
+      "price_now_usd": 0.049988,
+      "captured_at": "2026-10-03T15:09:45Z",
+      "last_verified_at": "2026-10-03T15:09:45Z",
+      "age_s": 7.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-241b61dc3de7",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/continuedev/continue",
+        "value": "continuedev/continue"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "continuedev/continue"
+        },
+        "url": "https://api.github.com/repos/continuedev/continue"
+      },
+      "pack_sha256": "1c5566ec0e2afeff50786eca848e19e15acc36288611cf3dc038273c989985c4",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.1,
+      "captured_at": "2026-10-03T15:09:44Z",
+      "last_verified_at": "2026-10-03T15:09:44Z",
+      "age_s": 8.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c3534447c70e",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "rate_limit_core_eq_60",
+        "subject": "github/api",
+        "value": "unauthenticated core limit 60/h"
+      },
+      "category": "schema",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.resources.core.limit",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": 60
+        },
+        "url": "https://api.github.com/rate_limit"
+      },
+      "pack_sha256": "03db2374c4422ab9fa9fa7a2889b4944ceccc493da5d3505c83710f2f1d89f57",
+      "p0_usd": 0.05,
+      "half_life_s": 604800,
+      "price_now_usd": 0.05,
+      "captured_at": "2026-10-03T15:09:44Z",
+      "last_verified_at": "2026-10-03T15:09:44Z",
+      "age_s": 8.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7356daea6808",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/solana-labs/solana",
+        "value": "solana-labs/solana"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "solana-labs/solana"
+        },
+        "url": "https://api.github.com/repos/solana-labs/solana"
+      },
+      "pack_sha256": "70f4f6b2c502d3360e2c42edde9e2a9221686ba24c15e5597d29050446890aeb",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:16Z",
+      "last_verified_at": "2026-10-03T15:09:16Z",
+      "age_s": 36.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d284ea0b166c",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/punkpeye/awesome-mcp-servers",
+        "value": "punkpeye/awesome-mcp-servers"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "punkpeye/awesome-mcp-servers"
+        },
+        "url": "https://api.github.com/repos/punkpeye/awesome-mcp-servers"
+      },
+      "pack_sha256": "9b85ca9e20f8b8295f9fdfed8258367e1684e5ce13941d13367eacd46018e182",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:15Z",
+      "last_verified_at": "2026-10-03T15:09:15Z",
+      "age_s": 37.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-0760d2e794a1",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/cline/cline",
+        "value": "cline/cline"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "cline/cline"
+        },
+        "url": "https://api.github.com/repos/cline/cline"
+      },
+      "pack_sha256": "2d43002259fef31eb2471dbb999619de85349b4e01d163750d3e42f88513351d",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:10Z",
+      "last_verified_at": "2026-10-03T15:09:10Z",
+      "age_s": 42.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-036e38f0ba3c",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/SWE-agent/SWE-agent",
+        "value": "SWE-agent/SWE-agent"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "SWE-agent/SWE-agent"
+        },
+        "url": "https://api.github.com/repos/SWE-agent/SWE-agent"
+      },
+      "pack_sha256": "e7e0bd5503db1ca90a8eed40761146844de899b7107fa9796e27947e82383ecd",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:07Z",
+      "last_verified_at": "2026-10-03T15:09:07Z",
+      "age_s": 45.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-273b83079432",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/microsoft/semantic-kernel",
+        "value": "microsoft/semantic-kernel"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "microsoft/semantic-kernel"
+        },
+        "url": "https://api.github.com/repos/microsoft/semantic-kernel"
+      },
+      "pack_sha256": "dcefdc28adecb82930f571b2a18ffa63844fa7a51cf12ce8a18811a26687891a",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:02Z",
+      "last_verified_at": "2026-10-03T15:09:02Z",
+      "age_s": 50.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-9b937fd1cbcf",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/BerriAI/litellm",
+        "value": "BerriAI/litellm"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "BerriAI/litellm"
+        },
+        "url": "https://api.github.com/repos/BerriAI/litellm"
+      },
+      "pack_sha256": "877ab50afa916a148568066c118c879da1c5b83a43e3f58a88c577b1bfeb5469",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:09:02Z",
+      "last_verified_at": "2026-10-03T15:09:02Z",
+      "age_s": 50.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-565b15fdce16",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/run-llama/llama_index",
+        "value": "run-llama/llama_index"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "run-llama/llama_index"
+        },
+        "url": "https://api.github.com/repos/run-llama/llama_index"
+      },
+      "pack_sha256": "aebaf8c963d1404ebde8e7925713e1990513d0475a2b8476be96d6621942b8cf",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:08:59Z",
+      "last_verified_at": "2026-10-03T15:08:59Z",
+      "age_s": 53.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-0e27b2b95e0f",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/Significant-Gravitas/AutoGPT",
+        "value": "Significant-Gravitas/AutoGPT"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "Significant-Gravitas/AutoGPT"
+        },
+        "url": "https://api.github.com/repos/Significant-Gravitas/AutoGPT"
+      },
+      "pack_sha256": "2170b5f30e9049420b5aa3bec6462b4722c8f2e6a8b66178ca025a232a0dd623",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099999,
+      "captured_at": "2026-10-03T15:08:59Z",
+      "last_verified_at": "2026-10-03T15:08:59Z",
+      "age_s": 53.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-daa300e03bf7",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/google-gemini/gemini-cli",
+        "value": "google-gemini/gemini-cli"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "google-gemini/gemini-cli"
+        },
+        "url": "https://api.github.com/repos/google-gemini/gemini-cli"
+      },
+      "pack_sha256": "273781d074a0971f53faca3ae7cf632b3de5ac60afbcaa171aabfefe65f70ef7",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:53Z",
+      "last_verified_at": "2026-10-03T15:08:53Z",
+      "age_s": 59.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-53f0257f2e00",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/Aider-AI/aider",
+        "value": "Aider-AI/aider"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "Aider-AI/aider"
+        },
+        "url": "https://api.github.com/repos/Aider-AI/aider"
+      },
+      "pack_sha256": "5ce15a83afaca23ce097e4f63a2cf02cbd57822a3ad6db90b638b3c6f4006e0f",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:52Z",
+      "last_verified_at": "2026-10-03T15:08:52Z",
+      "age_s": 60.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ff658f50eb91",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/ollama/ollama",
+        "value": "ollama/ollama"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "ollama/ollama"
+        },
+        "url": "https://api.github.com/repos/ollama/ollama"
+      },
+      "pack_sha256": "edfa64ed280881bbf5a09641b2f403480015d7e0855aee935f5cc1fdc9ebc8e5",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:49Z",
+      "last_verified_at": "2026-10-03T15:08:49Z",
+      "age_s": 63.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1605580be7bd",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/openai/codex",
+        "value": "openai/codex"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "openai/codex"
+        },
+        "url": "https://api.github.com/repos/openai/codex"
+      },
+      "pack_sha256": "18456bbac8c6fdb076d3206f3e246e2c26f0bab94ace56cffae27c82fc124bea",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:49Z",
+      "last_verified_at": "2026-10-03T15:08:49Z",
+      "age_s": 63.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fa4ff6852328",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/huggingface/transformers",
+        "value": "huggingface/transformers"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "huggingface/transformers"
+        },
+        "url": "https://api.github.com/repos/huggingface/transformers"
+      },
+      "pack_sha256": "50d7506c9f1f9d57380c5e86f4d9cb2cdc8cdfa60fba7635cd02241841662708",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:46Z",
+      "last_verified_at": "2026-10-03T15:08:46Z",
+      "age_s": 66.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-8ab5abca3df5",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/modelcontextprotocol/python-sdk",
+        "value": "modelcontextprotocol/python-sdk"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "modelcontextprotocol/python-sdk"
+        },
+        "url": "https://api.github.com/repos/modelcontextprotocol/python-sdk"
+      },
+      "pack_sha256": "668bceec3ac268aa67eae590ecee07b03b1d0941be61274b1be671dd5d075870",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:45Z",
+      "last_verified_at": "2026-10-03T15:08:45Z",
+      "age_s": 67.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2626dc3329ab",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/ethers-io/ethers.js",
+        "value": "ethers-io/ethers.js"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "ethers-io/ethers.js"
+        },
+        "url": "https://api.github.com/repos/ethers-io/ethers.js"
+      },
+      "pack_sha256": "0db7bee598de0dbba76c6e863c74f4ab509de56154bd68ef9b354661b254186d",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:42Z",
+      "last_verified_at": "2026-10-03T15:08:42Z",
+      "age_s": 70.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-10b6ab4acf95",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/modelcontextprotocol/servers",
+        "value": "modelcontextprotocol/servers"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "modelcontextprotocol/servers"
+        },
+        "url": "https://api.github.com/repos/modelcontextprotocol/servers"
+      },
+      "pack_sha256": "3397be8ddb5a72ab53a673dcc2dd96fabd29eeec3c60be96490dd153e6107bc4",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:41Z",
+      "last_verified_at": "2026-10-03T15:08:41Z",
+      "age_s": 71.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-474ed5760022",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/wevm/viem",
+        "value": "wevm/viem"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "wevm/viem"
+        },
+        "url": "https://api.github.com/repos/wevm/viem"
+      },
+      "pack_sha256": "b572835fe122a4787a3c9be6b782bba4158b27093517df19f010dc16bf1c13f4",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:37Z",
+      "last_verified_at": "2026-10-03T15:08:37Z",
+      "age_s": 75.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-06e8b41bcfed",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/crewAIInc/crewAI",
+        "value": "crewAIInc/crewAI"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "crewAIInc/crewAI"
+        },
+        "url": "https://api.github.com/repos/crewAIInc/crewAI"
+      },
+      "pack_sha256": "a2c7fdb8ca8552fd422b8536e76c161ac1df71678ca2e9a136365532e1ab7e72",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:35Z",
+      "last_verified_at": "2026-10-03T15:08:35Z",
+      "age_s": 77.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c8b1f4043d8e",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/microsoft/autogen",
+        "value": "microsoft/autogen"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "microsoft/autogen"
+        },
+        "url": "https://api.github.com/repos/microsoft/autogen"
+      },
+      "pack_sha256": "5b1b5bb2406dcb6629a50689a61449777f7f7ee734d25cb5b1691257e461e95e",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:34Z",
+      "last_verified_at": "2026-10-03T15:08:34Z",
+      "age_s": 78.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-559030cc25bf",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/openai/openai-python",
+        "value": "openai/openai-python"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "openai/openai-python"
+        },
+        "url": "https://api.github.com/repos/openai/openai-python"
+      },
+      "pack_sha256": "f6ad540ebb5cad524ed1b3cc593b45e5c3b73af79ec184cb8a15e89a47c521c7",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:29Z",
+      "last_verified_at": "2026-10-03T15:08:29Z",
+      "age_s": 83.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6e3eb0bcb0d5",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/langchain-ai/langchain",
+        "value": "langchain-ai/langchain"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "langchain-ai/langchain"
+        },
+        "url": "https://api.github.com/repos/langchain-ai/langchain"
+      },
+      "pack_sha256": "d3060ffa5288d6cfff555e40435226d318ab7e9e45bd1c91c6c1e62005129d52",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:29Z",
+      "last_verified_at": "2026-10-03T15:08:29Z",
+      "age_s": 83.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-93c125ef943a",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "full_name",
+        "subject": "github/anthropics/anthropic-sdk-python",
+        "value": "anthropics/anthropic-sdk-python"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.github+json",
+          "User-Agent": "KnownOnce-Seeder/0.1"
+        },
+        "jsonpath": "$.full_name",
+        "method": "GET",
+        "predicate": {
+          "op": "eq",
+          "value": "anthropics/anthropic-sdk-python"
+        },
+        "url": "https://api.github.com/repos/anthropics/anthropic-sdk-python"
+      },
+      "pack_sha256": "98aff168685273007d280f0e3bd69b256fe3cb3cbde728e39cbc316ea091d504",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:26Z",
+      "last_verified_at": "2026-10-03T15:08:26Z",
+      "age_s": 86.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1a5da31d2a47",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/black",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/black/json"
+      },
+      "pack_sha256": "81827aadb3425f9e3ee98b421c539fcd19a21bdf17009fa3a6c731112aba70ce",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099998,
+      "captured_at": "2026-10-03T15:08:21Z",
+      "last_verified_at": "2026-10-03T15:08:21Z",
+      "age_s": 91.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-30470c3ab784",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/uvicorn",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/uvicorn/json"
+      },
+      "pack_sha256": "46a9ef4a9581fa14dca61149cc7c4b1847ceabeca906bcc90147ca0c18caf012",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:15Z",
+      "last_verified_at": "2026-10-03T15:08:15Z",
+      "age_s": 97.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2b8b69ca8dc2",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/pytest",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/pytest/json"
+      },
+      "pack_sha256": "8f3b03f50f3fb86a4cd14af1f92da9982da4fd7465ffc3aac7c5a3c1c4109ba3",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:14Z",
+      "last_verified_at": "2026-10-03T15:08:14Z",
+      "age_s": 98.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fcb33e58e741",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/selenium",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/selenium/json"
+      },
+      "pack_sha256": "9f3fa8cb1c62f50dadef187fb06b699581b053f23cce37e89e518a078be03a38",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:14Z",
+      "last_verified_at": "2026-10-03T15:08:14Z",
+      "age_s": 98.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-861933e29878",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/beautifulsoup4",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/beautifulsoup4/json"
+      },
+      "pack_sha256": "bfe3195704d383a5772858b9b5fe0a287cd69c2363ef90aff16e28dceed6d4a9",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:05Z",
+      "last_verified_at": "2026-10-03T15:08:05Z",
+      "age_s": 107.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-08d00e5e4578",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/scrapy",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/scrapy/json"
+      },
+      "pack_sha256": "e5f91692695188e6c61f809733239814d93dee7b1d3a406689b148abcbd23e5a",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:03Z",
+      "last_verified_at": "2026-10-03T15:08:03Z",
+      "age_s": 109.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-2c4d1357b9ce",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/python-dotenv",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/python-dotenv/json"
+      },
+      "pack_sha256": "22e05a72794acf566c082345d19f207d5ac1859370e7ebdcf8aaac93f6d74890",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:03Z",
+      "last_verified_at": "2026-10-03T15:08:03Z",
+      "age_s": 109.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ad66eeebbca9",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/mcp",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/mcp/json"
+      },
+      "pack_sha256": "e839dc34a0b3cb48644a7f1a8b3e717198745cd7b7557df1fe6a5328550347dd",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:08:01Z",
+      "last_verified_at": "2026-10-03T15:08:01Z",
+      "age_s": 111.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-980b69f94ebf",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/llama-index",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/llama-index/json"
+      },
+      "pack_sha256": "e36650f94fb7bb97d1f294d855bfb72a49446cf2cd49afd6ca14615e4950c69b",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:59Z",
+      "last_verified_at": "2026-10-03T15:07:59Z",
+      "age_s": 113.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-28b1bd3b17eb",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/crewai",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/crewai/json"
+      },
+      "pack_sha256": "5e5406b08c54cc79d23d2ed8c880c7f82e9bf7e1975598d3688de8525dca9736",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:58Z",
+      "last_verified_at": "2026-10-03T15:07:58Z",
+      "age_s": 114.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-624fbcb31019",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/transformers",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/transformers/json"
+      },
+      "pack_sha256": "8d25d0eebc5b173c728e590cd6d07ca9a3cb84d4f458ab11e96bed244d35b928",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:48Z",
+      "last_verified_at": "2026-10-03T15:07:48Z",
+      "age_s": 124.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-fd067d1067f7",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/chromadb",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/chromadb/json"
+      },
+      "pack_sha256": "fbadaa746ba40c1f51a4492a1d029a8367294602f45c43bf10c1db60737672d6",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:48Z",
+      "last_verified_at": "2026-10-03T15:07:48Z",
+      "age_s": 124.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-ce3b6768a436",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/tiktoken",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/tiktoken/json"
+      },
+      "pack_sha256": "0ac2be83d73354dde264a0e436ca977ed123ba156411e4b576735bf39b22607b",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:48Z",
+      "last_verified_at": "2026-10-03T15:07:48Z",
+      "age_s": 124.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1b50b653d898",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/django",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/django/json"
+      },
+      "pack_sha256": "9397b329c6600e2ab18e6571f14f9fd6dbd487d04504eee1b24ae4d0f2a4bc5c",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099997,
+      "captured_at": "2026-10-03T15:07:43Z",
+      "last_verified_at": "2026-10-03T15:07:43Z",
+      "age_s": 129.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-cc1701dcfcf5",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/fastapi",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/fastapi/json"
+      },
+      "pack_sha256": "e98f7d6be6030b4e82dce05c50013ee458af3ccda8d7cd34675dba187c4c0da7",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:33Z",
+      "last_verified_at": "2026-10-03T15:07:33Z",
+      "age_s": 139.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c9ceaabc83b1",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/pydantic",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/pydantic/json"
+      },
+      "pack_sha256": "e429db4df9a3526457f7179e7b3a143cf75eb0a22d47cbfd7d0ad78943f2c495",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:32Z",
+      "last_verified_at": "2026-10-03T15:07:32Z",
+      "age_s": 140.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b94fbddf4a72",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/flask",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/flask/json"
+      },
+      "pack_sha256": "435c84649ce916e8949ff02d9f7f67888c692b9d6ad52d404b272f76d0f1ff6c",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:31Z",
+      "last_verified_at": "2026-10-03T15:07:31Z",
+      "age_s": 141.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-eb781db7d71f",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/solders",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/solders/json"
+      },
+      "pack_sha256": "7eb31d6855db15554a4a231679d0f4404bbac4af55dda2408cd51308e1a902f5",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:26Z",
+      "last_verified_at": "2026-10-03T15:07:26Z",
+      "age_s": 146.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-c8855c47406c",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/httpx",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/httpx/json"
+      },
+      "pack_sha256": "aa5b24648567537eb7bd7313625eba22bb4b1b26a14d395f480238a5ac80ad50",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:26Z",
+      "last_verified_at": "2026-10-03T15:07:26Z",
+      "age_s": 146.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6739bedaace3",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/requests",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/requests/json"
+      },
+      "pack_sha256": "54eaef0ae0c97eda1fa0c3aa412e3b0cb5d521438850c8124aacc693e2df0f37",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:25Z",
+      "last_verified_at": "2026-10-03T15:07:25Z",
+      "age_s": 147.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-497f44cf5d46",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/web3",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/web3/json"
+      },
+      "pack_sha256": "8fdf8ec2208f7e0abc958d1d0cb9c670d6c06ed775501be01a1d55070278f097",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:15Z",
+      "last_verified_at": "2026-10-03T15:07:15Z",
+      "age_s": 157.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-f73b2c3b43df",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/solana",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/solana/json"
+      },
+      "pack_sha256": "b3af182c7457afc12b63e1a52520e8b4cf67f083b30fffbf96d24e23e9a5878f",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:14Z",
+      "last_verified_at": "2026-10-03T15:07:14Z",
+      "age_s": 158.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-7aa20c675b7b",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/langchain-core",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/langchain-core/json"
+      },
+      "pack_sha256": "fd142ae7a19ee1a09b5bc7f4353367fdbceed5747fc2f9af39a6953ee509e49e",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:13Z",
+      "last_verified_at": "2026-10-03T15:07:13Z",
+      "age_s": 159.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-6a9b5b6bd3a4",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/anthropic",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/anthropic/json"
+      },
+      "pack_sha256": "ef291155c39415264b13dc12e428464999b3ccba28dcd37c0c25d08cf707322e",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:08Z",
+      "last_verified_at": "2026-10-03T15:07:08Z",
+      "age_s": 164.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-51d42da50f7f",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/langchain",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/langchain/json"
+      },
+      "pack_sha256": "21042c076222b99f0d22378fcc98585d4c0d6194f2407917f9930df090224e60",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:08Z",
+      "last_verified_at": "2026-10-03T15:07:08Z",
+      "age_s": 164.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-e767ba3a552b",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "info.version_present",
+        "subject": "pypi/openai",
+        "value": "current version published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.info.version",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://pypi.org/pypi/openai/json"
+      },
+      "pack_sha256": "e558896ea7f9c743a0e727f4712225a71bb912c1225b34e9314ab74b3c7e4086",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099996,
+      "captured_at": "2026-10-03T15:07:07Z",
+      "last_verified_at": "2026-10-03T15:07:07Z",
+      "age_s": 165.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-a0df471f31a5",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/nestjs",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/nestjs"
+      },
+      "pack_sha256": "99cdb7de48ca9f5f5fe3d5c8152c409f8e12ccf55e28a934facc1f11ae36657a",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049998,
+      "captured_at": "2026-10-03T15:07:04Z",
+      "last_verified_at": "2026-10-03T15:07:04Z",
+      "age_s": 168.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-b461c6501cba",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/fastify",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/fastify"
+      },
+      "pack_sha256": "d4387e3527a964ec4df0ba1b0c15fcce0efc9dd47c527778c10e77a7e5607131",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099995,
+      "captured_at": "2026-10-03T15:06:59Z",
+      "last_verified_at": "2026-10-03T15:06:59Z",
+      "age_s": 173.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-cbcd654825b3",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "dist-tags.latest_present",
+        "subject": "npm/nestjs",
+        "value": "latest tag published (version in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {
+          "Accept": "application/vnd.npm.install-v1+json"
+        },
+        "jsonpath": "$.dist-tags.latest",
+        "method": "GET",
+        "predicate": {
+          "op": "exists"
+        },
+        "url": "https://registry.npmjs.org/nestjs"
+      },
+      "pack_sha256": "cc234e650b4d45420b60ef526658f43bd6405a28dccf04c7c2e22f2ab2e58ddf",
+      "p0_usd": 0.1,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.099995,
+      "captured_at": "2026-10-03T15:06:59Z",
+      "last_verified_at": "2026-10-03T15:06:59Z",
+      "age_s": 173.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-325cecf3a7b2",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/@prisma/client",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/%40prisma%2Fclient"
+      },
+      "pack_sha256": "502fa45939e30a6457ac711f8a7c1c79049ae854010d51aab7eebbc7ae24b5ac",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049998,
+      "captured_at": "2026-10-03T15:06:55Z",
+      "last_verified_at": "2026-10-03T15:06:55Z",
+      "age_s": 177.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-d7b56e9c0585",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/fastify",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/fastify"
+      },
+      "pack_sha256": "9186a1241f1691c2ed2767437867caff627cee7a1fad6d5e9de28c5f7be9cabb",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049998,
+      "captured_at": "2026-10-03T15:06:55Z",
+      "last_verified_at": "2026-10-03T15:06:55Z",
+      "age_s": 177.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1377dcc59fcd",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/prisma",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/prisma"
+      },
+      "pack_sha256": "f1c8e8b9eb3006b7666ba53b32f9c5777f7367f1e357c0d44283460ede69caac",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049998,
+      "captured_at": "2026-10-03T15:06:48Z",
+      "last_verified_at": "2026-10-03T15:06:48Z",
+      "age_s": 184.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
+    {
+      "id": "kf-1fd9ca0cb403",
+      "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "claim": {
+        "predicate": "downloads_last_week",
+        "subject": "npm-downloads/pg",
+        "value": "positive download count (count in pack)"
+      },
+      "category": "reliability",
+      "evidence_tier": 1,
+      "probe": {
+        "body": null,
+        "headers": {},
+        "jsonpath": "$.downloads",
+        "method": "GET",
+        "predicate": {
+          "op": "gt",
+          "value": 0
+        },
+        "url": "https://api.npmjs.org/downloads/point/last-week/pg"
+      },
+      "pack_sha256": "5b7bde599dc531909e8292881dbc2d4c44f18a31badbf024f881e5179ba808df",
+      "p0_usd": 0.05,
+      "half_life_s": 2592000,
+      "price_now_usd": 0.049997,
+      "captured_at": "2026-10-03T15:06:45Z",
+      "last_verified_at": "2026-10-03T15:06:45Z",
+      "age_s": 187.2,
+      "status": "verified",
+      "sales": 0,
+      "delisted_at": null,
+      "delist_reason": null
+    },
     {
       "id": "kf-941cb04ecada",
       "seller": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
@@ -43,10 +2038,10 @@
       "pack_sha256": "69318199d9591c111bbf15bcca76e6f210695a0f36fda5635f540ece29ab42d4",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.1,
+      "price_now_usd": 0.099995,
       "captured_at": "2026-10-03T15:06:43Z",
       "last_verified_at": "2026-10-03T15:06:43Z",
-      "age_s": 1.2,
+      "age_s": 189.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -76,10 +2071,10 @@
       "pack_sha256": "b97af5bd4b23e5d88d4adfa9ce08d1e94418f4b7d7f377cffe1e39f7d0a950e1",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.049997,
       "captured_at": "2026-10-03T15:06:41Z",
       "last_verified_at": "2026-10-03T15:06:41Z",
-      "age_s": 3.2,
+      "age_s": 191.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -109,10 +2104,10 @@
       "pack_sha256": "6af66a716c07b1d04e3a08ff3efc468aab0ed09f77b136f41bea46bad8f5a9ef",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.049997,
       "captured_at": "2026-10-03T15:06:35Z",
       "last_verified_at": "2026-10-03T15:06:35Z",
-      "age_s": 9.2,
+      "age_s": 197.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -143,10 +2138,10 @@
       "pack_sha256": "2f43932c4218af6d9494bf56b2254a18273d53b960918ef967d707b3b8916bf2",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.1,
+      "price_now_usd": 0.099995,
       "captured_at": "2026-10-03T15:06:34Z",
       "last_verified_at": "2026-10-03T15:06:34Z",
-      "age_s": 10.2,
+      "age_s": 198.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -177,10 +2172,10 @@
       "pack_sha256": "b35ff61d9524fc785a28920cc1c325bcea06a136ef407e3c827a93241541021b",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.1,
+      "price_now_usd": 0.099995,
       "captured_at": "2026-10-03T15:06:29Z",
       "last_verified_at": "2026-10-03T15:06:29Z",
-      "age_s": 15.2,
+      "age_s": 203.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -210,10 +2205,10 @@
       "pack_sha256": "23e8a2b24ef13f1db70fa89f56b636096f15d39882f438cae43bf8dff59f362a",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.049997,
       "captured_at": "2026-10-03T15:06:28Z",
       "last_verified_at": "2026-10-03T15:06:28Z",
-      "age_s": 16.2,
+      "age_s": 204.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -244,10 +2239,10 @@
       "pack_sha256": "e0379ed07e30a3a3bf56f865373ce0b73f5c1aaf7db0823358725591a7a35238",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.099994,
       "captured_at": "2026-10-03T15:06:25Z",
       "last_verified_at": "2026-10-03T15:06:25Z",
-      "age_s": 19.2,
+      "age_s": 207.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -278,10 +2273,10 @@
       "pack_sha256": "df6e15463cdce8f7d7d2e2a5d723774a67a710ced49b0e4f1a7e8380cce5e338",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.099994,
       "captured_at": "2026-10-03T15:06:25Z",
       "last_verified_at": "2026-10-03T15:06:25Z",
-      "age_s": 19.2,
+      "age_s": 207.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -312,10 +2307,10 @@
       "pack_sha256": "f3a6f23057c56080f0a55cbf9ad80f5ee1bf2e7a98ba27855dbb6f0d4ed2c442",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099999,
+      "price_now_usd": 0.099994,
       "captured_at": "2026-10-03T15:06:18Z",
       "last_verified_at": "2026-10-03T15:06:18Z",
-      "age_s": 26.2,
+      "age_s": 214.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -345,10 +2340,10 @@
       "pack_sha256": "9418cb43d2f2bf4b34a26aa0f163f8ece4498d28875166183e120b0429a3f489",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.05,
+      "price_now_usd": 0.049997,
       "captured_at": "2026-10-03T15:06:17Z",
       "last_verified_at": "2026-10-03T15:06:17Z",
-      "age_s": 27.2,
+      "age_s": 215.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -378,10 +2373,10 @@
       "pack_sha256": "7c7303f8a6a7f1f81b0210c7e39143c24899ad38df872482f508bf4ea1428a8f",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049999,
+      "price_now_usd": 0.049996,
       "captured_at": "2026-10-03T15:05:00Z",
       "last_verified_at": "2026-10-03T15:05:00Z",
-      "age_s": 104.2,
+      "age_s": 292.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -411,10 +2406,10 @@
       "pack_sha256": "17ecab718a2db7aa8d8064740da01fcdb10c9f37b932d766018b10113253ab5e",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049999,
+      "price_now_usd": 0.049996,
       "captured_at": "2026-10-03T15:05:00Z",
       "last_verified_at": "2026-10-03T15:05:00Z",
-      "age_s": 104.2,
+      "age_s": 292.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -445,10 +2440,10 @@
       "pack_sha256": "051764ea126076d16bbd5e2301f5d35aebce47d7f4342db7235b9d2b4b5e8757",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099993,
+      "price_now_usd": 0.099988,
       "captured_at": "2026-10-03T15:02:06Z",
       "last_verified_at": "2026-10-03T15:02:06Z",
-      "age_s": 278.2,
+      "age_s": 466.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -478,10 +2473,10 @@
       "pack_sha256": "c4ddd45ba8803171df41bdac020fd097ae7a0bc8f63570de2aecd533547c9449",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049996,
+      "price_now_usd": 0.049994,
       "captured_at": "2026-10-03T15:02:03Z",
       "last_verified_at": "2026-10-03T15:02:03Z",
-      "age_s": 281.2,
+      "age_s": 469.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -512,10 +2507,10 @@
       "pack_sha256": "a269defceee5c24cbe0b732f6e7037f0039afca8ad65e1ca85aad55a975f5577",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099981,
+      "price_now_usd": 0.099976,
       "captured_at": "2026-10-03T14:54:58Z",
       "last_verified_at": "2026-10-03T14:54:58Z",
-      "age_s": 706.2,
+      "age_s": 894.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -545,10 +2540,10 @@
       "pack_sha256": "5f94495b68a8d8e4d7d82c1d82be26501a7576ae1ae56696787c361bbfea43f8",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049991,
+      "price_now_usd": 0.049988,
       "captured_at": "2026-10-03T14:54:57Z",
       "last_verified_at": "2026-10-03T14:54:57Z",
-      "age_s": 707.2,
+      "age_s": 895.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -579,10 +2574,10 @@
       "pack_sha256": "4121a67930b1ae7816bcf393ef693a94eab3dbff9c3e036c398b881a0486270e",
       "p0_usd": 0.1,
       "half_life_s": 2592000,
-      "price_now_usd": 0.099981,
+      "price_now_usd": 0.099976,
       "captured_at": "2026-10-03T14:54:56Z",
       "last_verified_at": "2026-10-03T14:54:56Z",
-      "age_s": 708.2,
+      "age_s": 896.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -612,10 +2607,10 @@
       "pack_sha256": "b3fc6981188905b9f1a2888073d064516bbec4c9ba01384930fd3c5927bc0a87",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.049988,
+      "price_now_usd": 0.049986,
       "captured_at": "2026-10-03T14:51:52Z",
       "last_verified_at": "2026-10-03T14:51:52Z",
-      "age_s": 892.2,
+      "age_s": 1080.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -645,10 +2640,10 @@
       "pack_sha256": "e425c9cf95ad54d058d73f93b2aeff7cb1efcefeaee0f50756a8daece4139335",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048582,
+      "price_now_usd": 0.04829,
       "captured_at": "2026-10-03T14:51:48Z",
       "last_verified_at": "2026-10-03T14:51:48Z",
-      "age_s": 896.2,
+      "age_s": 1084.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -677,10 +2672,10 @@
       "pack_sha256": "b3c33b0c77b2795cf65c67b6ea5181a2e2b7aab95e94b650153602cbda1010e1",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048511,
+      "price_now_usd": 0.048219,
       "captured_at": "2026-10-03T14:51:02Z",
       "last_verified_at": "2026-10-03T14:51:02Z",
-      "age_s": 942.2,
+      "age_s": 1130.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -710,10 +2705,10 @@
       "pack_sha256": "7847e4dd44bc0a2d92e99492c1a1d71f61da32cccf2684820dc76017680368b5",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048509,
+      "price_now_usd": 0.048217,
       "captured_at": "2026-10-03T14:51:01Z",
       "last_verified_at": "2026-10-03T14:51:01Z",
-      "age_s": 943.2,
+      "age_s": 1131.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -742,10 +2737,10 @@
       "pack_sha256": "2b057ad928d403d936df63190872534aa46d020ca67a693e7da16cab03557a90",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048449,
+      "price_now_usd": 0.048157,
       "captured_at": "2026-10-03T14:50:22Z",
       "last_verified_at": "2026-10-03T14:50:22Z",
-      "age_s": 982.2,
+      "age_s": 1170.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -775,10 +2770,10 @@
       "pack_sha256": "57772602df3ee50dadfe9388c33c379c4cb5017e159099f19529ecefe3622f03",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048449,
+      "price_now_usd": 0.048157,
       "captured_at": "2026-10-03T14:50:22Z",
       "last_verified_at": "2026-10-03T14:50:22Z",
-      "age_s": 982.2,
+      "age_s": 1170.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -807,10 +2802,10 @@
       "pack_sha256": "07e3ed5de9550ffb83dbe4251e28ea1d70a29e43e5f7a0065eb0a61ff0d19052",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048447,
+      "price_now_usd": 0.048156,
       "captured_at": "2026-10-03T14:50:21Z",
       "last_verified_at": "2026-10-03T14:50:21Z",
-      "age_s": 983.2,
+      "age_s": 1171.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -840,10 +2835,10 @@
       "pack_sha256": "17c05d5b03f5b1f48fbcf32a669c15efdab61a503ad81727fc3035beb7bfa4fc",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048447,
+      "price_now_usd": 0.048156,
       "captured_at": "2026-10-03T14:50:21Z",
       "last_verified_at": "2026-10-03T14:50:21Z",
-      "age_s": 983.2,
+      "age_s": 1171.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -873,10 +2868,10 @@
       "pack_sha256": "3229e8d3a47010213e2f89255d4ab819652a020474f44dbf5df65ed464d855ac",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048439,
+      "price_now_usd": 0.048148,
       "captured_at": "2026-10-03T14:50:16Z",
       "last_verified_at": "2026-10-03T14:50:16Z",
-      "age_s": 988.2,
+      "age_s": 1176.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -905,10 +2900,10 @@
       "pack_sha256": "ba458097a06fba49b961d880189818c8c6f5cd5c88f0fc50df3dd007e1403f93",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048438,
+      "price_now_usd": 0.048146,
       "captured_at": "2026-10-03T14:50:15Z",
       "last_verified_at": "2026-10-03T14:50:15Z",
-      "age_s": 989.2,
+      "age_s": 1177.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -938,10 +2933,10 @@
       "pack_sha256": "037e1b67ab29a3d1da895b510a116eb32a930627a613b9d20460a0e3425c2261",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.048428,
+      "price_now_usd": 0.048137,
       "captured_at": "2026-10-03T14:50:09Z",
       "last_verified_at": "2026-10-03T14:50:09Z",
-      "age_s": 995.2,
+      "age_s": 1183.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -970,10 +2965,10 @@
       "pack_sha256": "9d167a2fb041fc6f0e42e49753220b8c54e883ba053b3b921e7993469439a5ed",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047958,
+      "price_now_usd": 0.04767,
       "captured_at": "2026-10-03T14:45:05Z",
       "last_verified_at": "2026-10-03T14:45:05Z",
-      "age_s": 1299.2,
+      "age_s": 1487.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1002,10 +2997,10 @@
       "pack_sha256": "5c9494e0f60864eccc76c25f4c21459df1fdb4c942d792544873b661db2f531f",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047957,
+      "price_now_usd": 0.047668,
       "captured_at": "2026-10-03T14:45:04Z",
       "last_verified_at": "2026-10-03T14:45:04Z",
-      "age_s": 1300.2,
+      "age_s": 1488.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1035,10 +3030,10 @@
       "pack_sha256": "008199b577dd7ee6c86f17d3174746c01bf02c732b98b53a92b2185e6fb405c4",
       "p0_usd": 0.15,
       "half_life_s": 2592000,
-      "price_now_usd": 0.149947,
+      "price_now_usd": 0.14994,
       "captured_at": "2026-10-03T14:44:50Z",
       "last_verified_at": "2026-10-03T14:44:50Z",
-      "age_s": 1314.2,
+      "age_s": 1502.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1067,10 +3062,10 @@
       "pack_sha256": "26ba349ff60d0fa82f851e7367936ddabcc70db1d66012f017702b205146a651",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047926,
+      "price_now_usd": 0.047638,
       "captured_at": "2026-10-03T14:44:44Z",
       "last_verified_at": "2026-10-03T14:44:44Z",
-      "age_s": 1320.2,
+      "age_s": 1508.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1099,10 +3094,10 @@
       "pack_sha256": "eaa4e458d7626b7db10407016e48afdb6bd719a4bddb2e60f6cf606c81ca9591",
       "p0_usd": 0.05,
       "half_life_s": 21600,
-      "price_now_usd": 0.047924,
+      "price_now_usd": 0.047636,
       "captured_at": "2026-10-03T14:44:43Z",
       "last_verified_at": "2026-10-03T14:44:43Z",
-      "age_s": 1321.2,
+      "age_s": 1509.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
@@ -1132,10 +3127,10 @@
       "pack_sha256": "936069769a2771be1ddee1b370ba1857c10dd2c7fcb4db049be2bfdeab89779a",
       "p0_usd": 0.05,
       "half_life_s": 2592000,
-      "price_now_usd": 0.04998,
+      "price_now_usd": 0.049977,
       "captured_at": "2026-10-03T14:41:36Z",
       "last_verified_at": "2026-10-03T14:41:36Z",
-      "age_s": 1508.2,
+      "age_s": 1696.2,
       "status": "verified",
       "sales": 0,
       "delisted_at": null,
