@@ -1,0 +1,102 @@
+{
+ "entries": [
+  {
+   "amount_usdc": 12.5,
+   "counterparty": "0xb33d99d6b60b70739d125956048e009be816eee3",
+   "detail": "x402 job J-101 settled",
+   "entry_hash": "3a540a4b2b8256a34f16a6042b6ba8cd1d9f1ec8cc3808fabbc1a1a48bbca973",
+   "id": "fl-001",
+   "kind": "PAYMENT_SETTLED",
+   "prev_hash": "",
+   "sig": "1843e9fa654e69f0d1c6396fde2f6ac9e517e644334d18e805b40682745fa725edf59039e8ff1f537adcb83b182072a02af06a72ccdbe32a008f5fe31e6a080a",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790140347
+  },
+  {
+   "amount_usdc": 7.25,
+   "counterparty": "0xb33d99d6b60b70739d125956048e009be816eee3",
+   "detail": "x402 job J-118 settled",
+   "entry_hash": "807ea253b320b59d50e1efd14d9efdb603d4dd71973f5938177aa7844408f654",
+   "id": "fl-002",
+   "kind": "PAYMENT_SETTLED",
+   "prev_hash": "3a540a4b2b8256a34f16a6042b6ba8cd1d9f1ec8cc3808fabbc1a1a48bbca973",
+   "sig": "8062acdad42ec2ff55bbec27561c4fa5c7be06d29cb167d7fc64e24a96359e06d78132776f532089f8991a42be7e7e2b09ff1b79e749d3c54d311eda06b24a06",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790340347
+  },
+  {
+   "amount_usdc": 20.0,
+   "counterparty": "0x2f71cef014ea65366f86a06449456102fa5c21a3",
+   "detail": "ACP job escrow released",
+   "entry_hash": "dc7ffdc7c654eb5aef3f67bde075f961ae55d0e206f49bd4b7ea718394c6dd9c",
+   "id": "fl-003",
+   "kind": "PAYMENT_SETTLED",
+   "prev_hash": "807ea253b320b59d50e1efd14d9efdb603d4dd71973f5938177aa7844408f654",
+   "sig": "ae0a4908a9920d6d05299ba6954aa02260587728828f4c11af67bb36ee57568f08fbed430f1e3630251230f9be03052743b71e9455e62f5fe798312fac800601",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790540347
+  },
+  {
+   "amount_usdc": 3.75,
+   "counterparty": "0x2f71cef014ea65366f86a06449456102fa5c21a3",
+   "detail": "x402 job J-140 settled",
+   "entry_hash": "1a42bcde8bae3cb4b374a6b5670032fcf8889b9dce8f4324bd1bc8b904391009",
+   "id": "fl-004",
+   "kind": "PAYMENT_SETTLED",
+   "prev_hash": "dc7ffdc7c654eb5aef3f67bde075f961ae55d0e206f49bd4b7ea718394c6dd9c",
+   "sig": "05a230f7c5d937518a3ca9a621c8891cbf4d6d022b632edbddb4392c9979f631174060b3a9d45ba14a4db6fe7f3167dfc6fb8bd29286da82995c64cae2ca620e",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790740347
+  },
+  {
+   "amount_usdc": -7.25,
+   "counterparty": "0xb33d99d6b60b70739d125956048e009be816eee3",
+   "detail": "job J-118 refunded after failed delivery (NEGATIVE event)",
+   "entry_hash": "0e79ceb323d7b351295bd9f0323a542257a8d5c86dceff65d1bfe1a3ffdf1ebd",
+   "id": "fl-005",
+   "kind": "PAYMENT_REFUNDED",
+   "prev_hash": "1a42bcde8bae3cb4b374a6b5670032fcf8889b9dce8f4324bd1bc8b904391009",
+   "sig": "0c3937f90f3a2d91a1e0b5dd81d1f9d8f8aa555467d648f9b8659574459e2ff21b0cccf80519b5a38d5bcc208c2ef6d9cc2ca2dab1df0094e64b86020270c10e",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790840347
+  },
+  {
+   "amount_usdc": 0,
+   "counterparty": "fleet-registry",
+   "detail": "DecayCert-style endpoint certificate DC-TEST-7",
+   "entry_hash": "5ad23d7a76ffc9f20e5dc199acebaa014ee941c72f398d84a495e43128b526d9",
+   "id": "fl-006",
+   "kind": "CERT_EARNED",
+   "prev_hash": "0e79ceb323d7b351295bd9f0323a542257a8d5c86dceff65d1bfe1a3ffdf1ebd",
+   "sig": "fd9946d74cf3e1061a648ae2eb80656c892ef35669782d323b544c8db46ab9b9b54ff19f053d8d2578bc9860b9c23fcef686c7781308ba460e9cd19a49764309",
+   "subject": "0x411829f4a7ad07754f28c3ad0b1236ef511c2fcd",
+   "ts": 1790940347
+  },
+  {
+   "amount_usdc": 99.0,
+   "counterparty": "0xb33d99d6b60b70739d125956048e009be816eee3",
+   "detail": "noise: another agent",
+   "entry_hash": "1de2044a83c20c76b93d8e7c3488146ee25369c2b94985b6e0db40ad658f8cdb",
+   "id": "fl-101",
+   "kind": "PAYMENT_SETTLED",
+   "prev_hash": "5ad23d7a76ffc9f20e5dc199acebaa014ee941c72f398d84a495e43128b526d9",
+   "sig": "f01719969623d9ce63061a6e89767a12fdae505e05854f131842f8ae13cbcdcfe0f7242878d25afe2ac2c8c361e77d44cef0ed04b89dda16cdd3b6b599f74c08",
+   "subject": "0x000000000000000000000000000000000000dEaD",
+   "ts": 1790640347
+  },
+  {
+   "amount_usdc": -1.0,
+   "counterparty": "0x2f71cef014ea65366f86a06449456102fa5c21a3",
+   "detail": "noise: another agent refund",
+   "entry_hash": "1bdfb828e215300499e90479636e2f805819aedbcc9b119ecc627070cea9c338",
+   "id": "fl-102",
+   "kind": "PAYMENT_REFUNDED",
+   "prev_hash": "1de2044a83c20c76b93d8e7c3488146ee25369c2b94985b6e0db40ad658f8cdb",
+   "sig": "2e9b350c63d07307f35f4f36f19d08a8aaf9c3a10f64c300814b9d7d7f12f4e97fbe165b62bdba3bbf92886f661f41a3a7df8624372941777971b27290378d0a",
+   "subject": "0x000000000000000000000000000000000000bEEF",
+   "ts": 1790690347
+  }
+ ],
+ "log": "StillMe dogfood fleet registry (synthetic)",
+ "pubkey_hex": "8b79af925dddb92832cce34fbe678da1d5114b2027d058060e6ef22d3393c23d"
+}

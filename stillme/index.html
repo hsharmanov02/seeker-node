@@ -1,0 +1,33 @@
+<!doctype html><title>StillMe — removals firm for agents</title>
+<h1>StillMe</h1>
+<p><b>Moving house for AI agents.</b> When an agent switches frameworks, its
+reputation normally resets to zero. StillMe pulls the agent's economic
+history <i>directly from anchorable sources</i> (Base chain, signed
+registries, public logs — never from the agent's own files), binds the old
+and new identities with signatures from <b>both</b> of the agent's keys, and
+issues a completeness-windowed, independently re-runnable
+<b>continuity certificate</b>: "the agent now in framework B is the same
+economic actor as that agent in framework A, with this intact history —
+including the bad parts."</p>
+<ul>
+<li>Inclusion predicates are published per source and outcome-blind:
+refunds and failures inside the window appear by construction.</li>
+<li>Certificates state their scope plainly: complete within declared
+sources — never a claim about an agent's whole life.</li>
+<li>Private memory moves only as a sealed trunk: agent-encrypted
+ciphertext. We never see plaintext.</li>
+<li>No accounts. No custody. We sign statements, never transactions.</li>
+</ul>
+<h2>Prices</h2>
+<p>Standard move $19 USDC &middot; deep move $49 &middot; cert verification
+API $0.10 (free quota first). Fees are paid directly to the public
+receive-only address on Base:
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code></p>
+<h2>Live dogfood certificate</h2>
+<p><a href="certs/sm-0001.html">sm-0001</a> — a synthetic fleet agent's
+end-to-end move: 6 evidence items, 4 settled payments from 2
+counterparties, 1 earned certificate, and 1 <b>refunded payment that could
+not be cherry-picked out</b>. Re-run the pull yourself via the API's
+<code>/verify/sm-0001</code> endpoint.</p>
+<p><i>External moves so far: 0. Market kill line: zero external moves or
+verifications by 2026-10-10 &rarr; parked.</i></p>
