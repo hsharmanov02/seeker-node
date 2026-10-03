@@ -1,5 +1,5 @@
 {
- "api_base": "https://f1fe088cba5985.lhr.life",
+ "api_base": "https://ea803797396589.lhr.life",
  "demand_kill": "0 external calls of any kind after 7 days live -> park (see designer_q_untried.md)",
  "metrics": {
   "counters": {
@@ -15,5 +15,5 @@
   "revenue_usd_recognised": 0
  },
  "service": "plotproof",
- "updated_at": "2026-10-03T17:00:26Z"
+ "updated_at": "2026-10-03T17:00:52Z"
 }
