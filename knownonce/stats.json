@@ -8,7 +8,7 @@
   "real_sales": 0,
   "real_fee_revenue_usdc": 0,
   "simulated_dogfood_sales": 1,
-  "external_catalogue_queries": 1,
+  "external_catalogue_queries": 2,
   "external_seller_submissions_accepted": 0,
   "external_seller_submissions_rejected": 0,
   "chain_entries": 235,
