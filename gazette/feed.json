@@ -1,0 +1,28 @@
+{
+  "registry": "Agent Gazette",
+  "root_hash": "9470adcfb8900f6e2f1e7a95520f4af60682b7db4f3abbcc6e4fdc53fe8349c3",
+  "chain_length": 2,
+  "disclaimer": "Independent registry. Publication here is not a court filing, not service of process, not legal advice, and carries no claim of legal effect. The Gazette certifies only that a notice was published at a stated time and what delivery was attempted -- never that the underlying claim is true.",
+  "notices": [
+    {
+      "notice_id": "gz-8b7f798fe006",
+      "subject_type": "agent",
+      "subject_id": "demo-agent-000 (fictional)",
+      "notice_class": "data_recall",
+      "is_test": true,
+      "published_at": "2026-10-03T11:55:52Z",
+      "log_index": 2,
+      "cert_url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/cert/gz-8b7f798fe006.html"
+    },
+    {
+      "notice_id": "gz-11b672d0a976",
+      "subject_type": "wallet",
+      "subject_id": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "notice_class": "general",
+      "is_test": true,
+      "published_at": "2026-10-03T11:55:50Z",
+      "log_index": 1,
+      "cert_url": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/cert/gz-11b672d0a976.html"
+    }
+  ]
+}

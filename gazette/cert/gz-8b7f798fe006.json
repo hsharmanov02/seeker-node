@@ -1,0 +1,41 @@
+{
+  "registry": "Agent Gazette",
+  "notice_id": "gz-8b7f798fe006",
+  "subject_type": "agent",
+  "subject_id": "demo-agent-000 (fictional)",
+  "notice_class": "data_recall",
+  "text_hash": "c6ec59529dc7465989932fdd401001495d64ea8d4231401379cacbac5408bfcd",
+  "sealed": false,
+  "is_test": true,
+  "published_at": "2026-10-03T11:55:52Z",
+  "log_index": 2,
+  "prev_hash": "86d8f9d222a80bb3c4e01437d2a498ca5ea49a78b2600a22ea15556ad69588a6",
+  "entry_hash": "9470adcfb8900f6e2f1e7a95520f4af60682b7db4f3abbcc6e4fdc53fe8349c3",
+  "delivery_attempts": [
+    {
+      "channel": "named_index",
+      "target": "Agent Gazette named-subject index",
+      "attempted_at": "2026-10-03T11:55:52Z",
+      "result": "listed",
+      "detail": "Anyone can query /check for this identifier; listing is public."
+    },
+    {
+      "channel": "webhook",
+      "target": "(none known)",
+      "attempted_at": "2026-10-03T11:55:52Z",
+      "result": "no_endpoint",
+      "detail": "No public endpoint known for this identifier; no webhook attempt was possible."
+    },
+    {
+      "channel": "onchain_memo",
+      "target": "demo-agent-000 (fictional)",
+      "attempted_at": "2026-10-03T11:55:52Z",
+      "result": "not_attempted_by_registry",
+      "detail": "The Gazette never signs or sends transactions. A publisher may reference this notice_id in their own transaction if they wish."
+    }
+  ],
+  "mirror": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/log/entries.jsonl",
+  "disclaimer": "Independent registry. Publication here is not a court filing, not service of process, not legal advice, and carries no claim of legal effect. The Gazette certifies only that a notice was published at a stated time and what delivery was attempted -- never that the underlying claim is true.",
+  "registry_public_key_ed25519": "d570ebbd6ba29770a580f0ac03a7f63cf73f7f06a30fc34f53aa7cc7c8a68dbc",
+  "signature_ed25519": "56ef1d55a4688d43e85da014efca98615db96b1fb66ce869a1b800ccac62ea7c3e2ef7d5977ae2247c8ef7589741ca84ce1e2bbf90f7cccbc43f4ee5bba6830d"
+}

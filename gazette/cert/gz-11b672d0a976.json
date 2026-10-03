@@ -1,0 +1,41 @@
+{
+  "registry": "Agent Gazette",
+  "notice_id": "gz-11b672d0a976",
+  "subject_type": "wallet",
+  "subject_id": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "notice_class": "general",
+  "text_hash": "e102f8f3b89a858ccd2322e7a52705ccda80510ae562f6b30d22760357a5cda8",
+  "sealed": false,
+  "is_test": true,
+  "published_at": "2026-10-03T11:55:50Z",
+  "log_index": 1,
+  "prev_hash": "GENESIS",
+  "entry_hash": "86d8f9d222a80bb3c4e01437d2a498ca5ea49a78b2600a22ea15556ad69588a6",
+  "delivery_attempts": [
+    {
+      "channel": "named_index",
+      "target": "Agent Gazette named-subject index",
+      "attempted_at": "2026-10-03T11:55:50Z",
+      "result": "listed",
+      "detail": "Anyone can query /check for this identifier; listing is public."
+    },
+    {
+      "channel": "webhook",
+      "target": "(none known)",
+      "attempted_at": "2026-10-03T11:55:50Z",
+      "result": "no_endpoint",
+      "detail": "No public endpoint known for this identifier; no webhook attempt was possible."
+    },
+    {
+      "channel": "onchain_memo",
+      "target": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "attempted_at": "2026-10-03T11:55:50Z",
+      "result": "not_attempted_by_registry",
+      "detail": "The Gazette never signs or sends transactions. A publisher may reference this notice_id in their own transaction if they wish."
+    }
+  ],
+  "mirror": "https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/log/entries.jsonl",
+  "disclaimer": "Independent registry. Publication here is not a court filing, not service of process, not legal advice, and carries no claim of legal effect. The Gazette certifies only that a notice was published at a stated time and what delivery was attempted -- never that the underlying claim is true.",
+  "registry_public_key_ed25519": "d570ebbd6ba29770a580f0ac03a7f63cf73f7f06a30fc34f53aa7cc7c8a68dbc",
+  "signature_ed25519": "4ebe063b8fa059c5c460ca72b75d94d0091620cfc9f60395145c4a2c57d116a81588ff7e1663eb6f85af2a95e157b8a58ba18cbeefa97cdb6e0a653370e7ca0b"
+}
