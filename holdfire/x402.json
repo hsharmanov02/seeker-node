@@ -1,0 +1,12 @@
+{
+  "x402Version": 2,
+  "service": "HoldFire",
+  "description": "Neutral executor for pre-signed, capped, expiring x402 (EIP-3009) payment intents on Base: deposit once, go offline, we fire your own payload when your conditions hold and publish hash-chained proof of execution-or-expiry. We never sign, never hold keys or funds.",
+  "network": "eip155:8453",
+  "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "fee_address": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+  "fee": { "charged": "only on fired intents", "formula": "$0.001 + 1% of settled value, capped at $0.02" },
+  "caps": { "max_value_per_intent_usdc": "10.000000", "max_validity_hours": 72 },
+  "discovery": "GET /.well-known/x402 on the API base listed in api.json",
+  "docs": "./openapi.json"
+}

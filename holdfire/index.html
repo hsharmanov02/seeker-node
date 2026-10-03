@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoldFire — sign once, go offline. We fire when the moment is right.</title>
+<style>
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#16181d}
+ h1{font-size:1.9rem;margin-bottom:.2rem} .tag{color:#555;font-size:1.05rem;margin-top:0}
+ code{background:#f0f0f3;padding:.1rem .3rem;border-radius:4px} .card{border:1px solid #ddd;border-radius:10px;padding:1rem 1.2rem;margin:1rem 0}
+ .warn{background:#fff8e6;border-color:#e8cf7a} .mono{font-family:ui-monospace,Menlo,monospace;font-size:.85rem;word-break:break-all}
+ table{border-collapse:collapse} td,th{border:1px solid #ddd;padding:.3rem .6rem;text-align:left}
+ #stats{white-space:pre-wrap}
+</style></head><body>
+<h1>HoldFire</h1>
+<p class="tag">Agent purchases fail for dumb reasons: the seller is down at 3am, the price spiked for an hour, your run ended before the moment was right. Humans have limit orders. Agents have cron jobs and hope. HoldFire is the missing piece: <strong>sign once, go offline — we wait, we watch, we fire your own payload when your conditions hold, and we publish cryptographic proof either way.</strong></p>
+
+<div class="card">
+<h2>How it works</h2>
+<ol>
+<li>You sign <strong>one pre-signed, hard-capped, expiring</strong> x402 payment payload (EIP-3009: fixed seller, fixed maximum, fixed deadline, single-use nonce) — or a price ladder of up to 8 — plus your trigger conditions: <em>seller price &le; your cap, endpoint healthy again, before deadline T</em>.</li>
+<li>We hold the payload <strong>encrypted</strong> and watch the seller around the clock. We cannot sign, cannot redirect, cannot raise the amount: everything submittable was fully determined by your signature before we saw it.</li>
+<li>The moment your conditions hold, we fire your payload into the seller's endpoint as an ordinary x402 client. Settlement runs <strong>buyer &rarr; seller</strong> through the seller's facilitator. We never touch funds and pay no gas.</li>
+<li>You get a hash-chained, Ed25519-signed public proof: an <strong>execution receipt</strong> (settlement tx hash, resource hash) or an <strong>expiry certificate</strong> showing your nonce died unused — verifiable by anyone, forever, with one RPC call.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>Revocation that doesn't depend on trusting us</h2>
+<p>Two layers. <strong>Registry:</strong> revoke via API and firing halts in under a second; payloads are shredded. <strong>On-chain (final):</strong> broadcast USDC <code>cancelAuthorization</code> for your nonce and the token contract itself rejects the payload forever — including in our hands, including if our database leaks the next minute. Even unrevoked, every payload carries <code>validBefore &le; 72h</code>, enforced at deposit. Worst case per intent is exactly its signed cap (&le; $10 at launch), payable only to the seller you named. Every deposit receipt prints the fleet-wide exposure.</p>
+</div>
+
+<div class="card">
+<h2>Price</h2>
+<table>
+<tr><th>Watch-only intent (no payload)</th><td>free</td></tr>
+<tr><th>Deposit / expiry / revocation</th><td>free</td></tr>
+<tr><th>Fired intent</th><td>$0.001 + 1% of settled value, capped at $0.02 — via a separate micro-authorization you sign up front, settled only after delivery evidence exists</td></tr>
+</table>
+<p>Caps at launch: &le; $10 per intent, &le; 72h validity. Base (USDC) only.</p>
+</div>
+
+<div class="card warn">
+<h2>Honest economics</h2>
+<p>This is new infrastructure for a young market, not a money printer. Genuine agent-commerce volume protocol-wide is still small; expect long stretches of &pound;0. The service earns only when agents actually lose work to dead sellers and price spikes — the 7-day external-intent line decides whether it keeps growing. No rate guarantees are made anywhere on this page.</p>
+</div>
+
+<div class="card">
+<h2>Use it</h2>
+<p class="mono" id="api">API base: loading from api.json…</p>
+<ul>
+<li><code>POST /intents</code> — deposit (armed or watch-only). See the <a href="./openapi.json">OpenAPI spec</a>.</li>
+<li><code>POST /intents/:id/revoke</code> — EIP-191 signature over <code>holdfire:revoke:&lt;id&gt;</code>.</li>
+<li><code>GET /intents/:id</code> — status + full signed proof trail.</li>
+<li><code>GET /log</code> — the public proof log. <a href="./log.jsonl">log.jsonl mirror</a> · <a href="./stats.json">stats.json</a></li>
+<li><code>POST /mcp</code> — MCP tools: <code>holdfire_create_intent</code>, <code>holdfire_revoke</code>, <code>holdfire_status</code>.</li>
+<li><code>GET /.well-known/x402</code> on the API — service discovery + proof public key. <a href="./x402.json">x402.json mirror</a></li>
+</ul>
+<h3>Live stats (from stats.json)</h3>
+<pre id="stats">loading…</pre>
+</div>
+
+<p class="mono">Sellers need zero integration — we arrive as an ordinary x402 client at fire time. HoldFire is not a court, not a custodian, not a trading venue: deposit validation rejects known swap/DEX payees by construction.</p>
+<script>
+fetch('./api.json').then(r=>r.json()).then(j=>{document.getElementById('api').textContent='API base: '+(j.api_base||'(tunnel offline; API on request)')+' · network '+(j.network||'');}).catch(()=>{});
+fetch('./stats.json').then(r=>r.json()).then(j=>{document.getElementById('stats').textContent=JSON.stringify(j,null,1);}).catch(()=>{document.getElementById('stats').textContent='(stats unavailable)';});
+</script>
+</body></html>

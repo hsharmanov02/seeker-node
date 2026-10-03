@@ -1,0 +1,20 @@
+{
+ "service": "HoldFire",
+ "mode": "mainnet",
+ "network": "eip155:8453",
+ "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+ "fee_address": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+ "started_at": "2026-10-03T15:23:28.806Z",
+ "intents": {
+  "watching": 0,
+  "fired": 0,
+  "expired": 0,
+  "revoked": 0,
+  "total": 0
+ },
+ "fired_value_usdc": "0.000000",
+ "fee_settled_count": 0,
+ "proof_entries": 0,
+ "proof_head": "GENESIS",
+ "honest_note": "External revenue counts only mainnet intents from third-party buyers. Testnet harness traffic is labelled and excluded."
+}
