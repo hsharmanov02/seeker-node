@@ -1,0 +1,15 @@
+{
+  "product": "AbsenceSeal",
+  "chain": "base",
+  "service_public_key_ed25519": "2e464640ed13bd5ca3883b0dc848652fb75064ee7d9d36a1e95dc2143bbaa893",
+  "clock_start": null,
+  "killed": false,
+  "external_paid_certs": 0,
+  "external_verifications": 0,
+  "external_uncertifiable": 0,
+  "external_cert_requests": 0,
+  "certs_issued_total": 0,
+  "windows_complete": 3,
+  "pass_criteria": ">=1 external paid cert OR >=10 external verifications OR 1 marketplace inbound",
+  "pass": false
+}

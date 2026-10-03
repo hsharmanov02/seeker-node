@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AbsenceSeal",
+    "version": "0.1",
+    "description": "Certified absence over a captured Base USDC event universe; UNCERTIFIABLE is a first-class free outcome."
+  },
+  "paths": {
+    "/certificate": {
+      "post": {
+        "summary": "Request a certificate (402 until paid; UNCERTIFIABLE free)",
+        "responses": {
+          "200": {
+            "description": "UNCERTIFIABLE or issued (self-test)"
+          },
+          "402": {
+            "description": "payment required"
+          }
+        }
+      }
+    },
+    "/certificate/{job_id}/claim": {
+      "post": {
+        "summary": "Claim issuance with payment tx hash"
+      }
+    },
+    "/verify/{cert_id}": {
+      "get": {
+        "summary": "Fast verify vs committed roots (free)"
+      }
+    },
+    "/verify-full": {
+      "post": {
+        "summary": "Full recomputation from public RPC (free)"
+      }
+    },
+    "/coverage": {
+      "get": {
+        "summary": "Public completeness map"
+      }
+    },
+    "/sets": {
+      "get": {
+        "summary": "Pinned counterparty sets"
+      }
+    },
+    "/roots": {
+      "get": {
+        "summary": "Anchored root chain"
+      }
+    },
+    "/mcp": {
+      "post": {
+        "summary": "MCP tools: certify_absence, verify_certificate, list_sets, get_coverage"
+      }
+    }
+  }
+}

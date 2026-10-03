@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AbsenceSeal — certified absence on Base</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2rem auto;
+padding:0 1rem;color:#1a1a1a;background:#fdfcf8}code{background:#eee;
+padding:.1em .3em;word-break:break-all}pre{background:#111;color:#ddd;
+padding:1rem;overflow-x:auto;font-size:.8rem}table{border-collapse:
+collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:.3rem .4rem;
+font-size:.88rem;text-align:left}.foot{margin-top:2.5rem;border-top:2px
+solid #1a1a1a;padding-top:.8rem;font-size:.85rem;color:#444}</style>
+</head><body>
+<h1>AbsenceSeal</h1>
+<p><strong>Signed, independently verifiable certificates that something did
+<em>not</em> happen on Base</strong> — e.g. “no USDC transfer or approval
+between wallet X and any address in this hash-pinned set touched Base in
+blocks A–B”. When completeness cannot be proven, the API answers
+<code>UNCERTIFIABLE</code> — free, with the reason. That refusal is part of
+the product.</p>
+
+<h2>1. Verify before you pay</h2>
+<p>Never trust us. The open verifier (~150 lines, no dependencies beyond
+Python 3) recomputes every window root from the public Base chain and checks
+each non-membership proof itself:</p>
+<p><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/verifier.py"><strong>verifier.py</strong></a> ·
+Service Ed25519 public key: <code>2e464640ed13bd5ca3883b0dc848652fb75064ee7d9d36a1e95dc2143bbaa893</code><br>
+Anchored roots: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/roots.json">roots.json</a> ·
+Completeness map: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/coverage.json">coverage.json</a></p>
+<p><strong>Kill condition, stated up front:</strong> if anyone demonstrates
+a single false AbsenceSeal certificate, this service halts issuance
+permanently and posts a public post-mortem on this page. We would rather be
+refuted than believed.</p>
+<h2>2. What a certificate proves — and what it never proves</h2>
+<p>It proves exactly one negative: within USDC <em>Transfer/Approval</em>
+events on Base, blocks A–B, our captured event set — committed under a
+signed, hash-chained, publicly anchored Merkle root <em>before</em> your
+query — contains no event between your subject and any address in your
+hash-pinned counterparty set. It does <strong>not</strong> say anything
+about native ETH, other tokens, other chains, off-chain action, intent, or
+legality.</p>
+<p>Zone 1 (certifiable): closed universes we capture completely — the USDC
+event stream over committed block ranges. Zone 2 (certifiable only pinned):
+published sets named by hash, e.g. the OFAC snapshot below. Zone 3
+(refused, free): categories like “mixers”, “any breach anywhere”, “nothing
+illegal” — open universes nobody can enumerate. We return
+<code>UNCERTIFIABLE</code> there; screening vendors would still sell you a
+score.</p>
+<h2>3. Buy a certificate (machines welcome)</h2>
+<p><code>POST http://127.0.0.1:8825/certificate</code> with
+<code>{"subject": "0x…", "set_id": "ofac-sdn-evm-2026-10-03",
+"from_block": A, "to_block": B}</code> (or
+<code>"counterparty_addresses": ["0x…"]</code>, ≤500).<br>
+If the claim is Zone 3 or our capture has any gap in range, you get
+<code>UNCERTIFIABLE</code> immediately and free. Otherwise you get an
+HTTP 402 with a USDC-on-Base payment request (pay-to
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>, receive-only). After payment the certificate — or an
+INTERACTION_FOUND report with inclusion proofs, same price — is issued.
+Prices: <strong>$0.25</strong> standard (≤1800 blocks, ≤50 counterparties) ·
+<strong>$1.00</strong> custom (≤500 counterparties, ≤10800 blocks) ·
+<strong>$5.00</strong> deep (≤30 days). MCP tool
+<code>certify_absence</code> at <code>POST http://127.0.0.1:8825/mcp</code>.
+Machine discovery: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/x402.json">x402.json</a> ·
+<a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/openapi.json">openapi.json</a></p>
+<pre>curl -s http://127.0.0.1:8825/certificate -X POST -H 'Content-Type: application/json' -d '{"subject":"0xYOURWALLET","set_id":"ofac-sdn-evm-2026-10-03","from_block":A,"to_block":B}'</pre>
+<h2>4. Coverage (published, gaps and all)</h2>
+<p>Captured blocks: 5400 · complete chunks:
+54 · Every gap demotes its range to UNCERTIFIABLE
+automatically.</p>
+<p>Committed windows:</p><ul><li>52119000-52120799 (complete)</li><li>52120800-52122599 (complete)</li><li>52122600-52124399 (complete)</li></ul>
+<p>Gaps:</p><ul><li>none</li></ul>
+<h2>5. Pinned counterparty sets</h2>
+<table><tr><th>set_id</th><th>name</th><th>count</th><th>sha256</th></tr>
+<tr><td><code>fleet-demo-v1</code></td><td>Fleet demonstration set (our own public addresses)</td><td>2</td><td><code>c110e227187bad9ed10d…</code></td></tr><tr><td><code>ofac-sdn-evm-2026-10-03</code></td><td>OFAC SDN digital-currency addresses (EVM)</td><td>120</td><td><code>de904e0b0d600ee027cf…</code></td></tr></table>
+<p>Full sets: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/sets.json">sets.json</a></p>
+<h2>6. Live test status</h2>
+<p>24h window opened: pending ·
+External paid certificates: 0 ·
+External verifications: 0 ·
+External UNCERTIFIABLE served: 0 ·
+Pass = ≥1 external paid cert OR ≥10 external verifications OR 1 marketplace
+inbound; any false certificate = instant kill.</p>
+<table><tr><th>certificate</th><th>result</th><th>kind</th></tr>
+</table>
+<div class="foot"><p>AbsenceSeal certifies only a negative over a pinned, fully captured universe: USDC Transfer/Approval events on Base, blocks A-B, against a hash-pinned counterparty set. It does not certify anything about other assets, other chains, off-chain action, intent, or legality. A claim we cannot prove completely is refused UNCERTIFIABLE, free.</p>
+<p>AbsenceSeal holds no wallet keys and never signs transactions; payments
+are USDC on Base to the receive-only address above. The Ed25519 key is a
+service signing key (holds no funds) created for this service.</p></div>
+</body></html>

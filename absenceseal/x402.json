@@ -1,0 +1,17 @@
+{
+  "x402Version": 1,
+  "resource": "/certificate",
+  "description": "Certificate that no USDC Transfer/Approval between subject and a hash-pinned counterparty set occurred on Base in blocks A-B, or an INTERACTION_FOUND report; UNCERTIFIABLE free.",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "payTo": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+      "maxAmountRequired": "5000000",
+      "price_note": "tiers $0.25/$1/$5 by scope; the exact unique amount is returned in the 402 response",
+      "resource": "/certificate",
+      "mimeType": "application/json"
+    }
+  ]
+}

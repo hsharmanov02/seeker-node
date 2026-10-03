@@ -1,0 +1,34 @@
+{
+  "universe": {
+    "chain": "base",
+    "token_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "events": [
+      "Transfer",
+      "Approval"
+    ],
+    "note": "ERC-20 Transfer/Approval events of the USDC contract on Base only. Native-ETH and other-token claims are Zone 3 and are refused UNCERTIFIABLE."
+  },
+  "chunk_blocks": 100,
+  "window_blocks": 1800,
+  "captured_blocks": 5400,
+  "complete_chunks": 54,
+  "gap_chunks": [],
+  "windows": [
+    {
+      "from": 52119000,
+      "to": 52120799,
+      "status": "complete"
+    },
+    {
+      "from": 52120800,
+      "to": 52122599,
+      "status": "complete"
+    },
+    {
+      "from": 52122600,
+      "to": 52124399,
+      "status": "complete"
+    }
+  ],
+  "certifiable_rule": "A range is certifiable only if every block lies in complete chunks of committed windows. Any gap demotes overlapping ranges to UNCERTIFIABLE."
+}

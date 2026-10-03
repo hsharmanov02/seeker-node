@@ -1,0 +1,50 @@
+{
+  "product": "AbsenceSeal",
+  "chain": "base",
+  "service_public_key_ed25519": "2e464640ed13bd5ca3883b0dc848652fb75064ee7d9d36a1e95dc2143bbaa893",
+  "chain_tip": "ba7c9bd9a4c236150d1807b82b5ad2fb16377a54a94d2f04a6287ee1f8ec5901",
+  "windows": [
+    {
+      "from": 52119000,
+      "to": 52120799,
+      "events_root": "0bb5443fab685b61c6a8996b0573ef7c19333b498d74b4c223a806ceaba62937",
+      "pairs_root": "9f3b3a908728fa6a579cd5669e90cdbab5e4f69250d504717471cdd757cdd33f",
+      "event_count": 233060,
+      "pair_count": 25726,
+      "first_hash": "0x26a1826bfd2d45e3d5a48fd9496957c0bc7e906f143d5a8c31cf6a39019c614d",
+      "last_hash": "0x03cfc45cca3816014ddeaa25a232ec4f50f7d7b16ea12ccd9887444acaac0b16",
+      "prev_chain": "GENESIS",
+      "chain_hash": "9d90e86236828e53b0f3da0892aede79adac9610957a8a0bc25072ab2780748d",
+      "signature": "742e8c453531ac847d76f91ade5f19f704dcf282571ae141f1e179cf852aa79ddfc53f6314dba86ab417b7023d1f10c2431958ab8c883a3207f80a9be4d89b04",
+      "captured_at": "2026-10-03T14:47:33Z"
+    },
+    {
+      "from": 52120800,
+      "to": 52122599,
+      "events_root": "422bb8dfa5f22a0f97405d27e514532a76c9e1bae7291acda10093993a019748",
+      "pairs_root": "d40ba0f74a33a087c95cf0fa53edb060acfcbbfc7b194880559fc88b6a89ab7b",
+      "event_count": 191690,
+      "pair_count": 27728,
+      "first_hash": "0xe6c0b6394382b422256a0580dc6f727ac86583b54a5c4ba4f9d0c791854385f9",
+      "last_hash": "0x34e6e601ecf22ebe93c493101e37de43b0969a0f7c1cea33b0e5bd45a1f4e593",
+      "prev_chain": "9d90e86236828e53b0f3da0892aede79adac9610957a8a0bc25072ab2780748d",
+      "chain_hash": "a7826ce2e60883233e41f7fb530cefe33b19c8f3ea6ee4ae255ec5d5dccaafc2",
+      "signature": "dbe6611fbdad6585a292f2b603738b96a55d713d94e79def7c965f3070167e6b8f9ac0f6d0e80959c7a83ab64f12bac5fe3d8f99f987dcb7d797b76b4e5ea704",
+      "captured_at": "2026-10-03T14:48:00Z"
+    },
+    {
+      "from": 52122600,
+      "to": 52124399,
+      "events_root": "970c52a49d7fb89f187c4262c7d1cf71011e5cf31711e59fc4eccd4eda47f038",
+      "pairs_root": "1faa8f0ae3a9326bff8cb7164741e53bd7f3297b2c6002a25b9d27f1db49dab9",
+      "event_count": 169317,
+      "pair_count": 30929,
+      "first_hash": "0x4f8d85d5e9c3769219232f8b3c5386f30157c9cd24ee6123f3d51e50a6b3fb38",
+      "last_hash": "0xecea3e54559417fd652480696f193cd596535144d6a78d2dda907e0643bd0db2",
+      "prev_chain": "a7826ce2e60883233e41f7fb530cefe33b19c8f3ea6ee4ae255ec5d5dccaafc2",
+      "chain_hash": "ba7c9bd9a4c236150d1807b82b5ad2fb16377a54a94d2f04a6287ee1f8ec5901",
+      "signature": "8cef68da26c824bbe713aebd7c5d29d7529339bef083d32b23ff4f4a4653f1133cb2b50bda0c38520879c8fd4a28a143d3eb8ef43ccfcc88f712d10dd662320d",
+      "captured_at": "2026-10-03T14:48:34Z"
+    }
+  ]
+}
