@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstCrowd — synthetic demand rehearsal for agent-facing endpoints</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.55;color:#1a1a1a}
+.banner{background:#fff8c5;border:1px solid #9a6700;padding:.8em 1em}
+code{background:#f2f2f2;padding:.1em .3em} input{width:100%;padding:.5em;margin:.3em 0}
+button{padding:.55em 1.1em;margin:.3em .3em .3em 0;cursor:pointer}
+pre{background:#111;color:#9f9;padding:1em;overflow:auto;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1em} .card{border:1px solid #ddd;padding:1em}
+</style></head><body>
+<h1>FirstCrowd</h1>
+<p><b>A hireable crowd of synthetic customers for agent-facing products.</b>
+Your first buyers will be programs with wallets and no patience. FirstCrowd
+sends deterministic, scripted synthetic customers — each with its own wallet
+state, patience budget, doc-reading skill and honesty faults — through your
+live endpoint's full money journey: <i>discover → understand pricing →
+attempt payment → hit errors → complete or complain</i>. You get a seeded,
+re-runnable checkpoint report, so the first customer who finds your broken
+quote, stale price or dead-end error is one you paid for — not a real one
+you lost.</p>
+<div class="banner"><b>Rehearsal, not prophecy.</b> Payments are rehearsed
+in <b>dry-run</b>: payloads are constructed and validated, error paths are
+probed with unsigned rehearsal requests — nothing is signed, no funds move.
+Every request carries <code>X-Synthetic-Rehearsal: &lt;run-id&gt;</code> so
+you can see, filter or block the crowd in your own logs.</div>
+
+<h2>The crowd (8 personas)</h2>
+<div class="grid">
+<div class="card"><b>careful-reader</b> — reads everything, restates the quote exactly.</div>
+<div class="card"><b>speedy-skimmer</b> — partial reader, 2 retries of patience.</div>
+<div class="card"><b>bargain-hunter</b> — prices, leaves, returns later.</div>
+<div class="card"><b>confused-novice</b> — only sees the big price number.</div>
+<div class="card"><b>fault-finder</b> — pokes malformed requests at your error paths.</div>
+<div class="card"><b>low-balance</b> — wallet always a penny short.</div>
+<div class="card"><b>stale-replayer</b> — replays yesterday's expired quote.</div>
+<div class="card"><b>double-submitter</b> — clicks pay twice. Everyone does.</div>
+</div>
+
+<h2>Price</h2>
+<p>Free mini-panel (3 personas), once per verified endpoint per day.
+Full 8-persona panel: <b>$4.99 in Base USDC</b> via x402-style 402 flow —
+machine-purchasable, no signup, no credit card. Reports are deterministic:
+re-run with the same seed after a fix and diff the checkpoint grid like a
+regression test.</p>
+
+<h2>Hire the crowd</h2>
+<p>1. Register your endpoint (you get a nonce). 2. Serve the nonce at
+<code>/.well-known/firstcrowd-nonce</code> on your endpoint — no proof of
+ownership, no rehearsal, ever. 3. Run a panel.</p>
+<input id="url" placeholder="https://your-endpoint.example/">
+<button onclick="register()">1 · Register endpoint</button>
+<button onclick="verify()">2 · I served the nonce — verify</button>
+<button onclick="mini()">3 · Run free mini-panel</button>
+<button onclick="full()">Run full panel ($4.99)</button>
+<pre id="out">API status will appear here…</pre>
+<p><a href="runs.html">Published rehearsal reports</a> — including the
+crowd turned on our own products first.</p>
+<script src="fcconfig.js"></script>
+<script>
+const out = document.getElementById('out');
+const api = () => (window.FC_API || '');
+async function call(path, payload, method) {
+  const r = await fetch(api() + path, {method: method || 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: payload ? JSON.stringify(payload) : undefined});
+  const t = await r.text();
+  out.textContent = r.status + ' ' + path + '\n' + t.slice(0, 3000);
+}
+const url = () => document.getElementById('url').value.trim();
+function register(){ call('/endpoints', {url: url()}); }
+function verify(){ call('/endpoints/verify', {url: url()}); }
+function mini(){ call('/panels', {url: url(), panel: 'mini'}); }
+function full(){ call('/panels', {url: url(), panel: 'full'}); }
+call('/health', null, 'GET');
+</script>
+<p><small>FirstCrowd · deterministic synthetic customers · dry-run payment
+leg · nonce-gated · rate-capped · <code>X-Synthetic-Rehearsal</code> on every
+request · kill switch: POST /endpoints/kill</small></p>
+</body></html>
