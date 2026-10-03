@@ -1,0 +1,160 @@
+{
+ "service_pubkey_ed25519": "839877b0268149cfde80edc3016abd65742a064e27142eb2ccf9532f86df4ed7",
+ "claim": "provable order; measured honour",
+ "batches": [
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_cb7149155c819cb3",
+   "root": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
+   "prev_root": "GENESIS",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:55:29+00:00",
+   "signature": "c8acd3f9fe272cf4689eea5ca78b9577e16090c95577b7e2d8a92bca7c48dc06a3f274a0c38ee78724a82a226e341ee534ad475d7b3ba298ffe0e186066dbf02",
+   "leaves": [
+    {
+     "entry_id": "e_8acb4880d52cc751",
+     "leaf_hash": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
+     "buyer_hash": "dbd01c22ac72d163e2b89b65cb5a9af40d702af54ea539715e819484afae877c",
+     "commitment": "58aa2f834145be56ed5814cdcab7c988d013a199361144ba79b5f4c239ff3b2e",
+     "rank": 1,
+     "intake_seq": 1
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_3721dd22fcca8367",
+   "root": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
+   "prev_root": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:55:41+00:00",
+   "signature": "c307a57d3431be2c7a635ffab2fc9a2e4d6ef562c169fd0aed653326e882c96ff869a6e4be51cae9d4edbf090973cdcde4c52e97bb3f2489e44e0ebb7d73c40e",
+   "leaves": [
+    {
+     "entry_id": "e_1064223a7b38693b",
+     "leaf_hash": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
+     "buyer_hash": "47c16a98ba311e53f16aaa36a0da4ba2d9f21caea7174fc7b6550a5b6d7f5bb2",
+     "commitment": "30a1e61aae9552e51463b96194157511ff6b92f0147c469ce528e0eb80227514",
+     "rank": 1,
+     "intake_seq": 2
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_654159668258de87",
+   "root": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
+   "prev_root": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:55:44+00:00",
+   "signature": "8bb401efc1f16106a4f1dc033e467430d482d2feb6bce775f19c1ee7f7cca309ca9d65a705abb890bfddd4182773af749f5eb54af19aa116ad1a447c16baf40e",
+   "leaves": [
+    {
+     "entry_id": "e_6fcf94ebe9651694",
+     "leaf_hash": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
+     "buyer_hash": "851b3226cb3199537a986b80bb7306a9df59c67fe84dc06cae55d8aa5eccd68e",
+     "commitment": "0d3a190dbf9c7a7e70fd382bc03d0f4cf7dbfcf7823fc0ef0da3e8c51978bae8",
+     "rank": 1,
+     "intake_seq": 3
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_497e693f0f264337",
+   "root": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
+   "prev_root": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:56:32+00:00",
+   "signature": "d199520a56b5d880025c400ff93117a2d88844f6cc0abdeaeed149ae7aff59220ce72d1c4ee3b7f4e61dc3a8334c73732220cafb0eb1d42dce7de43eeaba1002",
+   "leaves": [
+    {
+     "entry_id": "e_0e2bae6d81ba7700",
+     "leaf_hash": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
+     "buyer_hash": "8959e70a4046d7cdb027aefc8bd0cec02195ae83d5861693acdf56c2533b6fb6",
+     "commitment": "aa17b08bb54e24d56470025ef04afc9d77b9e371e95dbcc14feaf848a3e87bc5",
+     "rank": 1,
+     "intake_seq": 4
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_b1904b276510bb8b",
+   "root": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
+   "prev_root": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:56:45+00:00",
+   "signature": "14be9c99ead1e533659c3bf37f20da92e9f76b90089d3dce926c61b23356409c0af8d7f6bce577f4d14c2cf762324e3baf372345ecd3c93caa4f6b6b8addf60d",
+   "leaves": [
+    {
+     "entry_id": "e_5e8f035446ab3a53",
+     "leaf_hash": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
+     "buyer_hash": "47c16a98ba311e53f16aaa36a0da4ba2d9f21caea7174fc7b6550a5b6d7f5bb2",
+     "commitment": "6f47847b5f9e024fc24ce518075d97f4322d0c04f963125a2eb897f6998d0c19",
+     "rank": 1,
+     "intake_seq": 5
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_b00df3d7f56c48d6",
+   "root": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
+   "prev_root": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:57:35+00:00",
+   "signature": "54e4917f606a93def7a0bc5d139871465834a13b8436087afb60e11153601425c64d607e9b6a235f3be0573ed4f4ea1eaa6fa13fd715e6e17585e522587ab603",
+   "leaves": [
+    {
+     "entry_id": "e_5dc542c0368f6789",
+     "leaf_hash": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
+     "buyer_hash": "851b3226cb3199537a986b80bb7306a9df59c67fe84dc06cae55d8aa5eccd68e",
+     "commitment": "cc7ec0cff0c563329901ad506fdf2e3564b592306af211249a6be67ac80e4923",
+     "rank": 1,
+     "intake_seq": 6
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_374e6ea327941b33",
+   "root": "72f4b47c4f555acef6c1117cb0983d51d2af5817957ddb97c6d16b8ed51db5a2",
+   "prev_root": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T14:57:47+00:00",
+   "signature": "a25461f903f7934f7cfd4975407fd12bce9d15393eca08fe6739284a07d2b281f60148e5059cf7dd36f00702b4e86f436091157f1696e99f92b6d5a7c2907200",
+   "leaves": [
+    {
+     "entry_id": "e_6f0474add11bc7d7",
+     "leaf_hash": "72f4b47c4f555acef6c1117cb0983d51d2af5817957ddb97c6d16b8ed51db5a2",
+     "buyer_hash": "8959e70a4046d7cdb027aefc8bd0cec02195ae83d5861693acdf56c2533b6fb6",
+     "commitment": "d3070beecb1fab910a6959eff4eb2ce73cc2cff448696adc6639fe2ed123c517",
+     "rank": 1,
+     "intake_seq": 7
+    }
+   ]
+  }
+ ]
+}

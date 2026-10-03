@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TurnSeal — provable order; measured honour</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 52rem;
+         padding: 0 1rem; line-height: 1.55; color: #1a1a2e; }
+  code { background: #eef; padding: 0 .3rem; border-radius: .25rem; }
+  .claim { font-size: 1.35rem; font-weight: 700; }
+  .not { color: #a33; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { border: 1px solid #ccd; padding: .35rem .5rem; text-align: left; }
+</style>
+</head>
+<body>
+<h1>TurnSeal</h1>
+<p class="claim">Provable order. Measured honour.</p>
+<p class="not">Not claimed: “guaranteed fair service.” Cryptography proves the
+order we published and that admission tokens were issued in that order, each
+bound to one committed call and one buyer key. It cannot force a seller to
+honour the order at their own door, and it cannot prove a seller ran no
+private side-door. So we publish the order, bind the token, and
+<em>measure</em> whether sellers actually served in order — a public Honour
+Index no seller can self-issue.</p>
+
+<h2>How it works</h2>
+<ol>
+  <li>A seller publishes a signed queue contract: endpoint, capacity, and a
+      fairness policy — <code>fifo</code>, <code>cohort_lottery</code>, or
+      <code>weighted_fair_share</code>.</li>
+  <li>A buyer commits only a salted hash of the exact call it wants to make.
+      The payload never reaches TurnSeal. The entry is sealed into a short
+      Merkle-logged batch; the buyer gets a recomputable proof of its place.</li>
+  <li>Admission is a one-time token bound to that exact call + buyer key.
+      Swapping the payload, the salt, or the key fails at the seller's door.</li>
+  <li>The seller's own middleware verifies the token at the door; served
+      receipts (seller-signed, buyer cross-checked) feed the Honour Index.</li>
+</ol>
+<p>Toll: <strong>$0.003 per admitted queued call</strong> (x402-style 402 at
+admission, exact unique amount, settled on Base to
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>). TurnSeal never
+proxies payloads, never holds funds, never touches seller revenue. Hard
+per-buyer/per-seller caps mean the queue cannot be aimed at a victim
+endpoint as a flooding tool.</p>
+
+<h2>Public records</h2>
+<ul>
+  <li><a href="./order.json">Order log</a> — every sealed batch, leaves, ranks</li>
+  <li><a href="./roots.json">Tree heads</a> — hash-chained, signed batch roots</li>
+  <li><a href="./honour.json">Honour Index</a> — per-seller measured honour</li>
+  <li><a href="./openapi.json">OpenAPI</a> · <a href="./config.json">Live API base</a></li>
+  <li>Door-check middleware: <a href="./door_check.py">Python</a> ·
+      <a href="./door_check.js">Node</a></li>
+</ul>
+
+<h2>API sketch</h2>
+<table>
+  <tr><th>Call</th><th>What</th></tr>
+  <tr><td><code>POST /v1/sellers</code></td><td>Publish a signed queue contract</td></tr>
+  <tr><td><code>POST /v1/queues/{seller}/join</code></td><td>Commit a salted call-hash</td></tr>
+  <tr><td><code>GET /v1/entries/{id}</code></td><td>Status, toll challenge, door token</td></tr>
+  <tr><td><code>GET /v1/entries/{id}/proof</code></td><td>Merkle inclusion + rank proof</td></tr>
+  <tr><td><code>POST /v1/admissions/next</code></td><td>Seller requests the next admission</td></tr>
+  <tr><td><code>POST /v1/served-receipts</code></td><td>Seller-signed served receipt</td></tr>
+  <tr><td><code>POST /v1/reports</code></td><td>Buyer cross-check (accept / refused / no-show)</td></tr>
+  <tr><td><code>GET /v1/sellers/{id}/honour</code></td><td>Honour Index entry</td></tr>
+  <tr><td><code>POST /mcp</code></td><td>Tools: turnseal_join, turnseal_status, turnseal_verify, turnseal_honour</td></tr>
+</table>
+<p>Live test in progress. Dogfood traffic (our own demo seller and buyer
+agents) is labelled and never counted as external signal.</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+ "generated_at": "2026-10-03T14:57:47+00:00",
+ "claim": "provable order; measured honour",
+ "sellers": [
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "honour_tier": "door",
+   "claim": "provable order; measured honour",
+   "admissions": 6,
+   "receipts": 5,
+   "receipt_coverage": 0.8333,
+   "served_in_order_rate": 1.0,
+   "served_within_ttl_rate": 1.0,
+   "unexplained_nonservice_rate": 0.0,
+   "buyer_confirmed_rate": 1.0,
+   "buyer_confirmed_receipts": 5,
+   "contradicted_receipts": 0,
+   "self_reported_only_receipts": 0,
+   "median_turn_delay_s": 1.4267220497131348,
+   "honour_score": 83.3,
+   "badge": null,
+   "badge_rule": ">=100 admissions, coverage>=95%, in-order>=98%, unexplained<=2% (Tier 1+ only)",
+   "events": [],
+   "computed_at": "2026-10-03T14:57:47+00:00"
+  }
+ ]
+}
