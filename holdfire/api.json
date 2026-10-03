@@ -1,5 +1,5 @@
 {
- "api_base": null,
+ "api_base": "https://c2dc4dad3f3bc4.lhr.life",
  "mode": "mainnet",
  "network": "eip155:8453"
 }

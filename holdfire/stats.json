@@ -6,15 +6,15 @@
  "fee_address": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
  "started_at": "2026-10-03T15:23:28.806Z",
  "intents": {
-  "watching": 0,
+  "watching": 1,
   "fired": 0,
-  "expired": 0,
+  "expired": 1,
   "revoked": 0,
-  "total": 0
+  "total": 2
  },
  "fired_value_usdc": "0.000000",
  "fee_settled_count": 0,
- "proof_entries": 0,
- "proof_head": "GENESIS",
+ "proof_entries": 3,
+ "proof_head": "339ca9b3304a6ea7965bd041ba499af3b9b1cba60d4a04fe4dca02fd34051e71",
  "honest_note": "External revenue counts only mainnet intents from third-party buyers. Testnet harness traffic is labelled and excluded."
 }
