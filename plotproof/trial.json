@@ -1,0 +1,2525 @@
+{
+ "method": "target gauge withheld (all stations within 1.0 km of the point excluded); day picked by rotation wettest/median/nearest-threshold from the target's own recent series",
+ "pass_rule": ">=85% accuracy on decidable verdicts; KILL <70% (designer_q_untried.md)",
+ "queries": 49,
+ "ran_at": "2026-10-03T17:00:08Z",
+ "results": [
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 16.94,
+     "family": "EA",
+     "margin_mm": 4.84,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 0,
+   "lat": 51.134741,
+   "lon": -2.999693,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "52105-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 13.42,
+   "verdict": "PROBABLE",
+   "window": "2026-09-08T00:00:00Z/2026-09-08T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 1.12,
+     "family": "EA",
+     "margin_mm": 1.57,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 1,
+   "lat": 51.270102,
+   "lon": -2.682969,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "52201-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.2,
+   "verdict": "PROBABLE",
+   "window": "2026-09-29T00:00:00Z/2026-09-29T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 16.09,
+     "family": "EA",
+     "margin_mm": 4.22,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 2,
+   "lat": 51.460233,
+   "lon": -2.609517,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "531179-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 8.8,
+   "verdict": "PROBABLE",
+   "window": "2026-09-08T00:00:00Z/2026-09-08T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": 8.63,
+     "family": "EA",
+     "margin_mm": 2.16,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 3,
+   "lat": 51.684691,
+   "lon": -2.162673,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "1112-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 7.4,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-08T00:00:00Z/2026-09-08T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 0.02,
+     "family": "EA",
+     "margin_mm": 1.33,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 4,
+   "lat": 51.897439,
+   "lon": 0.182296,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "243131TP-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 5.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.01,
+   "verdict": "PROBABLE",
+   "window": "2026-09-09T00:00:00Z/2026-09-09T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": 9.08,
+     "family": "EA",
+     "margin_mm": 3.56,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 5,
+   "lat": 52.049494,
+   "lon": 0.452229,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "E37271-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 8.2,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-08T00:00:00Z/2026-09-08T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": 8.76,
+     "family": "EA",
+     "margin_mm": 3.08,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 6,
+   "lat": 52.174506,
+   "lon": -1.736002,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "1086-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 10.6,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-13T00:00:00Z/2026-09-13T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 0.24,
+     "family": "EA",
+     "margin_mm": 1.83,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 7,
+   "lat": 52.27751,
+   "lon": -1.599081,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "1775-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.1,
+   "verdict": "PROBABLE",
+   "window": "2026-09-07T00:00:00Z/2026-09-07T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": 8.14,
+     "family": "EA",
+     "margin_mm": 2.84,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 8,
+   "lat": 52.362576,
+   "lon": -1.508732,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "1045-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 9.2,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-13T00:00:00Z/2026-09-13T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 11.21,
+     "family": "EA",
+     "margin_mm": 4.62,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 9,
+   "lat": 52.639137,
+   "lon": -2.325793,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "1712-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 20.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 10.6,
+   "verdict": "PROBABLE",
+   "window": "2026-09-04T00:00:00Z/2026-09-04T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 0.0,
+     "family": "EA",
+     "margin_mm": 1.38,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 10,
+   "lat": 52.807639,
+   "lon": -1.889433,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "3099-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2026-09-24T00:00:00Z/2026-09-24T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 15.64,
+     "family": "EA",
+     "margin_mm": 4.32,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 11,
+   "lat": 53.300189,
+   "lon": -2.155251,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "564769-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 14.2,
+   "verdict": "PROBABLE",
+   "window": "2026-09-04T00:00:00Z/2026-09-04T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": 11.91,
+     "family": "EA",
+     "margin_mm": 3.5,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 12,
+   "lat": 53.539768,
+   "lon": -2.35078,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "562656-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 15.7,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-04T00:00:00Z/2026-09-04T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 2.13,
+     "family": "EA",
+     "margin_mm": 1.67,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 13,
+   "lat": 53.60567,
+   "lon": -1.766463,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "078922-rainfall-tipping_bucket_raingauge-i-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.35,
+   "verdict": "PROBABLE",
+   "window": "2026-09-12T00:00:00Z/2026-09-12T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 1.4,
+     "family": "EA",
+     "margin_mm": 1.52,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 14,
+   "lat": 53.70469,
+   "lon": -2.135531,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "077066-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 5.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 5.8,
+   "verdict": "PROBABLE",
+   "window": "2026-09-10T00:00:00Z/2026-09-10T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 4.87,
+     "family": "EA",
+     "margin_mm": 2.6,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 15,
+   "lat": 53.833251,
+   "lon": -2.102519,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "574656-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 9.7,
+   "verdict": "PROBABLE",
+   "window": "2026-09-18T00:00:00Z/2026-09-18T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 1.05,
+     "family": "EA",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 16,
+   "lat": 53.947438,
+   "lon": -2.020525,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "074385-rainfall-tipping_bucket_raingauge-i-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.67,
+   "verdict": "PROBABLE",
+   "window": "2026-09-14T00:00:00Z/2026-09-14T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 4.27,
+     "family": "EA",
+     "margin_mm": 1.82,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 17,
+   "lat": 54.130296,
+   "lon": -1.656404,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "049902-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 5.52,
+   "verdict": "PROBABLE",
+   "window": "2026-09-18T00:00:00Z/2026-09-18T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": 3.51,
+     "family": "EA",
+     "margin_mm": 1.15,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 18,
+   "lat": 54.760776,
+   "lon": -1.340287,
+   "region": "UK",
+   "target_name": "Rainfall station",
+   "target_station": "026090-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+   "threshold_mm": 10.0,
+   "truth_family": "EA",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 7.2,
+   "verdict": "PROBABLE",
+   "window": "2026-09-07T00:00:00Z/2026-09-07T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 3.7,
+     "family": "GHCN",
+     "margin_mm": 2.85,
+     "side": "below",
+     "stations": 5,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 19,
+   "lat": 36.012,
+   "lon": -97.962,
+   "region": "US",
+   "target_name": "DOVER 3.6 NW",
+   "target_station": "US1OKKN0004",
+   "threshold_mm": 20.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2025-10-13T00:00:00Z/2025-10-13T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 20,
+   "lat": 37.139,
+   "lon": -82.7424,
+   "region": "US",
+   "target_name": "MAYKING 1.4 ENE",
+   "target_station": "US1KYLT0007",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 10.9,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-06T00:00:00Z/2026-09-06T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 11.2,
+     "family": "GHCN",
+     "margin_mm": 2.97,
+     "side": "at_or_above",
+     "stations": 1,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 21,
+   "lat": 37.6206,
+   "lon": -90.6389,
+   "region": "US",
+   "target_name": "PILOT KNOB 2",
+   "target_station": "USC00236688",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 10.4,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2025-12-19T00:00:00Z/2025-12-19T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "GHCN",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 22,
+   "lat": 37.7636,
+   "lon": -97.7399,
+   "region": "US",
+   "target_name": "ANDALE 6.4 WSW",
+   "target_station": "US1KSRN0007",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2026-08-03T00:00:00Z/2026-08-03T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 14.02,
+     "family": "GHCN",
+     "margin_mm": 3.78,
+     "side": "at_or_above",
+     "stations": 5,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 23,
+   "lat": 38.0825,
+   "lon": -88.1733,
+   "region": "US",
+   "target_name": "CARMI 4 NE",
+   "target_station": "USC00111302",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 6.4,
+   "verdict": "PROBABLE",
+   "window": "2024-09-29T00:00:00Z/2024-09-29T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "GHCN",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 24,
+   "lat": 38.4325,
+   "lon": -97.4277,
+   "region": "US",
+   "target_name": "CANTON 3.2 N",
+   "target_station": "US1KSMP0021",
+   "threshold_mm": 5.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2025-12-22T00:00:00Z/2025-12-22T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.74,
+     "family": "GHCN",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 25,
+   "lat": 39.4294,
+   "lon": -97.2386,
+   "region": "US",
+   "target_name": "MORGANVILLE 3.2 SW",
+   "target_station": "US1KSCY0015",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2026-09-09T00:00:00Z/2026-09-09T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 5.3,
+     "family": "GHCN",
+     "margin_mm": 1.33,
+     "side": "below",
+     "stations": 2,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 26,
+   "lat": 40.0496,
+   "lon": -89.2206,
+   "region": "US",
+   "target_name": "CHESTNUT 1.9 W",
+   "target_station": "US1ILLG0015",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 7.1,
+   "verdict": "PROBABLE",
+   "window": "2026-08-02T00:00:00Z/2026-08-02T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 76.11,
+     "family": "GHCN",
+     "margin_mm": 19.3,
+     "side": "at_or_above",
+     "stations": 2,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 27,
+   "lat": 40.484,
+   "lon": -91.9725,
+   "region": "US",
+   "target_name": "ARBELA 2.7 ENE",
+   "target_station": "US1MOSD0007",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 105.7,
+   "verdict": "PROBABLE",
+   "window": "2026-09-16T00:00:00Z/2026-09-16T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "GHCN",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 28,
+   "lat": 41.0546,
+   "lon": -88.0378,
+   "region": "US",
+   "target_name": "HERSCHER 3.3 E",
+   "target_station": "US1ILKK0039",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-09-12T00:00:00Z/2026-09-12T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 22.49,
+     "family": "GHCN",
+     "margin_mm": 5.62,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 29,
+   "lat": 42.5405,
+   "lon": -87.8421,
+   "region": "US",
+   "target_name": "KENOSHA 3.1 SSE",
+   "target_station": "US1WIKN0031",
+   "threshold_mm": 20.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 23.1,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-08-16T00:00:00Z/2026-08-16T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 3.46,
+     "family": "GHCN",
+     "margin_mm": 4.25,
+     "side": "below",
+     "stations": 5,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 30,
+   "lat": 42.975,
+   "lon": -82.4194,
+   "region": "US",
+   "target_name": "PORT HURON",
+   "target_station": "USC00206680",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 30.7,
+   "verdict": "PROBABLE",
+   "window": "2026-08-30T00:00:00Z/2026-08-30T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 12.53,
+     "family": "GHCN",
+     "margin_mm": 3.13,
+     "side": "at_or_above",
+     "stations": 4,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 31,
+   "lat": 44.0266,
+   "lon": -92.4504,
+   "region": "US",
+   "target_name": "ROCHESTER 1.6 ENE",
+   "target_station": "US1MNOL0061",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 12.4,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2024-06-23T00:00:00Z/2024-06-23T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 4.12,
+     "family": "GHCN",
+     "margin_mm": 1.03,
+     "side": "below",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 32,
+   "lat": 44.45,
+   "lon": -95.8167,
+   "region": "US",
+   "target_name": "MARSHALL RYAN FLD",
+   "target_station": "USW00094976",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 9.9,
+   "verdict": "PROBABLE",
+   "window": "2026-09-14T00:00:00Z/2026-09-14T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 42.72,
+     "family": "GHCN",
+     "margin_mm": 10.68,
+     "side": "at_or_above",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "DWD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    }
+   ],
+   "idx": 33,
+   "lat": 44.9289,
+   "lon": -93.3163,
+   "region": "US",
+   "target_name": "MINNEAPOLIS 3.3 SW",
+   "target_station": "US1MNHN0022",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 64.8,
+   "verdict": "PROBABLE",
+   "window": "2025-08-16T00:00:00Z/2025-08-16T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.49,
+     "family": "GHCN",
+     "margin_mm": 2.23,
+     "side": "below",
+     "stations": 3,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.41,
+     "family": "DWD",
+     "margin_mm": 1.1,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 34,
+   "lat": 47.6192,
+   "lon": 12.1681,
+   "region": "DE",
+   "target_name": "KIEFERSFELDEN-GACH",
+   "target_station": "GME00126874",
+   "threshold_mm": 5.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "PROBABLE",
+   "window": "2026-08-26T00:00:00Z/2026-08-26T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 17.03,
+     "family": "GHCN",
+     "margin_mm": 7.33,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 15.34,
+     "family": "DWD",
+     "margin_mm": 6.96,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    }
+   ],
+   "idx": 35,
+   "lat": 47.8017,
+   "lon": 9.4117,
+   "region": "DE",
+   "target_name": "DEGGENHAUSERTAL-AZENWEILER",
+   "target_station": "GME00132694",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 10.1,
+   "verdict": "PROBABLE",
+   "window": "2026-07-15T00:00:00Z/2026-07-15T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 17.22,
+     "family": "GHCN",
+     "margin_mm": 4.52,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 17.37,
+     "family": "DWD",
+     "margin_mm": 4.34,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 36,
+   "lat": 47.8781,
+   "lon": 11.3656,
+   "region": "DE",
+   "target_name": "ATTENKAM",
+   "target_station": "GME00123730",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 23.1,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-28T00:00:00Z/2026-08-28T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "GHCN",
+     "margin_mm": 1.01,
+     "side": "below",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "DWD",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 37,
+   "lat": 47.8853,
+   "lon": 12.5417,
+   "region": "DE",
+   "target_name": "CHIEMING",
+   "target_station": "GME00132550",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-24T00:00:00Z/2026-08-24T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 7.18,
+     "family": "GHCN",
+     "margin_mm": 3.0,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 7.91,
+     "family": "DWD",
+     "margin_mm": 3.2,
+     "side": "below",
+     "stations": 6,
+     "strong": false
+    }
+   ],
+   "idx": 38,
+   "lat": 48.3125,
+   "lon": 10.3781,
+   "region": "DE",
+   "target_name": "NEUBURG/KAMMEL-LANGENHASLACH",
+   "target_station": "GME00126430",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 9.2,
+   "verdict": "PROBABLE",
+   "window": "2026-07-05T00:00:00Z/2026-07-05T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 16.41,
+     "family": "GHCN",
+     "margin_mm": 4.61,
+     "side": "below",
+     "stations": 5,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 22.21,
+     "family": "DWD",
+     "margin_mm": 5.64,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    }
+   ],
+   "idx": 39,
+   "lat": 48.5742,
+   "lon": 12.2589,
+   "region": "DE",
+   "target_name": "LANDSHUT-REITHOF",
+   "target_station": "GME00122158",
+   "threshold_mm": 20.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 25.2,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2025-07-21T00:00:00Z/2025-07-21T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.03,
+     "family": "GHCN",
+     "margin_mm": 1.02,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "DWD",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 40,
+   "lat": 48.9328,
+   "lon": 8.6967,
+   "region": "DE",
+   "target_name": "PFORZHEIM-ISPRINGEN",
+   "target_station": "GME00127306",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-10T00:00:00Z/2026-08-10T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 4.97,
+     "family": "GHCN",
+     "margin_mm": 2.74,
+     "side": "below",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 6.57,
+     "family": "DWD",
+     "margin_mm": 2.06,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 41,
+   "lat": 49.1792,
+   "lon": 11.375,
+   "region": "DE",
+   "target_name": "FREYSTADT-OBERNDORF",
+   "target_station": "GME00122494",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 9.9,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-16T00:00:00Z/2026-08-16T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 12.2,
+     "family": "GHCN",
+     "margin_mm": 3.5,
+     "side": "at_or_above",
+     "stations": 1,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 12.3,
+     "family": "DWD",
+     "margin_mm": 3.08,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": false
+    }
+   ],
+   "idx": 42,
+   "lat": 49.7,
+   "lon": 7.3331,
+   "region": "DE",
+   "target_name": "IDAR-OBERSTEIN",
+   "target_station": "GME00124126",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 16.5,
+   "verdict": "PROBABLE",
+   "window": "2026-08-19T00:00:00Z/2026-08-19T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "GHCN",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 5,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "DWD",
+     "margin_mm": 1.07,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 43,
+   "lat": 49.47,
+   "lon": 11.8558,
+   "region": "DE",
+   "target_name": "AMBERG-UNTERAMMERSRICHT",
+   "target_station": "GME00122602",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-12T00:00:00Z/2026-08-12T24:00:00Z"
+  },
+  {
+   "claim_supported": null,
+   "correct": false,
+   "decidable": false,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 6.42,
+     "family": "GHCN",
+     "margin_mm": 1.84,
+     "side": "at_or_above",
+     "stations": 3,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.03,
+     "family": "DWD",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 44,
+   "lat": 49.985,
+   "lon": 7.9544,
+   "region": "DE",
+   "target_name": "GEISENHEIM",
+   "target_station": "GME00122698",
+   "threshold_mm": 5.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 4.7,
+   "verdict": "UNCERTIFIABLE",
+   "window": "2026-08-27T00:00:00Z/2026-08-27T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 7.33,
+     "family": "GHCN",
+     "margin_mm": 1.92,
+     "side": "below",
+     "stations": 4,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "DWD",
+     "margin_mm": 1.0,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 45,
+   "lat": 50.0333,
+   "lon": 8.5833,
+   "region": "DE",
+   "target_name": "RHEIN MAIN",
+   "target_station": "GMW00035032",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 11.0,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-27T00:00:00Z/2026-08-27T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "GHCN",
+     "margin_mm": 1.04,
+     "side": "below",
+     "stations": 5,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 0.0,
+     "family": "DWD",
+     "margin_mm": 1.27,
+     "side": "below",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 46,
+   "lat": 49.9706,
+   "lon": 9.9125,
+   "region": "DE",
+   "target_name": "ARNSTEIN-MUDESHEIM",
+   "target_station": "GME00123190",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": false,
+   "truth_total_mm": 0.0,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-09T00:00:00Z/2026-08-09T24:00:00Z"
+  },
+  {
+   "claim_supported": true,
+   "correct": true,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 17.41,
+     "family": "GHCN",
+     "margin_mm": 4.68,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 13.38,
+     "family": "DWD",
+     "margin_mm": 3.34,
+     "side": "at_or_above",
+     "stations": 6,
+     "strong": true
+    }
+   ],
+   "idx": 47,
+   "lat": 49.8183,
+   "lon": 11.8653,
+   "region": "DE",
+   "target_name": "NEUSTADT AM KULM-FILCHENDORF",
+   "target_station": "GME00126622",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 13.5,
+   "verdict": "CERTIFIED",
+   "window": "2026-08-21T00:00:00Z/2026-08-21T24:00:00Z"
+  },
+  {
+   "claim_supported": false,
+   "correct": false,
+   "decidable": true,
+   "families": [
+    {
+     "estimate_mm": null,
+     "family": "EA",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 5.4,
+     "family": "GHCN",
+     "margin_mm": 4.98,
+     "side": "below",
+     "stations": 3,
+     "strong": false
+    },
+    {
+     "estimate_mm": null,
+     "family": "ISD",
+     "margin_mm": null,
+     "side": null,
+     "stations": 0,
+     "strong": false
+    },
+    {
+     "estimate_mm": 2.1,
+     "family": "DWD",
+     "margin_mm": 1.07,
+     "side": "below",
+     "stations": 1,
+     "strong": true
+    }
+   ],
+   "idx": 48,
+   "lat": 50.5083,
+   "lon": 9.2244,
+   "region": "DE",
+   "target_name": "HOHERODSKOPF/VOGELSBERG",
+   "target_station": "GME00132190",
+   "threshold_mm": 10.0,
+   "truth_family": "GHCN",
+   "truth_side_at_or_above": true,
+   "truth_total_mm": 21.1,
+   "verdict": "PROBABLE",
+   "window": "2026-08-21T00:00:00Z/2026-08-21T24:00:00Z"
+  }
+ ],
+ "service": "plotproof",
+ "summary": {
+  "accuracy_pct": 83.8,
+  "by_tier_counts": {
+   "CERTIFIED": 8,
+   "PROBABLE": 29,
+   "UNCERTIFIABLE": 12
+  },
+  "certified": 8,
+  "certified_accuracy_pct": 87.5,
+  "certified_correct": 7,
+  "correct": 31,
+  "decidable": 37,
+  "probable": 29,
+  "uncertifiable": 12
+ },
+ "trial": "blind-50 withheld-gauge",
+ "verdict": "MARGINAL"
+}
