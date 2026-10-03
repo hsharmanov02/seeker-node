@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InstantAudit — automated smart-contract audit report, £79</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#0b1020;color:#e8ecf8}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:2rem;margin:.2em 0} h2{margin-top:2em}
+  .card{background:#131a30;border:1px solid #263157;border-radius:12px;padding:20px;margin:16px 0}
+  .price{font-size:1.6rem;font-weight:700}
+  code,pre{background:#0d1430;border:1px solid #263157;border-radius:6px;padding:2px 6px;word-break:break-all}
+  pre{padding:12px;overflow:auto;white-space:pre-wrap}
+  input,select,button{font-size:1rem;padding:10px;border-radius:8px;border:1px solid #33407a;background:#0d1430;color:#e8ecf8}
+  input{width:100%;box-sizing:border-box;margin:6px 0 12px}
+  button{background:#3b6cff;border-color:#3b6cff;cursor:pointer;font-weight:600}
+  button.secondary{background:#1b2547}
+  .warn{border-color:#8a6d1f;background:#241d08}
+  .muted{color:#9fb0d8} .ok{color:#57d977} .bad{color:#ff7a7a}
+  table{width:100%;border-collapse:collapse} td,th{border-bottom:1px solid #263157;padding:8px;text-align:left}
+  a{color:#7aa2ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>InstantAudit</h1>
+  <p><strong>An automated smart-contract audit report in ~10 minutes.</strong> Static analysis, deployed-contract
+  privilege &amp; honeypot checks, a risk score, a PDF + JSON report, and a public verification page you can link
+  from your launch.</p>
+
+  <div class="card warn">
+    <strong>Honest scope:</strong> this is an <em>automated scan</em>, not a manual audit and
+    <strong>not a security guarantee</strong>. It never certifies a contract as safe. It is the affordable first pass
+    before (or instead of) a five-figure manual audit.
+  </div>
+
+  <h2>Free teaser scan</h2>
+  <div class="card">
+    <label>Deployed contract address (Base mainnet)</label>
+    <input id="teaserAddr" placeholder="0x…">
+    <button id="teaserBtn">Run free teaser</button>
+    <div id="teaserOut" style="margin-top:14px"></div>
+  </div>
+
+  <h2>Buy the full report</h2>
+  <div class="card">
+    <table>
+      <tr><th>Tier</th><th>Price</th><th>Includes</th></tr>
+      <tr><td>Standard</td><td class="price">£79 <span class="muted">(99 USDC)</span></td>
+          <td>Full findings + remediation, PDF + JSON, public verification page</td></tr>
+      <tr><td>Deep</td><td class="price">£149 <span class="muted">(149 USDC)</span></td>
+          <td>Standard + with-source analysis and extended token honeypot suite</td></tr>
+    </table>
+    <label style="display:block;margin-top:14px">Contract address</label>
+    <input id="buyAddr" placeholder="0x…">
+    <label>Tier</label><br>
+    <select id="buyTier"><option value="standard">Standard — 99 USDC</option><option value="deep">Deep — 149 USDC</option></select>
+    <div style="margin-top:14px"><button id="buyBtn">Get payment details</button></div>
+    <div id="buyOut" style="margin-top:14px"></div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol>
+    <li>Pay the exact USDC amount shown to the Base address (USDC on Base network).</li>
+    <li>Open the pre-filled order issue and paste your payment transaction hash — a watcher verifies the
+        transfer against the public chain record automatically.</li>
+    <li>Your report (PDF + JSON + verification page) is generated and linked on the issue, typically within ~15 minutes.</li>
+  </ol>
+  <p class="muted">Payment address (Base USDC, receive-only):<br>
+  <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code></p>
+  <p class="muted">Methodology is open: runtime-bytecode capability screening (selectors/opcodes), EIP-1967 proxy
+  probe, owner-privilege probe, and source-pattern analysis when source is supplied. Reports from this service have
+  never been, and will never be, described as a certification.</p>
+</div>
+
+<script>
+const RPC = "https://mainnet.base.org";
+const PAY_TO = "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2";
+const REPO = "hsharmanov02/seeker-node";
+
+async function rpc(method, params){
+  const r = await fetch(RPC, {method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({jsonrpc:"2.0", id:1, method, params})});
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message || "RPC error");
+  return j.result;
+}
+const SEV = {critical:25, high:15, medium:8, low:3, info:0};
+function selectorsOf(codeHex){
+  const b = []; for (let i=2;i<codeHex.length;i+=2) b.push(parseInt(codeHex.substr(i,2),16));
+  const out = new Set();
+  for (let i=0;i<b.length-4;i++){ if (b[i]===0x63){ out.add(b.slice(i+1,i+5).map(x=>x.toString(16).padStart(2,"0")).join("")); } }
+  return out;
+}
+const WATCH = {"40c10f19":["medium","mint function present"],"8456cb59":["low","pause function present"],
+  "3659cfe6":["high","upgradeTo present (upgradeable)"],"e47d6060":["high","blacklist-style function present"]};
+
+document.getElementById("teaserBtn").onclick = async () => {
+  const out = document.getElementById("teaserOut");
+  const addr = document.getElementById("teaserAddr").value.trim();
+  out.innerHTML = "Scanning…";
+  try {
+    if (!/^0x[0-9a-fA-F]{40}$/.test(addr)) throw new Error("Enter a valid 0x address.");
+    const code = await rpc("eth_getCode",[addr,"latest"]);
+    if (!code || code === "0x") { out.innerHTML = '<span class="bad">No contract code at that address on Base.</span>'; return; }
+    const sels = selectorsOf(code);
+    let score = 100; const lines = [];
+    for (const [sel,[sev,title]] of Object.entries(WATCH)) if (sels.has(sel)) { score -= SEV[sev]; lines.push(`<li>${title} <span class="muted">(${sev})</span></li>`); }
+    if (code.includes("f4")) lines.push("<li>DELEGATECALL present (proxy/library pattern) <span class='muted'>(medium)</span></li>"), score -= 8;
+    out.innerHTML = `<p>Teaser score: <strong>${Math.max(0,score)}/100</strong> · ${lines.length} headline flag(s)</p>` +
+      (lines.length ? "<ul>"+lines.join("")+"</ul>" : '<p class="ok">No headline flags in the free screen.</p>') +
+      '<p class="muted">Free teaser: headline flags only. The paid report contains every finding with remediation, the full check log, PDF + JSON and a verification page. Automated scan — not a security guarantee.</p>';
+  } catch(e){ out.innerHTML = '<span class="bad">Scan failed: '+e.message+'</span>'; }
+};
+
+document.getElementById("buyBtn").onclick = () => {
+  const out = document.getElementById("buyOut");
+  const addr = document.getElementById("buyAddr").value.trim();
+  const tier = document.getElementById("buyTier").value;
+  if (!/^0x[0-9a-fA-F]{40}$/.test(addr)) { out.innerHTML = '<span class="bad">Enter a valid contract address first.</span>'; return; }
+  const base = tier === "deep" ? 149 : 99;
+  const suffix = (Math.floor(Math.random()*899)+1)/1000;
+  const amount = (base + suffix).toFixed(3);
+  const title = encodeURIComponent("InstantAudit order — " + addr);
+  const body = encodeURIComponent(
+    "InstantAudit order\n\nContract address: " + addr + "\nTier: " + tier +
+    "\nExpected amount (USDC on Base): " + amount + "\nPayment tx hash: PASTE_YOUR_TX_HASH_HERE\n" +
+    "Source code (optional, Deep tier): paste link or code block below\n");
+  const issue = "https://github.com/" + REPO + "/issues/new?title=" + title + "&body=" + body + "&labels=instantaudit-order";
+  out.innerHTML =
+    "<p>Send <strong>exactly " + amount + " USDC</strong> (Base network) to:<br><code>" + PAY_TO + "</code></p>" +
+    "<p>Then open the order issue and paste your transaction hash:</p>" +
+    '<p><a href="' + issue + '" target="_blank" rel="noopener"><button class="secondary">Open pre-filled order issue</button></a></p>' +
+    '<p class="muted">A watcher matches your payment to this order automatically. Keep the exact amount — the unique cents identify your order.</p>';
+};
+</script>
+</body>
+</html>
