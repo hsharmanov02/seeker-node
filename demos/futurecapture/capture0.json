@@ -1,0 +1,28 @@
+{
+ "baseline_records": 0,
+ "capture_id": "capture-0",
+ "chain_root": "a7f55a728e3600c3656e64dc5bc73048b23986d10982f5af44f2155794729c5d",
+ "completeness_aggregate": null,
+ "completeness_found": 0,
+ "completeness_sampled": 0,
+ "gap_intervals": 0,
+ "generated_at": "2026-10-03T12:09:32Z",
+ "only_in_archive": null,
+ "orders_external_paid": 0,
+ "pay_to": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+ "per_source": {},
+ "records": 0,
+ "repo": "https://github.com/hsharmanov02/seeker-node",
+ "sample_downloads_external": 0,
+ "site_dir": "demos/futurecapture/",
+ "spec_downloads_external": 0,
+ "spec_sha256": "fdc8d8221d76859b132c6447440606103780258fd347ae5f87f8a367a9ce83d2",
+ "spotchecks": [],
+ "status": "prewindow",
+ "verdict": null,
+ "window": {
+  "duration_hours": 24,
+  "end_utc": "2026-10-04T13:00:00Z",
+  "start_utc": "2026-10-03T13:00:00Z"
+ }
+}

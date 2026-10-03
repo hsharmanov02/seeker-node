@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FutureCapture — order</title>
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:2rem auto;
+padding:0 1rem;line-height:1.55;color:#111}.card{border:1px solid #ddd;
+border-radius:10px;padding:1rem;margin:1rem 0}code{background:#f2f2f2;
+padding:.1rem .3rem;border-radius:4px;word-break:break-all}
+button{padding:.5rem 1rem;font-size:1rem}input{padding:.4rem;width:100%}
+a{color:#0b5fff}</style></head><body>
+<h1>FutureCapture — order a future window</h1>
+<p>All products are archives of <strong>future</strong> windows of the
+ugig + Superteam streams, captured to a spec hash-committed publicly
+before the window opens and delivered at close with a verifiable
+manifest. Payment: USDC on Base to
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code> (receive-only — we never sign or send).</p>
+<div class="card"><h3>Option — next scheduled 24h window — £9 (12.0 USDC)</h3><p>Premium. Right to buy the capture-#1 24h archive at the locked strike of 59 USDC at its close; lapses worthless if not exercised.</p><button onclick="order('option_next_window')">Create order</button></div><div class="card"><h3>Future — next scheduled 24h window archive — £44 (59.0 USDC)</h3><p>Prepaid. Full hash-chained archive + manifest delivered at window close.</p><button onclick="order('future_24h')">Create order</button></div><div class="card"><h3>Future — 48h event-bounded window — £110 (149.0 USDC)</h3><p>Prepaid. Window scheduled with the buyer around a named event.</p><button onclick="order('future_event48h')">Create order</button></div><div class="card"><h3>Future — next scheduled 7-day window archive — £185 (249.0 USDC)</h3><p>Prepaid. Full hash-chained archive + manifest delivered at window close.</p><button onclick="order('future_7d')">Create order</button></div>
+<div class="card"><h2>Your order</h2><div id="out">
+Pick a product above. You will get an exact USDC amount (unique to your
+order). Send it, then optionally paste the transaction hash to speed up
+matching.</div>
+<p><input id="txh" placeholder="0x… transaction hash (optional)">
+<button id="txbtn">Register tx hash</button></p>
+<p id="status"></p></div>
+<p><a href="index.html">← back</a></p>
+<script src="fcconfig.js"></script>
+<script>
+var B=window.FC_API_BASE||'';var cur=null;
+function order(p){if(!B){alert('Live API unreachable — try again shortly.');
+return;}
+fetch(B+'/orders',{method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({product:p})}).then(function(r){return r.json()})
+.then(function(o){cur=o;
+document.getElementById('out').innerHTML=
+ '<p>Order <code>'+o.id+'</code> — send exactly <strong>'+o.amount_usdc+
+ ' USDC</strong> on Base to <code>'+o.pay_to+'</code></p>'+
+ '<p>Product: '+o.product+' · status: '+o.status+'</p>';})
+.catch(function(e){document.getElementById('out').textContent=
+ 'Error: '+e;});}
+document.getElementById('txbtn').onclick=function(){
+if(!cur){return;}var t=document.getElementById('txh').value.trim();
+if(!t){return;}
+fetch(B+'/orders/'+cur.id+'/tx',{method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({tx_hash:t})}).then(function(r){return r.json()})
+.then(function(o){document.getElementById('status').textContent=
+ 'Registered. Status: '+o.status;});};
+</script></body></html>

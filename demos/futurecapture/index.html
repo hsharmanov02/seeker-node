@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FutureCapture — committed capture of perishable streams</title>
+<style>body{font-family:system-ui,sans-serif;max-width:820px;margin:2rem auto;
+padding:0 1rem;line-height:1.55;color:#111}code{background:#f2f2f2;
+padding:.1rem .3rem;border-radius:4px;word-break:break-all}
+.card{border:1px solid #ddd;border-radius:10px;padding:1rem;margin:1rem 0}
+.num{font-size:1.6rem;font-weight:700}table{border-collapse:collapse}
+td,th{border:1px solid #ddd;padding:.3rem .6rem;text-align:left}
+a{color:#0b5fff}</style></head><body>
+<h1>FutureCapture</h1>
+<p><strong>Pre-sold, spec-committed capture of perishable data streams.</strong>
+You are not buying data that exists. You are buying data that <em>will</em>
+exist — captured to a specification hash-committed publicly
+<strong>before</strong> the window opens, hash-chained as it lands, with
+integrity roots published while the window runs. A deleted-listing archive
+assembled next month is fiction; one whose roots were public while the
+listings were alive is evidence.</p>
+<div class="card"><h2>Dogfood capture #0 — LIVE TEST</h2>
+<table>
+<tr><th>Capture spec (SHA-256, committed before the window)</th>
+<td><code>fdc8d8221d76859b132c6447440606103780258fd347ae5f87f8a367a9ce83d2</code><br>
+<a id="specDl" href="spec.json">Download the full spec (JSON)</a></td></tr>
+<tr><th>Window (UTC)</th><td>2026-10-03T13:00:00Z → 2026-10-04T13:00:00Z (24h)</td></tr>
+<tr><th>Streams</th><td>ugig gigs · ugig bounties · Superteam listings
+(poll cadence 30–45s)</td></tr>
+<tr><th>Status</th><td id="fcStatus">prewindow</td></tr>
+<tr><th>Records archived</th><td><span class="num" id="fcRecords">0</span>
+&nbsp;chain root <code id="fcRoot">a7f55a728e3600c3656e64dc…</code></td></tr>
+<tr><th>Completeness (independent spot-checks)</th>
+<td id="fcComp">pending</td></tr>
+<tr><th>Listings that now exist ONLY in our archive</th>
+<td id="fcOnly">pending</td></tr>
+</table>
+<p>Live numbers: <span id="fcLive">loading…</span></p>
+<p><a href="capture0.json">capture0.json</a> (machine-readable state) ·
+<a href="capture0.html">capture #0 verification page</a> ·
+<a id="sampleDl" href="spec.json">spec</a></p>
+</div>
+<div class="card"><h2>Buy the future</h2>
+<p><a href="order.html"><strong>Order page →</strong></a> £9 option on the
+next scheduled 24h window (locked 59 USDC strike) · £44 / 24h future ·
+£110 / 48h event future · £185 / 7d future. Paid in USDC on Base,
+receive-only; archives delivered at window close with a manifest that
+verifies against roots published <em>during</em> the window.</p></div>
+<p><small>Honest expectations: day-one revenue is likely £0 — this test
+prices whether our capture claim is real. Capture completeness below 90%
+kills the method outright. Listing-level data only, exactly as published
+by the sources; no contact enrichment. GitHub commit timestamps anchor
+every publication.</small></p>
+<script src="fcconfig.js"></script>
+<script>
+(function(){var b=window.FC_API_BASE||'';if(!b)return;
+var sd=document.getElementById('specDl');if(sd)sd.href=b+'/spec?src=site';
+fetch(b+'/stats').then(function(r){return r.json()}).then(function(s){
+document.getElementById('fcLive').textContent=
+ 'records '+s.records+' · root '+String(s.chain_root).slice(0,16)+'…'+
+ ' · status '+s.status+' · spot-checks '+s.spotchecks.length;
+}).catch(function(){document.getElementById('fcLive').textContent=
+ '(live API unreachable; static figures above are from the last publish)';});
+})();
+</script></body></html>
