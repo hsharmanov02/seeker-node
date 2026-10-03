@@ -1,11 +1,11 @@
 {
  "bids": 0,
  "clearing_volume_usdc": 0,
- "delayed_feed_api_calls": 0,
+ "delayed_feed_api_calls": 1,
  "events_by_kind": {},
  "events_total": 0,
  "signups": 0,
  "sold_listings": 0,
  "stream_key_present": false,
- "updated_at": "2026-10-03T11:38:12+00:00"
+ "updated_at": "2026-10-03T11:43:11+00:00"
 }
