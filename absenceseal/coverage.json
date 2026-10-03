@@ -10,10 +10,15 @@
   },
   "chunk_blocks": 100,
   "window_blocks": 1800,
-  "captured_blocks": 5400,
-  "complete_chunks": 54,
+  "captured_blocks": 9000,
+  "complete_chunks": 90,
   "gap_chunks": [],
   "windows": [
+    {
+      "from": 51944400,
+      "to": 51946199,
+      "status": "complete"
+    },
     {
       "from": 52119000,
       "to": 52120799,
@@ -27,6 +32,11 @@
     {
       "from": 52122600,
       "to": 52124399,
+      "status": "complete"
+    },
+    {
+      "from": 52124400,
+      "to": 52126199,
       "status": "complete"
     }
   ],

@@ -2,8 +2,22 @@
   "product": "AbsenceSeal",
   "chain": "base",
   "service_public_key_ed25519": "2e464640ed13bd5ca3883b0dc848652fb75064ee7d9d36a1e95dc2143bbaa893",
-  "chain_tip": "ba7c9bd9a4c236150d1807b82b5ad2fb16377a54a94d2f04a6287ee1f8ec5901",
+  "chain_tip": "3851485e21abb8cbbc1a2053c26edf4a56988976e336fe5bcf9a556f5fa91170",
   "windows": [
+    {
+      "from": 51944400,
+      "to": 51946199,
+      "events_root": "233ec955029af696e9ed187490b5901922325adf272b807e47d968a84ec6f34f",
+      "pairs_root": "71a6705140c12c7a412f2a4d6dce59533e281279a07932dbc3b2581732e53f12",
+      "event_count": 236226,
+      "pair_count": 54112,
+      "first_hash": "0xd6d58ddff199954583a4c374b10327655f585e493c25958d42e0c96b02db8347",
+      "last_hash": "0xdd36a8b5818b937c2a545f74010f1fc5a73b39cbfd275090ba2a734f66e7d03c",
+      "prev_chain": "ba7c9bd9a4c236150d1807b82b5ad2fb16377a54a94d2f04a6287ee1f8ec5901",
+      "chain_hash": "37bf93af40c44a3b44b7c88394bb8ad2fcd9dff34e8acd7a09eb206e6fa0174b",
+      "signature": "4ea4128038e48df81dec6691d73614de85becfdaae7ea40fe310ad0faf1bddcc4d628670ef40c02d063a383e3bd21d98d2a896e108e8e37a8d7ee7a200171404",
+      "captured_at": "2026-10-03T15:05:24Z"
+    },
     {
       "from": 52119000,
       "to": 52120799,
@@ -45,6 +59,20 @@
       "chain_hash": "ba7c9bd9a4c236150d1807b82b5ad2fb16377a54a94d2f04a6287ee1f8ec5901",
       "signature": "8cef68da26c824bbe713aebd7c5d29d7529339bef083d32b23ff4f4a4653f1133cb2b50bda0c38520879c8fd4a28a143d3eb8ef43ccfcc88f712d10dd662320d",
       "captured_at": "2026-10-03T14:48:34Z"
+    },
+    {
+      "from": 52124400,
+      "to": 52126199,
+      "events_root": "4e68f963b6145030218a0807980febf3dc721e45e30171db9f4f9bc758b13e88",
+      "pairs_root": "1e525c7838f7815ae78b37f31e9ff1ce7827497bc20d86e74c97d3f411abb1e7",
+      "event_count": 174334,
+      "pair_count": 32052,
+      "first_hash": "0x2a32b04884139dc12a8f1ca18b68b2d043733d7793759ae9e6a7db9177c06844",
+      "last_hash": "0x67d5f5a6663d55d3f3aa8d57ae8e8524e5c57dc4fcf6665e8ca12e709e78bc2c",
+      "prev_chain": "37bf93af40c44a3b44b7c88394bb8ad2fcd9dff34e8acd7a09eb206e6fa0174b",
+      "chain_hash": "3851485e21abb8cbbc1a2053c26edf4a56988976e336fe5bcf9a556f5fa91170",
+      "signature": "2d82f0a93c7af73e81d4b81f703e2d141ab1de9bf526ce89188eb59238d2574295b7a59d2e0d0343920ebb250cb0e36c1d12d790fb0836f435b41ecf316cf104",
+      "captured_at": "2026-10-03T15:38:04Z"
     }
   ]
 }

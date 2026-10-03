@@ -45,7 +45,7 @@ illegal” — open universes nobody can enumerate. We return
 <code>UNCERTIFIABLE</code> there; screening vendors would still sell you a
 score.</p>
 <h2>3. Buy a certificate (machines welcome)</h2>
-<p><code>POST http://127.0.0.1:8825/certificate</code> with
+<p><code>POST https://149cab897005c0.lhr.life/certificate</code> with
 <code>{"subject": "0x…", "set_id": "ofac-sdn-evm-2026-10-03",
 "from_block": A, "to_block": B}</code> (or
 <code>"counterparty_addresses": ["0x…"]</code>, ≤500).<br>
@@ -57,28 +57,28 @@ INTERACTION_FOUND report with inclusion proofs, same price — is issued.
 Prices: <strong>$0.25</strong> standard (≤1800 blocks, ≤50 counterparties) ·
 <strong>$1.00</strong> custom (≤500 counterparties, ≤10800 blocks) ·
 <strong>$5.00</strong> deep (≤30 days). MCP tool
-<code>certify_absence</code> at <code>POST http://127.0.0.1:8825/mcp</code>.
+<code>certify_absence</code> at <code>POST https://149cab897005c0.lhr.life/mcp</code>.
 Machine discovery: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/x402.json">x402.json</a> ·
 <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/openapi.json">openapi.json</a></p>
-<pre>curl -s http://127.0.0.1:8825/certificate -X POST -H 'Content-Type: application/json' -d '{"subject":"0xYOURWALLET","set_id":"ofac-sdn-evm-2026-10-03","from_block":A,"to_block":B}'</pre>
+<pre>curl -s https://149cab897005c0.lhr.life/certificate -X POST -H 'Content-Type: application/json' -d '{"subject":"0xYOURWALLET","set_id":"ofac-sdn-evm-2026-10-03","from_block":A,"to_block":B}'</pre>
 <h2>4. Coverage (published, gaps and all)</h2>
-<p>Captured blocks: 5400 · complete chunks:
-54 · Every gap demotes its range to UNCERTIFIABLE
+<p>Captured blocks: 9000 · complete chunks:
+90 · Every gap demotes its range to UNCERTIFIABLE
 automatically.</p>
-<p>Committed windows:</p><ul><li>52119000-52120799 (complete)</li><li>52120800-52122599 (complete)</li><li>52122600-52124399 (complete)</li></ul>
+<p>Committed windows:</p><ul><li>51944400-51946199 (complete)</li><li>52119000-52120799 (complete)</li><li>52120800-52122599 (complete)</li><li>52122600-52124399 (complete)</li><li>52124400-52126199 (complete)</li></ul>
 <p>Gaps:</p><ul><li>none</li></ul>
 <h2>5. Pinned counterparty sets</h2>
 <table><tr><th>set_id</th><th>name</th><th>count</th><th>sha256</th></tr>
 <tr><td><code>fleet-demo-v1</code></td><td>Fleet demonstration set (our own public addresses)</td><td>2</td><td><code>c110e227187bad9ed10d…</code></td></tr><tr><td><code>ofac-sdn-evm-2026-10-03</code></td><td>OFAC SDN digital-currency addresses (EVM)</td><td>120</td><td><code>de904e0b0d600ee027cf…</code></td></tr></table>
 <p>Full sets: <a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/absenceseal/sets.json">sets.json</a></p>
 <h2>6. Live test status</h2>
-<p>24h window opened: pending ·
+<p>24h window opened: 2026-10-03T15:01:28Z ·
 External paid certificates: 0 ·
 External verifications: 0 ·
 External UNCERTIFIABLE served: 0 ·
 Pass = ≥1 external paid cert OR ≥10 external verifications OR 1 marketplace
 inbound; any false certificate = instant kill.</p>
-<table><tr><th>certificate</th><th>result</th><th>kind</th></tr>
+<table><tr><th>certificate</th><th>result</th><th>kind</th></tr><tr><td><a href="./certs/as-12ef3f03cbe02646.html">as-12ef3f03cbe02646</a></td><td>ABSENT</td><td>TEST</td></tr><tr><td><a href="./certs/as-0687fbcbca1e1196.html">as-0687fbcbca1e1196</a></td><td>INTERACTION_FOUND</td><td>TEST</td></tr><tr><td><a href="./certs/as-d4f763062372e684.html">as-d4f763062372e684</a></td><td>ABSENT</td><td>TEST</td></tr><tr><td><a href="./certs/as-02a8378c6125a142.html">as-02a8378c6125a142</a></td><td>INTERACTION_FOUND</td><td>TEST</td></tr><tr><td><a href="./certs/as-6424a0d7a4b65887.html">as-6424a0d7a4b65887</a></td><td>ABSENT</td><td>TEST</td></tr>
 </table>
 <div class="foot"><p>AbsenceSeal certifies only a negative over a pinned, fully captured universe: USDC Transfer/Approval events on Base, blocks A-B, against a hash-pinned counterparty set. It does not certify anything about other assets, other chains, off-chain action, intent, or legality. A claim we cannot prove completely is refused UNCERTIFIABLE, free.</p>
 <p>AbsenceSeal holds no wallet keys and never signs transactions; payments

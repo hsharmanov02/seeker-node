@@ -4,7 +4,7 @@
       "set_id": "fleet-demo-v1",
       "name": "Fleet demonstration set (our own public addresses)",
       "source": "AbsenceSeal fleet public receiving addresses; included so anyone can reproduce the worked examples",
-      "fetched_at": "2026-10-03T14:47:00Z",
+      "fetched_at": "2026-10-03T15:20:33Z",
       "set_hash": "c110e227187bad9ed10d790173a4794deed15b2d265d5ded9e2fecf04b224f60",
       "count": 2,
       "addresses": [
@@ -16,7 +16,7 @@
       "set_id": "ofac-sdn-evm-2026-10-03",
       "name": "OFAC SDN digital-currency addresses (EVM)",
       "source": "OFAC SDN list via 0xB10C/ofac-sanctioned-digital-currency-addresses (sanctioned_addresses_ETH.json), fetched and hash-pinned at build time 2026-10-03",
-      "fetched_at": "2026-10-03T14:47:00Z",
+      "fetched_at": "2026-10-03T15:20:33Z",
       "set_hash": "de904e0b0d600ee027cf70ad14b7c1fee5b5615d56014f234a68510a03c914e5",
       "count": 120,
       "addresses": [
