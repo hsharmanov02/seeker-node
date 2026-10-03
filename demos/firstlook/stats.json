@@ -1,9 +1,9 @@
 {
- "at": "2026-10-03T11:52:32+00:00",
+ "at": "2026-10-03T11:56:56+00:00",
  "delay_seconds": 900,
  "external_api_keys": 0,
- "feed_api_calls": 0,
- "instant_api_calls_external": 0,
+ "feed_api_calls": 1,
+ "instant_api_calls_external": 1,
  "latency_overall": {
   "count": 0,
   "median_s": null
@@ -12,9 +12,9 @@
  "service": "FirstLook",
  "sources": {
   "github": {
-   "baseline_items": 0,
-   "errors": null,
-   "last_ok": null,
+   "baseline_items": 30,
+   "errors": 0,
+   "last_ok": "2026-10-03T11:56:34+00:00",
    "latency": {
     "count": 0,
     "median_s": null
@@ -22,9 +22,9 @@
    "live_items": 0
   },
   "superteam": {
-   "baseline_items": 0,
-   "errors": null,
-   "last_ok": null,
+   "baseline_items": 25,
+   "errors": 0,
+   "last_ok": "2026-10-03T11:56:38+00:00",
    "latency": {
     "count": 0,
     "median_s": null
@@ -32,9 +32,9 @@
    "live_items": 0
   },
   "ugig": {
-   "baseline_items": 0,
-   "errors": null,
-   "last_ok": null,
+   "baseline_items": 37,
+   "errors": 0,
+   "last_ok": "2026-10-03T11:56:52+00:00",
    "latency": {
     "count": 0,
     "median_s": null
