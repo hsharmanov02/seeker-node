@@ -1,0 +1,20 @@
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+margin:2rem auto;max-width:920px;padding:0 1rem;color:#16202a;
+background:#f7f9fb;line-height:1.5}
+h1{margin-bottom:.2rem} .tag{color:#445;font-size:1.05rem}
+.status{background:#e8f0e9;border:1px solid #b9d2bc;border-radius:8px;
+padding:.5rem .8rem;font-family:ui-monospace,monospace;font-size:.85rem}
+section{background:#fff;border:1px solid #dde4ea;border-radius:10px;
+padding:1rem 1.2rem;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid #e3e9ef;padding:.35rem .5rem;text-align:left}
+th{color:#556} .note{color:#667;font-size:.88rem}
+.cta{display:inline-block;background:#14532d;color:#fff;padding:.5rem 1rem;
+border-radius:8px;text-decoration:none}
+label{display:block;margin:.6rem 0} input{width:100%;padding:.5rem;
+border:1px solid #c4ced8;border-radius:6px;margin-top:.2rem}
+button{background:#14532d;color:#fff;border:0;padding:.6rem 1.1rem;
+border-radius:8px;cursor:pointer}
+.out{background:#0f172a;color:#d7e3f4;padding:.8rem;border-radius:8px;
+white-space:pre-wrap;min-height:1.2rem}
+code{font-family:ui-monospace,monospace;font-size:.85em}

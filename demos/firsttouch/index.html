@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstTouch — per-event exclusivity over UK company events</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>FirstTouch</h1>
+  <p class="tag">Per-event exclusivity over UK Companies House events.
+  Each incorporation, first charge, or control change is sold to
+  <strong>exactly one buyer</strong> inside a 10-minute window — then it
+  drops into a free 30-minute-delayed public feed. We sell position in
+  time, not data.</p>
+  <p id="status" class="status">loading status…</p>
+</header>
+
+<main>
+<section>
+  <h2>Open exclusivity windows</h2>
+  <p class="note">Anonymised while the window is open: sector, district,
+  event type, reserve. The winner — and only the winner — receives the
+  full company record by signed webhook the moment the window closes.</p>
+  <table id="listings"><thead><tr><th>Listing</th><th>Type</th>
+  <th>Sector</th><th>District</th><th>Reserve (USDC)</th>
+  <th>Closes in</th><th></th></tr></thead><tbody></tbody></table>
+  <p id="no-listings" class="note" hidden>No windows open right now.</p>
+</section>
+
+<section>
+  <h2>Sold board (proof)</h2>
+  <p class="note">Closed windows: event hash, clearing price, window.
+  No buyer names, ever.</p>
+  <table id="board"><thead><tr><th>Event hash</th><th>Type</th>
+  <th>Sector</th><th>District</th><th>Reserve</th><th>Clearing (USDC)</th>
+  <th>Closed</th></tr></thead><tbody></tbody></table>
+  <p id="no-board" class="note" hidden>Nothing sold yet.</p>
+</section>
+
+<section>
+  <h2>Free delayed feed (30 min)</h2>
+  <p class="note">Every event, sold or not, becomes public here
+  30 minutes after detection.</p>
+  <table id="feed"><thead><tr><th>Published</th><th>Type</th>
+  <th>Company</th><th>Sector</th><th>District</th>
+  <th>Exclusivity</th></tr></thead><tbody></tbody></table>
+  <p id="no-feed" class="note" hidden>Feed is empty so far.</p>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol>
+    <li>We run the fastest feed we can over the official Companies
+    House streams (incorporations, first charges, control changes).</li>
+    <li>Each event opens a 10-minute sealed window. Registered buyers
+    bid prepaid USDC credit. Losing bids are <strong>never
+    charged</strong>.</li>
+    <li>Highest bid at or above reserve wins. Only the winner receives
+    the record, by HMAC-signed webhook, seconds after the close.</li>
+    <li>After the window, the event joins the free delayed feed above.
+    The sold board proves windows really clear.</li>
+  </ol>
+  <p><a class="cta" href="register.html">Register a trial webhook →</a>
+  Every signup gets 5 USDC of trial credit. Prepaid packs are 25 USDC
+  on Base, matched to your account by an exact unique amount — no
+  accounts with us beyond an email-free token, no KYC.</p>
+  <p class="note">Honest note: exclusivity covers <em>our feed's</em>
+  timing and delivery — the underlying register is public, the same
+  basis as every latency-tiered data product.</p>
+</section>
+</main>
+
+<footer><p class="note">FirstTouch beta. Data: Companies House public
+register. Payments: USDC on Base to
+<code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code> (receive-only).</p>
+</footer>
+
+<script src="ftconfig.js"></script>
+<script>
+async function jget(name){ try{ const r = await fetch(name, {cache:"no-store"});
+  return r.ok ? await r.json() : null; }catch(e){ return null; } }
+function rows(el, items, cells, emptyEl){
+  const tb = document.querySelector(el+" tbody"); tb.innerHTML = "";
+  document.querySelector(emptyEl).hidden = items.length > 0;
+  for(const it of items){ const tr = document.createElement("tr");
+    for(const c of cells(it)){ const td = document.createElement("td");
+      if(c && c.nodeType){ td.appendChild(c); } else { td.textContent = c; }
+      tr.appendChild(td); } tb.appendChild(tr); } }
+function bidLink(id){ const a = document.createElement("a");
+  a.href = "register.html?listing="+id; a.textContent = "Bid"; return a; }
+async function tick(){
+  const [st, li, fe, bo] = await Promise.all(
+    [jget("stats.json"), jget("listings.json"), jget("feed.json"),
+     jget("board.json")]);
+  const s = document.getElementById("status");
+  if(st){ s.textContent =
+    (st.stream_key_present ? "Stream: LIVE" : "Stream: connecting…") +
+    " · events seen: " + st.events_total +
+    " · signups: " + st.signups + " · bids: " + st.bids +
+    " · sold: " + st.sold_listings +
+    " · clearing volume: " + st.clearing_volume_usdc + " USDC" +
+    " · updated " + (st.updated_at||""); }
+  if(li) rows("#listings", li, x => ["#"+x.listing_id, x.type,
+    x.sector_group, x.postcode_district, x.reserve_usdc,
+    Math.floor(x.closes_in_seconds/60)+"m "+(x.closes_in_seconds%60)+"s",
+    bidLink(x.listing_id)], "#no-listings");
+  if(bo) rows("#board", bo, x => [x.event_hash, x.type, x.sector_group,
+    x.postcode_district, x.reserve_usdc, x.clearing_usdc,
+    (x.closed_at||"").replace("T"," ").slice(0,16)], "#no-board");
+  if(fe) rows("#feed", fe.slice(0,50), x => [
+    (x.published_at||"").replace("T"," ").slice(0,16), x.type,
+    (x.company.name||"")+" ("+(x.company.number||"")+")",
+    x.company.sector_group, x.company.postcode_district,
+    x.exclusivity], "#no-feed");
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>

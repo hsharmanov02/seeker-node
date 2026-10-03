@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstTouch — register / bid</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>FirstTouch — register &amp; bid</h1>
+  <p class="tag">Trial signup + webhook registration, then bid prepaid
+  USDC credit on open exclusivity windows. Losing bids are never
+  charged.</p>
+  <p><a href="index.html">← back to listings</a></p>
+</header>
+
+<main>
+<section>
+  <h2>1. Register a trial webhook</h2>
+  <form id="signup">
+    <label>Label (anything, e.g. your firm)
+      <input name="label" maxlength="80"></label>
+    <label>Webhook URL (https — receives the full record on a win)
+      <input name="webhook_url" required placeholder="https://…"></label>
+    <label>Sector groups you care about (comma separated, optional)
+      <input name="sic_groups" placeholder="finance, real_estate"></label>
+    <button type="submit">Create signup (5 USDC trial credit)</button>
+  </form>
+  <pre id="signup-out" class="out"></pre>
+</section>
+
+<section>
+  <h2>2. Top up (optional)</h2>
+  <p>After signup you'll be shown an <strong>exact USDC amount</strong>
+  (25 USDC + your unique cents). Send exactly that amount of USDC on
+  <strong>Base</strong> to
+  <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>. The unique
+  cents identify your account; credit lands automatically once the
+  transfer is seen. Prepaid credit is only ever debited on a
+  <em>winning</em> bid.</p>
+</section>
+
+<section>
+  <h2>3. Bid on a window</h2>
+  <form id="bid">
+    <label>Listing ID
+      <input name="listing_id" required inputmode="numeric"></label>
+    <label>Your API token (from signup)
+      <input name="token" required></label>
+    <label>Bid (USDC)
+      <input name="amount_usdc" required inputmode="decimal"
+             placeholder="e.g. 3.00"></label>
+    <button type="submit">Place bid</button>
+  </form>
+  <pre id="bid-out" class="out"></pre>
+  <p class="note">Highest bid at or above reserve wins at the close;
+  delivery goes to the winner's webhook only, HMAC-SHA256 signed with
+  your token. Everyone else learns nothing until the delayed feed.</p>
+</section>
+
+<p id="api-status" class="note"></p>
+</main>
+
+<script src="ftconfig.js"></script>
+<script>
+const BASE = window.FT_API_BASE || "";
+const note = document.getElementById("api-status");
+if(!BASE){ note.textContent = "API endpoint is offline right now — " +
+  "the register/bid forms can't submit. The listings, sold board and " +
+  "delayed feed on the home page still update."; }
+async function post(path, obj, token){
+  const r = await fetch(BASE + path, {method:"POST",
+    headers: {"Content-Type":"application/json",
+              ...(token ? {"X-FT-Token": token} : {})},
+    body: JSON.stringify(obj)});
+  return {status: r.status, body: await r.json().catch(()=>({}))};
+}
+const q = new URLSearchParams(location.search);
+if(q.get("listing"))
+  document.querySelector('#bid [name=listing_id]').value = q.get("listing");
+document.getElementById("signup").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = new FormData(e.target), out = document.getElementById("signup-out");
+  try{ const r = await post("/signup", {
+      label: f.get("label"), webhook_url: f.get("webhook_url"),
+      sic_groups: (f.get("sic_groups")||"").split(",")
+        .map(s=>s.trim()).filter(Boolean)});
+    out.textContent = JSON.stringify(r.body, null, 2);
+  }catch(err){ out.textContent = "API unreachable: " + err; }
+});
+document.getElementById("bid").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = new FormData(e.target), out = document.getElementById("bid-out");
+  try{ const r = await post("/bid", {
+      listing_id: Number(f.get("listing_id")),
+      amount_usdc: Number(f.get("amount_usdc"))}, f.get("token"));
+    out.textContent = JSON.stringify(r.body, null, 2);
+  }catch(err){ out.textContent = "API unreachable: " + err; }
+});
+</script>
+</body>
+</html>
