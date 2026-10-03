@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>GoingRate — methodology &amp; opt-out</title></head><body>
+<h1>Methodology &amp; opt-out</h1>
+<p>GoingRate is a measurement census of public paid-agent endpoints.
+A probe is a single unauthenticated GET designed only to elicit the
+endpoint's public 402 price challenge. We <strong>never pay</strong>,
+never send payment headers, and never call the paid resource.</p>
+<ul>
+<li>&le;1 request per endpoint per cycle; &le;1 request per 5s per host.</li>
+<li>Identifying User-Agent: <code>GoingRate-Census/1.0 (+https://rawcdn.githack.com/hsharmanov02/seeker-node/main/goingrate/methodology.html)</code>.</li>
+<li>429 / Retry-After honoured with backoff; permanent skip on request.</li>
+<li>Any ToS objection: the host is excluded immediately and logged.</li>
+<li>Daily panel snapshots are hash-chained and published, so the series
+is provably contemporaneous.</li>
+</ul>
+<h2>Opt out</h2>
+<p>To exclude your host permanently, open
+<code>/opt-out?host=your.host</code> on the API base, or the host is
+excluded on first objection. No account, no form, no questions.</p>
+<p>Prices recorded are <em>asking</em> prices; settled prices can differ.
+Adoption weighting uses catalogue-reported 30-day payer counts.</p>
+</body></html>

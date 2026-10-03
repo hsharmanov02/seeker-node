@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>GoingRate — the asking-price census of the agent economy</title>
+<style>body{font-family:system-ui;max-width:56em;margin:2em auto;padding:0 1em}
+table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3em .6em}
+.num{font-variant-numeric:tabular-nums}</style></head><body>
+<h1>GoingRate</h1>
+<p>Once a day, politely, we knock on every enumerable paid agent endpoint
+(x402, MPP, L402) and record the price quoted in its live 402 challenge.
+Directories list; explorers record what settled. <strong>GoingRate records
+what was asked</strong> — and sells the answer at decision time.</p>
+<p>Universe: 0 services with a latest probe ·
+0 currently quoting. Generated 2026-10-03T15:05:45+00:00.</p>
+<table><tr><th>Category</th><th>Services</th><th>Quoting</th>
+<th>Median ask</th><th>Median ask (adoption-weighted)</th>
+<th>Alive share</th><th>Latency p50 ms</th></tr></table>
+<h2>Paid API (USDC on Base, receive-only)</h2>
+<ul>
+<li><code>GET /check?url=…</code> — $0.05: is this quote fair vs its category?</li>
+<li><code>GET /rate?category=…</code> — $0.05: the going rate, raw + adoption-weighted, n labelled.</li>
+<li><code>GET /series?service=…</code> — $0.10: one service's full quote history.</li>
+<li>MCP mirror at <code>POST /mcp</code>; manifest at <code>/.well-known/x402</code>.</li>
+</ul>
+<p>API base URL is published in
+<a href="indices.json">indices.json</a> (<code>api_base</code>).
+Snapshots: <a href="snapshots/">daily hash-chained census snapshots</a>.
+Method &amp; opt-out: <a href="methodology.html">methodology.html</a>.</p>
+<p>Honest gauge: the measured economy is small; indices of asking prices
+include services nobody may ever pay. n is always labelled. Our own
+fleet's 11 endpoints are in the census, labelled fleet.</p>
+</body></html>
