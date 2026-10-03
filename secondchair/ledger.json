@@ -1,4 +1,137 @@
 {
- "entries": [],
- "generated_at": "2026-10-03T14:56:58Z"
+ "entries": [
+  {
+   "agreed": 20.31,
+   "ask": 25.0,
+   "counterparty": "26366df7",
+   "dogfood": true,
+   "negotiation": "neg_bb279889",
+   "outcome": "DEAL",
+   "rounds": 7,
+   "saving_pct": 18.76,
+   "ts": "2026-10-03T14:57:30Z"
+  },
+  {
+   "agreed": 31.51,
+   "ask": 40.0,
+   "counterparty": "26366df7",
+   "dogfood": true,
+   "negotiation": "neg_368edd41",
+   "outcome": "DEAL",
+   "rounds": 6,
+   "saving_pct": 21.22,
+   "ts": "2026-10-03T14:57:31Z"
+  },
+  {
+   "agreed": 32.41,
+   "ask": 40.0,
+   "counterparty": "26366df7",
+   "dogfood": true,
+   "negotiation": "neg_0a505fa0",
+   "outcome": "DEAL",
+   "rounds": 4,
+   "saving_pct": 18.98,
+   "ts": "2026-10-03T14:57:25Z"
+  },
+  {
+   "agreed": 19.7,
+   "ask": 25.0,
+   "counterparty": "26366df7",
+   "dogfood": true,
+   "negotiation": "neg_27cca0bc",
+   "outcome": "DEAL",
+   "rounds": 6,
+   "saving_pct": 21.2,
+   "ts": "2026-10-03T14:57:30Z"
+  },
+  {
+   "agreed": 69.21,
+   "ask": 80.0,
+   "counterparty": "086835fa",
+   "dogfood": true,
+   "negotiation": "neg_5ae7a624",
+   "outcome": "DEAL",
+   "rounds": 9,
+   "saving_pct": 13.49,
+   "ts": "2026-10-03T14:57:42Z"
+  },
+  {
+   "agreed": 42.73,
+   "ask": 50.0,
+   "counterparty": "086835fa",
+   "dogfood": true,
+   "negotiation": "neg_97ee5dfa",
+   "outcome": "DEAL",
+   "rounds": 8,
+   "saving_pct": 14.54,
+   "ts": "2026-10-03T14:57:46Z"
+  },
+  {
+   "agreed": 69.04,
+   "ask": 80.0,
+   "counterparty": "086835fa",
+   "dogfood": true,
+   "negotiation": "neg_6f682c12",
+   "outcome": "DEAL",
+   "rounds": 8,
+   "saving_pct": 13.7,
+   "ts": "2026-10-03T14:57:46Z"
+  },
+  {
+   "agreed": 107.29,
+   "ask": 120.0,
+   "counterparty": "f3be75bf",
+   "dogfood": true,
+   "negotiation": "neg_00bf33e9",
+   "outcome": "DEAL",
+   "rounds": 11,
+   "saving_pct": 10.59,
+   "ts": "2026-10-03T14:57:52Z"
+  },
+  {
+   "agreed": 53.65,
+   "ask": 60.0,
+   "counterparty": "f3be75bf",
+   "dogfood": true,
+   "negotiation": "neg_df657bd4",
+   "outcome": "DEAL",
+   "rounds": 11,
+   "saving_pct": 10.58,
+   "ts": "2026-10-03T14:58:04Z"
+  },
+  {
+   "agreed": null,
+   "ask": 120.0,
+   "counterparty": "f3be75bf",
+   "dogfood": true,
+   "negotiation": "neg_0c721f3f",
+   "outcome": "NO_DEAL",
+   "rounds": 11,
+   "saving_pct": null,
+   "ts": "2026-10-03T14:58:08Z"
+  },
+  {
+   "agreed": 53.65,
+   "ask": 60.0,
+   "counterparty": "f3be75bf",
+   "dogfood": true,
+   "negotiation": "neg_fca0997c",
+   "outcome": "DEAL",
+   "rounds": 11,
+   "saving_pct": 10.58,
+   "ts": "2026-10-03T14:58:07Z"
+  },
+  {
+   "agreed": 43.07,
+   "ask": 50.0,
+   "counterparty": "086835fa",
+   "dogfood": true,
+   "negotiation": "neg_44dc81ba",
+   "outcome": "DEAL",
+   "rounds": 9,
+   "saving_pct": 13.86,
+   "ts": "2026-10-03T14:58:10Z"
+  }
+ ],
+ "generated_at": "2026-10-03T15:02:18Z"
 }

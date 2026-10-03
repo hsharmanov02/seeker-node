@@ -1,11 +1,11 @@
 {
  "dogfood": {
-  "avg_saving_pct_on_deals": 0,
-  "close_rate": 0,
-  "closed_over_5pct_saving": 0,
-  "deals": 0,
-  "negotiations": 0,
-  "pct_closed_over_5pct_saving": 0
+  "avg_saving_pct_on_deals": 15.23,
+  "close_rate": 0.917,
+  "closed_over_5pct_saving": 11,
+  "deals": 11,
+  "negotiations": 12,
+  "pct_closed_over_5pct_saving": 100.0
  },
  "external": {
   "avg_saving_pct_on_deals": 0,
@@ -26,7 +26,7 @@
  "mandate_violations": 0,
  "parked": false,
  "pass_criteria": ">=10 dogfood negotiations, >=30% closing at >5% saving, AND >=1 external mandate in 7 days; instant park on any mandate violation",
- "seller_optouts_honoured": 0,
+ "seller_optouts_honoured": 1,
  "service": "SecondChair/1.0",
  "started_at": "2026-10-03T14:56:58Z"
 }
