@@ -3,16 +3,16 @@
   {
    "bundle": "./demos/demo1.json",
    "result": {
-    "bundle_sha256": "1d42ee57ce9a7973f5c84bf8bc1bf7660617f37fb0a587c677c3642c4009bd91",
+    "bundle_sha256": "f1ecc62902efed7b3b0056f9937e3c0501ccd796bbcb62d817095061fd90c8c2",
     "claim_supported": false,
     "families": [
      {
-      "estimate_mm": 6.56,
-      "evidence_sha256": "cdaf2b8781121848afabd05a02ced42632b53d99373b621df82fc2b7b882ebaa",
+      "estimate_mm": 6.42,
+      "evidence_sha256": "b13440e4a4676c6e165cce9d66f59429193b0eed79df85323079ef95fd6e61d9",
       "family": "EA",
       "label": "Environment Agency rainfall gauges (UK, 15-min)",
       "licence": "Open Government Licence v3.0",
-      "margin_mm": 1.64,
+      "margin_mm": 1.61,
       "nearest_km": 4.94,
       "notes": [],
       "side": "below",
@@ -26,24 +26,6 @@
         "lon": 0.75505,
         "name": "SCOTS FLOAT SLUICE RL",
         "total_mm": 0.05
-       },
-       {
-        "coverage": 1.0,
-        "dist_km": 82.21,
-        "id": "238605TP-rainfall-tipping_bucket_raingauge-t-15_min-mm",
-        "lat": 51.722932,
-        "lon": 0.136235,
-        "name": "Rainfall station",
-        "total_mm": 0.0
-       },
-       {
-        "coverage": 1.0,
-        "dist_km": 68.38,
-        "id": "E8770-rainfall-tipping_bucket_raingauge-t-15_min-mm",
-        "lat": 50.893868,
-        "lon": 0.081008,
-        "name": "Rainfall station",
-        "total_mm": 0.0
        },
        {
         "coverage": 1.0,
@@ -71,6 +53,24 @@
         "lon": 1.009589,
         "name": "Rainfall station",
         "total_mm": 8.2
+       },
+       {
+        "coverage": 1.0,
+        "dist_km": 26.6,
+        "id": "300874-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+        "lat": 51.373888,
+        "lon": 1.173263,
+        "name": "Rainfall station",
+        "total_mm": 0.0
+       },
+       {
+        "coverage": 1.0,
+        "dist_km": 51.71,
+        "id": "E871-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+        "lat": 51.274484,
+        "lon": 0.217164,
+        "name": "Rainfall station",
+        "total_mm": 0.12
        }
       ],
       "strong": true,
@@ -78,7 +78,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "1f822332698ae7fb50cb04947270eebbb39af322e4a24ed8180418ebfa6e3b39",
+      "evidence_sha256": "058288ad027027c47a3a587d9bd5d3fb8ca23c05b302612823c92f71ae7b9932",
       "family": "GHCN",
       "label": "NOAA GHCN-Daily station archive (global)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -91,7 +91,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "985d9bc4d97ceb932d2ea03552ece1c75d2b3a0a8d95c2b5bd27836a4b6c4512",
+      "evidence_sha256": "b798c6746a0dff4575e5655040a9148a25f638092cfbba91a6a1faf3cf8d901c",
       "family": "ISD",
       "label": "NOAA Integrated Surface Database (global-hourly, airports/synop)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -104,7 +104,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "bf87e5d53275d1eee15da0d6fbb86b62f91b0db3773df3de3438f35c303b0d68",
+      "evidence_sha256": "62d7788c5bcd8b29e0f544fa2afa7f65575fada5c2aa53eddfed409e14754be2",
       "family": "DWD",
       "label": "Deutscher Wetterdienst hourly precipitation (Germany)",
       "licence": "Free of charge per DWD Act; attribution: Deutscher Wetterdienst",
@@ -125,7 +125,7 @@
      "threshold_mm": 10.0
     },
     "recheck": "Recompute from the listed station ids at each family's source_url; every station total, distance, weight input and the rule (rules_id) is in this bundle.",
-    "retrieved_at": "2026-10-03T14:48:54Z",
+    "retrieved_at": "2026-10-03T14:55:14Z",
     "rules_id": "plotproof-rules-v1",
     "verdict": "PROBABLE"
    },
@@ -137,12 +137,12 @@
   {
    "bundle": "./demos/demo2.json",
    "result": {
-    "bundle_sha256": "80c6f3232274bb7fcf30866359cea39db865a96e882102195a68249a25081bed",
+    "bundle_sha256": "f598856d8d5e2a219a5ae3715e683e1b2b653a25290e3f75e0c31a2294fe1c71",
     "claim_supported": false,
     "families": [
      {
       "estimate_mm": 0.0,
-      "evidence_sha256": "00c2a1fab73fd372b94b466520a2e89927a1600696855c14ceb1786d028f88d0",
+      "evidence_sha256": "c04f8f614730ebe17814134471399fb25c81d176d8f48ad2f83effafd5aa4ced",
       "family": "EA",
       "label": "Environment Agency rainfall gauges (UK, 15-min)",
       "licence": "Open Government Licence v3.0",
@@ -172,15 +172,6 @@
        },
        {
         "coverage": 1.0,
-        "dist_km": 60.13,
-        "id": "E24847-rainfall-tipping_bucket_raingauge-t-15_min-mm",
-        "lat": 51.889291,
-        "lon": 0.584473,
-        "name": "Rainfall station",
-        "total_mm": 0.0
-       },
-       {
-        "coverage": 1.0,
         "dist_km": 50.9,
         "id": "241961TP-rainfall-tipping_bucket_raingauge-t-15_min-mm",
         "lat": 51.97304,
@@ -205,6 +196,15 @@
         "lon": -0.418436,
         "name": "Rainfall station",
         "total_mm": 0.0
+       },
+       {
+        "coverage": 1.0,
+        "dist_km": 59.69,
+        "id": "E44121-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+        "lat": 51.931385,
+        "lon": 0.712001,
+        "name": "Rainfall station",
+        "total_mm": 0.0
        }
       ],
       "strong": true,
@@ -212,7 +212,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "3a971af96fc6e7ba70aa2e62509adf7ddedbc9ff0bdd9e65fedce2ef21603c12",
+      "evidence_sha256": "c12d417eb15203e4d959729c3e8da716d4d933e225bbfc0b6345e4bd087527a5",
       "family": "GHCN",
       "label": "NOAA GHCN-Daily station archive (global)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -225,7 +225,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "4ee3c8419e8f6aac8c475ead04346bbc99f04a99e7392a85cf617d7d6ad470d2",
+      "evidence_sha256": "8f72cbcca1f9e700dd9b11b3a27bafc3c4ff488a6e52d0217e75c14507618923",
       "family": "ISD",
       "label": "NOAA Integrated Surface Database (global-hourly, airports/synop)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -238,7 +238,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "e73c20e2f82d3d21c0aa79223c17deeac2e1a26fac4a2408164c0143506f3126",
+      "evidence_sha256": "f8903e9af0c523fcc4b2c9d8a3e6e385a9a9227d1b28e8736b662cbff5b21996",
       "family": "DWD",
       "label": "Deutscher Wetterdienst hourly precipitation (Germany)",
       "licence": "Free of charge per DWD Act; attribution: Deutscher Wetterdienst",
@@ -252,35 +252,35 @@
     ],
     "price_usd": 0.25,
     "query": {
-     "end": "2026-09-27T00:00:00Z",
+     "end": "2026-09-29T00:00:00Z",
      "lat": 52.394,
      "lon": 0.268,
-     "start": "2026-09-26T00:00:00Z",
+     "start": "2026-09-28T00:00:00Z",
      "threshold_mm": 10.0
     },
     "recheck": "Recompute from the listed station ids at each family's source_url; every station total, distance, weight input and the rule (rules_id) is in this bundle.",
-    "retrieved_at": "2026-10-03T14:51:05Z",
+    "retrieved_at": "2026-10-03T14:55:57Z",
     "rules_id": "plotproof-rules-v1",
     "verdict": "PROBABLE"
    },
    "threshold_mm": 10.0,
    "title": "Fen-edge field near Ely, Cambridgeshire",
    "where": "Ely, Cambridgeshire",
-   "window": "2026-09-26 (UTC day)"
+   "window": "2026-09-28 (UTC day)"
   },
   {
    "bundle": "./demos/demo3.json",
    "result": {
-    "bundle_sha256": "87e68a3c5a575b112ff5fe1db333c0d7ff9961864f87f59dd0ab373762bdf9eb",
+    "bundle_sha256": "30849b646ebe3545e12767f4a7cac8d4d37f598dcdd67437ae456b3409565333",
     "claim_supported": false,
     "families": [
      {
-      "estimate_mm": 2.53,
-      "evidence_sha256": "0921f80ed0193faa908123aa6a12848ea4ac6f1a67b1e985849bbe1c53342613",
+      "estimate_mm": 2.59,
+      "evidence_sha256": "17a43be4edb3c386dd3dba7391ec26a6efe91c2ad2c40608d92b7e6a8fd32b76",
       "family": "EA",
       "label": "Environment Agency rainfall gauges (UK, 15-min)",
       "licence": "Open Government Licence v3.0",
-      "margin_mm": 2.18,
+      "margin_mm": 2.13,
       "nearest_km": 21.54,
       "notes": [],
       "side": "below",
@@ -303,15 +303,6 @@
         "lon": -1.990391,
         "name": "Rainfall station",
         "total_mm": 0.2
-       },
-       {
-        "coverage": 0.99,
-        "dist_km": 67.57,
-        "id": "3014-rainfall-tipping_bucket_raingauge-t-15_min-mm",
-        "lat": 52.885755,
-        "lon": -2.183487,
-        "name": "Rainfall station",
-        "total_mm": 1.1
        },
        {
         "coverage": 0.979,
@@ -339,6 +330,15 @@
         "lon": -2.570654,
         "name": "Rainfall station",
         "total_mm": 9.2
+       },
+       {
+        "coverage": 0.979,
+        "dist_km": 51.55,
+        "id": "1201-rainfall-tipping_bucket_raingauge-t-15_min-mm",
+        "lat": 52.343809,
+        "lon": -1.955178,
+        "name": "Rainfall station",
+        "total_mm": 2.4
        }
       ],
       "strong": true,
@@ -346,7 +346,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "910aa60006ca23e41b2ebe4665608796d6ce9f86d79e055fd9d7dbb062d0f04c",
+      "evidence_sha256": "790caa51fe7a1635320c74b4cd5bd4e275f518a9c889a2913c729ec300afff64",
       "family": "GHCN",
       "label": "NOAA GHCN-Daily station archive (global)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -359,7 +359,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "bc494edec4a6ac3eae22da49f8e32e5bdc397bdbd065793a2f2b9efeea69abb4",
+      "evidence_sha256": "10ffa71f35b3e9bae0be7379e1e624b5e01ab44f89e525cefced1a8ee385b2ff",
       "family": "ISD",
       "label": "NOAA Integrated Surface Database (global-hourly, airports/synop)",
       "licence": "US public domain (NOAA/NCEI)",
@@ -372,7 +372,7 @@
      },
      {
       "estimate_mm": null,
-      "evidence_sha256": "9d7a8892b235a69c161f892741da97cc821875244468e1cee715f467ee82ab77",
+      "evidence_sha256": "093ecbe6140d63f90521a409b4ca21f79a256a336f823142083a08af5acf759f",
       "family": "DWD",
       "label": "Deutscher Wetterdienst hourly precipitation (Germany)",
       "licence": "Free of charge per DWD Act; attribution: Deutscher Wetterdienst",
@@ -393,7 +393,7 @@
      "threshold_mm": 10.0
     },
     "recheck": "Recompute from the listed station ids at each family's source_url; every station total, distance, weight input and the rule (rules_id) is in this bundle.",
-    "retrieved_at": "2026-10-03T14:53:24Z",
+    "retrieved_at": "2026-10-03T14:56:14Z",
     "rules_id": "plotproof-rules-v1",
     "verdict": "PROBABLE"
    },
@@ -403,5 +403,5 @@
    "window": "2026-09-30 (UTC day)"
   }
  ],
- "generated_at": "2026-10-03T14:54:12Z"
+ "generated_at": "2026-10-03T14:56:22Z"
 }
