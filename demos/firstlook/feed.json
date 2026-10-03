@@ -1,7 +1,22 @@
 {
  "delay_seconds": 900,
- "generated_at": "2026-10-03T13:18:10+00:00",
+ "generated_at": "2026-10-03T13:23:32+00:00",
  "items": [
+  {
+   "budget_currency": "SOL",
+   "budget_max": null,
+   "budget_min": null,
+   "category": "Finance",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:06:11+00:00",
+   "id": 114,
+   "kind": "gig",
+   "poster": "2f114c38-6985-4a57-9cb3-8dcffa01ee25",
+   "rail": "SOL",
+   "source": "ugig",
+   "title": "Virtual Card For SaaS Recurring Payments 29AM",
+   "url": "https://ugig.net/gigs/c5ff62a5-e0df-4e91-a8a7-6a868d3cf293"
+  },
   {
    "budget_currency": "USD",
    "budget_max": 25.0,
