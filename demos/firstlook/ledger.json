@@ -1,6 +1,23 @@
 {
  "entries": [
   {
+   "budget_currency": "SOL",
+   "budget_max": null,
+   "budget_min": null,
+   "category": "Finance",
+   "deadline": null,
+   "detected_at": "2026-10-03T13:06:11+00:00",
+   "id": 114,
+   "kind": "gig",
+   "latency_s": 324.741739,
+   "poster": "2f114c38-6985-4a57-9cb3-8dcffa01ee25",
+   "rail": "SOL",
+   "source": "ugig",
+   "source_created_at": "2026-10-03T13:00:46+00:00",
+   "title": "Virtual Card For SaaS Recurring Payments 29AM",
+   "url": "https://ugig.net/gigs/c5ff62a5-e0df-4e91-a8a7-6a868d3cf293"
+  },
+  {
    "budget_currency": "USD",
    "budget_max": 25.0,
    "budget_min": null,
@@ -120,5 +137,5 @@
    "url": "https://github.com/Ikalus1988/MisakaNet/issues/2757"
   }
  ],
- "generated_at": "2026-10-03T13:01:44+00:00"
+ "generated_at": "2026-10-03T13:07:18+00:00"
 }
