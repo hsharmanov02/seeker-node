@@ -1,11 +1,11 @@
 {
- "at": "2026-10-03T12:17:34+00:00",
+ "at": "2026-10-03T12:23:15+00:00",
  "delay_seconds": 900,
  "external_api_keys": 0,
  "feed_api_calls": 1,
  "instant_api_calls_external": 1,
  "latency_overall": {
-  "count": 3,
+  "count": 5,
   "max_s": 23.9,
   "median_s": 7.9,
   "min_s": 5.7
@@ -16,18 +16,18 @@
   "github": {
    "baseline_items": 44,
    "errors": 0,
-   "last_ok": "2026-10-03T12:17:18+00:00",
+   "last_ok": "2026-10-03T12:22:51+00:00",
    "latency": {
-    "count": 3,
+    "count": 5,
     "max_s": 23.9,
     "median_s": 7.9,
     "min_s": 5.7
    },
-   "live_items": 3
+   "live_items": 5
   },
   "superteam": {
    "baseline_items": 25,
-   "errors": 5,
+   "errors": 6,
    "last_ok": "2026-10-03T12:00:38+00:00",
    "latency": {
     "count": 0,
@@ -38,7 +38,7 @@
   "ugig": {
    "baseline_items": 37,
    "errors": 0,
-   "last_ok": "2026-10-03T12:17:18+00:00",
+   "last_ok": "2026-10-03T12:23:13+00:00",
    "latency": {
     "count": 0,
     "median_s": null
