@@ -1,0 +1,45 @@
+{
+ "at": "2026-10-03T11:52:32+00:00",
+ "delay_seconds": 900,
+ "external_api_keys": 0,
+ "feed_api_calls": 0,
+ "instant_api_calls_external": 0,
+ "latency_overall": {
+  "count": 0,
+  "median_s": null
+ },
+ "note": "Superteam publishes no creation timestamp; its items carry latency_s=null in the ledger.",
+ "service": "FirstLook",
+ "sources": {
+  "github": {
+   "baseline_items": 0,
+   "errors": null,
+   "last_ok": null,
+   "latency": {
+    "count": 0,
+    "median_s": null
+   },
+   "live_items": 0
+  },
+  "superteam": {
+   "baseline_items": 0,
+   "errors": null,
+   "last_ok": null,
+   "latency": {
+    "count": 0,
+    "median_s": null
+   },
+   "live_items": 0
+  },
+  "ugig": {
+   "baseline_items": 0,
+   "errors": null,
+   "last_ok": null,
+   "latency": {
+    "count": 0,
+    "median_s": null
+   },
+   "live_items": 0
+  }
+ }
+}

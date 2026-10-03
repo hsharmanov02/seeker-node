@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstLook — developer access</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: ui-sans-serif, system-ui, sans-serif; background:#0b0e13;
+         color:#e6e9ee; margin:0; padding:2rem 1rem 4rem; }
+  main { max-width: 880px; margin: 0 auto; }
+  .card { background:#12161f; border:1px solid #232a38; border-radius:10px;
+          padding:1rem 1.25rem; margin:1rem 0; }
+  a { color:#6cb2f5; } .muted { color:#8b93a3; font-size:.85rem; }
+  code, pre { background:#1a2030; border-radius:6px; }
+  code { padding:.1rem .35rem; }
+  pre { padding:.8rem; overflow-x:auto; font-size:.8rem; }
+  input { background:#0b0e13; color:#e6e9ee; border:1px solid #232a38;
+          border-radius:6px; padding:.5rem; width:100%; margin:.25rem 0 .75rem; }
+  button { background:#2563eb; color:#fff; border:0; border-radius:6px;
+           padding:.55rem 1.1rem; cursor:pointer; }
+  .key { word-break: break-all; color:#7ee2a0; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="index.html">← FirstLook</a></p>
+  <h1>Instant access (free during the live test)</h1>
+
+  <div class="card">
+    <h3>Get an API key</h3>
+    <label>Label (anything)
+      <input id="label" placeholder="my-agent"></label>
+    <label>Webhook URL (optional, https — new items POSTed instantly)
+      <input id="webhook" placeholder="https://your-agent.example/hook"></label>
+    <button id="go">Create free key</button>
+    <p id="out" class="muted">The key is shown once. Store it.</p>
+  </div>
+
+  <div class="card">
+    <h3>Endpoints</h3>
+    <p>Base URL: <code id="base">loading…</code></p>
+    <pre>GET  /feed            free, 15-minute delay, no key
+GET  /ledger          proof-of-earliness ledger, no key
+GET  /instant         instant items — header: X-API-Key: fl_...
+                      params: since_id, limit, source, min_budget
+POST /keys            {label, webhook_url?} -> free key (shown once)
+POST /mcp             MCP JSON-RPC: tool get_instant_opportunities
+                      (send X-API-Key header)</pre>
+    <p class="muted">Webhook deliveries are signed:
+       <code>X-FirstLook-Signature: sha256=&lt;hmac-sha256(webhook_secret, body)&gt;</code>.
+       Poll <code>/instant?since_id=&lt;last id&gt;</code> for a cursor feed.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pricing</h3>
+    <p class="muted">Everything is free during the live test. Planned:
+       Pro $15/mo · $0.02 per instant alert · $2 Priority Blast.
+       Payment will be receive-only USDC (Base
+       <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code>, Solana
+       <code>H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw</code>) —
+       no accounts, no KYC, no custody. Nothing is charged today.</p>
+  </div>
+</main>
+<script src="flconfig.js"></script>
+<script>
+const base = window.FL_API_BASE || "";
+document.getElementById("base").textContent = base || "(API offline)";
+document.getElementById("go").onclick = async () => {
+  const out = document.getElementById("out");
+  out.textContent = "creating…";
+  try {
+    const r = await fetch(base + "/keys", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        label: document.getElementById("label").value || "web",
+        webhook_url: document.getElementById("webhook").value || undefined})
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || r.status);
+    out.innerHTML = "API key: <span class='key'>" + d.api_key +
+      "</span><br>Webhook secret: <span class='key'>" +
+      d.webhook_secret + "</span>";
+  } catch (e) { out.textContent = "Failed: " + e.message; }
+};
+</script>
+</body>
+</html>

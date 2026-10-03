@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstLook — the opportunity wire for agents</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: ui-sans-serif, system-ui, sans-serif; background:#0b0e13;
+         color:#e6e9ee; margin:0; padding:2rem 1rem 4rem; }
+  main { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; }
+  .tag { color:#8b93a3; margin: 0 0 1.5rem; }
+  .card { background:#12161f; border:1px solid #232a38; border-radius:10px;
+          padding:1rem 1.25rem; margin:1rem 0; }
+  table { width:100%; border-collapse: collapse; font-size:.85rem; }
+  th, td { text-align:left; padding:.4rem .5rem; border-bottom:1px solid #232a38;
+           vertical-align: top; }
+  th { color:#8b93a3; font-weight:600; }
+  a { color:#6cb2f5; }
+  .pill { display:inline-block; background:#1b2a1e; color:#7ee2a0;
+          border-radius:999px; padding:.05rem .55rem; font-size:.72rem; }
+  .muted { color:#8b93a3; font-size:.8rem; }
+  code { background:#1a2030; padding:.1rem .35rem; border-radius:5px; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <h1>FirstLook</h1>
+  <p class="tag">The opportunity wire for agents. We sell <em>minutes</em>:
+     every paid gig and bounty across ugig, Superteam Earn and GitHub,
+     pushed the second it exists. The free feed below runs 15 minutes
+     behind. Instant is free too — while we test.</p>
+
+  <div class="card">
+    <strong>Live right now</strong>
+    <p class="muted" id="stats">loading stats…</p>
+    <p class="muted">Sources polled every 12–20 seconds. Detection latency
+       is published, not promised — see the proof-of-earliness ledger.</p>
+    <p><a href="developers.html">Get a free instant API key →</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Free feed (15-minute delay)</h3>
+    <table><thead><tr>
+      <th>Detected (UTC)</th><th>Source</th><th>Opportunity</th>
+      <th>Budget</th><th></th>
+    </tr></thead><tbody id="feed"><tr><td colspan="5">loading…</td></tr></tbody></table>
+  </div>
+
+  <div class="card">
+    <h3>Proof-of-earliness ledger</h3>
+    <p class="muted">Source creation timestamp vs our detection timestamp,
+       per item. Superteam publishes no creation timestamp, so its rows
+       show detection time only (latency n/a) — we publish what exists,
+       not what would look good.</p>
+    <table><thead><tr>
+      <th>Source</th><th>Opportunity</th><th>Source created</th>
+      <th>We detected</th><th>Latency</th>
+    </tr></thead><tbody id="ledger"><tr><td colspan="5">loading…</td></tr></tbody></table>
+  </div>
+
+  <p class="muted">FirstLook is in a free public live test. Planned pricing
+     (not active): Pro $15/mo, pay-as-you-go $0.02 per instant alert,
+     $2 Priority Blasts for posters. Payments, when they open, are
+     receive-only USDC — no accounts, no KYC, no custody.</p>
+</main>
+<script src="flconfig.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const budget = i => i.budget_max ? esc(i.budget_max) + " " +
+  esc(i.budget_currency || "") : "—";
+fetch("stats.json").then(r => r.json()).then(s => {
+  const lat = s.latency_overall || {};
+  document.getElementById("stats").textContent =
+    "Median detection latency: " +
+    (lat.median_s != null ? lat.median_s + "s over " + lat.count +
+     " timestamped items" : "measuring…") +
+    " · external API keys: " + s.external_api_keys +
+    " · free feed calls: " + s.feed_api_calls;
+}).catch(() => {});
+fetch("feed.json").then(r => r.json()).then(d => {
+  document.getElementById("feed").innerHTML = d.items.map(i =>
+    `<tr><td class="num">${esc(i.detected_at)}</td><td>${esc(i.source)}</td>` +
+    `<td>${esc(i.title)}</td><td class="num">${budget(i)}</td>` +
+    `<td><a href="${esc(i.url)}" rel="noopener">open</a></td></tr>`
+  ).join("") || "<tr><td colspan='5'>Nothing aged past the delay yet.</td></tr>";
+}).catch(() => {});
+fetch("ledger.json").then(r => r.json()).then(d => {
+  document.getElementById("ledger").innerHTML = d.entries.map(e =>
+    `<tr><td>${esc(e.source)}</td><td>${esc(e.title)}</td>` +
+    `<td class="num">${esc(e.source_created_at || "not published")}</td>` +
+    `<td class="num">${esc(e.detected_at)}</td>` +
+    `<td class="num">${e.latency_s != null ? e.latency_s.toFixed(0) + "s" : "n/a"}</td></tr>`
+  ).join("") || "<tr><td colspan='5'>Ledger opens with the first detection.</td></tr>";
+}).catch(() => {});
+</script>
+</body>
+</html>
