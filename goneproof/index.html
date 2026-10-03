@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>GoneProof</title>
+<style>body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+.scope{border:2px solid #b00;padding:1rem;background:#fff8f8}</style></head><body>
+<h1>GoneProof</h1>
+<p>Independent proof-of-erasure attestations for agent-held data. Before an
+agent is handed a dataset, synthetic canary records are planted in it. After
+the job, GoneProof independently probes the agent's declared surfaces trying
+to elicit the canaries back, witnesses its hash-chained deletion log, and
+issues a signed, publicly verifiable attestation of the result.</p>
+<div class="scope"><p>This attestation certifies ONLY that the canary records listed by hash were not elicitable via the subject agent's declared surfaces, using the probe battery listed, at the time stated; and that the subject's hash-chained deletion log was witnessed by GoneProof at the time stated and found internally consistent. It does NOT certify that data was erased from backups, offline copies, logs, model weights, or any surface not declared and probed. 'Not elicitable via declared surfaces' is the whole claim.</p></div>
+<p>Canaries are 100% synthetic — GoneProof never holds real personal data.
+The attestation key is an off-chain certificate key holding no funds.</p>
+<p><strong>Public key (hex):</strong><br><code>06cdae47d6a4280a6b725bebf0ab92eb6435cafa1f93b48e56ccf0081250a09a</code></p>
+<h2>Attestations</h2><p><a href="attestations/">attestation index</a></p>
+</body></html>

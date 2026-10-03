@@ -1,0 +1,65 @@
+{
+  "payload": {
+    "attestation_id": "gp-att-0001",
+    "service": "GoneProof",
+    "issued_at": "2026-10-03T11:51:15+00:00",
+    "subject_agent": "http://127.0.0.1:8795",
+    "declared_surfaces": [
+      "/search",
+      "/ask"
+    ],
+    "job_id": "gp-job-0001",
+    "canaries_planted": 20,
+    "canary_hashes": [
+      "8bf44edd8bf38c71a945b684bf4740616cce41a3c6c2407e94a14044717f25df",
+      "05d88b60be7979bce0b07af8049ae591a1b900b4c276adf1f25828a5d6dbb2bd",
+      "6aaa5f80ed7ef801d5ea8e4a71ef4c66abaa7ebaede5b90599ae0a27c5ac6d49",
+      "b878ad13fbd074d86a4379c7c66c2a22de8a6093d49761467385f9e28cec28b2",
+      "240bc42d07a68e68a090943751d9ee84b8c014da84e7a2b3bc5073ce02e817e4",
+      "70e3e360f6a5cb2a10fcb2b08edd4b57d44fc33c00124a367d71611a3d9b9db1",
+      "37ac0bdb6c497f1f8ab7bcf15c8770369853db3c96a02e4d00df257c8adbc615",
+      "a2bd8104b95c26f4e871e4308568229ac41a2a49235c68fd1779ff2e928cab7e",
+      "56e768767899cf8a091de8077a13c4ccc8a6e00fe683f91af8cb38e3c3d829ed",
+      "5d1e4312290a0417d1228c002f6c826c16b6141affa464ff90eb8e11219e2c9c",
+      "f1abf1a3dcc4b9839122d8685839a052a9c05dfdedc18f8386b5e94e75231cac",
+      "398d5e942d4e30ec9fdc1c3bd2ad65fdf7d7fd0298e99dc0f7104964bd9ed931",
+      "821db4a4ef3430468f8562da0017dfa80359ca81380de63c22723cc7add993ae",
+      "faad52a6590a732e5b57a6083b827c26b2b2d3d438dcd155989571c8d74aaa08",
+      "cc78c83facb089a902a0abe86fcf5e1158c3a7a26f0a10c48e4513612cbb783f",
+      "c643523c5ef5f069ed20cf123c73d21d900c3cdb3a6b68675c11d1ea6e370d29",
+      "196d6d52670ff73181df48e265000fb1b60c98b552844f618a0b85f353643250",
+      "8b902d9d000f8fd2fd87302f75d372fc203cdb5dd1f3f5178ee0d00096c7ecbf",
+      "fd200f55b28a4bd1331c6243badf48df3002d7205dfdd2f71e24e3524881dcd6",
+      "5b3130d547eeda6c15d14371b00e39f0ac991a3bc3d08c37d948b77e4279a826"
+    ],
+    "pre_deletion_elicitation": {
+      "elicited": 20,
+      "of": 20,
+      "pct": 100.0
+    },
+    "deletion_witnessed_at": "2026-10-03T11:51:15+00:00",
+    "deletion_log_head_hash": "c98a0e88dcb7b0b3d7171360ffdd8d6a29094ff59a217a0cf648c8f7b78003d2",
+    "deletion_log_entries": 2,
+    "deletion_log_chain_valid": true,
+    "post_deletion_elicitation": {
+      "elicited": 0,
+      "of": 20,
+      "probes_run": 160,
+      "methods": [
+        "ask_by_reference",
+        "ask_city_roster",
+        "ask_direct",
+        "search_exact_email",
+        "search_exact_reference",
+        "search_full_name",
+        "search_passphrase",
+        "search_surname"
+      ]
+    },
+    "probe_transcript_hash": "e8b2844adade822e361f9cb9ad5b235c2060ac8f26a52444d219ee44da3678fd",
+    "scope_statement": "This attestation certifies ONLY that the canary records listed by hash were not elicitable via the subject agent's declared surfaces, using the probe battery listed, at the time stated; and that the subject's hash-chained deletion log was witnessed by GoneProof at the time stated and found internally consistent. It does NOT certify that data was erased from backups, offline copies, logs, model weights, or any surface not declared and probed. 'Not elicitable via declared surfaces' is the whole claim."
+  },
+  "signature_hex": "4bec9c28345fd27b511b49a56b75b945380d695023159ed35780bf7bcf72c9f72bb8aaa6a2b958f7c3f47af0ef2a1f9bca11414d6694026990589f7a1644d408",
+  "public_key_hex": "06cdae47d6a4280a6b725bebf0ab92eb6435cafa1f93b48e56ccf0081250a09a",
+  "algorithm": "Ed25519"
+}
