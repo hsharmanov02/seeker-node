@@ -1,0 +1,29 @@
+{
+  "payload": {
+    "certificate_id": "dc-cert-0079",
+    "service": "DecayCert",
+    "endpoint_id": "rig-test",
+    "endpoint_url": "http://127.0.0.1:8807",
+    "task_class": "TEST rig - decay/degradation/fingerprint drills",
+    "suite_commitment_sha256": "567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0",
+    "suite_id": "dc-suite-v1",
+    "issued_at": "2026-10-03T13:16:21+00:00",
+    "probes_executed": 21,
+    "probes_passed": 11,
+    "pass_rate": 0.5238,
+    "pass_k": 0.2857,
+    "honesty_trap_score": 42.9,
+    "median_latency_ms": 3.3,
+    "rounds": 7,
+    "last_round_score": 100.0,
+    "last_pass_at": "2026-10-03T13:16:21+00:00",
+    "half_life_hours": 0.25,
+    "decay_formula": "effective = last_score * 0.5^(hours_since_last_pass / half_life_hours)",
+    "status_at_issue": "certified",
+    "effective_score_at_issue": 99.92,
+    "scope_statement": "DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator."
+  },
+  "signature_hex": "c8430bf433d5391b318832ef3ec073c79aedc7723c21f18edc78e64fccc31e3202eb591e143657059875de254978fde993fd2c4231fb0c15e982ce9fb935f104",
+  "public_key_hex": "90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1",
+  "algorithm": "Ed25519"
+}

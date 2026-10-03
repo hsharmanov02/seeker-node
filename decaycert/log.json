@@ -62,7 +62,1429 @@
       "payload_hash": "8f53d659b526eb83eae1f98be55fdc80b160d387596a7e0e4d0ac65c99aaec44",
       "prev_hash": "4d5028eec4c53e0ddc60c04e3e5a0cdcb818d15deac1b3087269f655dcc458a7",
       "hash": "7af3e243642b116af53f47d6e5dfcec6ab864e1795ed528b4087a9bcce3c3b3d"
+    },
+    {
+      "seq": 8,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "01ed293ffc5ee73e529e83ab1ecd3082d3cf1b7cc7120e39b0ee37703427754e",
+      "prev_hash": "7af3e243642b116af53f47d6e5dfcec6ab864e1795ed528b4087a9bcce3c3b3d",
+      "hash": "193bce45cb9f226139a312b22b70d621d9d33297a2ddcdd431e5b51dca8d0730"
+    },
+    {
+      "seq": 9,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0001",
+      "payload_hash": "e7903434cd7d9613add22d73da052bb4453f11f9b8af5ce668a032652038b927",
+      "prev_hash": "193bce45cb9f226139a312b22b70d621d9d33297a2ddcdd431e5b51dca8d0730",
+      "hash": "a9b7479260b10bf494d33e3cb52e4460507c91f729da72be491d45f845ea26fd"
+    },
+    {
+      "seq": 10,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "bd0e48fdc1d6ebb004431369bada424700733533d3d27f1f90a96809548d735f",
+      "prev_hash": "a9b7479260b10bf494d33e3cb52e4460507c91f729da72be491d45f845ea26fd",
+      "hash": "363565db8b360335da4cfee5b748276f273678e1ae02b5d3290364d7629d511c"
+    },
+    {
+      "seq": 11,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0002",
+      "payload_hash": "054fba7a99a164ea614194343ca0f246e7fc66ee81061feebd85c79452e4f54a",
+      "prev_hash": "363565db8b360335da4cfee5b748276f273678e1ae02b5d3290364d7629d511c",
+      "hash": "c95f9e186704cc98d83f5c7c7ea6659136da4fb19b269ab73358f8319f1a99dc"
+    },
+    {
+      "seq": 12,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "667053521c0bfc9e38c5f9b66212bda310b1ac589b2a7766d0c39feba6e803b3",
+      "prev_hash": "c95f9e186704cc98d83f5c7c7ea6659136da4fb19b269ab73358f8319f1a99dc",
+      "hash": "f653be1fe908e3f63e17f27b6038ba102822a802f0db02519726f5ac7a6b155d"
+    },
+    {
+      "seq": 13,
+      "ts": "2026-10-03T12:53:19+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0003",
+      "payload_hash": "200518ee1366fc8149955bca7ba19bfb96b6c8bb7d6222fffe6c6ed9430c77c6",
+      "prev_hash": "f653be1fe908e3f63e17f27b6038ba102822a802f0db02519726f5ac7a6b155d",
+      "hash": "7cd763802ff6c5e5d5e622c0930a9560be1191451da7e02558d42035ea63b641"
+    },
+    {
+      "seq": 14,
+      "ts": "2026-10-03T12:53:33+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "25fccc048faf9adb2fa21ffcf8dee6c825ebfad8a40abcc9072a57777e9b63dc",
+      "prev_hash": "7cd763802ff6c5e5d5e622c0930a9560be1191451da7e02558d42035ea63b641",
+      "hash": "8fda03100548bf5515b38c1bf58551e96c21d5a72102356d4c80486c0160212a"
+    },
+    {
+      "seq": 15,
+      "ts": "2026-10-03T12:53:33+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0004",
+      "payload_hash": "31b9530d7c7c900e57be71964277daca744edb4a13316a094411d0e73a1a2e1e",
+      "prev_hash": "8fda03100548bf5515b38c1bf58551e96c21d5a72102356d4c80486c0160212a",
+      "hash": "4dcbf6a227c7e3144b020c4d64a69f3103910183fd35ee5a7ae4a52c530574af"
+    },
+    {
+      "seq": 16,
+      "ts": "2026-10-03T12:53:43+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "26e50c9545d55c7a8ad5ebc2ff87937aad7ca883cbee6da7aa560f486528d9ac",
+      "prev_hash": "4dcbf6a227c7e3144b020c4d64a69f3103910183fd35ee5a7ae4a52c530574af",
+      "hash": "54eadf057a2eca4b00e442fb290428abe4cfdf2a42c6c0f75c082cc32bff6662"
+    },
+    {
+      "seq": 17,
+      "ts": "2026-10-03T12:53:43+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0005",
+      "payload_hash": "fe2b86bf82db7babc2760a6169d52d2b07292cd665e63a8eaed43c5ca03a6ba1",
+      "prev_hash": "54eadf057a2eca4b00e442fb290428abe4cfdf2a42c6c0f75c082cc32bff6662",
+      "hash": "e4d7da1c481d140c6e7a7b25ccc35ef1b6c8c25981a6dd5733a6b2c87b66b57f"
+    },
+    {
+      "seq": 18,
+      "ts": "2026-10-03T12:53:43+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "6f78543e1f54872aabf441df1ce9964448b09d57e88c83b2d91139eb55e8d6d0",
+      "prev_hash": "e4d7da1c481d140c6e7a7b25ccc35ef1b6c8c25981a6dd5733a6b2c87b66b57f",
+      "hash": "95dff3d1e02ef03a3d85be05cdca928817ccdf0136531afbb2613e31737aedf6"
+    },
+    {
+      "seq": 19,
+      "ts": "2026-10-03T12:53:43+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0006",
+      "payload_hash": "850acecab023f55d9c85bcea317b48e698876c9d39bb73a36a18cc6092c5e64c",
+      "prev_hash": "95dff3d1e02ef03a3d85be05cdca928817ccdf0136531afbb2613e31737aedf6",
+      "hash": "6868d47e6092894c77fb88db8ecbb0c953e76e1c7c8f163cc30e952d4930680f"
+    },
+    {
+      "seq": 20,
+      "ts": "2026-10-03T12:56:08+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "255bb7269676a1f1a67c858d15372806bd44889609f81975c195350774da28ac",
+      "prev_hash": "6868d47e6092894c77fb88db8ecbb0c953e76e1c7c8f163cc30e952d4930680f",
+      "hash": "aee55acd4806c2de0fb74e018d7831aed5391e987dab6ab30161f73974a79f09"
+    },
+    {
+      "seq": 21,
+      "ts": "2026-10-03T12:56:08+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0007",
+      "payload_hash": "0e5da8673e1c4a3f96e3ab202f278c7d1377102cf4a47ad7d2f659171eea156a",
+      "prev_hash": "aee55acd4806c2de0fb74e018d7831aed5391e987dab6ab30161f73974a79f09",
+      "hash": "1a835b842c2c7a594defbb1fb9c08a09d0498bd99383bc10761a35f3657e7017"
+    },
+    {
+      "seq": 22,
+      "ts": "2026-10-03T12:56:48+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "10afd278769b302ac896fcdb156a62a7d23b4ffa404bdd8a1965d307db23771e",
+      "prev_hash": "1a835b842c2c7a594defbb1fb9c08a09d0498bd99383bc10761a35f3657e7017",
+      "hash": "31597d308b8462073c8559fe8e1f51af1c1b81768e2d4909df64a9a5ea0ba035"
+    },
+    {
+      "seq": 23,
+      "ts": "2026-10-03T12:56:48+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0008",
+      "payload_hash": "816e07641d9c8d7164c4814d601d946ccd748241f970ad579d738bc8bd72f436",
+      "prev_hash": "31597d308b8462073c8559fe8e1f51af1c1b81768e2d4909df64a9a5ea0ba035",
+      "hash": "a0b7983037ac089553a07ca215b6af6a86a4bdc7d05b6c6e287269b6824ddaf5"
+    },
+    {
+      "seq": 24,
+      "ts": "2026-10-03T12:56:53+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "04564ecc53f6284ccf5d7c48ddddac49582d14f907467618d5ce189cd283702a",
+      "prev_hash": "a0b7983037ac089553a07ca215b6af6a86a4bdc7d05b6c6e287269b6824ddaf5",
+      "hash": "5ec432b820984f77076839c780633967036df2c7d732023cf99fc3e91677de7e"
+    },
+    {
+      "seq": 25,
+      "ts": "2026-10-03T12:56:53+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0009",
+      "payload_hash": "3086703fe4f38c5947b5e1a5eced3e560d0c787a35a6ff918e010e372680e2f0",
+      "prev_hash": "5ec432b820984f77076839c780633967036df2c7d732023cf99fc3e91677de7e",
+      "hash": "1945af7797910fdc5b7c8fa306c2af40eb8f0c05e5d094fc40ee99c221d49a6a"
+    },
+    {
+      "seq": 26,
+      "ts": "2026-10-03T12:56:54+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "160f2dfee76f2b415ea945d098a0ce3deacfc6f469ee79018e5160c2f3182df8",
+      "prev_hash": "1945af7797910fdc5b7c8fa306c2af40eb8f0c05e5d094fc40ee99c221d49a6a",
+      "hash": "054c0fce2796df73eab38c9537a4e6d5b982d254af3a5e03b3f54711fb642f08"
+    },
+    {
+      "seq": 27,
+      "ts": "2026-10-03T12:56:54+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0010",
+      "payload_hash": "5e2b24eebab23f57728a30981d8d4c6dcef73391d3b155dcc57a5bd45d12aecd",
+      "prev_hash": "054c0fce2796df73eab38c9537a4e6d5b982d254af3a5e03b3f54711fb642f08",
+      "hash": "3862fc2d400cd3e608b60b807a80a0cda434fce8b737c9bafa06b4d0108736da"
+    },
+    {
+      "seq": 28,
+      "ts": "2026-10-03T12:57:14+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "7fee05ef3ab50589d38fed32d30ce7bb68d02906b63f5c1039106019bd820708",
+      "prev_hash": "3862fc2d400cd3e608b60b807a80a0cda434fce8b737c9bafa06b4d0108736da",
+      "hash": "688fbdbfc3fba4b2b41e3bcd7eb21766e76bc32fd089ca72bd2470a74168101c"
+    },
+    {
+      "seq": 29,
+      "ts": "2026-10-03T12:57:14+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0011",
+      "payload_hash": "a9c4dbf2e127cf1ee76b962677980c778e7faff47084909d2e504afb3e80b755",
+      "prev_hash": "688fbdbfc3fba4b2b41e3bcd7eb21766e76bc32fd089ca72bd2470a74168101c",
+      "hash": "c784d021364a82783f6be57a3fe684c7e872111f85b71be3b148f297a153ce2d"
+    },
+    {
+      "seq": 30,
+      "ts": "2026-10-03T12:57:40+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "0f46aa8d86fbd80db4f55cc068f4f1333040fe434c4e236837884e38f41544d8",
+      "prev_hash": "c784d021364a82783f6be57a3fe684c7e872111f85b71be3b148f297a153ce2d",
+      "hash": "d219701492d57622e4accb4fb184b8c62121414ee3a39fe79ddaa732cc5b7461"
+    },
+    {
+      "seq": 31,
+      "ts": "2026-10-03T12:57:40+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0012",
+      "payload_hash": "3e6453ec7c791a1e46d0bd266d6946897493ee2066778abc6c1044855fb20df0",
+      "prev_hash": "d219701492d57622e4accb4fb184b8c62121414ee3a39fe79ddaa732cc5b7461",
+      "hash": "d49f96befbf2cf75a4f807d31c018d2b08f2e09cf631d19fc334486eb5a885d5"
+    },
+    {
+      "seq": 32,
+      "ts": "2026-10-03T12:59:01+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "586d6101241075990ec87dcb61661b7c6427043b274094aab6dd9667b9eb1714",
+      "prev_hash": "d49f96befbf2cf75a4f807d31c018d2b08f2e09cf631d19fc334486eb5a885d5",
+      "hash": "e61ee91f64016132583d522874d3ee8e538da414972644c835d318e1e7298009"
+    },
+    {
+      "seq": 33,
+      "ts": "2026-10-03T12:59:01+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0013",
+      "payload_hash": "4bdd017e53fa2421e445ffe99b6ff178fd0bea62851ab3b3d2c82f5c9d0a4fe9",
+      "prev_hash": "e61ee91f64016132583d522874d3ee8e538da414972644c835d318e1e7298009",
+      "hash": "d3ff066da8d35204198486c0c364d1ec481492c2acf8846cc426199013c1caed"
+    },
+    {
+      "seq": 34,
+      "ts": "2026-10-03T12:59:06+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "f6b0cfbad8a1369cf553d9c64afb820631db953b046b2e2fcd87c4d6272754df",
+      "prev_hash": "d3ff066da8d35204198486c0c364d1ec481492c2acf8846cc426199013c1caed",
+      "hash": "976e374d7655ba4c514574b859485054f8093f20107a630c97b2f44dfe91439f"
+    },
+    {
+      "seq": 35,
+      "ts": "2026-10-03T12:59:07+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0014",
+      "payload_hash": "717773300711a6223ca14891aad58f02950453f1dc3c0ae3c38af4f4dcee4416",
+      "prev_hash": "976e374d7655ba4c514574b859485054f8093f20107a630c97b2f44dfe91439f",
+      "hash": "c6fecc48020407d9bfde50d4c79b95124e6b30bbcd5071e16203f588f15ba074"
+    },
+    {
+      "seq": 36,
+      "ts": "2026-10-03T12:59:17+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "df978412b8a5efc66486d68d2082b91e0b89be381256cedd949741192107359d",
+      "prev_hash": "c6fecc48020407d9bfde50d4c79b95124e6b30bbcd5071e16203f588f15ba074",
+      "hash": "dbc685dcb91deb7668b7bdc968403c5fa5344e62134056e6597e9102f3114831"
+    },
+    {
+      "seq": 37,
+      "ts": "2026-10-03T12:59:17+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0015",
+      "payload_hash": "52fca423853d3e4f14b0010e61d758e0316ba8672c50b0e799c69c395ed03440",
+      "prev_hash": "dbc685dcb91deb7668b7bdc968403c5fa5344e62134056e6597e9102f3114831",
+      "hash": "d2c39b8bd4cc54b0baaad6d0d525a42b407b62b58379f64ee742430b770d126d"
+    },
+    {
+      "seq": 38,
+      "ts": "2026-10-03T13:00:07+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "49d6e95b0b094ba944ac85ca9d13a94d81e8153493a08a6b1dd1929e999ca074",
+      "prev_hash": "d2c39b8bd4cc54b0baaad6d0d525a42b407b62b58379f64ee742430b770d126d",
+      "hash": "9007b281e9e5b41db4c53d1ecf65c0eba0ce838cf1f1e324aa03f8dd297b36c4"
+    },
+    {
+      "seq": 39,
+      "ts": "2026-10-03T13:00:07+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0016",
+      "payload_hash": "9f864c6bca4daee94929e4c4b59ebf1ac9eef037d0ad328bdb04b7b373eed4e5",
+      "prev_hash": "9007b281e9e5b41db4c53d1ecf65c0eba0ce838cf1f1e324aa03f8dd297b36c4",
+      "hash": "9471fed2d2087b476be34a9c324835750e55a8cce50600d153e4ba5a69d7e2cc"
+    },
+    {
+      "seq": 40,
+      "ts": "2026-10-03T13:00:22+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "bf36cac16c85c49179496aa841a003b56dbdfc3aff0aaddb2d7cbd644fc6d6da",
+      "prev_hash": "9471fed2d2087b476be34a9c324835750e55a8cce50600d153e4ba5a69d7e2cc",
+      "hash": "0c3edd80f887cd6706abde5beec840c6c5d441fef94d8ca9309b9bb53d46bf9b"
+    },
+    {
+      "seq": 41,
+      "ts": "2026-10-03T13:00:22+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0017",
+      "payload_hash": "febce082953afc12ad90b0caf29af9ce7a59c7e8afb73f505d8e1c64c1b3195d",
+      "prev_hash": "0c3edd80f887cd6706abde5beec840c6c5d441fef94d8ca9309b9bb53d46bf9b",
+      "hash": "6300b5f9eaf9c773f6392105f255645e0b41cd330c7377fceb57624b0624a393"
+    },
+    {
+      "seq": 42,
+      "ts": "2026-10-03T13:00:42+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "360290d78f8a33cd02e1999b85e596cf1fe5d9c0965a61512da755dfee2b97bd",
+      "prev_hash": "6300b5f9eaf9c773f6392105f255645e0b41cd330c7377fceb57624b0624a393",
+      "hash": "08276f5f759d521e22515aa3de734e0dcd195602fd966f7d65811fec2d45f438"
+    },
+    {
+      "seq": 43,
+      "ts": "2026-10-03T13:00:42+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0018",
+      "payload_hash": "e2b5f00ded7ee5031c55ab9a0bcb2e32cf3169c325a2700eb7968076949177e9",
+      "prev_hash": "08276f5f759d521e22515aa3de734e0dcd195602fd966f7d65811fec2d45f438",
+      "hash": "b381299cb6d2f70b823823c65f829cf826a958c2e5047aec4ceb3024ff480189"
+    },
+    {
+      "seq": 44,
+      "ts": "2026-10-03T13:00:47+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "93ba2f6a766374ae117f322a3e579397c623ca8f3becb87c52f5d5af58d963ed",
+      "prev_hash": "b381299cb6d2f70b823823c65f829cf826a958c2e5047aec4ceb3024ff480189",
+      "hash": "08d9939af89947d4f038962ba8060756e648766e1ca3712c72813fcba7a4c401"
+    },
+    {
+      "seq": 45,
+      "ts": "2026-10-03T13:00:47+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0019",
+      "payload_hash": "7f41be0d47741adfd07281d7496d7cd23a37da12d5f5f085abb3dfd6cd88c606",
+      "prev_hash": "08d9939af89947d4f038962ba8060756e648766e1ca3712c72813fcba7a4c401",
+      "hash": "54a5132b25b84ed987d1063be6409ada5878f0eb431ea20cb32e1223710944d8"
+    },
+    {
+      "seq": 46,
+      "ts": "2026-10-03T13:01:03+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "39eb0c6759c58876951f290fce6be1f6ef3b364d873072091a5f25d7ecbc388e",
+      "prev_hash": "54a5132b25b84ed987d1063be6409ada5878f0eb431ea20cb32e1223710944d8",
+      "hash": "cd0e53748b0a3bd76c89c325d7712059e52ed7978c7aacecb7eaaa29b291ff61"
+    },
+    {
+      "seq": 47,
+      "ts": "2026-10-03T13:01:03+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0020",
+      "payload_hash": "2a3e14e9e570148d3e0904b03f55637da69d2197dc622e3653babe2b283b00fe",
+      "prev_hash": "cd0e53748b0a3bd76c89c325d7712059e52ed7978c7aacecb7eaaa29b291ff61",
+      "hash": "da70260e414032eb279cf063191537691bebeaa78cb1d5bfd70e633d748cf792"
+    },
+    {
+      "seq": 48,
+      "ts": "2026-10-03T13:02:24+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "26885392a805436aa2f849d56a01c0423979615d06c3fe4b98d20192c165b870",
+      "prev_hash": "da70260e414032eb279cf063191537691bebeaa78cb1d5bfd70e633d748cf792",
+      "hash": "ddcb081b12ec57d3f9c0b44505006302d1ea550c632fe4418c594d8aeddf6a53"
+    },
+    {
+      "seq": 49,
+      "ts": "2026-10-03T13:02:24+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0021",
+      "payload_hash": "4a045773706227ab910ece98c38f98948a2d749305c850be9def2547f78a1f39",
+      "prev_hash": "ddcb081b12ec57d3f9c0b44505006302d1ea550c632fe4418c594d8aeddf6a53",
+      "hash": "35a9bc0732d65c1bf71181bc3adbfcc52e8f6dded33cea412423afbfc65157d2"
+    },
+    {
+      "seq": 50,
+      "ts": "2026-10-03T13:03:09+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "646dafdd9cca16b9a778ea05ec5da87478783e1c6ae453301879760507ba755c",
+      "prev_hash": "35a9bc0732d65c1bf71181bc3adbfcc52e8f6dded33cea412423afbfc65157d2",
+      "hash": "07896257fb64bb0a0d62d0333ec9f33d361c91ee00f5b47e35255de1bc2db859"
+    },
+    {
+      "seq": 51,
+      "ts": "2026-10-03T13:03:09+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0022",
+      "payload_hash": "575fe184d827a802d448b51db343465eeb9ccf51e3e090593354f11a08df43eb",
+      "prev_hash": "07896257fb64bb0a0d62d0333ec9f33d361c91ee00f5b47e35255de1bc2db859",
+      "hash": "d6f5d47fda318b8f3dfdc36b9e99e86601ad710aefb7be18d35dc6db01d1eb3f"
+    },
+    {
+      "seq": 52,
+      "ts": "2026-10-03T13:03:24+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "dd98aa8cd37b0632ecc4669361924e141a3c6119c2f7bfabaf0a7c2b704b6d48",
+      "prev_hash": "d6f5d47fda318b8f3dfdc36b9e99e86601ad710aefb7be18d35dc6db01d1eb3f",
+      "hash": "89bc8b12ef2a37ad7923af75ab96742882371f45d2d37070901f4644a113f7d8"
+    },
+    {
+      "seq": 53,
+      "ts": "2026-10-03T13:03:24+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0023",
+      "payload_hash": "c654f23e6cf61550a4bda8eb628a7d35ef6cfca215313b5d3068afed124429bf",
+      "prev_hash": "89bc8b12ef2a37ad7923af75ab96742882371f45d2d37070901f4644a113f7d8",
+      "hash": "58d8d125b2759ee6edc5f0c8242eeb5b5770d6cb3e1040e8b0139593052e0151"
+    },
+    {
+      "seq": 54,
+      "ts": "2026-10-03T13:03:29+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "6e611f57f4dfbef9f2e6b0dbdbc9ab5414022809a59d1ccb8a1dbd00023dd254",
+      "prev_hash": "58d8d125b2759ee6edc5f0c8242eeb5b5770d6cb3e1040e8b0139593052e0151",
+      "hash": "75dfd2cc3eaef13c583bee1163d06c08f4e0450ef322a586f5b928072c10185b"
+    },
+    {
+      "seq": 55,
+      "ts": "2026-10-03T13:03:29+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0024",
+      "payload_hash": "ef62be284971d1398418f1a8f3581dc85d15733859a260baa35042db69902ea6",
+      "prev_hash": "75dfd2cc3eaef13c583bee1163d06c08f4e0450ef322a586f5b928072c10185b",
+      "hash": "eb6e07ddd1ad345ff549270fa97ccd0005c30048b9e7f20b18eb56abda98cc4d"
+    },
+    {
+      "seq": 56,
+      "ts": "2026-10-03T13:03:45+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "089206af6cb1869710e23b051bd1271ad12ef1f62ac17288a47caf1fed985f16",
+      "prev_hash": "eb6e07ddd1ad345ff549270fa97ccd0005c30048b9e7f20b18eb56abda98cc4d",
+      "hash": "1c58c73db3246628fae6e0eddf8b611825ab5025fb2bc73eadd0b135a134c87f"
+    },
+    {
+      "seq": 57,
+      "ts": "2026-10-03T13:03:45+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0025",
+      "payload_hash": "1943403f8bd8eb2389eba10e98c507240f421b8bddae2a17dbee9a109ac8cf68",
+      "prev_hash": "1c58c73db3246628fae6e0eddf8b611825ab5025fb2bc73eadd0b135a134c87f",
+      "hash": "50f33f9ae9ba1451267385f359f120067960a97d2b879cba7208cde7d89af0c8"
+    },
+    {
+      "seq": 58,
+      "ts": "2026-10-03T13:04:14+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "28cd903e62105c5b3371f0ff13bb228ab938e634f99ffc94381f0da186e2d88c",
+      "prev_hash": "50f33f9ae9ba1451267385f359f120067960a97d2b879cba7208cde7d89af0c8",
+      "hash": "92a0c39f6dea1a12bf76fdfe3d4359a4035af14abc74870bea5d4b42f3336a43"
+    },
+    {
+      "seq": 59,
+      "ts": "2026-10-03T13:04:14+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0026",
+      "payload_hash": "0d40857143d6e929355b94cafec78ef4ab69feb27121767076369a309a3fd61f",
+      "prev_hash": "92a0c39f6dea1a12bf76fdfe3d4359a4035af14abc74870bea5d4b42f3336a43",
+      "hash": "b3b278bddd2593c1733320f386703f25001a035ad8e4d56337fb67a0fbcb2f8d"
+    },
+    {
+      "seq": 60,
+      "ts": "2026-10-03T13:04:20+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "223a74efcb0259def5a3412deec108a775a61157e3d57d53137d53ef10414f68",
+      "prev_hash": "b3b278bddd2593c1733320f386703f25001a035ad8e4d56337fb67a0fbcb2f8d",
+      "hash": "10b4eb7802bbd10ff3ce3e80482489a58e2b23b346007ca8e76307da8522c870"
+    },
+    {
+      "seq": 61,
+      "ts": "2026-10-03T13:04:20+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0027",
+      "payload_hash": "bb53d2f36704bc97dcd47c5880021f9dc824306b5a3571a5f311a2693e43b15d",
+      "prev_hash": "10b4eb7802bbd10ff3ce3e80482489a58e2b23b346007ca8e76307da8522c870",
+      "hash": "b49b5d2a2284b31b3cc47248253bd9e0f5fba39910f5469ec55d77c5f3310aab"
+    },
+    {
+      "seq": 62,
+      "ts": "2026-10-03T13:05:16+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "70853ed5d0c7e7dfa2034cce85d9f81dacc8cdb3dc5df0efdef9cae40652a1ea",
+      "prev_hash": "b49b5d2a2284b31b3cc47248253bd9e0f5fba39910f5469ec55d77c5f3310aab",
+      "hash": "896d57a7c13634d3d41366ba7b273a7bb779e54291869d06643e62c7d99f6f72"
+    },
+    {
+      "seq": 63,
+      "ts": "2026-10-03T13:05:16+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0028",
+      "payload_hash": "dcceea7a7ce4778b5ab27705d971bc2b56d90d4acd5bfe48aea2efcf4684f0c1",
+      "prev_hash": "896d57a7c13634d3d41366ba7b273a7bb779e54291869d06643e62c7d99f6f72",
+      "hash": "a6551cd825286133a0e45b293d3dfec31c6ce4fd29049ec923661a6c813bb266"
+    },
+    {
+      "seq": 64,
+      "ts": "2026-10-03T13:05:46+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "9e0570ce2a00a1fe926e9da87e14b142fe07b7fd30006f868b8f57357e523e9c",
+      "prev_hash": "a6551cd825286133a0e45b293d3dfec31c6ce4fd29049ec923661a6c813bb266",
+      "hash": "f4de1d45eb38ea03aef0d0f23ba6bab605adbdc9353b789fff9121d7b05020f0"
+    },
+    {
+      "seq": 65,
+      "ts": "2026-10-03T13:05:46+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0029",
+      "payload_hash": "b81d189ce329f72f361772e515f2799506fd31316f8abd06111ab67be68b692c",
+      "prev_hash": "f4de1d45eb38ea03aef0d0f23ba6bab605adbdc9353b789fff9121d7b05020f0",
+      "hash": "4771d0f50b897d3cacdae10e834497304727a4f6eb6adc70e8904ea8edf4dd5f"
+    },
+    {
+      "seq": 66,
+      "ts": "2026-10-03T13:06:27+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "f799c310343aa213a616925ab25b09fd9fe113d24c2cb3fe43d1dc3521d97bf8",
+      "prev_hash": "4771d0f50b897d3cacdae10e834497304727a4f6eb6adc70e8904ea8edf4dd5f",
+      "hash": "1e012f1faaa591626b841380f3ba91f86e742849ec65bdbc58d0173e1652073e"
+    },
+    {
+      "seq": 67,
+      "ts": "2026-10-03T13:06:27+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0030",
+      "payload_hash": "d648153aa2eac499492c3c2ae080a096667c25027786472832454a804415b702",
+      "prev_hash": "1e012f1faaa591626b841380f3ba91f86e742849ec65bdbc58d0173e1652073e",
+      "hash": "660bf2442bebab4af8dd55772b2f4b90a42b3a674e1659876abf0f2174564d2c"
+    },
+    {
+      "seq": 68,
+      "ts": "2026-10-03T13:07:23+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "6d53b40d9244395d944ca6b808ce636b4b2614bb67e0c9b82a3b10a9b0000ba8",
+      "prev_hash": "660bf2442bebab4af8dd55772b2f4b90a42b3a674e1659876abf0f2174564d2c",
+      "hash": "ded41ef36280194acb2566f282a1fe89ab03c93613926d537102082b6d36ebbf"
+    },
+    {
+      "seq": 69,
+      "ts": "2026-10-03T13:07:23+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0031",
+      "payload_hash": "aadffdae63236ea5f060058c9e3400d81e5600ba3965ba343a4405956129489c",
+      "prev_hash": "ded41ef36280194acb2566f282a1fe89ab03c93613926d537102082b6d36ebbf",
+      "hash": "6292305d4c45ab33c4190c05d971a41a8013607a3640b0ac008d2a4a1f8b92e2"
+    },
+    {
+      "seq": 70,
+      "ts": "2026-10-03T13:07:53+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "79d7b900c3ff122f78d079c76c725354913974c1fe5e586bdc236b1c93c6374b",
+      "prev_hash": "6292305d4c45ab33c4190c05d971a41a8013607a3640b0ac008d2a4a1f8b92e2",
+      "hash": "7324c981ada7fe8bf8d2044d8b8c2515a7859af135392ec34160892529c42275"
+    },
+    {
+      "seq": 71,
+      "ts": "2026-10-03T13:07:53+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0032",
+      "payload_hash": "b660b85a720d370017b8cf157a5ccd850ddd98c25500cd4569940d928bed7826",
+      "prev_hash": "7324c981ada7fe8bf8d2044d8b8c2515a7859af135392ec34160892529c42275",
+      "hash": "80d64571855f0108fd25869005c6124229c41da56b9a2e7d99bb8fb541c63cef"
+    },
+    {
+      "seq": 72,
+      "ts": "2026-10-03T13:07:59+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "0dac6c73475e6af83383252460f8406a86f38e0c56fcfb3789c9706d754bf121",
+      "prev_hash": "80d64571855f0108fd25869005c6124229c41da56b9a2e7d99bb8fb541c63cef",
+      "hash": "dbcdf37d78df282f11e13c681c7a3ac25b9f035cb70d8dc9d859d038c0175b7b"
+    },
+    {
+      "seq": 73,
+      "ts": "2026-10-03T13:07:59+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0033",
+      "payload_hash": "a4f0976007b0a6661d10d21b41c278709879039ee3d25080406afc291a80afdb",
+      "prev_hash": "dbcdf37d78df282f11e13c681c7a3ac25b9f035cb70d8dc9d859d038c0175b7b",
+      "hash": "ea05ad3ce1a62c44ee351cacdf54e98b96bad6065197e03d21115f9d9d4cdd62"
+    },
+    {
+      "seq": 74,
+      "ts": "2026-10-03T13:08:20+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "5d20b1e12d7cfe88404cff835033810bf99ef20a357f8d6da496926fa7e0a8db",
+      "prev_hash": "ea05ad3ce1a62c44ee351cacdf54e98b96bad6065197e03d21115f9d9d4cdd62",
+      "hash": "149edfd68f241d8d1e8cee4645732b21402cd1d6b163780c8087a1dc19897eeb"
+    },
+    {
+      "seq": 75,
+      "ts": "2026-10-03T13:08:20+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0034",
+      "payload_hash": "f5020e3317943ebf3001c555ea6197226c0cacbeffed0dbf189f5160b11145e9",
+      "prev_hash": "149edfd68f241d8d1e8cee4645732b21402cd1d6b163780c8087a1dc19897eeb",
+      "hash": "032f06e441c5cc8292e3fbd9de2e840a26318fa21eb5af55ffd2ba98ccfdbac9"
+    },
+    {
+      "seq": 76,
+      "ts": "2026-10-03T13:08:35+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "08249107bda1589f14da29868924054b2a1aeca6099d50ed53c85a87cff2107c",
+      "prev_hash": "032f06e441c5cc8292e3fbd9de2e840a26318fa21eb5af55ffd2ba98ccfdbac9",
+      "hash": "b29bd7aa3b7380e8413b16c4edeb67ce7a762dfd32b8d519b1f8346643a183c1"
+    },
+    {
+      "seq": 77,
+      "ts": "2026-10-03T13:08:35+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0035",
+      "payload_hash": "a6531d21b7caf4b0ab377e0dcc725f2b32ffd55d1bb569b9db6576b2b663ea24",
+      "prev_hash": "b29bd7aa3b7380e8413b16c4edeb67ce7a762dfd32b8d519b1f8346643a183c1",
+      "hash": "13ed6386862ba841476c7ef0bdc029a3a3b42a30d1378cb2b20436d54e9fd8dd"
+    },
+    {
+      "seq": 78,
+      "ts": "2026-10-03T13:08:42+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "b6d7edbbdc9f41237398314392d4b958ddc73b73a0898f4b4048f31558b39119",
+      "prev_hash": "13ed6386862ba841476c7ef0bdc029a3a3b42a30d1378cb2b20436d54e9fd8dd",
+      "hash": "dc39e812d152cb3ae68980b1a7d1f0dcd15b36c77cf5ae8dfe131e4a197f9ff0"
+    },
+    {
+      "seq": 79,
+      "ts": "2026-10-03T13:08:42+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0036",
+      "payload_hash": "cc130841da62a2b0a7f66c3d23335d4d0f6d96fc3251e5d5a00f8f40fb238ee0",
+      "prev_hash": "dc39e812d152cb3ae68980b1a7d1f0dcd15b36c77cf5ae8dfe131e4a197f9ff0",
+      "hash": "50f90dc6b93f4145ba097cb073b98a1ccf8138fd3f1344ffcaccd61b32106b51"
+    },
+    {
+      "seq": 80,
+      "ts": "2026-10-03T13:09:40+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "17577a5c16c2975c414aa55ca1cd37bbdb9a529687a5f9f37e98ae6841a97184",
+      "prev_hash": "50f90dc6b93f4145ba097cb073b98a1ccf8138fd3f1344ffcaccd61b32106b51",
+      "hash": "cd43bbf5a665438b35cc2ebe0f147b015e422ee499cfb7f69836d6bd96dab407"
+    },
+    {
+      "seq": 81,
+      "ts": "2026-10-03T13:09:40+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0037",
+      "payload_hash": "ed5aeb31b37a17f13739c20fe11d99930a2c83ec8cfbd5e11e457f8bab804c4b",
+      "prev_hash": "cd43bbf5a665438b35cc2ebe0f147b015e422ee499cfb7f69836d6bd96dab407",
+      "hash": "dd5a3e430e1058fb505c0f726c7017af72122bd325826255d3d77f7bbdfdcbe2"
+    },
+    {
+      "seq": 82,
+      "ts": "2026-10-03T13:09:45+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "8c81c60d3f1b5dde9c6fb9c3c6cc99285a1665724a6d1f95b9b2885832ea1839",
+      "prev_hash": "dd5a3e430e1058fb505c0f726c7017af72122bd325826255d3d77f7bbdfdcbe2",
+      "hash": "ee19c4a4088bbe495adb321e7861a086402d0f1748a44eff528cf37f6552faa9"
+    },
+    {
+      "seq": 83,
+      "ts": "2026-10-03T13:09:45+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0038",
+      "payload_hash": "1ef85f90be2f7d95456e780325f17d5794216bb8bd210337cf0bb81af45ad3fc",
+      "prev_hash": "ee19c4a4088bbe495adb321e7861a086402d0f1748a44eff528cf37f6552faa9",
+      "hash": "64c22b9ed5562960792999336b7ee8f71002a182722920a4f4e9aee3e37cfccc"
+    },
+    {
+      "seq": 84,
+      "ts": "2026-10-03T13:11:21+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "5de00d30e2d6ae2caaad1eadb28e99aa917e4f4d2f7a4b5981e3fa1651413529",
+      "prev_hash": "64c22b9ed5562960792999336b7ee8f71002a182722920a4f4e9aee3e37cfccc",
+      "hash": "a12a4995a3712f88e9ced046def8e2c056ceba476fb9d120eb83055e46104fca"
+    },
+    {
+      "seq": 85,
+      "ts": "2026-10-03T13:11:21+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0039",
+      "payload_hash": "fc2d19c47ee9503903becf259e832918c53e64829adee61756f19b3f36b486c3",
+      "prev_hash": "a12a4995a3712f88e9ced046def8e2c056ceba476fb9d120eb83055e46104fca",
+      "hash": "3e22c0899e86fa49648a941c5878509df854f13e384eb66f26b1b8635c55ee6c"
+    },
+    {
+      "seq": 86,
+      "ts": "2026-10-03T13:11:55+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "2ed3a5c0adc6200823f2eb9e0fbd7d67cf81e6aeae62c85a654448b2e56094ee",
+      "prev_hash": "3e22c0899e86fa49648a941c5878509df854f13e384eb66f26b1b8635c55ee6c",
+      "hash": "91edaf1c3a1db5c6aba36f3bd1107fb298b1a9580dfde2264740f77d37e7d40d"
+    },
+    {
+      "seq": 87,
+      "ts": "2026-10-03T13:11:55+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0040",
+      "payload_hash": "588f91ae8fb1265afe8fcb308101390429474a77e995952b943c022b508c0610",
+      "prev_hash": "91edaf1c3a1db5c6aba36f3bd1107fb298b1a9580dfde2264740f77d37e7d40d",
+      "hash": "bf9e789afb05f390b8f9f0f3c3bf6776f66f66278511cda0eb3633cd0f2b52fc"
+    },
+    {
+      "seq": 88,
+      "ts": "2026-10-03T13:11:55+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "4d08f57d666f0ed395815b379c22e3ea587160b4d35da8e5e32fa2afee524233",
+      "prev_hash": "bf9e789afb05f390b8f9f0f3c3bf6776f66f66278511cda0eb3633cd0f2b52fc",
+      "hash": "e1d233e149a4d6e9e4b032ad8e895f61418ca06f2c7d2d3434e03d60260bc6fb"
+    },
+    {
+      "seq": 89,
+      "ts": "2026-10-03T13:11:55+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0041",
+      "payload_hash": "c060a4d2834fce22fea845b0a538aa207167e35c45fd6de39ed61d3967771534",
+      "prev_hash": "e1d233e149a4d6e9e4b032ad8e895f61418ca06f2c7d2d3434e03d60260bc6fb",
+      "hash": "1bd429fabc60611c4c40e32de0fc2fa69ebafc28dd0ed947d575c506b0628412"
+    },
+    {
+      "seq": 90,
+      "ts": "2026-10-03T13:11:55+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "7e7f29c87b3a40b8904425377dee76ab4ad12dee4226971023694bc0ba69f2b8",
+      "prev_hash": "1bd429fabc60611c4c40e32de0fc2fa69ebafc28dd0ed947d575c506b0628412",
+      "hash": "a0d2a10a6483f87346614b11fe4e8008b06e77a0412de4d6a37fc3476a044bb9"
+    },
+    {
+      "seq": 91,
+      "ts": "2026-10-03T13:11:56+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0042",
+      "payload_hash": "c6d14c2784598e0d9b9d721ebc278d23b2c902f3c1d65bf2c5a9d683955ce2d6",
+      "prev_hash": "a0d2a10a6483f87346614b11fe4e8008b06e77a0412de4d6a37fc3476a044bb9",
+      "hash": "b98ba661e21ae36deadb267b67cb6b37b7938e9d64c0883c89bd462c38f6bcd6"
+    },
+    {
+      "seq": 92,
+      "ts": "2026-10-03T13:12:14+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "e8edb7089f1d86be426bed60552da8089400c7b3cf70aca8f8937df5ff703533",
+      "prev_hash": "b98ba661e21ae36deadb267b67cb6b37b7938e9d64c0883c89bd462c38f6bcd6",
+      "hash": "0ad59b1cd6a94d4aad957bd8ad89c3f2ec68bcc09545517a7db7aa122dab853c"
+    },
+    {
+      "seq": 93,
+      "ts": "2026-10-03T13:12:14+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0043",
+      "payload_hash": "1259796c7d69f8e6751a03f8ef958e6d7ff5b47b4e8d9d65febd9dec0d0f22da",
+      "prev_hash": "0ad59b1cd6a94d4aad957bd8ad89c3f2ec68bcc09545517a7db7aa122dab853c",
+      "hash": "ad4bde5c5ad76d3f56b8a673f8ad28bb52f7095e504a411be47e8122353b0c9b"
+    },
+    {
+      "seq": 94,
+      "ts": "2026-10-03T13:12:20+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "3348305317e963fee8ef9154de63ce9ec2f7ddb3f28f6c0d72f82af54ad30f24",
+      "prev_hash": "ad4bde5c5ad76d3f56b8a673f8ad28bb52f7095e504a411be47e8122353b0c9b",
+      "hash": "44361170e253834f26210217d630e3bdb35c98e96f83420e49a8e905ec23fbbb"
+    },
+    {
+      "seq": 95,
+      "ts": "2026-10-03T13:12:20+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0044",
+      "payload_hash": "cf1054b29a2b72f9bdffafe0d6bd094f23d61b6075590943a58eb318657ff9df",
+      "prev_hash": "44361170e253834f26210217d630e3bdb35c98e96f83420e49a8e905ec23fbbb",
+      "hash": "e70dd1b1ea349ccfd3c781ade92ec953d45b115495f669192380a328d6f0aa5a"
+    },
+    {
+      "seq": 96,
+      "ts": "2026-10-03T13:12:20+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "3ffd0ef79a08f722f0d8e5359fb65b4aa2333b5b2791420b97a689e0f0f40513",
+      "prev_hash": "e70dd1b1ea349ccfd3c781ade92ec953d45b115495f669192380a328d6f0aa5a",
+      "hash": "a9c3b2a856348542e93e2087e7ae9aa6b986597bfd83a42848776dead3cc3afd"
+    },
+    {
+      "seq": 97,
+      "ts": "2026-10-03T13:12:20+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0045",
+      "payload_hash": "28f818de7df0d6a0597734826ba638ba3f3233a5bde096f03fbe7dc31d742c26",
+      "prev_hash": "a9c3b2a856348542e93e2087e7ae9aa6b986597bfd83a42848776dead3cc3afd",
+      "hash": "efef600ef9b095c42fe2991f3be9ef2e01c3eb42ebbab69f7f00605614885da2"
+    },
+    {
+      "seq": 98,
+      "ts": "2026-10-03T13:12:25+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "cc4e63930316992d1bef8d75f9b6e94815dcae4e12ca216e8177e4b201b43be6",
+      "prev_hash": "efef600ef9b095c42fe2991f3be9ef2e01c3eb42ebbab69f7f00605614885da2",
+      "hash": "fc8fc2d6acd71b5511739ecbdbbba5c297be0fac6dc884ef6a9c52160a68b3f5"
+    },
+    {
+      "seq": 99,
+      "ts": "2026-10-03T13:12:25+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0046",
+      "payload_hash": "4e2d47cebe5aef4bf3deb6e783a6af9e8436fce1f73db3c7f3c1c5089c1f26f7",
+      "prev_hash": "fc8fc2d6acd71b5511739ecbdbbba5c297be0fac6dc884ef6a9c52160a68b3f5",
+      "hash": "b8ddc7d7c7fc6ed15301f100f67ea8b5f1bd23b3ec038e28598587c85b3a06ba"
+    },
+    {
+      "seq": 100,
+      "ts": "2026-10-03T13:12:35+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "ec7a30032e1707634656776acb400abf6bdf68b0bb4dbd03a7eee72b0e207255",
+      "prev_hash": "b8ddc7d7c7fc6ed15301f100f67ea8b5f1bd23b3ec038e28598587c85b3a06ba",
+      "hash": "ca482ee3c143b93e27ffac58e630e4f50b24616c52125bf3a475bdc20733f4ce"
+    },
+    {
+      "seq": 101,
+      "ts": "2026-10-03T13:12:35+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0047",
+      "payload_hash": "778ee6284adcbe9574ac3f1380da029b27068ff24d93ca258b6f68ed7db3573f",
+      "prev_hash": "ca482ee3c143b93e27ffac58e630e4f50b24616c52125bf3a475bdc20733f4ce",
+      "hash": "3e3b20aad56863fa89fdd8cd73c9defb6724edb86f81a14c075a4e72313d7b1a"
+    },
+    {
+      "seq": 102,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "b73c4b126769c8d1e82dde9ddddcdc71cb3f67c25ebcde46e40c8676b1574efa",
+      "prev_hash": "3e3b20aad56863fa89fdd8cd73c9defb6724edb86f81a14c075a4e72313d7b1a",
+      "hash": "9463d0f049c6e50db2d448522a28bd37cff24348396737bd433f7f439ad11215"
+    },
+    {
+      "seq": 103,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0048",
+      "payload_hash": "a19f039b554bfded2185d28ea64a5ea1156d498acb32a053c997f11b7640411a",
+      "prev_hash": "9463d0f049c6e50db2d448522a28bd37cff24348396737bd433f7f439ad11215",
+      "hash": "79ad3e38b5444bae935c66effc38e4eb67f2889442f9586efc83a792c5b051fd"
+    },
+    {
+      "seq": 104,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "d97e6e0032d6ba4de308da1b62b0cd9c1e8314760fe583498ceae798de30de83",
+      "prev_hash": "79ad3e38b5444bae935c66effc38e4eb67f2889442f9586efc83a792c5b051fd",
+      "hash": "1876b84f24ca0dbd9a343a27b4cc0e920701227bdd0922145887b622c9599625"
+    },
+    {
+      "seq": 105,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0049",
+      "payload_hash": "fc8ecf9eb32b486a585c817babdd9e5e193c081fce9e88770a6ee4eac05189d1",
+      "prev_hash": "1876b84f24ca0dbd9a343a27b4cc0e920701227bdd0922145887b622c9599625",
+      "hash": "0d353415211bb181dda0d196ff1d1acf07848f578dd26f4289062cd05b1e5312"
+    },
+    {
+      "seq": 106,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "21c4c1687edbab30c8e161d9825fb53144d2d04153cd56bf0c6802bc7ebf41f1",
+      "prev_hash": "0d353415211bb181dda0d196ff1d1acf07848f578dd26f4289062cd05b1e5312",
+      "hash": "1ec0517c0ec06ddc90f47cc4d2ba3785f01bbc673dc481194eacb96d19bbe14a"
+    },
+    {
+      "seq": 107,
+      "ts": "2026-10-03T13:12:53+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0050",
+      "payload_hash": "cd0c8d3db9a3d906386de4447370e1e57d2f934a1678f60efe64729c1c4926ca",
+      "prev_hash": "1ec0517c0ec06ddc90f47cc4d2ba3785f01bbc673dc481194eacb96d19bbe14a",
+      "hash": "aef1c1e67cfcc689c940d8c72d561ed29b95066dc4dc64d50e582a551ddb5551"
+    },
+    {
+      "seq": 108,
+      "ts": "2026-10-03T13:13:13+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "4036e0d29c808a28b3ddf46609e3117123fbb90034335ed1c299f188ffaefc0a",
+      "prev_hash": "aef1c1e67cfcc689c940d8c72d561ed29b95066dc4dc64d50e582a551ddb5551",
+      "hash": "de982657bd0370e765df762c8ae6d3e78bb54e9edb0d9b4cf0784f857fc3d597"
+    },
+    {
+      "seq": 109,
+      "ts": "2026-10-03T13:13:13+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0051",
+      "payload_hash": "3683047643ed300c495385e92d32e0f5a7e35d9962b982fe84a397dfa4adbf0d",
+      "prev_hash": "de982657bd0370e765df762c8ae6d3e78bb54e9edb0d9b4cf0784f857fc3d597",
+      "hash": "6217f9a6d1a828a7953c9185dcbc13ebe30756e976acfcef2da27b3eb2df68cc"
+    },
+    {
+      "seq": 110,
+      "ts": "2026-10-03T13:13:21+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "0ba4965fee143163f16689df45ee418ae6d641e8b2a09a6be2ecc2865420ae69",
+      "prev_hash": "6217f9a6d1a828a7953c9185dcbc13ebe30756e976acfcef2da27b3eb2df68cc",
+      "hash": "c293540b50e19518979a8986815ea0d2c9e91b642a4520cebf709f5247d76c81"
+    },
+    {
+      "seq": 111,
+      "ts": "2026-10-03T13:13:21+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0052",
+      "payload_hash": "a47c4ddd1ef6376c2dbbbb3584d47a996a7613b11dc02859f0d0958178c99200",
+      "prev_hash": "c293540b50e19518979a8986815ea0d2c9e91b642a4520cebf709f5247d76c81",
+      "hash": "62430d5f7b99caf96da6541e31d30db0675866af4363e93ebd0d99991a49094a"
+    },
+    {
+      "seq": 112,
+      "ts": "2026-10-03T13:13:21+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "3a766c54eff80115a81cf421b439d260816830cb212906e0dd6c5c2d297edba8",
+      "prev_hash": "62430d5f7b99caf96da6541e31d30db0675866af4363e93ebd0d99991a49094a",
+      "hash": "aef9fff6707a96a29d92b3e7c8738317bba025e40954e5acb2e4e1bc5aeaba9c"
+    },
+    {
+      "seq": 113,
+      "ts": "2026-10-03T13:13:21+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0053",
+      "payload_hash": "8aeecb1b9d15a4df754e7512695908cc40ff574248b0af19cf10a244064644ea",
+      "prev_hash": "aef9fff6707a96a29d92b3e7c8738317bba025e40954e5acb2e4e1bc5aeaba9c",
+      "hash": "f88128a5feee90b4da90050466beef7742c55f381b48feb88c1d7cd47131712d"
+    },
+    {
+      "seq": 114,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "6678eeb64b0ec83514442e17b5681530763029e426e47092917c991ad23684cc",
+      "prev_hash": "f88128a5feee90b4da90050466beef7742c55f381b48feb88c1d7cd47131712d",
+      "hash": "2a4bf8fe10dd949bf72b3fda243f11395702703613e3cf88c41d6a979a2873c7"
+    },
+    {
+      "seq": 115,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0054",
+      "payload_hash": "8bade743a0fec6b31b44be7709dac670fe0801b016bdee42b5559d7960edcffc",
+      "prev_hash": "2a4bf8fe10dd949bf72b3fda243f11395702703613e3cf88c41d6a979a2873c7",
+      "hash": "c626bdda7f0b274f3cc5083888b389b71edde15a2c989b5665d591e498b29c8c"
+    },
+    {
+      "seq": 116,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "5e9ac4288370daea2dd371683354dc86869c9962bde9bfd67a8241b052b6e798",
+      "prev_hash": "c626bdda7f0b274f3cc5083888b389b71edde15a2c989b5665d591e498b29c8c",
+      "hash": "d11ddb41af4e1a84c6b97d6d10dfb768398f2694c3d653c353baba2b4c80be02"
+    },
+    {
+      "seq": 117,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0055",
+      "payload_hash": "353a902fe829c13f3842661a42027b3abfefd5de3105090214d4c910932330ca",
+      "prev_hash": "d11ddb41af4e1a84c6b97d6d10dfb768398f2694c3d653c353baba2b4c80be02",
+      "hash": "feb890e774f45391097422cd9242209edc73478e39d8b69b66654412dc6db1e4"
+    },
+    {
+      "seq": 118,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "b1ed4fa7996af8bf33f6467311fbbbb2665e4be0db417c155bcbf1c4e71dc5ae",
+      "prev_hash": "feb890e774f45391097422cd9242209edc73478e39d8b69b66654412dc6db1e4",
+      "hash": "db65ab3904b99d096207c03b6ae05fd76cae22aa79541568d9f64c275142e742"
+    },
+    {
+      "seq": 119,
+      "ts": "2026-10-03T13:13:46+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0056",
+      "payload_hash": "eba7bb4055e8390e08866d09eea9eedb5c89ea2e7141bef1b9a1a3e39df685e2",
+      "prev_hash": "db65ab3904b99d096207c03b6ae05fd76cae22aa79541568d9f64c275142e742",
+      "hash": "fb7ea07009a4e161753f316214c29e5df97152e1af49f28797160c585de45423"
+    },
+    {
+      "seq": 120,
+      "ts": "2026-10-03T13:14:01+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "f36d87ff21276699f9c09c49c858399c12361df7e647b01799b8345664ef12d0",
+      "prev_hash": "fb7ea07009a4e161753f316214c29e5df97152e1af49f28797160c585de45423",
+      "hash": "6fb40348fcae533937b37d8ad3d6adc3abd76dd06b67319f338858507c7de1be"
+    },
+    {
+      "seq": 121,
+      "ts": "2026-10-03T13:14:01+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0057",
+      "payload_hash": "f3b35cd17e363082ad8a2145a25ff4f9f04a93a48fa7e2920afc758ef37e8f90",
+      "prev_hash": "6fb40348fcae533937b37d8ad3d6adc3abd76dd06b67319f338858507c7de1be",
+      "hash": "765ccdc249a2460bf9498efc39d655effccdc435263d7721daddbf10bea03833"
+    },
+    {
+      "seq": 122,
+      "ts": "2026-10-03T13:14:09+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "b01881213a219b8e2bf61a79d86f37f05ccc9135dcbfed2128e974f6eda7dd66",
+      "prev_hash": "765ccdc249a2460bf9498efc39d655effccdc435263d7721daddbf10bea03833",
+      "hash": "2e9d55cd530534621b638851179277cee23c8c1c1e9b611a42a012f9c75352ff"
+    },
+    {
+      "seq": 123,
+      "ts": "2026-10-03T13:14:09+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0058",
+      "payload_hash": "8e801a0642607d9414945d66aeb50472ec716a5c1f8e8dc37ec504112fa08daf",
+      "prev_hash": "2e9d55cd530534621b638851179277cee23c8c1c1e9b611a42a012f9c75352ff",
+      "hash": "dae667dca16e534196806ce2c558f7fd95acb907679627d64174841dfb16c429"
+    },
+    {
+      "seq": 124,
+      "ts": "2026-10-03T13:14:09+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "6969b6636190ddaf5ba9634f3df7fc8181c4378ba40afb516e5223c0c4092033",
+      "prev_hash": "dae667dca16e534196806ce2c558f7fd95acb907679627d64174841dfb16c429",
+      "hash": "c029b9c49ee7610ee2d5cd1a9bd50cb17c0f3bf15119a6a81aa6cb67ed35f5fd"
+    },
+    {
+      "seq": 125,
+      "ts": "2026-10-03T13:14:09+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0059",
+      "payload_hash": "bfd1fcaa2c86dbcdd78a47ee0281c9d2b9bd053c84399d30d77774a9a3b38b1f",
+      "prev_hash": "c029b9c49ee7610ee2d5cd1a9bd50cb17c0f3bf15119a6a81aa6cb67ed35f5fd",
+      "hash": "2a89bd693c06c2173c73b128117fb7fe906314c048af4d2fae95657b833f1322"
+    },
+    {
+      "seq": 126,
+      "ts": "2026-10-03T13:14:14+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "cd21ac357cf58b12960b740bda367e19a92cb53fd410b30b9ea9c2953f0a04d2",
+      "prev_hash": "2a89bd693c06c2173c73b128117fb7fe906314c048af4d2fae95657b833f1322",
+      "hash": "4f2398b812409e27974e780c065fa8f0e20a0d2bb791f292e04b8f81d2e7a2aa"
+    },
+    {
+      "seq": 127,
+      "ts": "2026-10-03T13:14:14+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0060",
+      "payload_hash": "1dc8a8578f7cebac4a7598d5c1dc05476af3e54bdbde85cef4a5cce54ad89911",
+      "prev_hash": "4f2398b812409e27974e780c065fa8f0e20a0d2bb791f292e04b8f81d2e7a2aa",
+      "hash": "c9fa56f52d9f8818fcd6e3f68155788cdc0a9e541ac4f9054c9b69d0a87488d8"
+    },
+    {
+      "seq": 128,
+      "ts": "2026-10-03T13:14:14+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "65cc01f8f6c2ee65f542365694c512e5d0025e7fec041c4d31bb1bc205ba9054",
+      "prev_hash": "c9fa56f52d9f8818fcd6e3f68155788cdc0a9e541ac4f9054c9b69d0a87488d8",
+      "hash": "9c909fb1c1e7596b88d38349abf039e532245e9730459bbf555a1d1c95c91c77"
+    },
+    {
+      "seq": 129,
+      "ts": "2026-10-03T13:14:14+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0061",
+      "payload_hash": "a7d287da96de051922c45bb2b9f539ac9500f5e4970c14cbdbadc79641f068b9",
+      "prev_hash": "9c909fb1c1e7596b88d38349abf039e532245e9730459bbf555a1d1c95c91c77",
+      "hash": "402a6de799f8ecce5f167d15227234258d2e122ccb4a414687906ca35775a7ea"
+    },
+    {
+      "seq": 130,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "2ba94e5a324afffb9ad2337c38de40157ac9fc2dcf9f6d0766374a5ce3c37784",
+      "prev_hash": "402a6de799f8ecce5f167d15227234258d2e122ccb4a414687906ca35775a7ea",
+      "hash": "8d399200ac903007122eb117f024d935025294045741f26bbc3d8a49417e15bb"
+    },
+    {
+      "seq": 131,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0062",
+      "payload_hash": "ef81dff1bf6633aeba336eda22331fd86a33a9f656b0fd347734f7e872311558",
+      "prev_hash": "8d399200ac903007122eb117f024d935025294045741f26bbc3d8a49417e15bb",
+      "hash": "8ba38e332a9174c951abfbc379fb2a4c58c73e7ee4b2eca0e3343879d2fb4f25"
+    },
+    {
+      "seq": 132,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "924362f258bee1c2ea2a22c553ee3baff0e7fe996e80008667cd7594858b53b5",
+      "prev_hash": "8ba38e332a9174c951abfbc379fb2a4c58c73e7ee4b2eca0e3343879d2fb4f25",
+      "hash": "4e99070d70f5690c5c2bb489b459315fd311293719b288b6eb7c0fbc2121f26c"
+    },
+    {
+      "seq": 133,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0063",
+      "payload_hash": "8ededb4315c74b51af7d8df21119a86520a8d7c18ce57db6643bdec279d5e0f8",
+      "prev_hash": "4e99070d70f5690c5c2bb489b459315fd311293719b288b6eb7c0fbc2121f26c",
+      "hash": "1e41bba44f41d634e64f80f3f3a309b1fc756bda8a281b57f4c586db4bb4eac9"
+    },
+    {
+      "seq": 134,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "24e907138f95121cd972b2c60f3484ea48173e909cbb53d2532f63768740be93",
+      "prev_hash": "1e41bba44f41d634e64f80f3f3a309b1fc756bda8a281b57f4c586db4bb4eac9",
+      "hash": "67c2c842006b45023d0c58a818a42180eff6e3085f4fcf70a21cc098ce047dc5"
+    },
+    {
+      "seq": 135,
+      "ts": "2026-10-03T13:14:25+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0064",
+      "payload_hash": "45cfcf50d401914f0d616a8612314a10f97018c6b4da318f690c4e06d9ac2a75",
+      "prev_hash": "67c2c842006b45023d0c58a818a42180eff6e3085f4fcf70a21cc098ce047dc5",
+      "hash": "b3b65babad8fb62ff79f659cec9f40f07ecafad8ace158db2080d7c1709a4c1d"
+    },
+    {
+      "seq": 136,
+      "ts": "2026-10-03T13:14:41+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "b70c98a92b25467541887558b535455b7fe4c9b82513fb141955c6373f91b7fc",
+      "prev_hash": "b3b65babad8fb62ff79f659cec9f40f07ecafad8ace158db2080d7c1709a4c1d",
+      "hash": "b584dc16f61c9d8de430398bb551ece6f60d23f501a308d95f4823b193373416"
+    },
+    {
+      "seq": 137,
+      "ts": "2026-10-03T13:14:41+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0065",
+      "payload_hash": "dec609dbab716433a0cf5939592fe8c5e038620190538443225034fcbc415833",
+      "prev_hash": "b584dc16f61c9d8de430398bb551ece6f60d23f501a308d95f4823b193373416",
+      "hash": "8dc3b48ffe14f34893fa0bc504b4a9873fca436f86d2c995e87018fc7f563ecc"
+    },
+    {
+      "seq": 138,
+      "ts": "2026-10-03T13:14:47+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "653f97172dc9790cad606b1c954ded475e893d5ff847f5453804fea9204b95d4",
+      "prev_hash": "8dc3b48ffe14f34893fa0bc504b4a9873fca436f86d2c995e87018fc7f563ecc",
+      "hash": "7f2ab7bcc5999e1930cca80f4fb99bf5669a285dc39268a94a7f295f9e2bc8c3"
+    },
+    {
+      "seq": 139,
+      "ts": "2026-10-03T13:14:47+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0066",
+      "payload_hash": "44751334e7fc2928f5ecd003594634c8a70a5db7764441207e577d7e3139f09d",
+      "prev_hash": "7f2ab7bcc5999e1930cca80f4fb99bf5669a285dc39268a94a7f295f9e2bc8c3",
+      "hash": "33a24d45fc9fe466e5486b3cf825a322e78529885e6d5fe24bd22b245ea914c4"
+    },
+    {
+      "seq": 140,
+      "ts": "2026-10-03T13:14:48+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "79a03bd1648e2699fdeae9a2ee5e86e848be91f908a876372b0d1a0389548079",
+      "prev_hash": "33a24d45fc9fe466e5486b3cf825a322e78529885e6d5fe24bd22b245ea914c4",
+      "hash": "e053af5c91c518414871f5935f5f79e6e76655d0c1b5c179ead7b3daed6931b7"
+    },
+    {
+      "seq": 141,
+      "ts": "2026-10-03T13:14:48+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0067",
+      "payload_hash": "9f42b9dc56a4ff6da17f932ca41741798dd04a540a47b33500b617a648a78739",
+      "prev_hash": "e053af5c91c518414871f5935f5f79e6e76655d0c1b5c179ead7b3daed6931b7",
+      "hash": "bc5ef13faf6d058fd78d7021c5c32cc29e2139b600c00cb91a2781214e98710b"
+    },
+    {
+      "seq": 142,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "f3ee7480e657402279eb7d77a05afc4b781ee0bdbbeb360cc01137ef3ecab12b",
+      "prev_hash": "bc5ef13faf6d058fd78d7021c5c32cc29e2139b600c00cb91a2781214e98710b",
+      "hash": "54f32e08ca673f9f3bb3aebe98a49df6257755bc1a74d510a84b6675e5a42200"
+    },
+    {
+      "seq": 143,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0068",
+      "payload_hash": "0e94601bf1c28da5d3d782df15371e1789cca2e8190cf5cac4e4f25527e31c8e",
+      "prev_hash": "54f32e08ca673f9f3bb3aebe98a49df6257755bc1a74d510a84b6675e5a42200",
+      "hash": "0550753c7869afe9c98a033d073e3154ab1679a43c4d17a643f15c7c9987270a"
+    },
+    {
+      "seq": 144,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "95e8c6b6c863e770ff4a654e926f5f1bbc0d5cb5837b0784cd538d2981d59a77",
+      "prev_hash": "0550753c7869afe9c98a033d073e3154ab1679a43c4d17a643f15c7c9987270a",
+      "hash": "f970a3f7cb38fd3f2b5c2e50d39b9cd17e1f3cc2e0d7c383ff5c1300a90a9b6c"
+    },
+    {
+      "seq": 145,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0069",
+      "payload_hash": "1162d88f67af8ffac845087b3fbf9a2a1983fc6cedaabd4cc5454beeb1c2ba97",
+      "prev_hash": "f970a3f7cb38fd3f2b5c2e50d39b9cd17e1f3cc2e0d7c383ff5c1300a90a9b6c",
+      "hash": "547476edb998dda4b2776eb8ec3b276a17ca5fe1926d8b5ffa682945043a6d1b"
+    },
+    {
+      "seq": 146,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "7203a4c373e6776071fb642ae915b1c6df036227f5de6682ec150c0b2e05910a",
+      "prev_hash": "547476edb998dda4b2776eb8ec3b276a17ca5fe1926d8b5ffa682945043a6d1b",
+      "hash": "1b9fa89f41505f6cbba8cef735222c308065bbcc572197a7908fccd5f6bb155b"
+    },
+    {
+      "seq": 147,
+      "ts": "2026-10-03T13:15:04+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0070",
+      "payload_hash": "6618e7315b794a443d65bba2b88d9a9e141acc2b2f3a2d40b806e213745e3a9c",
+      "prev_hash": "1b9fa89f41505f6cbba8cef735222c308065bbcc572197a7908fccd5f6bb155b",
+      "hash": "c7633a84f34d7c87849d8264ace83f156d7d2a363ec80a4c79c8e295566bc577"
+    },
+    {
+      "seq": 148,
+      "ts": "2026-10-03T13:15:36+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "517c21b8248ffac8a033abc871195927a4d6e4d91386b3e3830ff793f8433195",
+      "prev_hash": "c7633a84f34d7c87849d8264ace83f156d7d2a363ec80a4c79c8e295566bc577",
+      "hash": "6d29d45d45c185b3970cbfd2040bcf4d78cd4b413fe2806ed16e4ef778f69d0d"
+    },
+    {
+      "seq": 149,
+      "ts": "2026-10-03T13:15:36+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0071",
+      "payload_hash": "13bac75679e33d78506018fa853dc0a2948e8ee92f3b60a53613ae9b15827d79",
+      "prev_hash": "6d29d45d45c185b3970cbfd2040bcf4d78cd4b413fe2806ed16e4ef778f69d0d",
+      "hash": "436939cef8aa879d3949f54a29907e511c382cee8e6697d7428c579adeab0448"
+    },
+    {
+      "seq": 150,
+      "ts": "2026-10-03T13:15:44+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "310fd49e7955a796da0d7166de3c2a422ee9e7335060a60ffc55f7e4aab3aeda",
+      "prev_hash": "436939cef8aa879d3949f54a29907e511c382cee8e6697d7428c579adeab0448",
+      "hash": "8e9023dea31e5cf9e095342d20307f954fdf4fae4e207c33b63dc5cae3bfc0ae"
+    },
+    {
+      "seq": 151,
+      "ts": "2026-10-03T13:15:44+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0072",
+      "payload_hash": "22ee27d3585148e5a2026d7f3b2916de5c209b267efd8fa0d380a40c7198aa91",
+      "prev_hash": "8e9023dea31e5cf9e095342d20307f954fdf4fae4e207c33b63dc5cae3bfc0ae",
+      "hash": "e844c30d6de5a21007eaac605118d6f3da29d3d4b5f3fd9c926326e8a9c0737f"
+    },
+    {
+      "seq": 152,
+      "ts": "2026-10-03T13:15:44+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "27481020b9724bb6cefeee52f08a57a76b5f01a523aa84b3c3545a1fdbd563f5",
+      "prev_hash": "e844c30d6de5a21007eaac605118d6f3da29d3d4b5f3fd9c926326e8a9c0737f",
+      "hash": "423e1494a7499ff1555fec429ab023d43439932d52e8d84c9271e311eae1eeb4"
+    },
+    {
+      "seq": 153,
+      "ts": "2026-10-03T13:15:44+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0073",
+      "payload_hash": "ac655b5957190027912f0f526293e0bdfcd4bfd2fc5a6b304a1061444c72d91f",
+      "prev_hash": "423e1494a7499ff1555fec429ab023d43439932d52e8d84c9271e311eae1eeb4",
+      "hash": "1aa3c221f960f7a8867da75246b8523f84ae1c13d9ee70c3f87942173f20f319"
+    },
+    {
+      "seq": 154,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "round",
+      "ref": "firstlook",
+      "payload_hash": "db16ec6684e87c3075f811594a03956d1b6e260c40360258753e67ab336ebd56",
+      "prev_hash": "1aa3c221f960f7a8867da75246b8523f84ae1c13d9ee70c3f87942173f20f319",
+      "hash": "60b8b0f1057c5196b0c6034e6dc57c15607d4d682d8281f74e9897df0826c7a6"
+    },
+    {
+      "seq": 155,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0074",
+      "payload_hash": "6c0ef5b638bb8dbb1b6e0335f74e5fe2eed06e5f5067482a33e0641453b34e01",
+      "prev_hash": "60b8b0f1057c5196b0c6034e6dc57c15607d4d682d8281f74e9897df0826c7a6",
+      "hash": "9be621335538d5a3b5c1788913ee8f16244cb324b729a843b7fbcd42086b68a5"
+    },
+    {
+      "seq": 156,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "round",
+      "ref": "futurecapture",
+      "payload_hash": "895d369adc4615a1548300e9403c94efa3abd07bd2eca4f2b2c112e99b291edf",
+      "prev_hash": "9be621335538d5a3b5c1788913ee8f16244cb324b729a843b7fbcd42086b68a5",
+      "hash": "c762fcaf464eb508ad019f50c30c805d784d2c93039e0d6cc34e9d962ec0a34c"
+    },
+    {
+      "seq": 157,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0075",
+      "payload_hash": "384b21760cf165b705572dc71008a31864602e28fd27a8c4a1825d27bd08c053",
+      "prev_hash": "c762fcaf464eb508ad019f50c30c805d784d2c93039e0d6cc34e9d962ec0a34c",
+      "hash": "2451d787a0d569d958167cdc39a7cdcc92c8d6aec7d1d3a71d41324a6af4ca63"
+    },
+    {
+      "seq": 158,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "round",
+      "ref": "gazette",
+      "payload_hash": "c89f7496cc57a2af9493f53c087f0c481cae5acb9b546411b1503dfe31fd3add",
+      "prev_hash": "2451d787a0d569d958167cdc39a7cdcc92c8d6aec7d1d3a71d41324a6af4ca63",
+      "hash": "daa3f1d3f9536305115bb2ea83f58c28c0e27f500e3bbc47710b7ac8b0ff575d"
+    },
+    {
+      "seq": 159,
+      "ts": "2026-10-03T13:15:57+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0076",
+      "payload_hash": "71f563d70af2c4f2a52d28391734819a67396965447478d0ef38c0c14056adcd",
+      "prev_hash": "daa3f1d3f9536305115bb2ea83f58c28c0e27f500e3bbc47710b7ac8b0ff575d",
+      "hash": "138084309e6adb3c466146179fb17fa67bb82bfe467911639b271aa0cd391dfb"
+    },
+    {
+      "seq": 160,
+      "ts": "2026-10-03T13:16:14+00:00",
+      "kind": "round",
+      "ref": "instantaudit",
+      "payload_hash": "852f168495bed8c26c42b64a6b8a6633e136bcc77a7e4e231369ab99c29e21e1",
+      "prev_hash": "138084309e6adb3c466146179fb17fa67bb82bfe467911639b271aa0cd391dfb",
+      "hash": "768f46eb03944f9b0467181edec3ba225113a479f4e665957877ab6f43189b46"
+    },
+    {
+      "seq": 161,
+      "ts": "2026-10-03T13:16:15+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0077",
+      "payload_hash": "89be3e22a33bee2ff843006ff462941af0abf5f3b45ac48d0376d640da39c87d",
+      "prev_hash": "768f46eb03944f9b0467181edec3ba225113a479f4e665957877ab6f43189b46",
+      "hash": "a85c5bae462ebba4b43f53cd64056af160613c91985d2f5222af6ffb9ecf8e73"
+    },
+    {
+      "seq": 162,
+      "ts": "2026-10-03T13:16:21+00:00",
+      "kind": "round",
+      "ref": "ipgeo-worker",
+      "payload_hash": "2ca62c32fc8e6b5368fce6c37842d94c01046c24a29dfdeea2608e363e10cc3f",
+      "prev_hash": "a85c5bae462ebba4b43f53cd64056af160613c91985d2f5222af6ffb9ecf8e73",
+      "hash": "96d71f71c048cde354c7fdf4efe2a3247526081d71ef45e4cca40fa2b34cf4c5"
+    },
+    {
+      "seq": 163,
+      "ts": "2026-10-03T13:16:21+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0078",
+      "payload_hash": "7e955b77d6be26ef8a51b983e53db26317d60c4c35a0959e8b1f84af44451f58",
+      "prev_hash": "96d71f71c048cde354c7fdf4efe2a3247526081d71ef45e4cca40fa2b34cf4c5",
+      "hash": "eec0c5c967e7bcbfaa9e1e9343af49826b0e5efab5a7893261b7259a930e4ad9"
+    },
+    {
+      "seq": 164,
+      "ts": "2026-10-03T13:16:21+00:00",
+      "kind": "round",
+      "ref": "rig-test",
+      "payload_hash": "d0556f73babe31485f2d7a0b6fff451041e48a0305cd1fc67dc694ef04de9b8a",
+      "prev_hash": "eec0c5c967e7bcbfaa9e1e9343af49826b0e5efab5a7893261b7259a930e4ad9",
+      "hash": "01aa7ddb08fe2f719ef112e31f37941a77530e83b338f3f4870a4181b6b44dfb"
+    },
+    {
+      "seq": 165,
+      "ts": "2026-10-03T13:16:22+00:00",
+      "kind": "cert",
+      "ref": "dc-cert-0079",
+      "payload_hash": "09fce3a5f3ab12942b7771d6eb82a04fe5b0b5ab9823b7380aa50f0aa5dca05c",
+      "prev_hash": "01aa7ddb08fe2f719ef112e31f37941a77530e83b338f3f4870a4181b6b44dfb",
+      "hash": "389ae385834251d6ac5fd751a157776f037494e77d44c491b57b99f451ba8107"
     }
   ],
-  "tip": "7af3e243642b116af53f47d6e5dfcec6ab864e1795ed528b4087a9bcce3c3b3d"
+  "tip": "389ae385834251d6ac5fd751a157776f037494e77d44c491b57b99f451ba8107"
 }

@@ -1,0 +1,29 @@
+{
+  "payload": {
+    "certificate_id": "dc-cert-0077",
+    "service": "DecayCert",
+    "endpoint_id": "instantaudit",
+    "endpoint_url": "http://127.0.0.1:8791",
+    "task_class": "smart-contract audit API",
+    "suite_commitment_sha256": "567fcf0c929618e02164dbd6f41283df34a04723fd07beb4bf3a9d851dd546e0",
+    "suite_id": "dc-suite-v1",
+    "issued_at": "2026-10-03T13:16:15+00:00",
+    "probes_executed": 45,
+    "probes_passed": 45,
+    "pass_rate": 1.0,
+    "pass_k": 1.0,
+    "honesty_trap_score": 100.0,
+    "median_latency_ms": 3769.6,
+    "rounds": 15,
+    "last_round_score": 100.0,
+    "last_pass_at": "2026-10-03T13:16:14+00:00",
+    "half_life_hours": 36.0,
+    "decay_formula": "effective = last_score * 0.5^(hours_since_last_pass / half_life_hours)",
+    "status_at_issue": "certified",
+    "effective_score_at_issue": 100.0,
+    "scope_statement": "DecayCert certifies ONLY the behaviour observed by its secret, pre-committed probe suite against this endpoint's declared surfaces at the times logged. It certifies nothing about undeclared surfaces, future behaviour beyond the decay window, or the honesty of the operator."
+  },
+  "signature_hex": "5c0a0a199265d22950646115584231f6f776ccf7acbadcb6b636b2731b9a64e5147ff8be7b04cb814229d92f64578f3e10cbb6ea88778b81c0f3447fee533e01",
+  "public_key_hex": "90d16f70f158cfa53313d666922945c9fda6b580f90b44277e21a6cb317f32b1",
+  "algorithm": "Ed25519"
+}
