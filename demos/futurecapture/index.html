@@ -35,7 +35,7 @@ listings were alive is evidence.</p>
 <p>Live numbers: <span id="fcLive">loading…</span></p>
 <p><a href="capture0.json">capture0.json</a> (machine-readable state) ·
 <a href="capture0.html">capture #0 verification page</a> ·
-<a id="sampleDl" href="spec.json">spec</a></p>
+<a id="sampleDl" href="capture0.json">free sample archive (reduced fields, JSONL)</a></p>
 </div>
 <div class="card"><h2>Buy the future</h2>
 <p><a href="order.html"><strong>Order page →</strong></a> £9 option on the
@@ -50,8 +50,9 @@ by the sources; no contact enrichment. GitHub commit timestamps anchor
 every publication.</small></p>
 <script src="fcconfig.js"></script>
 <script>
-(function(){var b=window.FC_API_BASE||'';if(!b)return;
+(function(){var b=window.FC_API_BASE||'https://bb565de8d13e10.lhr.life';if(!b)return;
 var sd=document.getElementById('specDl');if(sd)sd.href=b+'/spec?src=site';
+var sm=document.getElementById('sampleDl');if(sm)sm.href=b+'/sample?src=site';
 fetch(b+'/stats').then(function(r){return r.json()}).then(function(s){
 document.getElementById('fcLive').textContent=
  'records '+s.records+' · root '+String(s.chain_root).slice(0,16)+'…'+
