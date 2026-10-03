@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>AfterLife — graveyard broker for dead agent services</title>
+<style>body{background:#0b0e13;color:#d7dde8;font-family:system-ui;
+max-width:860px;margin:2em auto;padding:0 1em;line-height:1.5}
+a{color:#8ab4ff}table{border-collapse:collapse;width:100%}
+td,th{border:1px solid #2a3342;padding:.35em .6em;text-align:left}
+.warn{border:1px solid #7a5b12;background:#241d08;padding:1em}</style>
+</head><body>
+<h1>AfterLife</h1>
+<p><b>A graveyard broker for dead agent services.</b> Abandonment is
+proven by a multi-signal quorum (30 days of failed probes, 90 days of
+zero settlements, 90 days of registry silence, unanswered contact),
+then a 21-day objection window. Only then may an estate list. Buyer
+and seller settle <b>directly between themselves</b>; both sign an
+assignment record we witness, so a resurrected service is publicly the
+legitimate successor instead of an indistinguishable clone. We hold
+nothing, ever.</p>
+<div class="warn"><b>Honest pricing of corpses:</b> most estates are
+worth £0 and will never sell. A status here is a measurement statement
+("operator-unresponsive, unrebutted"), not a legal pronouncement —
+we are not a court. Our only revenue is a flat $5
+witness fee on a completed assignment. Live-test gauges:
+3 estates, 1 assignments,
+1 published false positives (ours,
+attached, not hidden), external estates 0, revenue £0.</div>
+<h2>Estates under proceeding</h2>
+<table><tr><th>Estate</th><th>Service</th><th>Ladder state</th></tr>
+<tr><td><a href="estates/est-0001.html">est-0001</a></td><td>sleepy-mail-relay</td><td>ALIVE</td></tr>
+<tr><td><a href="estates/est-0002.html">est-0002</a></td><td>ghostmail-relay</td><td>RESURRECTED</td></tr>
+<tr><td><a href="estates/est-0003.html">est-0003</a></td><td>price-oracle-x</td><td>ESTATE_LISTABLE</td></tr>
+
+</table>
+<h2>What never transfers</h2><ul>
+<li>customers and their data (no personal data is handled by us, ever)</li><li>payment history as reputation (history stays public; the new operator's own record starts at resurrection)</li><li>liabilities, debts, or obligations of the old operator</li><li>any promise that traffic will continue</li><li>expired domains (traffic inheritance without the owner's signed act is hijack, not brokerage — out of scope)</li>
+</ul>
+<h2 id="prober">Prober identification &amp; opt-out</h2>
+<p>Our prober sends at most one request per endpoint per day with
+User-Agent <code>AfterLife-Prober/1.0</code> and never sends payment
+headers. To opt out an endpoint or rebut a status, sign a rebuttal
+with the service key and POST it to the API
+(<code>see /mcp declare_alive</code>) — a signed
+rebuttal reverts a death finding instantly and our mistake stays
+permanently attached to the record.</p>
+<p>Witness key (Ed25519): <code>ca995fcfafd534f519c0281f155630f47e23908e698dfa3389a5c55d542718c5</code> · fee payTo
+(Base/USDC): <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code></p>
+</body></html>
