@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>InstantAudit report dc027245df56</title>
+<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;background:#0b1020;color:#e8ecf8}
+code{word-break:break-all} table{width:100%;border-collapse:collapse} td,th{border-bottom:1px solid #334;padding:6px;text-align:left}
+.warn{border:1px solid #8a6d1f;background:#241d08;padding:12px;border-radius:8px}</style></head>
+<body>
+<h1>InstantAudit — verification page</h1>
+<p>Report ID: <code>dc027245df56</code><br>
+Contract: <code>0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</code> (chain: base)<br>
+Generated: 2026-10-03T11:33:36Z<br>
+Bytecode SHA-256: <code>98d785fcb1bf847f287adc2310759fd94cc13e754b974bc72131382e8266f607</code><br>
+Verification hash: <code>de0b034c6d1cd793205220f9ee84b8e73e19fc018dc52610b308cb72d785693c</code><br>
+Risk score: <strong>47/100</strong></p>
+<div class="warn"><strong>Automated scan — not a security guarantee.</strong> This is an automated scan, not a manual security audit and not a security guarantee. It does not certify that a contract is safe. Always obtain a professional manual audit before handling user funds.</div>
+<h2>Findings</h2>
+<table><tr><th>Severity</th><th>Title</th><th>Detail</th><th>Remediation</th></tr><tr><td>high</td><td>SELFDESTRUCT opcode present</td><td>Bytecode contains SELFDESTRUCT. Depending on reachability, the contract may be destructible or able to force-send ETH.</td><td>Confirm SELFDESTRUCT is unreachable by non-admin callers.</td></tr><tr><td>high</td><td>upgradeTo present (proxy upgrade)</td><td>Function selector 0x3659cfe6 is dispatched in the runtime bytecode.</td><td>Upgradeable contracts can be changed after deployment. Users must trust the upgrade key holder indefinitely.</td></tr><tr><td>high</td><td>upgradeToAndCall present (proxy upgrade)</td><td>Function selector 0x4f1ef286 is dispatched in the runtime bytecode.</td><td>Upgradeable contracts can be changed after deployment. Users must trust the upgrade key holder indefinitely.</td></tr><tr><td>medium</td><td>DELEGATECALL opcode present</td><td>The runtime bytecode contains DELEGATECALL (proxy or library pattern). Execution can be redirected to other code.</td><td>Identify the delegate target; if it is upgradeable, treat the contract as mutable.</td></tr></table>
+<h2>Checks performed</h2><ul><li>Bytecode retrieved: 1852 bytes, sha256 98d785fcb1bf847f…</li><li>CREATE2 opcode present (deterministic deployments possible).</li><li>EIP-1967 implementation slot empty (not an EIP-1967 proxy).</li><li>owner() returns 0x3abd6f64a422225e61e435bae41db12096106df7 (privileged role is set).</li><li>Selector scan: 12 PUSH4 selectors extracted and screened.</li><li>No source submitted: bytecode-only scan (reduced coverage).</li></ul>
+<h2>Methodology</h2><p>Automated heuristic scan: runtime-bytecode capability screen (selectors/opcodes), EIP-1967 proxy slot probe, owner() probe, and source pattern matching when source is supplied.</p>
+<p>Files: <a href="report.json">report.json</a> · <a href="report.pdf">report.pdf</a></p>
+</body></html>
