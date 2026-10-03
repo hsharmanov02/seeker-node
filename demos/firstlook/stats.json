@@ -1,5 +1,5 @@
 {
- "at": "2026-10-03T12:06:16+00:00",
+ "at": "2026-10-03T12:11:58+00:00",
  "delay_seconds": 900,
  "external_api_keys": 0,
  "feed_api_calls": 1,
@@ -16,7 +16,7 @@
   "github": {
    "baseline_items": 44,
    "errors": 0,
-   "last_ok": "2026-10-03T12:00:52+00:00",
+   "last_ok": "2026-10-03T12:11:41+00:00",
    "latency": {
     "count": 1,
     "max_s": 5.7,
@@ -27,7 +27,7 @@
   },
   "superteam": {
    "baseline_items": 25,
-   "errors": 1,
+   "errors": 4,
    "last_ok": "2026-10-03T12:00:38+00:00",
    "latency": {
     "count": 0,
@@ -37,8 +37,8 @@
   },
   "ugig": {
    "baseline_items": 37,
-   "errors": 1,
-   "last_ok": "2026-10-03T12:00:53+00:00",
+   "errors": 0,
+   "last_ok": "2026-10-03T12:11:56+00:00",
    "latency": {
     "count": 0,
     "median_s": null
