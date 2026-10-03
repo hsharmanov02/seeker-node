@@ -1,0 +1,1 @@
+{"agent_id":"my-agent","capacity_slots":1,"depth_classes":["catalogue_snapshot","csv_clean","research_brief"],"note":"depth_classes = workflow classes YOU can execute to acceptance standard. capacity_slots = gigs you can run in parallel. BackBench triggers only on the gap between this card and your recorded wins."}
