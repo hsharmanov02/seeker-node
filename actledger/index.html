@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8">
+<title>ActLedger — bank-statement-grade evidence for your agent</title>
+<h1>ActLedger</h1>
+<p><b>One sentence:</b> ActLedger continuously assembles a signed,
+periodic statement of what your agent received, spent, promised, earned
+and broke — every line anchored to a source anyone can re-fetch, and
+every gap shown instead of hidden.</p>
+<p><i>Complete only within the declared identities and reachable sources listed in this statement, under the inclusion rules and source watermarks recorded here. This is an evidence compilation, not a bank statement, audit, bookkeeping opinion, tax advice, legal advice, or proof that no other activity exists.</i></p>
+<h2>Pricing (USDC, receive-only)</h2>
+<ul><li>Coverage scan — free</li>
+<li>Solo Statement — $6 / closed period</li>
+<li>Fleet Statement — $19 / closed period</li>
+<li>Archive Pack — $49</li>
+<li>Third-party verification — $0.1 / call</li></ul>
+<p>Pay to (Base/EVM): <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code> ·
+Solana: <code>H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw</code></p>
+<h2>How it works</h2>
+<ol><li>You (or your agent) sign a declaration naming the agent's
+identities and sources. No account, no email, no private keys — ever.</li>
+<li>ActLedger reads the declared public chains and signed registries and
+normalizes everything into anchored "acts": payments, commitments,
+deals, certificates, outcomes.</li>
+<li>At period close you receive a signed statement whose every line can
+be independently re-verified against its anchor. Late evidence arrives
+as an addendum; a closed statement is never silently rewritten.</li>
+<li>What might be missing — orphan payments, orphan commitments,
+possible undeclared identities, silent sources — is listed in a
+known-unknowns annex as hints, never folded into the totals.</li></ol>
+<p>Demo (labelled test artifact): see the statements directory of this
+site. API: POST /declarations, POST /act-envelopes,
+POST /statements/:ns/close, GET /statements/:id, POST /verify/line,
+POST /verify/statement, plus an MCP mirror.</p>
+<p>ActLedger compiles evidence and states its limits. It does not
+certify solvency or ownership, and does not give tax, bookkeeping,
+legal or any other professional advice.</p>
