@@ -1,0 +1,44 @@
+{
+ "generated_at": "2026-10-03T14:05:18+00:00",
+ "notary_pubkey": "910711d00a996693a106e148bda9e1626bb45fcc35be19f917b8e99d4737b9b5",
+ "chain_head": {
+  "seq": 2,
+  "row_hash": "93d8e29785455ee70e079be4d778a4e8ed549e34cd40f1d3c5a086078854a733"
+ },
+ "chain_valid": true,
+ "entries": [
+  {
+   "id": "pb-0001",
+   "chain": "base",
+   "tx_hash": "0xa9e8b36e4d62a21dcaee23edb0c7d09a1822286af8fcece645cf918c645ddcea",
+   "tx_refs": [
+    "0xa9e8b36e4d62a21dcaee23edb0c7d09a1822286af8fcece645cf918c645ddcea",
+    "0xa93e2591ee7b3efcfa18a90cac43a76e78c8fa77a77cbd0b6721aa6cf374600b",
+    "0x20c59aa4a40c6a79a26aead282487e3371491adfaa45d06220c57c7af666aa05"
+   ],
+   "explorer": "https://basescan.org/tx/0xa9e8b36e4d62a21dcaee23edb0c7d09a1822286af8fcece645cf918c645ddcea",
+   "from": "0x7e6b6556322c4e26c567a867964ac793f5ee2b1c",
+   "to": "0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2",
+   "asset": "USDC",
+   "amount": "0.022",
+   "timestamp": "2026-09-29T10:34:13Z",
+   "purpose": "x402 API payment via xpay.sh facilitator (counterparty purpose self-report unavailable)",
+   "purpose_confirmed": false,
+   "category": "api-sales",
+   "order_ref": "programme-payment-2026-09-29",
+   "proposer": "seed:chain-reconstruction",
+   "status": "PROPOSED",
+   "settled_tx": "0xa9e8b36e4d62a21dcaee23edb0c7d09a1822286af8fcece645cf918c645ddcea",
+   "settled_at": "2026-10-03T14:05:18+00:00",
+   "chain_verified": true,
+   "signatures": {
+    "from": null,
+    "to": null
+   },
+   "dispute": null,
+   "export_count": 0,
+   "created_at": "2026-10-03T14:05:18+00:00",
+   "sign_message": "pairbook-entry-v1:{\"amount\":\"0.022\",\"asset\":\"USDC\",\"category\":\"api-sales\",\"chain\":\"base\",\"from\":\"0x7e6b6556322c4e26c567a867964ac793f5ee2b1c\",\"order_ref\":\"programme-payment-2026-09-29\",\"purpose\":\"x402 API payment via xpay.sh facilitator (counterparty purpose self-report unavailable)\",\"timestamp\":\"2026-09-29T10:34:13Z\",\"to\":\"0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2\",\"tx_hash\":\"0xa9e8b36e4d62a21dcaee23edb0c7d09a1822286af8fcece645cf918c645ddcea\",\"uid\":\"pb-0001\"}"
+  }
+ ]
+}

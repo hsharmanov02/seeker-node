@@ -1,0 +1,26 @@
+{
+ "api_base": "",
+ "by_status": {
+  "PROPOSED": 1
+ },
+ "chain_events": 2,
+ "chain_head": {
+  "row_hash": "93d8e29785455ee70e079be4d778a4e8ed549e34cd40f1d3c5a086078854a733",
+  "seq": 2
+ },
+ "chain_valid": true,
+ "disputed": 0,
+ "distinct_referers": 0,
+ "entries": 1,
+ "external_callers": 0,
+ "external_calls": 0,
+ "generated_at": "2026-10-03T14:05:18+00:00",
+ "notary_pubkey": "910711d00a996693a106e148bda9e1626bb45fcc35be19f917b8e99d4737b9b5",
+ "paired": 0,
+ "revenue": {
+  "by_purpose": {},
+  "payments": 0,
+  "revenue_usdc": "0"
+ },
+ "settled": 1
+}

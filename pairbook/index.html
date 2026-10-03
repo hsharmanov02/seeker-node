@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pairbook — the shared book for machine payments</title>
+<style>
+ body{font-family:ui-sans-serif,system-ui,sans-serif;background:#0b0e13;
+ color:#e6e9ee;margin:0;padding:2rem 1rem 4rem}
+ main{max-width:880px;margin:0 auto}
+ .card{background:#12161f;border:1px solid #232a38;border-radius:10px;
+ padding:1rem 1.25rem;margin:1rem 0}
+ .mono{font-family:ui-monospace,monospace;font-size:.8rem;word-break:break-all}
+ .muted{color:#8b93a3;font-size:.85rem} a{color:#6cb2f5}
+ table{width:100%;border-collapse:collapse;font-size:.88rem}
+ td,th{text-align:left;padding:.4rem .5rem;border-bottom:1px solid #232a38}
+ code{background:#1a2030;padding:.1rem .35rem;border-radius:5px}
+</style></head><body><main>
+<h1>Pairbook</h1>
+<p>Every payment between two agents becomes <b>one canonical book entry
+co-signed by both payer and payee</b> — the shared book for an economy where
+both sides of every transaction currently keep separate, adversarial
+records. Neutral, rail-agnostic (Base + Solana USDC), no custody: we observe
+public chains and verify signatures; parties sign with their own wallets.</p>
+
+<div class="card"><h3>How it works</h3>
+<table>
+<tr><td><b>PROPOSED</b></td><td>Either side drafts an entry — or our watcher
+auto-drafts one from a public on-chain transfer within ~2 minutes.</td></tr>
+<tr><td><b>PAIRED</b></td><td>The counterparty co-signs the identical object
+($0.02). Disagreement is a signed DISPUTED annotation, not silent divergence.</td></tr>
+<tr><td><b>SETTLED</b></td><td>Our watcher matches the on-chain payment to
+the open entry and stamps it closed.</td></tr>
+<tr><td><b>EXPORTED</b></td><td>Either party pulls a tax-ready CSV/JSON
+journal ($5) — every line cites entry IDs and both signatures.</td></tr>
+</table></div>
+
+<div class="card"><h3>Live ledger</h3>
+<table>
+<tr><td>Entries</td><td>1 (paired 0,
+disputed 0, settled 1)</td></tr>
+<tr><td>Hash chain</td><td>head seq 2 · valid:
+True</td></tr>
+<tr><td>Chain head</td><td class="mono">93d8e29785455ee70e079be4d778a4e8ed549e34cd40f1d3c5a086078854a733</td></tr>
+<tr><td>Notary (Ed25519)</td><td class="mono">910711d00a996693a106e148bda9e1626bb45fcc35be19f917b8e99d4737b9b5</td></tr>
+<tr><td>Revenue so far</td><td>0 USDC
+(0 payments)</td></tr>
+</table>
+<p><a href="ledger.json">ledger.json</a> · <a href="stats.json">stats.json</a> ·
+<a href="x402.json">x402 pricing manifest</a></p></div>
+
+<div class="card"><h3>For agent &amp; seller developers</h3>
+<p>API base: <code>(tunnel starting)</code></p>
+<table>
+<tr><td class="mono">POST /entries</td><td>Draft an entry (free). Response
+carries an <code>X-Pairbook-Entry</code> invite header — seller endpoints can
+pass it straight to the buyer, who co-signs in one $0.02 call.</td></tr>
+<tr><td class="mono">POST /entries/{id}/cosign</td><td>Co-sign the
+identical entry object (EIP-191 / Ed25519). 402 flow: pay $0.02 USDC, retry
+with your payment tx.</td></tr>
+<tr><td class="mono">GET /entries/{id}</td><td>Free verification view:
+both signatures, chain link, hash-chain position.</td></tr>
+<tr><td class="mono">GET /journal/{wallet}</td><td>Tax-ready export,
+$5 via 402. <span class="mono">?format=csv|json</span></td></tr>
+<tr><td class="mono">GET /wallets/{addr}/obligations</td><td>Open paired
+obligations + dispute count, $0.01.</td></tr>
+<tr><td class="mono">POST /watch</td><td>Register a wallet for auto-drafting
+(free).</td></tr>
+</table>
+<p class="muted">Receiving (receive-only): Base/EVM
+<span class="mono">0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</span> · Solana
+<span class="mono">H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw</span></p></div>
+
+<div class="card"><h3>From the same bench</h3>
+<p><a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/demos/firstlook/index.html">FirstLook</a>
+— the opportunity wire for agents ·
+<a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/gazette/index.html">Agent Gazette</a>
+— constructive-notice registry ·
+<a href="https://rawcdn.githack.com/hsharmanov02/seeker-node/main/instantaudit/index.html">InstantAudit</a>
+— automated smart-contract audits. Every payment to those endpoints can be
+paired here into a shared book entry.</p></div>
+
+<p class="muted">Entries are party-attested facts about payments, not
+accounting, audit, tax or credit advice. "Purpose" is labelled
+counterparty-confirmed only when both parties have signed; otherwise it is
+self-reported. Pairbook never custodies, routes or moves anyone's funds and
+holds no one's keys.</p>
+</main></body></html>
