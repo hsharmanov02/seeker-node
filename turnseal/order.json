@@ -5,20 +5,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_cb7149155c819cb3",
-   "root": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
+   "batch_id": "b_1357aba5fa95d3a5",
+   "root": "1aacffca16187c55520505b1a8a98d4ee34c355973dd6ced451356081eabd7be",
    "prev_root": "GENESIS",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:55:29+00:00",
-   "signature": "c8acd3f9fe272cf4689eea5ca78b9577e16090c95577b7e2d8a92bca7c48dc06a3f274a0c38ee78724a82a226e341ee534ad475d7b3ba298ffe0e186066dbf02",
+   "sealed_at": "2026-10-03T15:02:27+00:00",
+   "signature": "f153cb2601752eb13a8a8f8efc2ee23cb837a862b06de174b7fc9db8341a9e1a3667b1d3df00a150dbada576e80aefa9bed220e37f2937aecd91a3fef697a103",
    "leaves": [
     {
-     "entry_id": "e_8acb4880d52cc751",
-     "leaf_hash": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
-     "buyer_hash": "dbd01c22ac72d163e2b89b65cb5a9af40d702af54ea539715e819484afae877c",
-     "commitment": "58aa2f834145be56ed5814cdcab7c988d013a199361144ba79b5f4c239ff3b2e",
+     "entry_id": "e_4a0549658aa5857e",
+     "leaf_hash": "1aacffca16187c55520505b1a8a98d4ee34c355973dd6ced451356081eabd7be",
+     "buyer_hash": "97ef8bd8be4aa7d4bd8754a54dea7bed89ce8b5b592b55ad896fea06ed35e635",
+     "commitment": "3c74be4cdb4a503a5c94ecb7ccf7afe69c958c7ee42e5682299583becf32353b",
      "rank": 1,
      "intake_seq": 1
     }
@@ -27,20 +27,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_3721dd22fcca8367",
-   "root": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
-   "prev_root": "1810309c979efa82127cb7ee64ef3c31ef93beb7888d96bf2b184828d2577f66",
+   "batch_id": "b_97aca93934461707",
+   "root": "190e830b46c4951af37b0e738d6790746e8e707d608feddbd96b6d4e734b88c3",
+   "prev_root": "1aacffca16187c55520505b1a8a98d4ee34c355973dd6ced451356081eabd7be",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:55:41+00:00",
-   "signature": "c307a57d3431be2c7a635ffab2fc9a2e4d6ef562c169fd0aed653326e882c96ff869a6e4be51cae9d4edbf090973cdcde4c52e97bb3f2489e44e0ebb7d73c40e",
+   "sealed_at": "2026-10-03T15:02:30+00:00",
+   "signature": "f55421736207704b67d0c76b58a15c52fb76f42f5beb19c2a56ccc8199f124a473b3bad5e8f6ae148b6d7bbe1dbfb4045fa552d244cdba2ca19b67c4f032d805",
    "leaves": [
     {
-     "entry_id": "e_1064223a7b38693b",
-     "leaf_hash": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
-     "buyer_hash": "47c16a98ba311e53f16aaa36a0da4ba2d9f21caea7174fc7b6550a5b6d7f5bb2",
-     "commitment": "30a1e61aae9552e51463b96194157511ff6b92f0147c469ce528e0eb80227514",
+     "entry_id": "e_8ffb109c67b1adad",
+     "leaf_hash": "190e830b46c4951af37b0e738d6790746e8e707d608feddbd96b6d4e734b88c3",
+     "buyer_hash": "81ea4b844cabd79fab70c1d9db0e66594478dcde0b6c13ce93606e384ab9656d",
+     "commitment": "a94f0c8863dbdd52554ddc3d7b04f0914e8c25db9f715ec59a13822abe03cbb4",
      "rank": 1,
      "intake_seq": 2
     }
@@ -49,20 +49,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_654159668258de87",
-   "root": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
-   "prev_root": "c91fb183c3bf5ad2301482b96e559d5a93af80d9a45890327f956f299d96ec6e",
+   "batch_id": "b_0d143838672a9232",
+   "root": "9dc86fae27fb82791cafb3c30a1b309ed087a5844e0d0cfdebf6511628960796",
+   "prev_root": "190e830b46c4951af37b0e738d6790746e8e707d608feddbd96b6d4e734b88c3",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:55:44+00:00",
-   "signature": "8bb401efc1f16106a4f1dc033e467430d482d2feb6bce775f19c1ee7f7cca309ca9d65a705abb890bfddd4182773af749f5eb54af19aa116ad1a447c16baf40e",
+   "sealed_at": "2026-10-03T15:02:34+00:00",
+   "signature": "7f17419b1f0a06599f28da47395ab42517044a4ca59dc0178dd4911b72bf07a3c445be64c4ce16b713aafe20a86befc5732f424849c9f0106bdc0932ddfffd09",
    "leaves": [
     {
-     "entry_id": "e_6fcf94ebe9651694",
-     "leaf_hash": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
-     "buyer_hash": "851b3226cb3199537a986b80bb7306a9df59c67fe84dc06cae55d8aa5eccd68e",
-     "commitment": "0d3a190dbf9c7a7e70fd382bc03d0f4cf7dbfcf7823fc0ef0da3e8c51978bae8",
+     "entry_id": "e_6082146cb2c03ec5",
+     "leaf_hash": "9dc86fae27fb82791cafb3c30a1b309ed087a5844e0d0cfdebf6511628960796",
+     "buyer_hash": "9dfd28b9f8435c5e526fed185536506659d8a3f96ec88ea3767280c3a72c0165",
+     "commitment": "55addfb0d48540fdcdc564477b238211b8564cc0c7918f593b0889e5315fe023",
      "rank": 1,
      "intake_seq": 3
     }
@@ -71,20 +71,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_497e693f0f264337",
-   "root": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
-   "prev_root": "876e442f050a9aef2850aec7c70185ae43ebd040fb63cb6fdc90336c085f8eb4",
+   "batch_id": "b_40dac4b415a4b3a1",
+   "root": "26cff17cb10ea81c0a476d7fff127715e31329cc7056356e537518a5d591cdec",
+   "prev_root": "9dc86fae27fb82791cafb3c30a1b309ed087a5844e0d0cfdebf6511628960796",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:56:32+00:00",
-   "signature": "d199520a56b5d880025c400ff93117a2d88844f6cc0abdeaeed149ae7aff59220ce72d1c4ee3b7f4e61dc3a8334c73732220cafb0eb1d42dce7de43eeaba1002",
+   "sealed_at": "2026-10-03T15:03:31+00:00",
+   "signature": "ed3e3b56fb3f4bc3573a13840722d1586858770b2b2b03b127967b6c2d1a8c44722a8ef3d13f1164b31dae43e96072e67d504d010d6dd7e6c548e5f365d4cc07",
    "leaves": [
     {
-     "entry_id": "e_0e2bae6d81ba7700",
-     "leaf_hash": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
-     "buyer_hash": "8959e70a4046d7cdb027aefc8bd0cec02195ae83d5861693acdf56c2533b6fb6",
-     "commitment": "aa17b08bb54e24d56470025ef04afc9d77b9e371e95dbcc14feaf848a3e87bc5",
+     "entry_id": "e_2eee1d16e85d37d0",
+     "leaf_hash": "26cff17cb10ea81c0a476d7fff127715e31329cc7056356e537518a5d591cdec",
+     "buyer_hash": "97ef8bd8be4aa7d4bd8754a54dea7bed89ce8b5b592b55ad896fea06ed35e635",
+     "commitment": "15b07faaed0e304f88ea6f114b19d05453dc0b9dcb3bf81ad29c652d40719501",
      "rank": 1,
      "intake_seq": 4
     }
@@ -93,20 +93,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_b1904b276510bb8b",
-   "root": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
-   "prev_root": "bb6cfab96296f161b52cac54a3bbc688b9d2a3b13030ba81f9745a8c96c7c9ab",
+   "batch_id": "b_9fc2d6ede04f9eee",
+   "root": "b8003a130b35595171281065d8e5e19832a5ac0fa5d6538e5d2181c5e88a4db0",
+   "prev_root": "26cff17cb10ea81c0a476d7fff127715e31329cc7056356e537518a5d591cdec",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:56:45+00:00",
-   "signature": "14be9c99ead1e533659c3bf37f20da92e9f76b90089d3dce926c61b23356409c0af8d7f6bce577f4d14c2cf762324e3baf372345ecd3c93caa4f6b6b8addf60d",
+   "sealed_at": "2026-10-03T15:03:36+00:00",
+   "signature": "3832f73d1303fcbd4a69abc62c3298cedc306461114ff8a6a20737273e04d015f44a65f4b4cc169a82e8cbc4672785e24b3e20444d3ec11f0fa88e3cac43a901",
    "leaves": [
     {
-     "entry_id": "e_5e8f035446ab3a53",
-     "leaf_hash": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
-     "buyer_hash": "47c16a98ba311e53f16aaa36a0da4ba2d9f21caea7174fc7b6550a5b6d7f5bb2",
-     "commitment": "6f47847b5f9e024fc24ce518075d97f4322d0c04f963125a2eb897f6998d0c19",
+     "entry_id": "e_ce253085bef1ad8c",
+     "leaf_hash": "b8003a130b35595171281065d8e5e19832a5ac0fa5d6538e5d2181c5e88a4db0",
+     "buyer_hash": "81ea4b844cabd79fab70c1d9db0e66594478dcde0b6c13ce93606e384ab9656d",
+     "commitment": "67d7b7bbc3687135f86014a97999cbd8c33eb629938949841c974c687cdf4c93",
      "rank": 1,
      "intake_seq": 5
     }
@@ -115,20 +115,20 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_b00df3d7f56c48d6",
-   "root": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
-   "prev_root": "3896e9b73e474238d8092f0b708e8d089aaefbb23a43200dc199e4b40e5a251d",
+   "batch_id": "b_4ab70e85c066dc5d",
+   "root": "0750eecc04bf5e8872652dcfd9fcad70dbe1de5aceb6a2f7ffdb00f9f6c24a22",
+   "prev_root": "b8003a130b35595171281065d8e5e19832a5ac0fa5d6538e5d2181c5e88a4db0",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:57:35+00:00",
-   "signature": "54e4917f606a93def7a0bc5d139871465834a13b8436087afb60e11153601425c64d607e9b6a235f3be0573ed4f4ea1eaa6fa13fd715e6e17585e522587ab603",
+   "sealed_at": "2026-10-03T15:04:34+00:00",
+   "signature": "247626a3e88bc12943806e75a2713151a25a8c09c12fd7a886075f90e1046be0b767fb0fca73c17bf62fff6ea1fe0d6e57c1a891824626b13564dc389032d504",
    "leaves": [
     {
-     "entry_id": "e_5dc542c0368f6789",
-     "leaf_hash": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
-     "buyer_hash": "851b3226cb3199537a986b80bb7306a9df59c67fe84dc06cae55d8aa5eccd68e",
-     "commitment": "cc7ec0cff0c563329901ad506fdf2e3564b592306af211249a6be67ac80e4923",
+     "entry_id": "e_54cb9d3c5c6d36cb",
+     "leaf_hash": "0750eecc04bf5e8872652dcfd9fcad70dbe1de5aceb6a2f7ffdb00f9f6c24a22",
+     "buyer_hash": "9dfd28b9f8435c5e526fed185536506659d8a3f96ec88ea3767280c3a72c0165",
+     "commitment": "ddbd82f9661c70ae7631b9efc68f67391625b93a248e7d40bbd8fc968f462285",
      "rank": 1,
      "intake_seq": 6
     }
@@ -137,22 +137,904 @@
   {
    "seller_id": "sel_22eb8756f802a0bff7c0750f",
    "endpoint_id": "scarce_echo",
-   "batch_id": "b_374e6ea327941b33",
-   "root": "72f4b47c4f555acef6c1117cb0983d51d2af5817957ddb97c6d16b8ed51db5a2",
-   "prev_root": "e53305871b8bd004c0ca7127cf0d8ef0c0926ff56ef34b46a0b4431c0ba87c4d",
+   "batch_id": "b_cde7f86a7a8dfcce",
+   "root": "b2a1b50f1f64a879e280bbf48b03dd385bed932dbcfc769d4c30c172cef0df14",
+   "prev_root": "0750eecc04bf5e8872652dcfd9fcad70dbe1de5aceb6a2f7ffdb00f9f6c24a22",
    "entry_count": 1,
    "policy": "fifo",
    "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
-   "sealed_at": "2026-10-03T14:57:47+00:00",
-   "signature": "a25461f903f7934f7cfd4975407fd12bce9d15393eca08fe6739284a07d2b281f60148e5059cf7dd36f00702b4e86f436091157f1696e99f92b6d5a7c2907200",
+   "sealed_at": "2026-10-03T15:04:39+00:00",
+   "signature": "f15bd3930596cf81b83427ea1ac3d084802fac46a2b798bd2e5463c28f53e1ab3eeeddb6e80c9e925fa99b7a9d1097bd901661932d8bbb3ecf3ed6c40035df0e",
    "leaves": [
     {
-     "entry_id": "e_6f0474add11bc7d7",
-     "leaf_hash": "72f4b47c4f555acef6c1117cb0983d51d2af5817957ddb97c6d16b8ed51db5a2",
-     "buyer_hash": "8959e70a4046d7cdb027aefc8bd0cec02195ae83d5861693acdf56c2533b6fb6",
-     "commitment": "d3070beecb1fab910a6959eff4eb2ce73cc2cff448696adc6639fe2ed123c517",
+     "entry_id": "e_8820ccfd1fe107c7",
+     "leaf_hash": "b2a1b50f1f64a879e280bbf48b03dd385bed932dbcfc769d4c30c172cef0df14",
+     "buyer_hash": "97ef8bd8be4aa7d4bd8754a54dea7bed89ce8b5b592b55ad896fea06ed35e635",
+     "commitment": "b3cc91a24a1a84eed91ad38600167b6d6bc9c31f56b1993774ac1a4a4f69a098",
      "rank": 1,
      "intake_seq": 7
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_46774f582dbdbb5e",
+   "root": "fff5bd588c93b56fbdf3305476d3ea32dfad32949fa1fb3d93248f7c0cf8e4c6",
+   "prev_root": "b2a1b50f1f64a879e280bbf48b03dd385bed932dbcfc769d4c30c172cef0df14",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:05:36+00:00",
+   "signature": "e2385f4a4fa7b4ca1e80e4b152adc4dbb415dc6940eae8707c55026e65ae301457f4007f22bf58c041769470ff06ae04f70d49a31d5b5e77a2403d9f73a3eb0c",
+   "leaves": [
+    {
+     "entry_id": "e_00ff633ec4b427bc",
+     "leaf_hash": "fff5bd588c93b56fbdf3305476d3ea32dfad32949fa1fb3d93248f7c0cf8e4c6",
+     "buyer_hash": "81ea4b844cabd79fab70c1d9db0e66594478dcde0b6c13ce93606e384ab9656d",
+     "commitment": "5a7eebb58116ddf9fe85428160b457325a02909ee22a7ec2803c369857f43c79",
+     "rank": 1,
+     "intake_seq": 8
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_3c20adb84fd18232",
+   "root": "092e3ca06027559278823242d6775a7429789d35c15bddbda15774ba7f92de5a",
+   "prev_root": "fff5bd588c93b56fbdf3305476d3ea32dfad32949fa1fb3d93248f7c0cf8e4c6",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:05:40+00:00",
+   "signature": "d9d6fa7784922e6f9a78d72ecc208373f2ac93f9d42113f815404e23504c45e10042d7f9f8ee3edb70d1040520b2f45042f041192e443c54e78b4226cee13a0d",
+   "leaves": [
+    {
+     "entry_id": "e_4ae163176a65bde0",
+     "leaf_hash": "092e3ca06027559278823242d6775a7429789d35c15bddbda15774ba7f92de5a",
+     "buyer_hash": "9dfd28b9f8435c5e526fed185536506659d8a3f96ec88ea3767280c3a72c0165",
+     "commitment": "28ff4015650ce5c481da390996a712ab4e8d1d419885e55ce8f1ab131a8735f5",
+     "rank": 1,
+     "intake_seq": 9
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_438091e66853635e",
+   "root": "9b0c7e29042e05edc3959e9725551813c0bc02a27a7eb0c75279f867eb56e086",
+   "prev_root": "092e3ca06027559278823242d6775a7429789d35c15bddbda15774ba7f92de5a",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:07:44+00:00",
+   "signature": "db6c05099ac57f4ebe797c9a3c1f2bd9bd841ba38b21227d13e84b3c798c34c45a7ea3c66ac316d8a32dcf5b855c55db6499954db7798cda7a25e2f98c1e0907",
+   "leaves": [
+    {
+     "entry_id": "e_c17afd5a812d6ef6",
+     "leaf_hash": "9b0c7e29042e05edc3959e9725551813c0bc02a27a7eb0c75279f867eb56e086",
+     "buyer_hash": "4c6a2ccf63146b52e267b1ffe84f66debea2b4a43582bfef34cd0e5ec9319c7a",
+     "commitment": "4b453a8e3b9d2585bcbb54f2790482b98f8e64cb2c94998f89fcc0c63a924353",
+     "rank": 1,
+     "intake_seq": 10
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_57075d89372f4c0a",
+   "root": "bdfcee712f2d87e561e6fa127544aa9f691394155f5a6459589ae3dbc46e5905",
+   "prev_root": "9b0c7e29042e05edc3959e9725551813c0bc02a27a7eb0c75279f867eb56e086",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:07:47+00:00",
+   "signature": "7f15c35e7fe0c3e8f23cedfece185a6b87a08e2c263a730ae4c7f34f791a41d11c0bb23b4ea223864553ba176d867ec9c6ac17616e0c09994fdbaf521763090e",
+   "leaves": [
+    {
+     "entry_id": "e_8c7f46a041023fb9",
+     "leaf_hash": "bdfcee712f2d87e561e6fa127544aa9f691394155f5a6459589ae3dbc46e5905",
+     "buyer_hash": "4c6a2ccf63146b52e267b1ffe84f66debea2b4a43582bfef34cd0e5ec9319c7a",
+     "commitment": "4b453a8e3b9d2585bcbb54f2790482b98f8e64cb2c94998f89fcc0c63a924353",
+     "rank": 1,
+     "intake_seq": 11
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_c7795dec1337d75eca661c62",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_d4769c94c56b6248",
+   "root": "8afe7150cd3ec9c86595b07d8519c273267954476c39a8b13911261efa435dbd",
+   "prev_root": "bdfcee712f2d87e561e6fa127544aa9f691394155f5a6459589ae3dbc46e5905",
+   "entry_count": 6,
+   "policy": "fifo",
+   "policy_hash": "38a29a4984263c1d86e2d5706fbb157ecc73f670228edf279fd379022301de93",
+   "sealed_at": "2026-10-03T15:08:46+00:00",
+   "signature": "00d78345629bb57cbd8ba1aaf88c623f3f1ee198240f651b46e34285233c0b78bcb925cd2d66d3d2d00e46e3d7ed44e619ad458106d23b46c16730ef45df0c0c",
+   "leaves": [
+    {
+     "entry_id": "e_6a778b9431de2c02",
+     "leaf_hash": "6cd3e9221338787a3b44203b6df10d52ae01545a34ab72127a1ef4966b8a4fdc",
+     "buyer_hash": "16125080b0f1e26a0f20127b66eadbab57daf32632498006c08ad3b378ba635f",
+     "commitment": "e1b04eab45763f4fcca638639d3985e06e090f9d63de56d4d9fabc079eba5a19",
+     "rank": 1,
+     "intake_seq": 13
+    },
+    {
+     "entry_id": "e_c9f41c36228a1d87",
+     "leaf_hash": "c72338ef7b5a34a3dcff9ad0d27bcf30533b5fa3ef6ebb559b0e9af9e4b27da7",
+     "buyer_hash": "16125080b0f1e26a0f20127b66eadbab57daf32632498006c08ad3b378ba635f",
+     "commitment": "9103f3fa244eed221b6efd0e1f0a53aa8bcd6037d0cb0d2118078f1db41409a6",
+     "rank": 2,
+     "intake_seq": 14
+    },
+    {
+     "entry_id": "e_6314425a1a008802",
+     "leaf_hash": "920894d37c5d83498763cb0eb6ff9162cc305102e0825b13165fa0758da96d69",
+     "buyer_hash": "a550b9c9af416735f421d1994e05c2427c65e00d909df88a07ad89984b0bd192",
+     "commitment": "7bf023db87089834391dbb5ff35f3e76347684627b888e21587b0f6f5bdd5b53",
+     "rank": 3,
+     "intake_seq": 15
+    },
+    {
+     "entry_id": "e_4e80b214af47d399",
+     "leaf_hash": "33a7d26058a188b4dc0868e13527bf679b6f5c46ab81d987468580d7c2ffb1d0",
+     "buyer_hash": "16125080b0f1e26a0f20127b66eadbab57daf32632498006c08ad3b378ba635f",
+     "commitment": "444d9a01a02e4caa544dd63abe58c7ac49d7768d764b119e020f558b3d1557e9",
+     "rank": 4,
+     "intake_seq": 16
+    },
+    {
+     "entry_id": "e_abb53218fe6898a8",
+     "leaf_hash": "da7ae796852d742f35442cf8fb37223c23295b6b4a2e60b375dd230a5d4c09be",
+     "buyer_hash": "a550b9c9af416735f421d1994e05c2427c65e00d909df88a07ad89984b0bd192",
+     "commitment": "5cc74651e1e1f70a8f854b2049922206f02de51bc25ed28ebe668cd98fd8cc8c",
+     "rank": 5,
+     "intake_seq": 17
+    },
+    {
+     "entry_id": "e_6eeeada838d143f8",
+     "leaf_hash": "4a9e0084474075eb5075d0d8a806839340c57ee97b8bdc63072da919505f83c8",
+     "buyer_hash": "a550b9c9af416735f421d1994e05c2427c65e00d909df88a07ad89984b0bd192",
+     "commitment": "b15487d39d01f2032b3d978793d42480278f58491ef3691718e8354ef4960c16",
+     "rank": 6,
+     "intake_seq": 18
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_c491297dbcee64d8",
+   "root": "662875b26febd71ffe274b256d05547cfa791c98a38de2c34be209063150f26e",
+   "prev_root": "8afe7150cd3ec9c86595b07d8519c273267954476c39a8b13911261efa435dbd",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:08:47+00:00",
+   "signature": "f9f7b08f5cf960e34aab35fb60707ebfc5916e533eae0440e4c94536b93f95e069e2daae490fb34aaedc4ffff386566a177e613937fa1ed393ed2f80cd94040e",
+   "leaves": [
+    {
+     "entry_id": "e_ef08a06117a0a330",
+     "leaf_hash": "662875b26febd71ffe274b256d05547cfa791c98a38de2c34be209063150f26e",
+     "buyer_hash": "4c6a2ccf63146b52e267b1ffe84f66debea2b4a43582bfef34cd0e5ec9319c7a",
+     "commitment": "4b453a8e3b9d2585bcbb54f2790482b98f8e64cb2c94998f89fcc0c63a924353",
+     "rank": 1,
+     "intake_seq": 12
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_4f4a0a3d0ec4244b9d8714c2",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_178450116ac6d4dc",
+   "root": "5359e9355ab6196250fa5a58471d75a625483872b72d6a750e97def869f5ccae",
+   "prev_root": "662875b26febd71ffe274b256d05547cfa791c98a38de2c34be209063150f26e",
+   "entry_count": 6,
+   "policy": "cohort_lottery",
+   "policy_hash": "d2e3b6c79483df1b0a6c8e2845b59a4aec392bd040c1337236a1ae0538147b68",
+   "sealed_at": "2026-10-03T15:08:49+00:00",
+   "signature": "4c148986ada7cdc3255c2889f571da0e8265aba334b3f203632df1caae6beb87b47819abddb5325331af337c42060b767bdce553020f4a2e41fb63fbca64c203",
+   "leaves": [
+    {
+     "entry_id": "e_43d03910c6dafafd",
+     "leaf_hash": "8fa7518fb7e4d2b0b313778ca94dcc677b234cd00e295bf542d4b4bc0a5303ff",
+     "buyer_hash": "90924d2e85ab4bc4c58b1dd73cf859746b5250dfee4bb936f3d1dd68539cf0f2",
+     "commitment": "da307b71388484742793255f0b6ee3913a9233405bffa9fea6615030ef4bf9dc",
+     "rank": 1,
+     "intake_seq": 19
+    },
+    {
+     "entry_id": "e_5aa8a5b572fadd7e",
+     "leaf_hash": "fc32b99c0bbedeb11ca27a88cc6caea6847d868a601af3cfdf2e9443ddc8b6e2",
+     "buyer_hash": "90924d2e85ab4bc4c58b1dd73cf859746b5250dfee4bb936f3d1dd68539cf0f2",
+     "commitment": "673f2ba80111028c43663a57eee9faa846ae04a0d99e82aedd6c49b5fb380cf0",
+     "rank": 2,
+     "intake_seq": 20
+    },
+    {
+     "entry_id": "e_02701c726058af43",
+     "leaf_hash": "a7fedc8da4b5d1a84d226d14e48f5e3d61b345d2a34e972b0cadf0f7e7eb498c",
+     "buyer_hash": "ef2142ade0cb32137314a6d251971af2cfaf5ad345b04ab0822526f85b753032",
+     "commitment": "df877e9c281c1c0462150cacb878cec5a235de127f9861b4ef46024e157578b9",
+     "rank": 5,
+     "intake_seq": 21
+    },
+    {
+     "entry_id": "e_4747418b9fb864fc",
+     "leaf_hash": "8aa17e2a4bfc5c715c255df40a5386d05f510f89720717ece1bb543dad690d58",
+     "buyer_hash": "90924d2e85ab4bc4c58b1dd73cf859746b5250dfee4bb936f3d1dd68539cf0f2",
+     "commitment": "a0145fe09610a67a0485d2f5c240bfca04af506d4973e0c580106bda61994297",
+     "rank": 6,
+     "intake_seq": 22
+    },
+    {
+     "entry_id": "e_dcd411c38e5a20d2",
+     "leaf_hash": "544e81525c866f6ed07e9564aa4f6b277874e38a2c12093a74b6cd503fb1872f",
+     "buyer_hash": "ef2142ade0cb32137314a6d251971af2cfaf5ad345b04ab0822526f85b753032",
+     "commitment": "2652ce9399332c39854ae91266b74fdb64b2dd946e57d624bd22b9388fbd4504",
+     "rank": 4,
+     "intake_seq": 23
+    },
+    {
+     "entry_id": "e_428c4f9e24474697",
+     "leaf_hash": "ef22cf6cea1d58674c5dbe22af3cff1b0eb4a53a0401f166069ebfa4470abb08",
+     "buyer_hash": "ef2142ade0cb32137314a6d251971af2cfaf5ad345b04ab0822526f85b753032",
+     "commitment": "8e3de0645507d06bc20da9db3cacd856a60b7e693ae53e5c15639fefc4e29ed0",
+     "rank": 3,
+     "intake_seq": 24
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_3f0ba616b9a110aa45315635",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_412c1dd89c9f158c",
+   "root": "762d7027f72ed0b5076e027254848af49f8223edb03a4fe4dda25c3ada59d9b2",
+   "prev_root": "5359e9355ab6196250fa5a58471d75a625483872b72d6a750e97def869f5ccae",
+   "entry_count": 6,
+   "policy": "weighted_fair_share",
+   "policy_hash": "d9ce3e322fb58d9f75d510765577f66a31b06a8526cc99b5f032e166af43a1aa",
+   "sealed_at": "2026-10-03T15:08:51+00:00",
+   "signature": "84bcfed39a3972a188029b304b7a3cb6d03a7109e28094238dfb3b5d606ae4bcd6c6259bd3830fff0999a1c60a7ac57adc4754dabe64542898d505b75c22440d",
+   "leaves": [
+    {
+     "entry_id": "e_c929647c109b89c7",
+     "leaf_hash": "4df1f72d5caaaeca0bb848ff19cec1f322d5fc4b2d819f6be05da41b7f1e7777",
+     "buyer_hash": "efcdf35b656d43af408bee75e6caec0318c3be864df21b376b3aee8f85030ab2",
+     "commitment": "b505367ac5abee66ca8d8f853f55d865bbd15be27673f757fb267c2814f3a0d9",
+     "rank": 1,
+     "intake_seq": 25
+    },
+    {
+     "entry_id": "e_55452938813b0412",
+     "leaf_hash": "9f2d8800a8bc41c21c66c9403dc409cd880df233fef21073f1ca4b166eeffacd",
+     "buyer_hash": "efcdf35b656d43af408bee75e6caec0318c3be864df21b376b3aee8f85030ab2",
+     "commitment": "77de9d3d8cd79f81cd54b12ec8476390b51e924067312709518515a6229312ec",
+     "rank": 3,
+     "intake_seq": 26
+    },
+    {
+     "entry_id": "e_b6e10f0b43aa2968",
+     "leaf_hash": "407a83ba29b3b66cc2811f8492781f5e5abb783457e2e6ca68bbedc5a99c8ea8",
+     "buyer_hash": "22fb664535d51fdd35feeee6c0da347496bde856596b6744ff4efaec0d8d41d1",
+     "commitment": "d2c83fe90eb2ecb7b384f00e8bde8d761e1c1349c654d1b378f4470852db9c51",
+     "rank": 2,
+     "intake_seq": 27
+    },
+    {
+     "entry_id": "e_b5bb6b442ad7c414",
+     "leaf_hash": "8c10cf2963abfecdf16a1d9fb74556ef3946dbab4bbf79045879c936514f0dd1",
+     "buyer_hash": "efcdf35b656d43af408bee75e6caec0318c3be864df21b376b3aee8f85030ab2",
+     "commitment": "83d2cc972da77a0cb44f185a07a6353b5ccbf49d47eaa382353abfb579b1c389",
+     "rank": 5,
+     "intake_seq": 28
+    },
+    {
+     "entry_id": "e_eb22787ae14b4793",
+     "leaf_hash": "8dde8c81412d5a5d1c995e514f9122e328dfeec8465d0b08855df35c0659056d",
+     "buyer_hash": "22fb664535d51fdd35feeee6c0da347496bde856596b6744ff4efaec0d8d41d1",
+     "commitment": "c1686314d1112e706dc1ec1f5aec95ab09c92c48c16f42cd1afa1fbace59c127",
+     "rank": 4,
+     "intake_seq": 29
+    },
+    {
+     "entry_id": "e_45a22fc4f45d36a2",
+     "leaf_hash": "a7f900ea624018fed117be47242ab5518271a8788a8b58f2534a8b12795a520d",
+     "buyer_hash": "22fb664535d51fdd35feeee6c0da347496bde856596b6744ff4efaec0d8d41d1",
+     "commitment": "3395de904211ef5ac0cf3cb7135290473b3cbf872b5010adbdcbde3b1930d602",
+     "rank": 6,
+     "intake_seq": 30
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_596e2f947074dce6d396ec4b",
+   "endpoint_id": "paid_lab",
+   "batch_id": "b_53bb0885f7d0d180",
+   "root": "9a9a7d1c6d04007f6d45f373ecf95e5f4a99e2444ef6e0dcfbe65f8b43d14c68",
+   "prev_root": "762d7027f72ed0b5076e027254848af49f8223edb03a4fe4dda25c3ada59d9b2",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "63601c0efa0fb1e8b2288e03dbd7e88defa54853e6217539934656921e9306f3",
+   "sealed_at": "2026-10-03T15:08:54+00:00",
+   "signature": "e2644365189c3ca796a77c86d4ed08e2695d360f64a6c177697a108722fb40355e78ba8908fae0d4c3cec7941311328a17aba716dfc0ee6571b5d6ee61721401",
+   "leaves": [
+    {
+     "entry_id": "e_8438d8d205d03e4a",
+     "leaf_hash": "9a9a7d1c6d04007f6d45f373ecf95e5f4a99e2444ef6e0dcfbe65f8b43d14c68",
+     "buyer_hash": "c47491c8345ff2751ee8b6271fc80bcd864a6144acacf875a3177da8573e06c1",
+     "commitment": "36188f164c4c41499ac28943dcfc3b7fa7928d364b6f8efeacbde26ec758c5d7",
+     "rank": 1,
+     "intake_seq": 31
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_5f65c62e880487b9572bc562",
+   "endpoint_id": "cheat_lab",
+   "batch_id": "b_f58873fecc4c9498",
+   "root": "ebc9e4483d9c9636b81bf0915d6a811fe4587c8588e5071c9a273dd56cc71001",
+   "prev_root": "9a9a7d1c6d04007f6d45f373ecf95e5f4a99e2444ef6e0dcfbe65f8b43d14c68",
+   "entry_count": 3,
+   "policy": "fifo",
+   "policy_hash": "fd2714d637e3f5e5950f8da0aac890f0d3cb88168d9bebaa97946a2d14d3f6a3",
+   "sealed_at": "2026-10-03T15:08:56+00:00",
+   "signature": "ef799d03050833a1754ace1efb731caef8d6f831cce1eee6eeec6abed03e7e7da83344708367df2d51da242a16df6f4803cd4322838eb6eb131dec5a378fb907",
+   "leaves": [
+    {
+     "entry_id": "e_4f251c8f251a600a",
+     "leaf_hash": "18d467be05a7a815739961034e8eaaab5dc9426894f0c371e66defb74d5f51f9",
+     "buyer_hash": "db6a85590c484d50bed9d20698967f31970657a1231b401f2a40cc6061c41e67",
+     "commitment": "e98070fff8d7153f8f9755de0c2eaae126e85d4c47fc5581c754110a7384806b",
+     "rank": 1,
+     "intake_seq": 32
+    },
+    {
+     "entry_id": "e_fda936eb45aa109e",
+     "leaf_hash": "7e932c950de17fe00c9757a191fd1eb2ec325486554122014b164db1e4c7aec9",
+     "buyer_hash": "db6a85590c484d50bed9d20698967f31970657a1231b401f2a40cc6061c41e67",
+     "commitment": "2f0ff14214a808d0058cf14f082aef4bf3ad812f638c9f6c808602422061b79a",
+     "rank": 2,
+     "intake_seq": 33
+    },
+    {
+     "entry_id": "e_5248cce4cdf7a3e3",
+     "leaf_hash": "20394f29dd50dbab7e738759f3870dada1c0ba696c2191a0b7bbd216f59d34ab",
+     "buyer_hash": "db6a85590c484d50bed9d20698967f31970657a1231b401f2a40cc6061c41e67",
+     "commitment": "49da9513b30bf25f78008d84bbe04e24d7432fa3dae06711f36b8b8380b79e21",
+     "rank": 3,
+     "intake_seq": 34
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_c5e9a371c7bb39f7",
+   "root": "d3d800d0fa43ad9af25a52d6a04eb691e963b26b9a36a189b769ec874bf6ebf5",
+   "prev_root": "ebc9e4483d9c9636b81bf0915d6a811fe4587c8588e5071c9a273dd56cc71001",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:09:47+00:00",
+   "signature": "b4c55ad896ac57b3e6d83a65b075eadeac7a1578f1ce76079e3dc06235021ab9f9350848fbd2f81f74f49430f9d2aab0a5254b8ce3c1c8123e9be2d6e1f3550b",
+   "leaves": [
+    {
+     "entry_id": "e_f19159ca6dcdde8b",
+     "leaf_hash": "d3d800d0fa43ad9af25a52d6a04eb691e963b26b9a36a189b769ec874bf6ebf5",
+     "buyer_hash": "859e09150df28d847ae8940ef7d774e2bd6abe01837cd915866a0572ac1adfa6",
+     "commitment": "733bb61115f39740d1ee183d5214901d6dfbb365013570ffe27385c7d694c3e7",
+     "rank": 1,
+     "intake_seq": 35
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_cb2b4db0fe93332d",
+   "root": "baedbd4cee9b673bc61d2a1215b90b8887dd5e86c60cd8cf06f286282c7659ab",
+   "prev_root": "d3d800d0fa43ad9af25a52d6a04eb691e963b26b9a36a189b769ec874bf6ebf5",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:09:50+00:00",
+   "signature": "508bc2db748bcdc36b88f9d745f25d2172f955f597e547cd070892aea1552043c51734e114cabf2a263c94483331b0f6f6152e053a448052a0cae0c9cdadc30f",
+   "leaves": [
+    {
+     "entry_id": "e_0a37589d71d4fa3e",
+     "leaf_hash": "baedbd4cee9b673bc61d2a1215b90b8887dd5e86c60cd8cf06f286282c7659ab",
+     "buyer_hash": "859e09150df28d847ae8940ef7d774e2bd6abe01837cd915866a0572ac1adfa6",
+     "commitment": "733bb61115f39740d1ee183d5214901d6dfbb365013570ffe27385c7d694c3e7",
+     "rank": 1,
+     "intake_seq": 36
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_6cb7205649c59aed4a614710",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_d3216ad6772aa29e",
+   "root": "e7ace5160c832d2a216cc820885de2049e9555b98a46400f9aae05514f0866de",
+   "prev_root": "baedbd4cee9b673bc61d2a1215b90b8887dd5e86c60cd8cf06f286282c7659ab",
+   "entry_count": 6,
+   "policy": "fifo",
+   "policy_hash": "38a29a4984263c1d86e2d5706fbb157ecc73f670228edf279fd379022301de93",
+   "sealed_at": "2026-10-03T15:10:49+00:00",
+   "signature": "a3b1d06251e3c86a1cfda2326232d17dc22b8c25a08068f12f4049394d5f68ff5834b48a6035dcee2b8a0a5691f34188ae6ec3784262062cac8e41a23fa0ff0a",
+   "leaves": [
+    {
+     "entry_id": "e_01464bf4d0a3bd4f",
+     "leaf_hash": "4c6823286b476a466a7d2df24b9daf6065e9cc14d0942bdc90b479562923e78f",
+     "buyer_hash": "665ee6c9242f86a55bef4f94dc9e13ab2d05ef1285e936d93c795af60d031f09",
+     "commitment": "17f73c61955792f4dae026b4e1fac37f754370390c8030cba641a754b19cb63f",
+     "rank": 1,
+     "intake_seq": 38
+    },
+    {
+     "entry_id": "e_13dc181a910ed062",
+     "leaf_hash": "93049a5eedcb4deafac6d0388cd73c3e42c4de65b0a64bc92c7e9afba925f3de",
+     "buyer_hash": "665ee6c9242f86a55bef4f94dc9e13ab2d05ef1285e936d93c795af60d031f09",
+     "commitment": "320e78c7b0ed17cee7a229c5f99e00a12f4b2048529801f2e82450f8375d09bd",
+     "rank": 2,
+     "intake_seq": 39
+    },
+    {
+     "entry_id": "e_b11eecd4d677893a",
+     "leaf_hash": "8c3cfa43725985302f39d4ac9603d558bf10d349a3e4de6ec3753da040ee4917",
+     "buyer_hash": "66f19afac440eed12d70d5e9165f633de87a1756707b5c7b23cf19f41a9eef64",
+     "commitment": "76b45eb0ebcaf4398adabc688621817a6582436fde33b3f54a91ab47681441f9",
+     "rank": 3,
+     "intake_seq": 40
+    },
+    {
+     "entry_id": "e_bb6504eb47fc4e59",
+     "leaf_hash": "80b9d96678a1a00db58d87687085b90fd6baf636198bb2e13f373fff35e0068a",
+     "buyer_hash": "665ee6c9242f86a55bef4f94dc9e13ab2d05ef1285e936d93c795af60d031f09",
+     "commitment": "1349d89c8035b570d0facccd3aff1389cd518f92924e4c3d326f9941fb03f0b8",
+     "rank": 4,
+     "intake_seq": 41
+    },
+    {
+     "entry_id": "e_b9c9018fa3822f15",
+     "leaf_hash": "45f24bdc8d010ba0c64da41a58f0826c7526c3e7d2a2993651512d91d4a90a8e",
+     "buyer_hash": "66f19afac440eed12d70d5e9165f633de87a1756707b5c7b23cf19f41a9eef64",
+     "commitment": "efff387377bf54cf7ea2162a161226b8fefd85d72f9669e1fe05c97e6bc94292",
+     "rank": 5,
+     "intake_seq": 42
+    },
+    {
+     "entry_id": "e_58b3f5b2d0cd0765",
+     "leaf_hash": "edeedd2585c64a6a07e7a71ed4e5deac6452d698e369847c2d23430c23e11abd",
+     "buyer_hash": "66f19afac440eed12d70d5e9165f633de87a1756707b5c7b23cf19f41a9eef64",
+     "commitment": "5d6a5a72be493dd9a14b6de12cb64c4639ed25c675ed3248022743c4d44de41b",
+     "rank": 6,
+     "intake_seq": 43
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_cdced04b7c77fa62",
+   "root": "64aa6a76050970be61cf1144651240fe987ca969443c88f939a83e9892300ea6",
+   "prev_root": "e7ace5160c832d2a216cc820885de2049e9555b98a46400f9aae05514f0866de",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:10:50+00:00",
+   "signature": "3ae9da9ef6104d95dbdfc60afa8c45ac7c3867e8c6d3803f419735948f6a9cf65f01b222c1304e6d9a864a77f6b171e4e1f4e3c6dd7a42613e27a3ad8898df01",
+   "leaves": [
+    {
+     "entry_id": "e_00f925d73cc8fd06",
+     "leaf_hash": "64aa6a76050970be61cf1144651240fe987ca969443c88f939a83e9892300ea6",
+     "buyer_hash": "859e09150df28d847ae8940ef7d774e2bd6abe01837cd915866a0572ac1adfa6",
+     "commitment": "733bb61115f39740d1ee183d5214901d6dfbb365013570ffe27385c7d694c3e7",
+     "rank": 1,
+     "intake_seq": 37
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_04b12f374054ef177443a8df",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_cee3602c09aeb22c",
+   "root": "0f1eb43cb5a23d8c63a8c4911711c4427ad5a217b231bf4325cd36bd6b63bd89",
+   "prev_root": "64aa6a76050970be61cf1144651240fe987ca969443c88f939a83e9892300ea6",
+   "entry_count": 6,
+   "policy": "cohort_lottery",
+   "policy_hash": "d2e3b6c79483df1b0a6c8e2845b59a4aec392bd040c1337236a1ae0538147b68",
+   "sealed_at": "2026-10-03T15:10:52+00:00",
+   "signature": "55c9fdb8375f1bc55872cb372c5a960e434153b9ebcbc2d6559b820bf11c12ed5b41bddee9e1233192641eeab7f066ec6e7a33a26ad81bbc83154ce377671f01",
+   "leaves": [
+    {
+     "entry_id": "e_fefeec1da15413e5",
+     "leaf_hash": "be0e7da6d45175801e06d2e8b28f7db41f06c4d8631ba5dc2e06ade697b9d736",
+     "buyer_hash": "c5ec113811187152168343f7133a0134c39b86fe520ba12da7ad7d5bb124587b",
+     "commitment": "cc4590645b834c127dc3357b36728f6b8a7d339f06d9cd7ff2957e7808104b91",
+     "rank": 6,
+     "intake_seq": 44
+    },
+    {
+     "entry_id": "e_f5ed4ded80b20b82",
+     "leaf_hash": "66ff697d5c98f4fac7e3a60909dddd49fbef6d479a68cd6c12c840dbf6e09534",
+     "buyer_hash": "c5ec113811187152168343f7133a0134c39b86fe520ba12da7ad7d5bb124587b",
+     "commitment": "5b7568f7cdb8b46fc73493783ba1299012cfbfede89e9ef4279317e9e5ac3c54",
+     "rank": 5,
+     "intake_seq": 45
+    },
+    {
+     "entry_id": "e_890378aabe2b830c",
+     "leaf_hash": "37d050bf59f3a92469fbb74e6c8ff35e64a16dac5492e450b727316dd8296072",
+     "buyer_hash": "7083039dda900268dc78c2fd7cbccc8418a5b1ebce9463d1e81428e70b4fd692",
+     "commitment": "ffb29529941b0fba45318225ff6ebe2b0883cd98dbcc861904d5ba565a80ec39",
+     "rank": 2,
+     "intake_seq": 46
+    },
+    {
+     "entry_id": "e_9cc6c918140bf147",
+     "leaf_hash": "c0fcbea830f0e2efa55e6367937a2b09129858afe3463a7773938ed39a4610a8",
+     "buyer_hash": "c5ec113811187152168343f7133a0134c39b86fe520ba12da7ad7d5bb124587b",
+     "commitment": "2beef5aff6da6db85f0ff34a1070ef2ea93c3c586fc9b84aa2e1c8347985bc2c",
+     "rank": 3,
+     "intake_seq": 47
+    },
+    {
+     "entry_id": "e_c8a2b0e0a33f33d7",
+     "leaf_hash": "373184826259c0fba13bc793d83b365f26487ad3181985d2ede40e9496238cb7",
+     "buyer_hash": "7083039dda900268dc78c2fd7cbccc8418a5b1ebce9463d1e81428e70b4fd692",
+     "commitment": "a3dfcb4497cf3c9ddb4445769de62a7bb586bf32ee04ae2699d12d98dce89597",
+     "rank": 4,
+     "intake_seq": 48
+    },
+    {
+     "entry_id": "e_d8abe9ce7d4ef6b6",
+     "leaf_hash": "2138f8b37cfadd2c6dad142e10337f7ca2141ffc1e051546c05a2ff475bef7a1",
+     "buyer_hash": "7083039dda900268dc78c2fd7cbccc8418a5b1ebce9463d1e81428e70b4fd692",
+     "commitment": "9ba134a3dd68daef36180506bafc178d850d640e6472aaa9b8985b61e88259ea",
+     "rank": 1,
+     "intake_seq": 49
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_311712f2ab968b2be7277817",
+   "endpoint_id": "policy_lab",
+   "batch_id": "b_96663c38eb110c11",
+   "root": "fecf879b532800812eb2cf63065d9a46e15babaad6b8cfe6b3e964e30de94b8a",
+   "prev_root": "0f1eb43cb5a23d8c63a8c4911711c4427ad5a217b231bf4325cd36bd6b63bd89",
+   "entry_count": 6,
+   "policy": "weighted_fair_share",
+   "policy_hash": "d9ce3e322fb58d9f75d510765577f66a31b06a8526cc99b5f032e166af43a1aa",
+   "sealed_at": "2026-10-03T15:10:55+00:00",
+   "signature": "44c03b88d35bd2c87ba6d4478ae533d5023e0ed69e4d66cdd1563018986acb5975255748e580a3b4bca4ddae3f7184830cf9fd0ec6dbc2ad5cd7aec9e7de5903",
+   "leaves": [
+    {
+     "entry_id": "e_bd04c9f7e279bcc9",
+     "leaf_hash": "cabac604b8fc69362af0530e4c45e00b3197b0a04b91cbe9df14aeaa798817aa",
+     "buyer_hash": "e7760bc3b1f3e415985d26befa9d0d44310f3e55b7d39805fa59a05b2df73e92",
+     "commitment": "d493b4871d321e700a85acde32c9a239687177c4f13c5b3b303c86eea7a3d5d1",
+     "rank": 1,
+     "intake_seq": 50
+    },
+    {
+     "entry_id": "e_173d05ce011eae0c",
+     "leaf_hash": "aaaad81c5dcd329b7226db2bc7f6aefab3aa27b9af8a18741dc4b70e757eedf0",
+     "buyer_hash": "e7760bc3b1f3e415985d26befa9d0d44310f3e55b7d39805fa59a05b2df73e92",
+     "commitment": "c45659671772f83c514b6e5bc8226d8d0dcfa3605f1b55b713342985422fa0ed",
+     "rank": 3,
+     "intake_seq": 51
+    },
+    {
+     "entry_id": "e_a9e35f066b589663",
+     "leaf_hash": "d2f8e029abc924ec4b643bea84fef59a2b17026ddd6b1e4d9e34add6b0ad621e",
+     "buyer_hash": "cb34f16787ce38f90533db40ec0950c046a887d39bd4af21a5d7bb1d895a77a6",
+     "commitment": "6b210abc4be4fd29ff2736d08790a477fa808a0af02a5f340d1ecd8542e3388b",
+     "rank": 2,
+     "intake_seq": 52
+    },
+    {
+     "entry_id": "e_86041dead8e8cc5b",
+     "leaf_hash": "b3fc6bb7f2ad5fd664e662f20738000fe87090d679ef7232b4ad0669ab57a008",
+     "buyer_hash": "e7760bc3b1f3e415985d26befa9d0d44310f3e55b7d39805fa59a05b2df73e92",
+     "commitment": "f13b81f834c2aec433f2b6fcba788fffe9fba53b78aaef91fc2814af8ebf0f67",
+     "rank": 5,
+     "intake_seq": 53
+    },
+    {
+     "entry_id": "e_2fa5eb11f0e8498c",
+     "leaf_hash": "4979f6a9561cdb7af3d4ec7b4f428b22e0ee567d618d8274c0f84c9588d64b8e",
+     "buyer_hash": "cb34f16787ce38f90533db40ec0950c046a887d39bd4af21a5d7bb1d895a77a6",
+     "commitment": "095865c908cbf64d0fee838467aa65c35524ec04d461790ff8edd4c2b3007b0a",
+     "rank": 4,
+     "intake_seq": 54
+    },
+    {
+     "entry_id": "e_fa0c5707f4a9731d",
+     "leaf_hash": "312d5b5a4e5f6c23ba5b5023d99bb8caee26ccdcf9ce4c415c53981679642b66",
+     "buyer_hash": "cb34f16787ce38f90533db40ec0950c046a887d39bd4af21a5d7bb1d895a77a6",
+     "commitment": "e8b88dfe733d87196994e713ee171d45e9b1d0fd09b63be625209bc5309d156a",
+     "rank": 6,
+     "intake_seq": 55
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_c42cb8c6b0258ff79960e2c2",
+   "endpoint_id": "paid_lab",
+   "batch_id": "b_8754d7e40558aa7b",
+   "root": "0b07911bbedfae9f8426835d148c8eb27793c465255eeb12c5e46a86264e2b37",
+   "prev_root": "fecf879b532800812eb2cf63065d9a46e15babaad6b8cfe6b3e964e30de94b8a",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "63601c0efa0fb1e8b2288e03dbd7e88defa54853e6217539934656921e9306f3",
+   "sealed_at": "2026-10-03T15:10:58+00:00",
+   "signature": "affd97cc1fa2d16ba07544cf936e77e94f946a14b67c23475ccb2a63459867fff24e75697d9aacf1dc77dd05ffa1780d7bb210e2a5bcf1cb5edbce9c5e412b0e",
+   "leaves": [
+    {
+     "entry_id": "e_9db07e8feb037482",
+     "leaf_hash": "0b07911bbedfae9f8426835d148c8eb27793c465255eeb12c5e46a86264e2b37",
+     "buyer_hash": "ab1a07904036515d1fbffd24df04fc67c2c46af8438e490630f8a5b6cfcb962e",
+     "commitment": "fad4845b6cee6d74ce9419f98b794782bf3ded35957bd148df72d112cf41f37d",
+     "rank": 1,
+     "intake_seq": 56
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_fbc06fb370f12571564abd6f",
+   "endpoint_id": "cheat_lab",
+   "batch_id": "b_131c5749e1ba18d9",
+   "root": "6976312756e91bf24250c915a32a39cae1178e110a82eb2fa86d5205b0def070",
+   "prev_root": "0b07911bbedfae9f8426835d148c8eb27793c465255eeb12c5e46a86264e2b37",
+   "entry_count": 3,
+   "policy": "fifo",
+   "policy_hash": "fd2714d637e3f5e5950f8da0aac890f0d3cb88168d9bebaa97946a2d14d3f6a3",
+   "sealed_at": "2026-10-03T15:11:00+00:00",
+   "signature": "45d9540c569630f0123fdf72e4f07195c0e20d36d1c0d9b5c256daaa8c356772b333ab19f974527878f159f30f074b03c3fad6a4edd2b7ad8ae338d21de3ba0c",
+   "leaves": [
+    {
+     "entry_id": "e_e8fa5c7624d52275",
+     "leaf_hash": "4e3f66c107ea89071ddcb2ee2935d035219c9aea340cce2875629d84c3c95b26",
+     "buyer_hash": "a8e7b10a7b8d50091216c199ff4be86de01a960d25a3db5dad2188bb9c50190b",
+     "commitment": "3067378e29c379b9b7e73f24e4196508189a3d7159225ba43531e3fec1dbdc44",
+     "rank": 1,
+     "intake_seq": 57
+    },
+    {
+     "entry_id": "e_ba068ef9e021207d",
+     "leaf_hash": "3cd896734b921320cb44ed2dc4479a930edd44697e6ddfb88a512db7c5be5e1b",
+     "buyer_hash": "614500a2f958ad32d47a1b62ad8ac140559016ebdf1b1bbff11391b22f7ca06c",
+     "commitment": "4167155d2d5ee73679eb13cb5e8b74aff1994612e615cc7a6c4e25e8cf12c50c",
+     "rank": 2,
+     "intake_seq": 58
+    },
+    {
+     "entry_id": "e_30a8b429e832256b",
+     "leaf_hash": "aa5ee5a84cb407ecef8be1d9b54fdf9a7095be11a007f7f246227e304ddd4984",
+     "buyer_hash": "a27789b1270e08f413d0deaa374b1feb93a8d31ff04cb4118ead9a3e98d26516",
+     "commitment": "933126c4e9878de5c3110e748f6f65f0d852ab0baeeaa926fcfe1fa996e5d765",
+     "rank": 3,
+     "intake_seq": 59
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_a27a6bbc50d90e5b7252d8e2",
+   "endpoint_id": "flood_lab",
+   "batch_id": "b_600255314e69a97a",
+   "root": "824815fba84892f4e7dd9926d453b77a62b616554a2b6992149bee5f3e4c3e93",
+   "prev_root": "6976312756e91bf24250c915a32a39cae1178e110a82eb2fa86d5205b0def070",
+   "entry_count": 3,
+   "policy": "fifo",
+   "policy_hash": "e666f45e89b0c185d869181c563e15726e4c365210942c9b3378c24dd20657ac",
+   "sealed_at": "2026-10-03T15:12:34+00:00",
+   "signature": "014f13ab7b30f34e32d19a9629a0f2838ae1d35ae3f1a7f800bde59ad7584f2b5fe2e645fbed37de2e529e539becfac4cd262595e727161bec646f1e072a860e",
+   "leaves": [
+    {
+     "entry_id": "e_751371f9172d3695",
+     "leaf_hash": "4db03c907b03208b9b9c6b64b51617df2c9d5a5bb842c00579ee751848764f27",
+     "buyer_hash": "2fbef71c61d43f83a0d3ea98f7334975c5eb80847c9fbc02d981319760d2e1b8",
+     "commitment": "753209b71b49688b1ca789ba3ce80cf637b3161d145547d54c7c9e5448fd9c24",
+     "rank": 1,
+     "intake_seq": 60
+    },
+    {
+     "entry_id": "e_43ddb6cf336acc09",
+     "leaf_hash": "b8aea81fdc6c4b15d1edea92a2af3140083102fe6d715d144541ae5ec9d37ad2",
+     "buyer_hash": "2fbef71c61d43f83a0d3ea98f7334975c5eb80847c9fbc02d981319760d2e1b8",
+     "commitment": "afcba395926fa4e6c92c3820c27ba672526ea5233563c06cb84faf3d709bc190",
+     "rank": 2,
+     "intake_seq": 61
+    },
+    {
+     "entry_id": "e_85d3cfc087771600",
+     "leaf_hash": "26bc43fec135657394f5e8f65705f7bd5c4334edc32a1760aed47547ddd91be1",
+     "buyer_hash": "2fbef71c61d43f83a0d3ea98f7334975c5eb80847c9fbc02d981319760d2e1b8",
+     "commitment": "043a31299394c304086924c3466b03ae2c5a6e9dc2425f62b2151c05028744ba",
+     "rank": 3,
+     "intake_seq": 62
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_68d8e7129f57acdc",
+   "root": "823cc96d11d9878cf2e859256a0efae3218a544e5bb70a9ac23589c174aa7c07",
+   "prev_root": "824815fba84892f4e7dd9926d453b77a62b616554a2b6992149bee5f3e4c3e93",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:14:00+00:00",
+   "signature": "1092a5d8996dfa6f84ba2ac66e85c9c583b4a892dd19c51040032f398825ba9b6a9741b62abb768ad49a59c7f09d446d54680a5a360348604377176475369c05",
+   "leaves": [
+    {
+     "entry_id": "e_5d28e1559e27420b",
+     "leaf_hash": "823cc96d11d9878cf2e859256a0efae3218a544e5bb70a9ac23589c174aa7c07",
+     "buyer_hash": "2482adb307a1f1c04291c0a0882a8323988316904dfa01321e490c6c9aa167a5",
+     "commitment": "45b59e5fd867e2190ba3d0b1dd3e047c84262fac4357eb3fe9289d887804e34a",
+     "rank": 1,
+     "intake_seq": 63
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_67fab282728820e3",
+   "root": "9901e4580340be373c9294c88967d0198976b07eb42a1679bea3a7154bc3a417",
+   "prev_root": "823cc96d11d9878cf2e859256a0efae3218a544e5bb70a9ac23589c174aa7c07",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:14:04+00:00",
+   "signature": "697a1fe470c220d7422a7df34b8854a46b4135d6c4b86537113eb9d0f0d730da3fec5b1ca209d09ffb47c078147b25e47a8a482e2895ccccb55c14dcecf36802",
+   "leaves": [
+    {
+     "entry_id": "e_80d8198046720d7a",
+     "leaf_hash": "9901e4580340be373c9294c88967d0198976b07eb42a1679bea3a7154bc3a417",
+     "buyer_hash": "3718bd0b9ffd4735513718864a6ed6d603f5bfb146076118227f731cb5af9684",
+     "commitment": "049710aeb2f043e4664daa96eee055ed765d4aba9b9c179717c859e3176e9a16",
+     "rank": 1,
+     "intake_seq": 64
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_6e8840dcf687f769",
+   "root": "b5cf2fa75c6e98a6917273ffd1b6678bcdb8ca6fe1440423ff23cc3517e9cbf4",
+   "prev_root": "9901e4580340be373c9294c88967d0198976b07eb42a1679bea3a7154bc3a417",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:14:09+00:00",
+   "signature": "caa75c61f10062750c43680fe9c7de54ccced19c4adaa23e6a3d09e79ec4bafb709c9d19aabb6e9ce594707a56cb6987fb7de5d742ddba0518d3eb9929384c05",
+   "leaves": [
+    {
+     "entry_id": "e_b1bba7940f859c72",
+     "leaf_hash": "b5cf2fa75c6e98a6917273ffd1b6678bcdb8ca6fe1440423ff23cc3517e9cbf4",
+     "buyer_hash": "b3c6128b3c212adb24fe7ab8c8fdf45d0f505803a5a0c8815b18c74e1385d0ea",
+     "commitment": "676af48529b36168e8c4a2d26240a1385c7ad88954c0cc815558d9103507772e",
+     "rank": 1,
+     "intake_seq": 65
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_4de1818bbef9fb24",
+   "root": "d8a50c66df6574a7c61c4c6f1d536ae0d87936e4be10a1c4aef4375c060016b8",
+   "prev_root": "b5cf2fa75c6e98a6917273ffd1b6678bcdb8ca6fe1440423ff23cc3517e9cbf4",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:19:21+00:00",
+   "signature": "2d06991b08f7535b0f5a6d956c08ec7e42620cb555e2b8f8226c29a6534150bdc89618d1791b7bd335ec73ec2fc80961edfb39df40d9bb13868ccecc1191b80d",
+   "leaves": [
+    {
+     "entry_id": "e_f8a4150b1c0c9893",
+     "leaf_hash": "d8a50c66df6574a7c61c4c6f1d536ae0d87936e4be10a1c4aef4375c060016b8",
+     "buyer_hash": "aece72a4f2db042b24b8cc90beef780067415a7011397f1e938fa5a3a7f15d6f",
+     "commitment": "2739afa2ea2d75c57fde4fb6d3ad64cfd8557c15ce25e6d0c1300c943fda8369",
+     "rank": 1,
+     "intake_seq": 66
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_e070de304d64e642",
+   "root": "d63d9c88e610477747e8adc330194ed97ba806f46bfaa928e7700c5a98529057",
+   "prev_root": "d8a50c66df6574a7c61c4c6f1d536ae0d87936e4be10a1c4aef4375c060016b8",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:19:24+00:00",
+   "signature": "7741842d36ee34c161ec1493bdfd80f20a411260aa4867191b40e0ba242ba7d58dec6610f15c564223ebb5922412d3fc2763ed3ca49e6a720e2dda5cd0ede103",
+   "leaves": [
+    {
+     "entry_id": "e_0fc7b306cccdcda2",
+     "leaf_hash": "d63d9c88e610477747e8adc330194ed97ba806f46bfaa928e7700c5a98529057",
+     "buyer_hash": "b83907c9813ddf799778963a4cd98f2236ca3d99a4a2dcfd02a76c2472c2205e",
+     "commitment": "7b5c9cd7251ed88454327eeb2d451ece0a886ff60bc6e7bb7d30310233f28438",
+     "rank": 1,
+     "intake_seq": 67
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_c874a401847fb435",
+   "root": "9ba9c29e3c386185eaaedc2b18267ca5d8fc4cb1babca9ba371e4426216a006d",
+   "prev_root": "d63d9c88e610477747e8adc330194ed97ba806f46bfaa928e7700c5a98529057",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:19:28+00:00",
+   "signature": "2e9c1ea2b91016b9a5861ffb4920b4e29fb893ab28e847d698e18dd4ae401d58da5e977d0396ae9eead44e1e1950dc6fa25910d7d1e3925970d1ee357729d802",
+   "leaves": [
+    {
+     "entry_id": "e_16b096df10c795d1",
+     "leaf_hash": "9ba9c29e3c386185eaaedc2b18267ca5d8fc4cb1babca9ba371e4426216a006d",
+     "buyer_hash": "15eb729391a150b853b870bf5aff6e06bc36678a9416358c1d28ee1bc629618e",
+     "commitment": "be784e1c840a9f2c7189e09e5196cfb1bf5407406fa6bee9de69e69cdf3c2f48",
+     "rank": 1,
+     "intake_seq": 68
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_0218e0db4a513dc0",
+   "root": "b584092a7cdeb29b364af8397b2dac481bf403312aa98f8360c9b105f33fccf5",
+   "prev_root": "9ba9c29e3c386185eaaedc2b18267ca5d8fc4cb1babca9ba371e4426216a006d",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:20:26+00:00",
+   "signature": "2e377751369a018c2441d61e9e16342fb21053ea9e6c59129fc3f8ac554a70b8f331b1b24c8a1c01feb5826a9c4e6128634e9afa6290383613f62ba99f2b5105",
+   "leaves": [
+    {
+     "entry_id": "e_d53c87cefd755e6c",
+     "leaf_hash": "b584092a7cdeb29b364af8397b2dac481bf403312aa98f8360c9b105f33fccf5",
+     "buyer_hash": "00e8ab9651898ba9c431813ca608793a46e6af8160100af1e44a74e2b3cf54f4",
+     "commitment": "b4ce5c6fc1e8a2188b7c0efb08a87dac8ae63bef5b2dd0fdeba6ed6df5c281b4",
+     "rank": 1,
+     "intake_seq": 69
+    }
+   ]
+  },
+  {
+   "seller_id": "sel_22eb8756f802a0bff7c0750f",
+   "endpoint_id": "scarce_echo",
+   "batch_id": "b_b653f0d487d37402",
+   "root": "fea93624a3c1416665dc50ec5fc40375bc756fded9f659b848e676999aefe05d",
+   "prev_root": "b584092a7cdeb29b364af8397b2dac481bf403312aa98f8360c9b105f33fccf5",
+   "entry_count": 1,
+   "policy": "fifo",
+   "policy_hash": "e089fa7798fb5e0166a460406853a9ee326ec53550a5d9971fa975dc417bf572",
+   "sealed_at": "2026-10-03T15:20:30+00:00",
+   "signature": "a438092d51af23e5d465214921f5b5d9adab920f8a0046026f3c1fd90b2ca6537b4d668c6441a695c2fd08243ae60812462c7a37a9339d3cdc7aec283999c501",
+   "leaves": [
+    {
+     "entry_id": "e_6798c23dce72014e",
+     "leaf_hash": "fea93624a3c1416665dc50ec5fc40375bc756fded9f659b848e676999aefe05d",
+     "buyer_hash": "3ebda358cecc26aba6f00e65136af67c950823a1fec4db3db76b28140a8bbf79",
+     "commitment": "853f516e7214e18b3276ce260fbdf162b20c4bc1a457113ff5e1528e42a32466",
+     "rank": 1,
+     "intake_seq": 70
     }
    ]
   }
