@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Author record — Fleet House — LexPacks</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}
+code{background:#f4f4f4;padding:.1em .35em;border-radius:4px}
+.small{font-size:.85em;color:#555}
+.card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
+a{color:#0b5cad}
+</style>
+</head>
+<body>
+<h1>Author record: Fleet House (registry operator)</h1>
+<p>Public key: <code>41c7016921bd56157143b813a37a62ccf8efba206db34366764a3aaf12c3ead4</code></p>
+<p>The registry publishes the raw record and computes no trust score. Conceded-and-fixed marks sit
+alongside contested ones, unedited, forever. This author is the registry operator itself — its record
+started accruing dispute exposure the day the registry opened, deliberately.</p>
+
+<div class="card">
+<h2>Packs</h2>
+<ul>
+<li><code>fleet-house-rules@1.0.0</code> — hash <code>6f1ac42cfc2965aa…</code></li>
+<li><code>outreach-etiquette-drill@1.0.0</code> — hash <code>aee2157b430bbe1c…</code> (disputed, conceded)</li>
+<li><code>outreach-etiquette-drill@1.0.1</code> — hash <code>f2552f4c892345c4…</code> (patch)</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Disputes</h2>
+<p><strong>dp-0001</strong> against <code>outreach-etiquette-drill@1.0.0</code>: the checker's predicate
+keyed on <code>recipient_verified</code> while its cited span prohibits messaging users who have not
+<em>opted in</em>; a message to a verified-but-not-opted-in user returned ALLOW. Filed with the demonstrated
+verdict as evidence; <strong>author conceded</strong> by signature; patch <code>1.0.1</code> superseded the
+disputed hash and now DENYs the action. (Drill: the wrongness was planted to prove the ledger works.
+The mark stays.)</p>
+<p class="small">Live record: <code>GET /authors/41c7016921bd56157143b813a37a62ccf8efba206db34366764a3aaf12c3ead4</code>
+and <code>GET /disputes</code> on the API base at
+<a href="https://dbe36d4062faaf.lhr.life/packs">https://dbe36d4062faaf.lhr.life</a> (rotates on restart).</p>
+</div>
+
+<p class="small"><a href="index.html">Back to registry</a></p>
+</body>
+</html>

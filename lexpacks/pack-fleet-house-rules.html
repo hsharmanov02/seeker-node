@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fleet-house-rules @ 1.0.0 — LexPacks</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}
+code,pre{background:#f4f4f4;padding:.1em .35em;border-radius:4px}
+pre{padding:.8rem;overflow-x:auto;font-size:.85em}
+.small{font-size:.85em;color:#555}
+a{color:#0b5cad}
+</style>
+</head>
+<body>
+<h1>fleet-house-rules @ 1.0.0</h1>
+<p>Executable form of this fleet's published operating constraints, authored and dogfooded by the
+registry operator. Scope class: <code>house_rules</code>. Every predicate cites a verbatim span of the
+source document; the source is hash-pinned and watched for drift.</p>
+<p>Author: Fleet House (registry operator) ·
+<code>41c7016921bd56157143b813a37a62ccf8efba206db34366764a3aaf12c3ead4</code><br>
+Pack hash: <code>6f1ac42cfc2965aa22537b584b00cf2fa30cd8d4669e18f49965d93e60d50522</code><br>
+Prices: pack $4.00, hosted check $0.005 · Effective from 2026-10-03 · Warranty: mechanics only; advice: none.</p>
+
+<h2>Predicates (8)</h2>
+<ul>
+<li><code>no-custody</code> (DENY) — "Fleet services never take custody of user or buyer funds"</li>
+<li><code>no-signing</code> (DENY) — "No fleet service signs wallet transactions or moves funds on behalf of any party"</li>
+<li><code>no-secrets</code> (DENY) — "No service may request, store, or transmit private keys, seed phrases, passwords, or one-time codes"</li>
+<li><code>no-identity-gates</code> (DENY) — "must refuse any action that requires identity verification (KYC) or registration under a person's real name"</li>
+<li><code>consent-based-contact</code> (DENY) — "Automated outreach is permitted only to recipients who initiated contact or explicitly opted in"</li>
+<li><code>hard-cap</code> (DENY) — "any action above its cap is refused, never escalated for approval"</li>
+<li><code>honest-identification</code> (FLAG) — "Automated interactions must honestly identify as automated"</li>
+<li><code>honour-opt-out</code> (DENY) — "opt-out requests are honoured permanently"</li>
+</ul>
+
+<h2>Check an action</h2>
+<pre>curl -X POST https://dbe36d4062faaf.lhr.life/check -H 'Content-Type: application/json' -d '{
+  "pack_id": "fleet-house-rules", "caller": "your-agent",
+  "action_context": {"action_type": "send_outreach",
+                     "recipient_opted_in": false, "identifies_as_bot": true}}'
+# -&gt; verdict DENY, predicate consent-based-contact fired, cited span included,
+#    warranty "mechanics_only", advice "none", signed by the checker.</pre>
+
+<p class="small">Dogfood receipts (all labelled, none external): 5 scripted fleet-style callers produced
+2 ALLOW / 3 DENY as expected; 100 evaluator replays per context were bit-identical; the same contexts
+evaluated by the JavaScript reference evaluator agree. Drift drill: mutating the cited source document
+flagged this pack SOURCE_MOVED within one watcher cycle; restoring it returned OK, with both events kept
+on the public record. <a href="index.html">Back to registry</a> ·
+<a href="author-house.html">Author record</a> · Live record: <code>GET /packs/fleet-house-rules/1.0.0</code>
+on the API base.</p>
+</body>
+</html>

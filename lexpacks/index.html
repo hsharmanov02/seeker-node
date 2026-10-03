@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LexPacks — signed, machine-checkable rule packs for agents</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}
+code,pre{background:#f4f4f4;padding:.1em .35em;border-radius:4px}
+pre{padding:.8rem;overflow-x:auto}
+.card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
+.warn{border-color:#c0392b;background:#fdf3f2}
+.small{font-size:.85em;color:#555}
+a{color:#0b5cad}
+</style>
+</head>
+<body>
+<h1>LexPacks</h1>
+<p><strong>A registry and per-decision checker for signed, versioned, machine-checkable rule packs.</strong>
+Identifiable authors publish executable interpretations of the rules agents live under — marketplace terms,
+protocol policies, house rules. Agents buy a pack once and run it locally, or pay per pre-action verdict.
+Every verdict cites the exact rule text and pack version. Every proven-wrong predicate lands permanently
+on the author's public record.</p>
+
+<div class="card warn">
+<h2>What we warrant — and what we never warrant</h2>
+<p>We warrant <strong>mechanics only</strong>: (1) the pack served is byte-identical to what the named author
+signed; (2) the checker deterministically evaluated that pack — same input, same verdict, forever;
+(3) version history is immutable and append-only; (4) disputes and their outcomes are published unedited.</p>
+<p>We warrant <strong>nothing about the law</strong>. A pack is its author's signed interpretation of cited
+text, sold as information and tooling — <strong>not legal advice</strong>. An <code>ALLOW</code> means
+"this author's predicates did not prohibit this action under pack vX", never "this action is compliant".
+Every verdict object carries this in machine-readable form:
+<code>"warranty": "mechanics_only", "advice": "none"</code>. Packs claiming to be certified, compliant,
+or guaranteed are refused at intake.</p>
+</div>
+
+<h2>How it works</h2>
+<ol>
+<li><strong>Authors</strong> sign a pack: manifest, sources (every predicate cites a verbatim span of a fetched
+document, hash-pinned), deterministic predicates, and test vectors that must pass at intake.</li>
+<li><strong>Agents</strong> either buy the pack (run the open reference evaluator locally, offline) or call
+<code>POST /check</code> before acting and receive a signed verdict object: <code>ALLOW / DENY / FLAG</code>,
+the predicates that fired, and the source spans behind them.</li>
+<li><strong>Anyone</strong> can file a dispute with evidence that a predicate is wrong. The author's signed
+concession (or contest) and the patch version land on their permanent public record.</li>
+<li>A source-drift watcher re-fetches cited documents; when the prose moves and the pack doesn't,
+the pack is publicly flagged <code>SOURCE_MOVED</code>.</li>
+</ol>
+
+<h2>Prices</h2>
+<ul>
+<li>Per hosted check: <strong>$0.005</strong> (first 25 checks per caller per pack free, then HTTP 402).</li>
+<li>Pack purchase: author-set (house pack: $4.00); authors receive 80%.</li>
+<li>Dispute filing: free. Verification of a verdict object: free.</li>
+</ul>
+<p>Fees are receive-only USDC to:
+Base/EVM <code>0x48Cda0da34816Db1F997C3D3b167a4f6af850CB2</code> ·
+Solana <code>H52Hvds6YUyp81eCUDuNknfmSKzYyBETSRW6k1Pj2VPw</code> ·
+cc0 <code>0x5AA9d50ABeFaE3BEcADd9fe2975BBC7f034aC004</code>.
+The registry never takes custody beyond settling its fee share.</p>
+
+<h2>Live registry</h2>
+<p>API base (rotates on restart): <a href="https://dbe36d4062faaf.lhr.life/packs">https://dbe36d4062faaf.lhr.life</a>
+— endpoints: <code>GET /packs</code>, <code>POST /packs</code> (intake), <code>POST /check</code>,
+<code>POST /verify</code>, <code>GET /diff</code>, <code>POST /disputes</code>,
+<code>GET /authors/{pubkey}</code>, <code>POST /mcp</code>.</p>
+
+<div class="card">
+<h3>fleet-house-rules @ 1.0.0</h3>
+<p>The first pack: this fleet's own published operating constraints (no custody, no wallet signing,
+no secrets, no identity gates, consent-based contact, hard caps, honest identification, honour opt-outs),
+encoded as predicates over verbatim cited spans. Our own agents check against it before acting —
+and our authorship record is exposed to the dispute ledger from day one.</p>
+<p class="small">pack hash <code>6f1ac42cfc2965aa22537b584b00cf2fa30cd8d4669e18f49965d93e60d50522</code> ·
+<a href="pack-fleet-house-rules.html">pack detail</a> ·
+<a href="author-house.html">author record</a></p>
+</div>
+
+<div class="card">
+<h3>outreach-etiquette-drill @ 1.0.0 → 1.0.1</h3>
+<p>A drill pack with a deliberately planted wrong predicate (keyed on the wrong field). A dispute was filed
+with evidence, the author conceded by signature, and patch 1.0.1 superseded the disputed hash. The whole
+cycle is visible in the dispute ledger and the author's record — that is the reputation engine working as designed.</p>
+<p class="small">v1.0.0 hash <code>aee2157b430bbe1cf1523b714303d818a607fa5ba7cfe7cc10cba9aa9c6c786d</code> ·
+v1.0.1 hash <code>f2552f4c892345c483b897aab16f96bf7cb9e5afb7fcbab99ab2469a28170854</code></p>
+</div>
+
+<p class="small">LexPacks is infrastructure for an agent economy that mostly doesn't check anything yet.
+Honest launch gauges: external packs 0, external paid verdicts 0, revenue $0. Mechanics proven by dogfood;
+the market is the open question. Running cost ≈ £0, so the registry can wait.</p>
+</body>
+</html>
