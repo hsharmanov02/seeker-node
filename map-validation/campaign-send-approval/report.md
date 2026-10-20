@@ -1,0 +1,10 @@
+# MAP 0.3 description run — Campaign Send Approval
+
+- Install: `npm install mailschema@0.3.2` (npm 10.9.4, node v24.20.0, linux x64). Contract downloaded from https://mailschema.org/artifacts/map-0.3/contracts/campaign-send-approval-0.1.json.
+- Commands: `npx mailschema@0.3.2 contract contract.json` → `Valid type contract https://mailschema.org/types/campaign-send-approval 0.1`, digest `sha-256:de3c88a0712adb1d0c6e82f437b825c83520d8e1c44c7b032a2cfcfe5ce55731`; `npx mailschema@0.3.2 description description.json --contract contract.json` → `Valid MAP 0.3 description https://example.org/map/campaign-send-approval/october-wallpaper-drop`, digest `sha-256:430e5163e79a38a3e734fbe903a37d33d57f7daba9fa9b16c6aeee0e21439511`.
+- Minutes from install to a valid description: about 6.
+- Broken field: set `details.audience.count` to 0 and re-ran. Exact CLI output on stderr: `/details/audience/count: must be >= 1` (exit 1). Restored to 214; the description validates again with the same digest.
+- Slowest step: learning the description envelope. The README documents the JS API but shows no complete minimal description.json, so the top-level fields (`@context`, `@type`, `terms`, `human`, `operations`) had to be assembled from `core.schema.json` in the package.
+- Doc gap: the README says each Registry type page "links an example description of the type", but the registry entry for campaign-send-approval carries `"exampleHref": null, "example": null`, and the type page shows no example. Repro: fetch https://mailschema.org/registry/map-0.3.json and inspect the campaign-send-approval entry.
+- One change I would make: when a URI field fails its pattern (e.g. `service.id` rejecting `https://example.org/mailer` because the pattern allows no path), print the expected shape next to the regex, e.g. "expected a bare https://host, no path".
+- Ruby cross-check not run: no Ruby runtime on this machine, so no `Mailschema.digest` comparison was possible; the digest above is the CLI's second line, as instructed.
