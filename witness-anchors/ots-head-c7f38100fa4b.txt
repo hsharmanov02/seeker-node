@@ -1,0 +1,7 @@
+witness-recorder-ots-head-v1
+stamped_at_utc=2026-11-02T09:10:23Z
+source_log=observations.jsonl
+head_seq=83
+head_ts_utc=2026-10-26T10:11:08Z
+head_entry_hash=c7f38100fa4bec9a237ea401f162fbfbec9401a4129e5208648eee155b183b9a
+log_sha256=5ba65460f553a3f0290bd9ca846df0a59dab6374f676490865656a22f0688fce

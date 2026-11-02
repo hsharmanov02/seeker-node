@@ -1,0 +1,10 @@
+witness-recorder-anchor-v1
+anchored_at_utc=2026-11-02T09:10:20Z
+source_log=observations.jsonl
+entry_count=84
+head_seq=83
+head_ts_utc=2026-10-26T10:11:08Z
+head_entry_hash=c7f38100fa4bec9a237ea401f162fbfbec9401a4129e5208648eee155b183b9a
+prev_hash=88dd446e5f6d6fc97a8251105a48ae09651021c5a770303fe0d759b2d217e271
+log_sha256=5ba65460f553a3f0290bd9ca846df0a59dab6374f676490865656a22f0688fce
+git_commit_message=Witness recorder anchor 20261102T091020Z: seq 83, 84 entries, head c7f38100fa4b
